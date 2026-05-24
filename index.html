@@ -7,12 +7,12 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   
   <style>
-    /* MCKINSEY-INSPIRED EXECUTIVE DESIGN SYSTEM */
+    /* MCKINSEY EXECUTIVE DESIGN TOKENS */
     * {
       margin: 0;
       padding: 0;
@@ -25,43 +25,40 @@
 
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: #0B0F19; 
+      background-color: #F8FAFC; 
       background-image: 
-        radial-gradient(circle at 90% 10%, rgba(56, 189, 248, 0.05) 0%, transparent 50%),
-        radial-gradient(circle at 10% 60%, rgba(30, 58, 138, 0.1) 0%, transparent 50%);
-      color: #F1F5F9; 
+        radial-gradient(circle at 95% 5%, rgba(13, 148, 136, 0.03) 0%, transparent 40%),
+        radial-gradient(circle at 5% 50%, rgba(30, 58, 138, 0.02) 0%, transparent 50%);
+      color: #0F172A; 
       line-height: 1.6;
-      /* Fixed the exhaustive top padding conflict */
-      padding-top: 75px; 
+      /* Eliminated the exhaustive massive top padding gap */
+      padding-top: 80px;
       -webkit-font-smoothing: antialiased;
       letter-spacing: -0.01em;
     }
 
     h1, h2, h3, h4, .serif-heading {
       font-family: 'Playfair Display', Georgia, serif;
-      color: #FFFFFF;
+      color: #0F172A;
       font-weight: 700;
-      letter-spacing: -0.01em;
+      letter-spacing: -0.015em;
     }
 
-    /* SOLID STRUCTURAL FIXED HEADER */
+    /* COMPACT, ULTRA-PROFESSIONAL NAVIGATION BAR */
     .navbar {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      height: 75px;
-      background: #0B0F19;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
       z-index: 1000;
-      display: flex;
-      align-items: center;
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      padding: 1rem 0;
     }
 
     .navbar .container {
-      width: 100%;
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 40px;
@@ -77,120 +74,122 @@
     }
 
     .logo-main {
-      font-size: 1.35rem;
+      font-size: 1.3rem;
       font-family: 'Playfair Display', serif;
       font-weight: 700;
-      color: #FFFFFF;
+      color: #0F172A;
       letter-spacing: -0.01em;
       line-height: 1.1;
     }
 
     .logo-main .ex {
-      color: #38BDF8;
+      color: #1E3A8A;
       font-style: italic;
     }
 
     .logo-area .tagline {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 0.65rem;
-      color: #94A3B8;
-      letter-spacing: 0.12em;
+      font-size: 0.6rem;
+      color: #64748B;
+      letter-spacing: 0.1em;
       font-weight: 700;
       text-transform: uppercase;
-      margin-top: 4px;
+      margin-top: 3px;
     }
 
-    /* PREMIUM INTERACTIVE BUTTON EFFECTS FOR NAV LINKS */
+    /* PREMIUM INTERACTIVE NAV EFFECTS (RAY EFFECTS) */
     .nav-links {
       display: flex;
-      gap: 1.5rem;
+      gap: 2.5rem;
       align-items: center;
     }
 
     .nav-links a {
-      color: #94A3B8;
+      color: #475569;
       text-decoration: none;
-      font-weight: 700;
-      font-size: 0.8rem;
+      font-weight: 600;
+      font-size: 0.85rem;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-      padding: 0.6rem 1.2rem;
-      border-radius: 6px;
-      border: 1px solid transparent;
+      letter-spacing: 0.06em;
       position: relative;
-      overflow: hidden;
+      padding: 0.4rem 0;
+      transition: color 0.25s ease;
     }
 
-    /* Ray/Glow effect on Nav Menu button hover */
+    /* Under-Ray Glow Effect for Header Buttons */
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #1E3A8A, transparent);
+      box-shadow: 0 0 8px rgba(30, 58, 138, 0.6);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: translateX(-50%);
+    }
+
     .nav-links a:hover {
-      color: #FFFFFF;
-      background: rgba(56, 189, 248, 0.05);
-      border-color: rgba(56, 189, 248, 0.25);
-      box-shadow: 0 0 15px rgba(56, 189, 248, 0.15);
+      color: #1E3A8A;
     }
 
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* BALANCED RESPONSIVE GRID CONTAINER */
     .content-container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 40px;
     }
 
-    /* Adjusted padding across sections to compress unnecessary gaps */
+    /* Compact section padding settings matching image_63a626.jpg */
     section {
-      padding: 60px 0 40px 0;
+      padding: 45px 0;
     }
 
-    /* HERO CONTAINER */
+    /* HERO BLOCK STRUCTURE */
     .hero-layout {
-      max-width: 1100px;
+      max-width: 950px;
       margin: 0 auto;
       text-align: center;
-      padding: 60px 40px;
-      background: linear-gradient(135deg, #111827 0%, #0F172A 100%);
-      border-radius: 16px;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: 0 30px 70px -20px rgba(0, 0, 0, 0.6);
-      position: relative;
+      padding: 30px 0 10px 0;
     }
 
     .hero-layout .section-label {
-      color: #38BDF8;
+      color: #1E3A8A;
       font-family: 'Plus Jakarta Sans', sans-serif;
       text-transform: uppercase;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.14em;
       font-size: 0.75rem;
-      font-weight: 800;
+      font-weight: 700;
       display: inline-flex;
       align-items: center;
-      margin-bottom: 2rem;
-      background: rgba(56, 189, 248, 0.08);
-      padding: 6px 16px;
-      border-radius: 50px;
-      border: 1px solid rgba(56, 189, 248, 0.2);
+      margin-bottom: 1.5rem;
+      background: rgba(30, 58, 138, 0.05);
+      padding: 4px 12px;
+      border-radius: 4px;
     }
 
     .hero-title {
-      font-size: 3.4rem;
+      font-size: 3.25rem;
       line-height: 1.25;
       margin-bottom: 1.5rem;
-      color: #FFFFFF;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
+      color: #0F172A;
     }
 
     .hero-title em {
-      font-weight: 700;
-      color: #38BDF8; 
-      font-style: italic;
+      font-weight: 400;
+      color: #475569;
     }
 
     .hero-subtitle {
       font-size: 1.15rem;
-      color: #94A3B8;
-      max-width: 80%;
-      margin: 0 auto 3rem auto;
+      color: #475569;
+      max-width: 82%;
+      margin: 0 auto 2.5rem auto;
       line-height: 1.75;
     }
 
@@ -202,101 +201,93 @@
     }
 
     .stat-pill {
-      background: rgba(56, 189, 248, 0.06); 
-      border: 1px solid rgba(56, 189, 248, 0.2);
-      padding: 0.8rem 1.6rem;
-      border-radius: 8px;
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
       font-size: 0.85rem;
-      font-weight: 700;
-      color: #FFFFFF;
+      font-weight: 600;
+      color: #334155;
       display: inline-flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 0.6rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
     }
 
     .stat-pill i {
-      color: #38BDF8;
+      color: #1E3A8A;
     }
 
-    /* PRODUCTS GRID ARCHITECTURE WITH DISTINCT COLOR ACCENTS */
+    /* CARD GRID SYSTEM WITH MULTICOLOR PROFESSIONAL ACCENTS */
     .products-grid-section {
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-top: 1px solid #E2E8F0;
       margin-top: 20px;
-      padding-top: 60px;
+      padding-top: 50px;
     }
 
     .section-header-area {
-      margin-bottom: 3rem;
+      margin-bottom: 2.5rem;
     }
 
     .section-title-label {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      color: #38BDF8;
+      color: #64748B;
       text-transform: uppercase;
-      letter-spacing: 0.15em;
-      font-size: 0.8rem;
-      font-weight: 800;
+      letter-spacing: 0.12em;
+      font-size: 0.78rem;
+      font-weight: 700;
       display: block;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
     }
 
     .section-title {
-      font-size: 2.5rem;
+      font-size: 2.25rem;
       font-weight: 700;
     }
 
     .products-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
       gap: 2.5rem;
     }
 
+    /* PREMIUM ACCENT-BORDER CARD SPECIFICATIONS */
     .premium-product-card {
-      background: #111827;
-      border-radius: 12px; 
-      padding: 3.5rem 3rem;
-      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      background: #FFFFFF;
+      border-radius: 8px; 
+      padding: 3rem 2.5rem;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
       position: relative;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.04);
     }
 
-    /* Distinct Card Borders based on system execution priority */
+    /* Active Module: High-end Corporate Muted Teal Border Accent */
     .premium-product-card.active-module {
-      border: 1px solid rgba(52, 211, 153, 0.2); /* Emerald accent border */
+      border: 1px solid rgba(13, 148, 136, 0.3);
+      border-top: 4px solid #0D9488;
     }
 
+    /* Locked Module: Refined Executive Slate-Amber Border Accent */
     .premium-product-card.locked-module {
-      border: 1px solid rgba(245, 158, 11, 0.15); /* Amber accent border */
+      border: 1px solid rgba(217, 119, 6, 0.18);
+      border-top: 4px solid #D97706;
     }
-
-    .premium-product-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      opacity: 0.4;
-      transition: opacity 0.3s ease;
-    }
-
-    .premium-product-card.active-module::before { background: #34D399; }
-    .premium-product-card.locked-module::before { background: #F59E0B; }
 
     .premium-product-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.6);
     }
-    
+
     .premium-product-card.active-module:hover {
-      border-color: rgba(52, 211, 153, 0.5);
+      border-color: #0D9488;
+      box-shadow: 0 25px 50px -12px rgba(13, 148, 136, 0.12);
     }
-    
+
     .premium-product-card.locked-module:hover {
-      border-color: rgba(245, 158, 11, 0.4);
+      border-color: #D97706;
+      box-shadow: 0 25px 50px -12px rgba(217, 119, 6, 0.08);
     }
 
     .card-top-matter {
@@ -306,242 +297,217 @@
     .coming-soon-badge {
       text-transform: uppercase;
       letter-spacing: 0.1em;
-      font-size: 0.7rem;
-      font-weight: 800;
+      font-size: 0.68rem;
+      font-weight: 700;
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      margin-bottom: 1.5rem;
-      padding: 6px 12px;
-      border-radius: 6px;
+      gap: 0.4rem;
+      margin-bottom: 1.25rem;
+      padding: 4px 10px;
+      border-radius: 4px;
     }
 
     .product-headline {
-      font-size: 2.2rem;
+      font-size: 2rem;
       font-weight: 700;
-      margin-bottom: 0.5rem;
-      letter-spacing: -0.01em;
+      margin-bottom: 0.4rem;
     }
 
     .product-meta-sub {
-      color: #38BDF8;
+      color: #1E3A8A;
       font-family: 'Plus Jakarta Sans', sans-serif;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 1.75rem;
+      letter-spacing: 0.05em;
+      margin-bottom: 1.5rem;
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
     }
 
     .product-description-text {
-      color: #94A3B8;
-      font-size: 1.05rem;
-      line-height: 1.7;
+      color: #475569;
+      font-size: 1rem;
+      line-height: 1.65;
     }
 
-    /* RE-ENGINEERED PRIMARY BUTTON CONTROLS */
+    /* REFINED EXECUTIVE INTERACTIVE BUTTON CONTROLS */
     .btn-primary {
-      background: #FFFFFF;
-      color: #0B0F19;
+      background: #0F172A;
+      color: #FFFFFF;
       font-family: 'Plus Jakarta Sans', sans-serif;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-weight: 800;
-      padding: 1.1rem 2rem;
-      border-radius: 8px;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+      padding: 1rem 1.75rem;
+      border-radius: 6px;
       cursor: pointer;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       display: inline-flex;
       align-items: center;
-      gap: 0.8rem;
-      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      gap: 0.75rem;
+      transition: all 0.2s ease;
       border: none;
       width: 100%;
       justify-content: center;
-      margin-top: auto;
     }
 
     .btn-primary:hover {
-      background: #38BDF8;
-      color: #0B0F19;
-      box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+      background: #1E3A8A;
+      box-shadow: 0 4px 12px rgba(30, 58, 138, 0.2);
     }
 
-    /* ABOUT SECTION BENTO ARCHITECTURE */
+    /* ABOUT COMPONENT LAYOUT BLOCK */
     .about-section-container {
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      padding-top: 60px;
+      border-top: 1px solid #E2E8F0;
+      margin-top: 20px;
+      padding-top: 50px;
     }
 
     .about-grid {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns: 1.25fr 0.75fr;
       gap: 4rem;
     }
 
     .founder-header-meta {
-      margin-bottom: 2.5rem;
-      border-left: 4px solid #38BDF8;
-      padding-left: 20px;
+      margin-bottom: 2rem;
+      border-left: 3px solid #1E3A8A;
+      padding-left: 15px;
     }
 
     .founder-label {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 800;
+      font-size: 0.8rem;
+      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: #38BDF8;
+      letter-spacing: 0.12em;
+      color: #1E3A8A;
       display: block;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     .founder-name {
-      font-size: 2.5rem;
+      font-size: 2.1rem;
       font-weight: 700;
-      color: #FFFFFF;
+      color: #0F172A;
       line-height: 1.2;
     }
 
     .founder-title-sub {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 1.2rem;
-      color: #94A3B8;
-      font-weight: 600;
-      margin-top: 4px;
+      font-size: 1.05rem;
+      color: #475569;
+      font-weight: 500;
+      margin-top: 2px;
     }
 
     .about-left p {
-      margin-bottom: 1.5rem;
-      color: #CBD5E1;
-      font-size: 1.1rem;
-      line-height: 1.75;
+      margin-bottom: 1.25rem;
+      color: #334155;
+      font-size: 1.05rem;
+      line-height: 1.7;
     }
 
     .bullets-list {
       list-style: none;
-      margin: 2.5rem 0;
+      margin: 2rem 0;
     }
 
     .bullets-list li {
       display: flex;
       align-items: flex-start;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-      color: #E2E8F0;
-      font-size: 1.1rem;
+      gap: 0.85rem;
+      margin-bottom: 1.25rem;
+      color: #334155;
+      font-size: 1.05rem;
     }
 
     .bullets-list li i {
-      color: #38BDF8;
-      margin-top: 0.25rem;
+      color: #1E3A8A;
+      margin-top: 0.35rem;
       font-size: 0.85rem;
-      background: rgba(56, 189, 248, 0.1);
-      padding: 6px;
-      border-radius: 4px;
     }
 
     .quote-box {
       font-family: 'Playfair Display', serif;
       font-style: italic;
-      font-size: 1.4rem;
-      border-left: 4px solid #38BDF8;
-      padding-left: 2rem;
-      color: #F1F5F9;
-      margin: 3.5rem 0;
+      font-size: 1.25rem;
+      border-left: 3px solid #1E3A8A;
+      padding-left: 1.5rem;
+      color: #1E293B;
+      margin: 2.5rem 0;
       line-height: 1.65;
-      background: linear-gradient(90deg, rgba(56, 189, 248, 0.03), transparent);
-      padding-top: 0.75rem;
-      padding-bottom: 0.75rem;
     }
 
     .about-right {
+      background: #FFFFFF;
+      padding: 2.5rem 2rem;
+      border-radius: 8px;
+      border: 1px solid #E2E8F0;
       display: flex;
       flex-direction: column;
-      gap: 1.5rem;
+      gap: 2rem;
+      height: fit-content;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01);
     }
 
     .info-block {
-      background: #111827; 
-      padding: 2.5rem;
-      border-radius: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.05);
       display: flex;
       flex-direction: column;
-      gap: 0.6rem;
+      gap: 0.4rem;
     }
 
     .info-block h5 {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       font-weight: 700;
-      color: #FFFFFF;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-
-    .info-block h5::before {
-      content: '';
-      display: inline-block;
-      width: 6px;
-      height: 6px;
-      background: #38BDF8;
-      border-radius: 50%;
+      color: #0F172A;
     }
 
     .info-block p {
-      color: #94A3B8;
-      font-size: 1rem;
+      color: #475569;
+      font-size: 0.95rem;
       line-height: 1.6;
     }
 
-    /* PROTOCOLS OUTBOUND COMMUNICATIONS BOX */
+    /* CHANNELS AND PROTOCOLS CONNECTIVITY FOOTER */
     .contact-info {
-      margin-top: 5rem;
-      background: linear-gradient(135deg, #1E3A8A 0%, #0F172A 100%);
+      margin-top: 4rem;
+      background: #0F172A;
       color: #FFFFFF;
-      padding: 5rem 4rem;
-      border-radius: 12px;
+      padding: 3.5rem;
+      border-radius: 6px;
       text-align: center;
-      border: 1px solid rgba(59, 130, 246, 0.25);
     }
 
     .contact-info h4 {
       color: #FFFFFF;
-      font-size: 2.2rem;
-      margin-bottom: 2.5rem;
+      font-size: 1.8rem;
+      margin-bottom: 1.75rem;
     }
 
     .contact-details {
       display: flex;
       justify-content: center;
-      gap: 2.5rem;
+      gap: 3rem;
       flex-wrap: wrap;
     }
 
     .contact-details a, .contact-details span {
       display: inline-flex;
       align-items: center;
-      gap: 0.75rem;
-      color: #FFFFFF;
+      gap: 0.6rem;
+      color: #94A3B8;
       text-decoration: none;
-      font-weight: 700;
-      font-size: 1.05rem;
-      background: rgba(255, 255, 255, 0.05);
-      padding: 1rem 1.75rem;
-      border-radius: 8px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      transition: all 0.2s ease;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.2s;
     }
 
     .contact-details a:hover {
-      background: #FFFFFF;
-      color: #0B0F19;
-      transform: translateY(-2px);
+      color: #FFFFFF;
     }
 
     .contact-details i {
@@ -550,34 +516,34 @@
 
     .footer {
       text-align: center;
-      padding: 5rem 0;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      margin-top: 5rem;
-      font-size: 0.9rem;
+      padding: 4rem 0 2rem 0;
+      border-top: 1px solid #E2E8F0;
+      margin-top: 4rem;
+      font-size: 0.85rem;
       color: #64748B;
       line-height: 1.8;
     }
 
     .footer span {
       display: block;
-      margin-top: 0.8rem;
+      margin-top: 0.5rem;
       text-transform: uppercase;
-      font-weight: 800;
-      font-size: 0.78rem;
-      color: #38BDF8;
-      letter-spacing: 0.1em;
+      font-weight: 700;
+      font-size: 0.75rem;
+      color: #475569;
+      letter-spacing: 0.06em;
     }
 
-    /* DATA SPECIFICATION MODAL GRAPHICS */
+    /* MODAL INFRASTRUCTURE PANELS */
     .modal-overlay {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(11, 15, 25, 0.8);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      background-color: rgba(15, 23, 42, 0.4);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
       z-index: 1100;
       display: flex;
       align-items: center;
@@ -593,21 +559,18 @@
     }
 
     .modal-container {
-      background: #111827;
-      border-top: 6px solid #38BDF8;
-      max-width: 760px;
+      background: #FFFFFF;
+      border-top: 6px solid #1E3A8A;
+      max-width: 720px;
       width: 90%;
-      border-radius: 12px;
-      box-shadow: 0 40px 90px -20px rgba(0, 0, 0, 0.7);
-      padding: 4rem 3.5rem;
+      border-radius: 6px;
+      box-shadow: 0 30px 60px -15px rgba(15, 23, 42, 0.2);
+      padding: 3.5rem;
       position: relative;
-      transform: scale(0.96);
-      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: scale(0.98);
+      transition: transform 0.25s ease;
       max-height: 85vh;
       overflow-y: auto;
-      border-left: 1px solid rgba(255, 255, 255, 0.05);
-      border-right: 1px solid rgba(255, 255, 255, 0.05);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
 
     .modal-overlay.active .modal-container {
@@ -618,112 +581,107 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      padding-bottom: 1.5rem;
-      margin-bottom: 2.5rem;
+      border-bottom: 1px solid #E2E8F0;
+      padding-bottom: 1.25rem;
+      margin-bottom: 2rem;
     }
 
     .modal-header h2 {
-      font-size: 2rem;
+      font-size: 1.75rem;
     }
 
     .close-modal {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: none;
+      border: none;
       color: #94A3B8;
-      width: 36px;
-      height: 36px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
+      font-size: 1.35rem;
       cursor: pointer;
       transition: color 0.2s;
     }
 
     .close-modal:hover {
-      color: #FFFFFF;
-      background: rgba(255, 255, 255, 0.15);
+      color: #0F172A;
     }
 
     .detail-section {
-      margin-bottom: 2.5rem;
+      margin-bottom: 2rem;
     }
 
     .detail-section h4 {
       font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 0.85rem;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: #38BDF8;
-      margin-bottom: 1rem;
-      font-weight: 800;
+      letter-spacing: 0.1em;
+      color: #1E3A8A;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
     }
 
     .detail-section p {
-      color: #CBD5E1;
-      font-size: 1.05rem;
-      line-height: 1.7;
+      color: #475569;
+      font-size: 1rem;
+      line-height: 1.65;
     }
 
     .badge-container, .grid-outputs {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-top: 1rem;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
     }
 
     .input-badge {
-      background: rgba(255, 255, 255, 0.03);
-      padding: 0.6rem 1.2rem;
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: #E2E8F0;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 6px;
+      background: #F1F5F9;
+      padding: 0.4rem 0.85rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #334155;
+      border: 1px solid #E2E8F0;
+      border-radius: 4px;
     }
 
     .output-chip {
-      background: rgba(52, 211, 153, 0.1);
-      border: 1px solid rgba(52, 211, 153, 0.25);
-      padding: 0.6rem 1.2rem;
-      font-size: 0.85rem;
-      font-weight: 800;
-      color: #34D399;
-      border-radius: 6px;
+      background: #F0FDF4;
+      border: 1px solid #BBF7D0;
+      padding: 0.4rem 0.85rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #166534;
+      border-radius: 4px;
     }
 
     .ecosystem-callout {
-      background: rgba(255, 255, 255, 0.02);
-      padding: 1.5rem;
-      margin-top: 20px;
-      border-left: 4px solid #64748B;
-      border-radius: 0 8px 8px 0;
-      font-size: 1rem;
-      color: #E2E8F0;
+      background: #F8FAFC;
+      padding: 1.25rem;
+      margin-top: 15px;
+      border-left: 3px solid #64748B;
+      border-radius: 0 4px 4px 0;
+      font-size: 0.95rem;
+      color: #334155;
     }
 
     .btn-secondary-close {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      color: #E2E8F0;
+      background: #F1F5F9;
+      border: 1px solid #CBD5E1;
+      color: #334155;
       font-family: 'Plus Jakarta Sans', sans-serif;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.05em;
       font-weight: 700;
-      padding: 1rem 2rem;
+      padding: 0.75rem 1.5rem;
       cursor: pointer;
       font-size: 0.8rem;
+      border-radius: 4px;
       transition: all 0.2s;
-      border-radius: 8px;
     }
 
     .btn-secondary-close:hover {
-      background: #FFFFFF;
-      color: #0B0F19;
+      background: #0F172A;
+      color: #FFFFFF;
+      border-color: #0F172A;
     }
 
-    /* RESPONSIVE LAYOUT CALIBRATIONS */
+    /* BALANCED MOBILE RESPONSIVE ENGINE */
     @media (max-width: 1024px) {
       .about-grid {
         grid-template-columns: 1fr;
@@ -736,77 +694,65 @@
         padding-top: 70px; 
       }
       .navbar {
-        height: 70px;
+        padding: 0.75rem 0;
       }
       .navbar .container {
         padding: 0 24px;
       }
       .logo-main {
-        font-size: 1.2rem;
+        font-size: 1.15rem;
       }
       .logo-area .tagline {
-        font-size: 0.55rem;
+        font-size: 0.52rem;
       }
       .nav-links {
-        gap: 0.75rem;
+        gap: 1.5rem;
       }
       .nav-links a {
-        font-size: 0.75rem;
-        padding: 0.5rem 0.8rem;
+        font-size: 0.78rem;
       }
       section {
-        padding: 40px 0 30px 0;
+        padding: 35px 0;
       }
       .hero-layout {
-        padding: 40px 20px;
+        padding: 20px 0;
       }
       .hero-title {
-        font-size: 2.2rem;
+        font-size: 2.1rem;
       }
       .hero-subtitle {
         font-size: 1.05rem;
         width: 100%;
         margin-bottom: 2rem;
       }
-      .inline-stats {
-        flex-direction: column;
-        gap: 0.85rem;
-      }
       .products-grid-section {
-        padding-top: 40px;
+        padding-top: 35px;
       }
       .products-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
       }
       .premium-product-card {
-        padding: 2.5rem 2rem;
+        padding: 2.25rem 1.75rem;
       }
       .product-headline {
-        font-size: 1.9rem;
+        font-size: 1.8rem;
       }
       .about-section-container {
-        padding-top: 40px;
+        padding-top: 35px;
       }
       .founder-name {
-        font-size: 2rem;
+        font-size: 1.8rem;
       }
       .section-title {
-        font-size: 2.1rem;
-      }
-      .info-block {
-        padding: 2rem;
+        font-size: 1.85rem;
       }
       .contact-info {
-        padding: 3.5rem 2rem;
+        padding: 2.5rem 1.5rem;
       }
       .contact-details {
         flex-direction: column;
-        gap: 1rem;
-      }
-      .contact-details a, .contact-details span {
-        width: 100%;
-        justify-content: center;
+        gap: 1.25rem;
       }
     }
   </style>
@@ -851,7 +797,7 @@
     <div class="products-grid">
       <div class="premium-product-card active-module">
         <div class="card-top-matter">
-          <div class="coming-soon-badge" style="background: rgba(52, 211, 153, 0.1); border: 1px solid rgba(52, 211, 153, 0.25); color: #34D399;">
+          <div class="coming-soon-badge" style="background: #E6F4F1; color: #0D9488;">
             <i class="fas fa-circle-check"></i> Operational Module · Active Engine
           </div>
           <h3 class="product-headline">RevenuePilot</h3>
@@ -859,25 +805,25 @@
           <p class="product-description-text">Insulate engineering teams from non-viable architectures. RevenuePilot audits target market parameters, variable baseline pricing tiers, and direct micro-economic monetization vectors before a single line of script is committed.</p>
         </div>
         
-        <div style="display: grid; grid-template-columns: 1fr auto; gap: 1rem; margin-top: auto;">
+        <div style="display: grid; grid-template-columns: 1fr auto; gap: 0.75rem; margin-top: auto;">
           <a href="revenue-pilot.html" class="btn-primary" style="text-decoration: none;">
             <span>Initialize Engine Control Panel</span>
             <i class="fas fa-bolt"></i>
           </a>
-          <button class="btn-primary" id="openModalBtn" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); color: #FFFFFF; width: 56px; padding: 0;" title="Review Core Specifications">
+          <button class="btn-primary" id="openModalBtn" style="background: #F1F5F9; color: #0F172A; width: 50px; padding: 0;" title="Review Core Specifications">
             <i class="fas fa-info-circle"></i>
           </button>
         </div>
       </div>
 
-      <div class="premium-product-card locked-module" style="opacity: 0.65;">
+      <div class="premium-product-card locked-module" style="opacity: 0.85;">
         <div class="card-top-matter">
-          <div class="coming-soon-badge" style="background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.2); color: #F59E0B;"><i class="far fa-clock"></i> Deployment Phase · Coming Soon</div>
+          <div class="coming-soon-badge" style="background: #FFF7ED; color: #C2410C;"><i class="far fa-clock"></i> Deployment Phase · Coming Soon</div>
           <h3 class="product-headline">FeatureImpact OS</h3>
           <div class="product-meta-sub"><i class="fas fa-shuffle"></i> Pre-Deployment Feature Impact Simulator</div>
           <p class="product-description-text">Predicts how a feature modification may impact users and overall product performance vectors before deployment. Simulates onboarding friction, retention stability indexes, and UX disruption indicators.</p>
         </div>
-        <button class="btn-primary" disabled style="background: rgba(255, 255, 255, 0.02); color: #475569; cursor: not-allowed; border: 1px solid rgba(255, 255, 255, 0.05);">
+        <button class="btn-primary" disabled style="background: #E2E8F0; color: #94A3B8; cursor: not-allowed; border: none;">
           <span>Pipeline Stage Locked</span>
           <i class="fas fa-lock"></i>
         </button>
@@ -896,7 +842,7 @@
         <div class="founder-header-meta">
           <span class="founder-label">Founder and Operator, FaridEx Labs</span>
           <h3 class="founder-name">GHULAM FARID</h3>
-          <div class="founder-title-sub">Business Strategy and Product Analyst</div>
+          <div class="founder-title-sub">Corporate Strategy & Digital Product Consultant</div>
         </div>
 
         <p>I operate within heavy-data system integration nodes, developing structural evaluation frameworks designed to isolate high-risk business initiatives from active engineering execution streams.</p>
@@ -904,9 +850,9 @@
         <p>My work centers around replacing speculative launch methodologies with quantitative telemetry. I engineer clean system architectures, structure product governance pipelines, and construct scalable market entry blueprints optimized to match complex engineering footprints.</p>
         
         <ul class="bullets-list">
-          <li><i class="fas fa-chart-network"></i> <span>I formulate granular product roadmaps and strategic market alignment models for modern high-performance frameworks.</span></li>
-          <li><i class="fas fa-sliders-h"></i> <span>I direct systemic performance matrices spanning high-velocity e-commerce and complex enterprise software structures.</span></li>
-          <li><i class="fas fa-shield-alt"></i> <span>I designed FaridEx Labs to function as an independent quantitative verification buffer to eliminate systemic launch volatility.</span></li>
+          <li><i class="fas fa-circle" style="font-size: 0.5rem; margin-top: 0.5rem;"></i> <span>I formulate granular product roadmaps and strategic market alignment models for modern high-performance frameworks.</span></li>
+          <li><i class="fas fa-circle" style="font-size: 0.5rem; margin-top: 0.5rem;"></i> <span>I direct systemic performance matrices spanning high-velocity e-commerce and complex enterprise software structures.</span></li>
+          <li><i class="fas fa-circle" style="font-size: 0.5rem; margin-top: 0.5rem;"></i> <span>I designed FaridEx Labs to function as an independent quantitative verification buffer to eliminate systemic launch volatility.</span></li>
         </ul>
         
         <div class="quote-box">
@@ -942,7 +888,7 @@
   </section>
 
   <div class="footer">
-    Ghulam Farid — Business Strategy & Product Analyst <br>
+    Ghulam Farid — Corporate Strategy & Digital Product Consultant <br>
     <span>© 2026 FaridEx Labs · Strategic Advisory & Analytics Core</span>
   </div>
 </div>
