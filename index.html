@@ -264,7 +264,7 @@
       text-decoration: none;
     }
 
-    /* HIGH-SPEED DIGITAL PIPELINE Visual */
+    /* HIGH-SPEED DIGITAL PIPELINE VISUAL */
     .pipeline-dashboard-container {
       display: flex;
       flex-direction: column;
@@ -343,7 +343,6 @@
       transform: translateX(-50%);
     }
 
-    /* Dynamic Generated Fast Streaming Elements */
     .dynamic-packet {
       position: absolute;
       width: 6px;
@@ -453,7 +452,7 @@
       color: #FFFFFF;
       line-height: 1;
       letter-spacing: -0.02em;
-      transition: color 0.2s;
+      transition: color 0.1s ease;
     }
 
     .delta-status-row {
@@ -463,8 +462,11 @@
       gap: 4px;
       font-size: 0.75rem;
       font-weight: 700;
-      color: #10B981;
+      transition: color 0.2s;
     }
+    
+    .delta-status-row.positive { color: #10B981; }
+    .delta-status-row.negative { color: #EF4444; }
 
     .metric-readout-panel .label-node {
       font-size: 0.65rem;
@@ -934,7 +936,7 @@
       <div class="pipeline-dashboard-container" id="dashboardHub">
         
         <div class="source-cards-row">
-          <div class="pipeline-source-card active" data-target="1" id="cardAnalysis">
+          <div class="pipeline-source-card active" data-target-state="1" id="cardAnalysis">
             <i class="fas fa-chart-line"></i>
             <h4>Analysis</h4>
             <p>Quantitative Logic</p>
@@ -959,7 +961,7 @@
           <div class="bucket-header-zone">
             <div class="bucket-title-meta">
               <h5>FaridEx Lab Engine Core</h5>
-              <p id="activeTrackLabel">Processing Pipeline Active</p>
+              <p id="activeTrackLabel">Processing Pipeline Active: Analysis Mode</p>
             </div>
             <div class="engine-status-puck">
               <i class="fas fa-bolt" style="font-size:0.6rem; color:#10B981;"></i> High Frequency
@@ -975,9 +977,9 @@
               <div class="growth-chart-bar" style="height: 90%;"></div>
             </div>
             <div class="metric-readout-panel">
-              <div class="value-node" id="telemetryValue">94.20%</div>
-              <div class="delta-status-row">
-                <i class="fas fa-caret-up"></i> <span id="deltaValue">+1.45%</span>
+              <div class="value-node" id="telemetryValue">74.50%</div>
+              <div class="delta-status-row positive" id="deltaStatusBox">
+                <i class="fas id-icon fa-caret-up" id="deltaIcon"></i> <span id="deltaValue">+1.45%</span>
               </div>
               <div class="label-node">Feasibility Growth Core</div>
             </div>
@@ -1183,31 +1185,31 @@
       });
     });
 
-    // RE-ENGINEERED ULTRA-FAST HIGH FREQUENCY TELEMETRY SYSTEM
+    // WIDE-SPECTRUM HIGH FREQUENCY TELEMETRY ENGINE
     const conduitTrack = document.getElementById('conduitTrack');
     const chartBars = document.querySelectorAll('.growth-chart-bar');
     const telemetryValue = document.getElementById('telemetryValue');
     const deltaValue = document.getElementById('deltaValue');
+    const deltaStatusBox = document.getElementById('deltaStatusBox');
+    const deltaIcon = document.getElementById('deltaIcon');
     const sourceCards = document.querySelectorAll('.pipeline-source-card');
     
-    let baseFeasibilityScore = 94.20;
+    // Starting metric safely positioned mid-matrix
+    let baseFeasibilityScore = 64.50;
 
     // 1. HIGH SPEED DATA PACKET INJECTION LOOP (Every 0.2 Seconds)
     setInterval(() => {
       const packet = document.createElement('div');
       packet.classList.add('dynamic-packet');
       
-      // Dynamic horizontal injection offsets to make streaming look organic
       const randomSpread = Math.floor(Math.random() * 30) - 15;
       packet.style.marginLeft = `${randomSpread}px`;
       
       conduitTrack.appendChild(packet);
-      
-      // Clean up executed DOM elements efficiently
       setTimeout(() => packet.remove(), 250);
     }, 200);
 
-    // 2. HIGH SPEED CHART & VALUE MATRIX RE-CALCULATION (Every 0.5 Seconds)
+    // 2. STRETCHED SPECTRUM RUNTIME UPDATES (Every 0.5 Seconds)
     setInterval(() => {
       // Bouncing bar chart updates
       chartBars.forEach(bar => {
@@ -1215,26 +1217,37 @@
         bar.style.height = `${randomHeight}%`;
       });
 
-      // Micro incremental logic adjustments
-      const variance = (Math.random() * 0.4) - 0.18; 
-      baseFeasibilityScore += variance;
-      if (baseFeasibilityScore > 99.5) baseFeasibilityScore = 93.10;
-      if (baseFeasibilityScore < 85.0) baseFeasibilityScore = 95.50;
+      // Expand calculation steps to target a sweeping wide index window (30.00% to 95.00%)
+      const mathematicalSwing = (Math.random() * 12) - 5.5; 
+      let originalScore = baseFeasibilityScore;
+      baseFeasibilityScore += mathematicalSwing;
+      
+      // Hard ceiling and floor caps matching the target data array rules
+      if (baseFeasibilityScore > 95.00) baseFeasibilityScore = 88.50;
+      if (baseFeasibilityScore < 30.00) baseFeasibilityScore = 42.10;
 
       telemetryValue.textContent = `${baseFeasibilityScore.toFixed(2)}%`;
       
-      // Delta fluctuate positive growth indicator arrays
-      const currentDelta = (Math.random() * 1.5) + 0.2;
-      deltaValue.textContent = `+${currentDelta.toFixed(2)}%`;
+      // Dynamically calculate positive or negative telemetry delta indicators
+      const finalDelta = baseFeasibilityScore - originalScore;
+      if (finalDelta >= 0) {
+        deltaStatusBox.className = "delta-status-row positive";
+        deltaIcon.className = "fas fa-caret-up";
+        deltaValue.textContent = `+${finalDelta.toFixed(2)}%`;
+      } else {
+        deltaStatusBox.className = "delta-status-row negative";
+        deltaIcon.className = "fas fa-caret-down";
+        deltaValue.textContent = `${finalDelta.toFixed(2)}%`;
+      }
     }, 500);
 
     // Dynamic Tracking Interaction States 
     sourceCards.forEach((card, idx) => {
       const labelTracker = document.getElementById('activeTrackLabel');
       const networkLabels = [
-        "Processing Pipeline: Analysis Mode", 
-        "Processing Pipeline: Strategy Core", 
-        "Processing Pipeline: Execution Node"
+        "Processing Pipeline Active: Analysis Mode", 
+        "Processing Pipeline Active: Strategy Core", 
+        "Processing Pipeline Active: Execution Node"
       ];
       
       const triggerInteraction = () => {
