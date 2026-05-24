@@ -331,7 +331,6 @@
     .conduit-channel {
       height: 80px;
       position: relative;
-      overflow: hidden;
     }
 
     .stream-line-conduit {
@@ -342,6 +341,29 @@
       left: 50%;
       transform: translateX(-50%);
     }
+
+    /* PLACING THE USER+PC WATCHER DIRECTLY WHERE DATA ENTERS FROM THE CONDUIT */
+    .user-pc-watcher {
+      position: absolute;
+      top: -12px; /* Positioned directly up where packets originate */
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 20;
+      pointer-events: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: #0F172A;
+      color: #F59E0B;
+      border: 1px solid rgba(245, 158, 11, 0.7);
+      padding: 4px 6px;
+      border-radius: 5px;
+      font-size: 0.65rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      filter: drop-shadow(0 0 5px rgba(245, 158, 11, 0.3));
+    }
+    .user-pc-watcher i.fa-user { color: #FFFFFF; }
+    .user-pc-watcher i.fa-desktop { color: #F59E0B; font-size: 0.6rem; }
 
     .dynamic-packet {
       position: absolute;
@@ -443,27 +465,6 @@
     .bar-green  { background: linear-gradient(to top, #065F46, #34D399); box-shadow: 0 0 10px rgba(52, 211, 153, 0.2); }
     .bar-purple { background: linear-gradient(to top, #6B21A8, #C084FC); box-shadow: 0 0 10px rgba(192, 132, 252, 0.2); }
     .bar-indigo { background: linear-gradient(to top, #3730A3, #818CF8); box-shadow: 0 0 10px rgba(129, 140, 248, 0.2); }
-
-    /* DYNAMIC USER-PC MATRIX MARKER WATCHER */
-    .user-pc-watcher {
-      position: absolute;
-      z-index: 10;
-      pointer-events: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      background: #0F172A;
-      color: #F59E0B;
-      border: 1px solid rgba(245, 158, 11, 0.6);
-      padding: 3px 5px;
-      border-radius: 4px;
-      font-size: 0.62rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-      transition: all 0.35s cubic-bezier(0.1, 0.8, 0.2, 1);
-      filter: drop-shadow(0 0 4px rgba(245, 158, 11, 0.4));
-    }
-    .user-pc-watcher i.fa-user { color: #FFFFFF; }
-    .user-pc-watcher i.fa-desktop { color: #F59E0B; font-size: 0.58rem; }
 
     .metric-readout-panel {
       display: flex;
@@ -655,9 +656,9 @@
     }
 
     .founder-header-meta {
-      margin-bottom: 2rem;
       border-left: 3px solid #1E3A8A;
       padding-left: 15px;
+      margin-bottom: 2rem;
     }
 
     .founder-label {
@@ -982,6 +983,11 @@
 
         <div class="conduit-channel" id="conduitTrack">
           <div class="stream-line-conduit"></div>
+          
+          <div id="userTrendWatcher" class="user-pc-watcher">
+            <i class="fas fa-user"></i>
+            <i class="fas fa-desktop"></i>
+          </div>
         </div>
 
         <div class="faridex-processing-bucket">
@@ -1001,11 +1007,6 @@
               <svg id="trendLineSvg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; z-index: 5;">
                 <polyline id="dynamicTrendLine" points="" style="fill: none; stroke: #F59E0B; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0px 0px 5px rgba(245, 158, 11, 0.7)); transition: all 0.35s cubic-bezier(0.1, 0.8, 0.2, 1);" />
               </svg>
-
-              <div id="userTrendWatcher" class="user-pc-watcher">
-                <i class="fas fa-user"></i>
-                <i class="fas fa-desktop"></i>
-              </div>
 
               <div class="growth-chart-bar bar-cyan" style="height: 45%;"></div>
               <div class="growth-chart-bar bar-blue" style="height: 70%;"></div>
@@ -1222,7 +1223,7 @@
       });
     });
 
-    // INTEGRATED CHROMATIC & TRENDLINE TELEMETRY ENGINE WITH LIVE WATCHER
+    // INTEGRATED CHROMATIC & TRENDLINE TELEMETRY ENGINE
     const conduitTrack = document.getElementById('conduitTrack');
     const chartBars = document.querySelectorAll('.growth-chart-bar');
     const telemetryValue = document.getElementById('telemetryValue');
@@ -1231,7 +1232,6 @@
     const deltaIcon = document.getElementById('deltaIcon');
     const sourceCards = document.querySelectorAll('.pipeline-source-card');
     const dynamicTrendLine = document.getElementById('dynamicTrendLine');
-    const userTrendWatcher = document.getElementById('userTrendWatcher');
     
     let baseFeasibilityScore = 64.50;
 
@@ -1250,24 +1250,15 @@
     // 2. RUNTIME TELEMETRY SYSTEM LOOP (Every 0.5 Seconds)
     function runTelemetryRefresh() {
       let pointsCoordArray = [];
-      let targetWatcherX = 0;
-      let targetWatcherY = 0;
 
-      // Loop through each uniquely-gradiented bar node
-      chartBars.forEach((bar, index) => {
-        const randomHeight = Math.floor(Math.random() * 65) + 30; // Spans wide range: 30% to 95%
+      chartBars.forEach((bar) => {
+        const randomHeight = Math.floor(Math.random() * 65) + 30; // 30% to 95%
         bar.style.height = `${randomHeight}%`;
         
         // Dynamic Vector Mapping for Trendline Center Coordinates
         const posX = bar.offsetLeft + (bar.offsetWidth / 2);
-        const posY = 85 - (85 * randomHeight / 100); // 85px canvas base framework
+        const posY = 85 - (85 * randomHeight / 100); 
         pointsCoordArray.push(`${posX},${posY}`);
-
-        // Track the middle data cluster (index 2) to anchor the trend analyst
-        if (index === 2) {
-          targetWatcherX = posX;
-          targetWatcherY = posY;
-        }
       });
 
       // Commit coordinates to active SVG polyline
@@ -1275,13 +1266,7 @@
         dynamicTrendLine.setAttribute('points', pointsCoordArray.join(' '));
       }
 
-      // Synchronously reposition the User + PC widget parallel to the trendline (floating slightly above it)
-      if (userTrendWatcher) {
-        userTrendWatcher.style.left = `${targetWatcherX - 18}px`;
-        userTrendWatcher.style.top = `${targetWatcherY - 26}px`;
-      }
-
-      // Expand calculation steps to target a sweeping wide index window (30.00% to 95.00%)
+      // Sweeping wide index window calculations
       const mathematicalSwing = (Math.random() * 12) - 5.5; 
       let originalScore = baseFeasibilityScore;
       baseFeasibilityScore += mathematicalSwing;
