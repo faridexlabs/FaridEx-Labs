@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   
   <style>
-    /* MCKINSEY EXECUTIVE DESIGN TOKENS */
+    /* EXECUTIVE STRUCTURE & DESIGN TOKENS */
     * {
       margin: 0;
       padding: 0;
@@ -27,12 +27,11 @@
       font-family: 'Plus Jakarta Sans', sans-serif;
       background-color: #F8FAFC; 
       background-image: 
-        radial-gradient(circle at 95% 5%, rgba(13, 148, 136, 0.03) 0%, transparent 40%),
-        radial-gradient(circle at 5% 50%, rgba(30, 58, 138, 0.02) 0%, transparent 50%);
+        radial-gradient(circle at 100% 0%, rgba(30, 58, 138, 0.04) 0%, transparent 45%),
+        radial-gradient(circle at 0% 100%, rgba(15, 23, 42, 0.02) 0%, transparent 40%);
       color: #0F172A; 
-      line-height: 1.6;
-      /* Eliminated the exhaustive massive top padding gap */
-      padding-top: 80px;
+      line-height: 1.65;
+      padding-top: 135px; /* Accounted for double-tier premium dark navbar grid */
       -webkit-font-smoothing: antialiased;
       letter-spacing: -0.01em;
     }
@@ -44,18 +43,20 @@
       letter-spacing: -0.015em;
     }
 
-    /* COMPACT, ULTRA-PROFESSIONAL NAVIGATION BAR */
+    /* ELITE DARK MULTI-TIER NAV SYSTEM */
     .navbar {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+      background: #0A192F; /* Deep premium dark canvas background */
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       z-index: 1000;
-      padding: 1rem 0;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .nav-main-tier {
+      padding: 1.1rem 0;
     }
 
     .navbar .container {
@@ -74,30 +75,29 @@
     }
 
     .logo-main {
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       font-family: 'Playfair Display', serif;
       font-weight: 700;
-      color: #0F172A;
+      color: #FFFFFF;
       letter-spacing: -0.01em;
       line-height: 1.1;
     }
 
     .logo-main .ex {
-      color: #1E3A8A;
+      color: #38BDF8; /* Premium sharp blue highlight */
       font-style: italic;
     }
 
     .logo-area .tagline {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 0.6rem;
-      color: #64748B;
-      letter-spacing: 0.1em;
+      font-size: 0.62rem;
+      color: #94A3B8;
+      letter-spacing: 0.12em;
       font-weight: 700;
       text-transform: uppercase;
-      margin-top: 3px;
+      margin-top: 4px;
     }
 
-    /* PREMIUM INTERACTIVE NAV EFFECTS (RAY EFFECTS) */
     .nav-links {
       display: flex;
       gap: 2.5rem;
@@ -105,212 +105,351 @@
     }
 
     .nav-links a {
-      color: #475569;
+      color: #CBD5E1;
       text-decoration: none;
       font-weight: 600;
       font-size: 0.85rem;
       text-transform: uppercase;
       letter-spacing: 0.06em;
+      transition: color 0.2s ease;
       position: relative;
-      padding: 0.4rem 0;
-      transition: color 0.25s ease;
-    }
-
-    /* Under-Ray Glow Effect for Header Buttons */
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      width: 0;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, #1E3A8A, transparent);
-      box-shadow: 0 0 8px rgba(30, 58, 138, 0.6);
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-      transform: translateX(-50%);
     }
 
     .nav-links a:hover {
-      color: #1E3A8A;
+      color: #38BDF8;
     }
 
-    .nav-links a:hover::after {
-      width: 100%;
+    /* Premium Sub-Header Status Ribbon Track (Matching Reference Image) */
+    .nav-status-tier {
+      background: #1E293B;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 0.45rem 0;
     }
 
-    /* BALANCED RESPONSIVE GRID CONTAINER */
+    .status-flex {
+      display: flex;
+      gap: 1.5rem;
+      color: #94A3B8;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .status-flex span i {
+      color: #38BDF8;
+      margin-right: 4px;
+    }
+
+    /* GLOBAL CONTENT SYSTEM */
     .content-container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 40px;
     }
 
-    /* Compact section padding settings matching image_63a626.jpg */
     section {
-      padding: 45px 0;
+      padding: 80px 0 50px 0;
     }
 
-    /* HERO BLOCK STRUCTURE */
-    .hero-layout {
-      max-width: 950px;
-      margin: 0 auto;
-      text-align: center;
-      padding: 30px 0 10px 0;
+    /* MCKINSEY HERO ASYMMETRIC GRID ARCHITECTURE */
+    .hero-section {
+      padding-top: 45px;
+      padding-bottom: 55px;
     }
 
-    .hero-layout .section-label {
-      color: #1E3A8A;
+    .hero-grid-layout {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-left-content {
+      text-align: left;
+    }
+
+    .hero-left-content .section-label {
+      color: #2563EB;
+      background: rgba(37, 99, 235, 0.06);
       font-family: 'Plus Jakarta Sans', sans-serif;
       text-transform: uppercase;
-      letter-spacing: 0.14em;
-      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      font-size: 0.72rem;
       font-weight: 700;
-      display: inline-flex;
-      align-items: center;
+      display: inline-block;
       margin-bottom: 1.5rem;
-      background: rgba(30, 58, 138, 0.05);
-      padding: 4px 12px;
+      padding: 5px 12px;
       border-radius: 4px;
+      border: 1px solid rgba(37, 99, 235, 0.12);
     }
 
     .hero-title {
-      font-size: 3.25rem;
-      line-height: 1.25;
-      margin-bottom: 1.5rem;
+      font-size: 3.5rem;
+      line-height: 1.2;
+      margin-bottom: 1.75rem;
       color: #0F172A;
     }
 
     .hero-title em {
       font-weight: 400;
-      color: #475569;
+      color: #2563EB; /* Elegant blue focus */
     }
 
     .hero-subtitle {
       font-size: 1.15rem;
       color: #475569;
-      max-width: 82%;
-      margin: 0 auto 2.5rem auto;
+      margin-bottom: 2.5rem;
       line-height: 1.75;
     }
 
-    .inline-stats {
+    /* ACTION WRAPPER FRAME */
+    .hero-action-row {
       display: flex;
       gap: 1.25rem;
-      justify-content: center;
+      align-items: center;
       flex-wrap: wrap;
     }
 
-    .stat-pill {
-      background: #FFFFFF;
-      border: 1px solid #E2E8F0;
-      padding: 0.6rem 1.2rem;
+    /* SHINING INTERACTIVE CALL-TO-ACTION BUTTONS */
+    .btn-shine-premium {
+      position: relative;
+      background: linear-gradient(135deg, #1E3A8A 0%, #0F172A 100%);
+      color: #FFFFFF;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+      padding: 1.1rem 2.2rem;
       border-radius: 6px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: #334155;
+      cursor: pointer;
+      font-size: 0.82rem;
       display: inline-flex;
       align-items: center;
-      gap: 0.6rem;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+      gap: 0.8rem;
+      border: none;
+      box-shadow: 0 10px 25px -5px rgba(30, 58, 138, 0.3);
+      overflow: hidden;
+      transition: all 0.3s ease;
+      text-decoration: none;
     }
 
-    .stat-pill i {
-      color: #1E3A8A;
+    /* Loop Light Ray Shine Effect Animation */
+    .btn-shine-premium::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -60%;
+      width: 30%;
+      height: 200%;
+      background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.3) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      transform: rotate(25deg);
+      animation: buttonShineRay 4.5s infinite ease-in-out;
     }
 
-    /* CARD GRID SYSTEM WITH MULTICOLOR PROFESSIONAL ACCENTS */
+    @keyframes buttonShineRay {
+      0% { left: -60%; }
+      15% { left: 140%; }
+      100% { left: 140%; }
+    }
+
+    .btn-shine-premium:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 30px -5px rgba(30, 58, 138, 0.4);
+      background: linear-gradient(135deg, #2563EB 0%, #1E3A8A 100%);
+    }
+
+    .btn-outline-executive {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      color: #334155;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+      padding: 1.1rem 2rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.82rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      transition: all 0.25s ease;
+      text-decoration: none;
+    }
+
+    .btn-outline-executive:hover {
+      background: #F8FAFC;
+      border-color: #94A3B8;
+      color: #0F172A;
+    }
+
+    /* RIGHT COLUMN VERTICAL MODULE PILLS (FOLLOWING EXACT EXCEL TEMPLATE) */
+    .hero-right-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .interactive-track-pill {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 1.5rem 1.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.02);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .pill-left-node {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .pill-icon-frame {
+      width: 44px;
+      height: 44px;
+      background: rgba(37, 99, 235, 0.06);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #2563EB;
+      font-size: 1.1rem;
+    }
+
+    .pill-meta h4 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #0F172A;
+      letter-spacing: -0.01em;
+    }
+
+    .pill-meta p {
+      font-size: 0.8rem;
+      color: #64748B;
+      font-weight: 500;
+    }
+
+    .pill-arrow-indicator {
+      color: #94A3B8;
+      font-size: 0.9rem;
+      transition: transform 0.25s ease, color 0.25s;
+    }
+
+    .interactive-track-pill:hover {
+      transform: translateX(4px);
+      border-color: #2563EB;
+      box-shadow: 0 10px 25px -8px rgba(37, 99, 235, 0.12);
+    }
+
+    .interactive-track-pill:hover .pill-arrow-indicator {
+      color: #2563EB;
+      transform: translateX(2px);
+    }
+
+    /* SCALABLE PRODUCT GRID SYSTEM */
     .products-grid-section {
       border-top: 1px solid #E2E8F0;
-      margin-top: 20px;
-      padding-top: 50px;
+      padding-top: 70px;
     }
 
     .section-header-area {
-      margin-bottom: 2.5rem;
+      margin-bottom: 3rem;
     }
 
     .section-title-label {
       font-family: 'Plus Jakarta Sans', sans-serif;
       color: #64748B;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-size: 0.78rem;
+      letter-spacing: 0.15em;
+      font-size: 0.8rem;
       font-weight: 700;
       display: block;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.5rem;
     }
 
     .section-title {
-      font-size: 2.25rem;
+      font-size: 2.5rem;
       font-weight: 700;
     }
 
     .products-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-      gap: 2.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 3rem;
+      margin-top: 2.5rem;
     }
 
-    /* PREMIUM ACCENT-BORDER CARD SPECIFICATIONS */
+    /* PREMIUM PRODUCT CARD COMPONENT */
     .premium-product-card {
       background: #FFFFFF;
+      border: 1px solid #E2E8F0;
       border-radius: 8px; 
       padding: 3rem 2.5rem;
-      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
       position: relative;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.04);
+      box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.05);
     }
 
-    /* Active Module: High-end Corporate Muted Teal Border Accent */
-    .premium-product-card.active-module {
-      border: 1px solid rgba(13, 148, 136, 0.3);
-      border-top: 4px solid #0D9488;
-    }
-
-    /* Locked Module: Refined Executive Slate-Amber Border Accent */
-    .premium-product-card.locked-module {
-      border: 1px solid rgba(217, 119, 6, 0.18);
-      border-top: 4px solid #D97706;
+    .premium-product-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: #CBD5E1;
+      transition: background 0.3s ease;
     }
 
     .premium-product-card:hover {
-      transform: translateY(-4px);
+      transform: translateY(-6px);
+      border-color: #CBD5E1;
+      box-shadow: 0 30px 60px -15px rgba(15, 23, 42, 0.1);
     }
 
-    .premium-product-card.active-module:hover {
-      border-color: #0D9488;
-      box-shadow: 0 25px 50px -12px rgba(13, 148, 136, 0.12);
-    }
-
-    .premium-product-card.locked-module:hover {
-      border-color: #D97706;
-      box-shadow: 0 25px 50px -12px rgba(217, 119, 6, 0.08);
+    .premium-product-card:hover::before {
+      background: #1E3A8A; 
     }
 
     .card-top-matter {
-      margin-bottom: 2rem;
+      margin-bottom: 2.5rem;
     }
 
     .coming-soon-badge {
       text-transform: uppercase;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.12em;
+      color: #B45309;
       font-size: 0.68rem;
       font-weight: 700;
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
-      margin-bottom: 1.25rem;
-      padding: 4px 10px;
-      border-radius: 4px;
+      margin-bottom: 1.5rem;
+      background: #FEF3C7;
+      padding: 4px 8px;
+      border-radius: 2px;
     }
 
     .product-headline {
-      font-size: 2rem;
+      font-size: 2.2rem;
       font-weight: 700;
       margin-bottom: 0.4rem;
+      letter-spacing: -0.02em;
     }
 
     .product-meta-sub {
@@ -318,7 +457,7 @@
       font-family: 'Plus Jakarta Sans', sans-serif;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.06em;
       margin-bottom: 1.5rem;
       display: flex;
       align-items: center;
@@ -329,46 +468,44 @@
     .product-description-text {
       color: #475569;
       font-size: 1rem;
-      line-height: 1.65;
+      line-height: 1.7;
     }
 
-    /* REFINED EXECUTIVE INTERACTIVE BUTTON CONTROLS */
-    .btn-primary {
+    .btn-card-primary {
       background: #0F172A;
       color: #FFFFFF;
       font-family: 'Plus Jakarta Sans', sans-serif;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.1em;
       font-weight: 700;
-      padding: 1rem 1.75rem;
-      border-radius: 6px;
+      padding: 1.1rem 2rem;
+      border-radius: 4px;
       cursor: pointer;
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       display: inline-flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 0.8rem;
       transition: all 0.2s ease;
       border: none;
       width: 100%;
       justify-content: center;
+      margin-top: auto;
     }
 
-    .btn-primary:hover {
+    .btn-card-primary:hover {
       background: #1E3A8A;
-      box-shadow: 0 4px 12px rgba(30, 58, 138, 0.2);
     }
 
-    /* ABOUT COMPONENT LAYOUT BLOCK */
+    /* ABOUT ME SECTION BLOCK */
     .about-section-container {
       border-top: 1px solid #E2E8F0;
-      margin-top: 20px;
-      padding-top: 50px;
+      padding-top: 70px;
     }
 
     .about-grid {
       display: grid;
       grid-template-columns: 1.25fr 0.75fr;
-      gap: 4rem;
+      gap: 4.5rem;
     }
 
     .founder-header-meta {
@@ -389,7 +526,7 @@
     }
 
     .founder-name {
-      font-size: 2.1rem;
+      font-size: 2rem;
       font-weight: 700;
       color: #0F172A;
       line-height: 1.2;
@@ -397,60 +534,61 @@
 
     .founder-title-sub {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 1.05rem;
+      font-size: 1rem;
       color: #475569;
       font-weight: 500;
       margin-top: 2px;
     }
 
     .about-left p {
-      margin-bottom: 1.25rem;
+      margin-bottom: 1.5rem;
       color: #334155;
       font-size: 1.05rem;
-      line-height: 1.7;
+      line-height: 1.75;
     }
 
     .bullets-list {
       list-style: none;
-      margin: 2rem 0;
+      margin: 2.5rem 0;
     }
 
     .bullets-list li {
       display: flex;
       align-items: flex-start;
-      gap: 0.85rem;
+      gap: 1rem;
       margin-bottom: 1.25rem;
       color: #334155;
       font-size: 1.05rem;
+      line-height: 1.6;
     }
 
     .bullets-list li i {
       color: #1E3A8A;
       margin-top: 0.35rem;
-      font-size: 0.85rem;
+      font-size: 0.95rem;
     }
 
     .quote-box {
       font-family: 'Playfair Display', serif;
       font-style: italic;
-      font-size: 1.25rem;
+      font-size: 1.3rem;
       border-left: 3px solid #1E3A8A;
-      padding-left: 1.5rem;
+      padding-left: 1.75rem;
       color: #1E293B;
-      margin: 2.5rem 0;
+      margin: 3rem 0;
       line-height: 1.65;
     }
 
     .about-right {
       background: #FFFFFF;
-      padding: 2.5rem 2rem;
-      border-radius: 8px;
+      padding: 3rem 2.5rem;
+      border-radius: 6px;
       border: 1px solid #E2E8F0;
       display: flex;
       flex-direction: column;
-      gap: 2rem;
+      gap: 2.5rem;
       height: fit-content;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01);
+      box-shadow: 0 4px 20px -5px rgba(15, 23, 42, 0.03);
     }
 
     .info-block {
@@ -460,8 +598,8 @@
     }
 
     .info-block h5 {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 1.1rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
       font-weight: 700;
       color: #0F172A;
     }
@@ -472,26 +610,26 @@
       line-height: 1.6;
     }
 
-    /* CHANNELS AND PROTOCOLS CONNECTIVITY FOOTER */
+    /* COMMUNICATIONS PROTOCOLS */
     .contact-info {
-      margin-top: 4rem;
+      margin-top: 5rem;
       background: #0F172A;
       color: #FFFFFF;
-      padding: 3.5rem;
-      border-radius: 6px;
+      padding: 4rem;
+      border-radius: 4px;
       text-align: center;
     }
 
     .contact-info h4 {
       color: #FFFFFF;
-      font-size: 1.8rem;
-      margin-bottom: 1.75rem;
+      font-size: 2rem;
+      margin-bottom: 2rem;
     }
 
     .contact-details {
       display: flex;
       justify-content: center;
-      gap: 3rem;
+      gap: 3.5rem;
       flex-wrap: wrap;
     }
 
@@ -508,42 +646,45 @@
 
     .contact-details a:hover {
       color: #FFFFFF;
+      text-decoration: underline;
     }
 
     .contact-details i {
       color: #38BDF8;
     }
 
+    /* FOOTER */
     .footer {
       text-align: center;
-      padding: 4rem 0 2rem 0;
+      padding: 4rem 0;
       border-top: 1px solid #E2E8F0;
-      margin-top: 4rem;
+      margin-top: 6rem;
       font-size: 0.85rem;
       color: #64748B;
       line-height: 1.8;
+      letter-spacing: 0.02em;
     }
 
     .footer span {
       display: block;
-      margin-top: 0.5rem;
+      margin-top: 0.6rem;
       text-transform: uppercase;
       font-weight: 700;
       font-size: 0.75rem;
       color: #475569;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.08em;
     }
 
-    /* MODAL INFRASTRUCTURE PANELS */
+    /* MODAL OVERLAY SETUP */
     .modal-overlay {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(15, 23, 42, 0.4);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
+      background-color: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
       z-index: 1100;
       display: flex;
       align-items: center;
@@ -563,8 +704,8 @@
       border-top: 6px solid #1E3A8A;
       max-width: 720px;
       width: 90%;
-      border-radius: 6px;
-      box-shadow: 0 30px 60px -15px rgba(15, 23, 42, 0.2);
+      border-radius: 4px;
+      box-shadow: 0 40px 80px -15px rgba(15, 23, 42, 0.3);
       padding: 3.5rem;
       position: relative;
       transform: scale(0.98);
@@ -582,19 +723,19 @@
       justify-content: space-between;
       align-items: center;
       border-bottom: 1px solid #E2E8F0;
-      padding-bottom: 1.25rem;
+      padding-bottom: 1.5rem;
       margin-bottom: 2rem;
     }
 
     .modal-header h2 {
-      font-size: 1.75rem;
+      font-size: 1.8rem;
     }
 
     .close-modal {
       background: none;
       border: none;
       color: #94A3B8;
-      font-size: 1.35rem;
+      font-size: 1.5rem;
       cursor: pointer;
       transition: color 0.2s;
     }
@@ -613,41 +754,39 @@
       text-transform: uppercase;
       letter-spacing: 0.1em;
       color: #1E3A8A;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.6rem;
       font-weight: 700;
     }
 
     .detail-section p {
       color: #475569;
       font-size: 1rem;
-      line-height: 1.65;
+      line-height: 1.7;
     }
 
     .badge-container, .grid-outputs {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem;
+      gap: 0.6rem;
       margin-top: 0.75rem;
     }
 
     .input-badge {
       background: #F1F5F9;
-      padding: 0.4rem 0.85rem;
+      padding: 0.4rem 1rem;
       font-size: 0.8rem;
       font-weight: 600;
       color: #334155;
       border: 1px solid #E2E8F0;
-      border-radius: 4px;
     }
 
     .output-chip {
       background: #F0FDF4;
       border: 1px solid #BBF7D0;
-      padding: 0.4rem 0.85rem;
+      padding: 0.4rem 1rem;
       font-size: 0.8rem;
       font-weight: 700;
       color: #166534;
-      border-radius: 4px;
     }
 
     .ecosystem-callout {
@@ -655,9 +794,9 @@
       padding: 1.25rem;
       margin-top: 15px;
       border-left: 3px solid #64748B;
-      border-radius: 0 4px 4px 0;
       font-size: 0.95rem;
       color: #334155;
+      line-height: 1.6;
     }
 
     .btn-secondary-close {
@@ -671,7 +810,6 @@
       padding: 0.75rem 1.5rem;
       cursor: pointer;
       font-size: 0.8rem;
-      border-radius: 4px;
       transition: all 0.2s;
     }
 
@@ -681,52 +819,53 @@
       border-color: #0F172A;
     }
 
-    /* BALANCED MOBILE RESPONSIVE ENGINE */
+    /* RESPONSIVE LAYOUT ENGINE */
     @media (max-width: 1024px) {
-      .about-grid {
+      .hero-grid-layout {
         grid-template-columns: 1fr;
         gap: 3rem;
+      }
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
       }
     }
 
     @media (max-width: 768px) {
       body {
-        padding-top: 70px; 
-      }
-      .navbar {
-        padding: 0.75rem 0;
+        padding-top: 120px; 
       }
       .navbar .container {
-        padding: 0 24px;
+        padding: 0 20px;
       }
       .logo-main {
-        font-size: 1.15rem;
-      }
-      .logo-area .tagline {
-        font-size: 0.52rem;
+        font-size: 1.2rem;
       }
       .nav-links {
-        gap: 1.5rem;
+        gap: 1.25rem;
       }
       .nav-links a {
-        font-size: 0.78rem;
+        font-size: 0.75rem;
+      }
+      .status-flex {
+        justify-content: center;
+        font-size: 0.65rem;
       }
       section {
-        padding: 35px 0;
-      }
-      .hero-layout {
-        padding: 20px 0;
+        padding: 50px 0 35px 0;
       }
       .hero-title {
-        font-size: 2.1rem;
+        font-size: 2.35rem;
       }
       .hero-subtitle {
         font-size: 1.05rem;
-        width: 100%;
-        margin-bottom: 2rem;
       }
-      .products-grid-section {
-        padding-top: 35px;
+      .hero-action-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .btn-shine-premium, .btn-outline-executive {
+        justify-content: center;
       }
       .products-grid {
         grid-template-columns: 1fr;
@@ -735,56 +874,93 @@
       .premium-product-card {
         padding: 2.25rem 1.75rem;
       }
-      .product-headline {
-        font-size: 1.8rem;
-      }
-      .about-section-container {
-        padding-top: 35px;
-      }
-      .founder-name {
-        font-size: 1.8rem;
-      }
-      .section-title {
-        font-size: 1.85rem;
-      }
-      .contact-info {
-        padding: 2.5rem 1.5rem;
-      }
-      .contact-details {
-        flex-direction: column;
-        gap: 1.25rem;
-      }
     }
   </style>
 </head>
 <body>
 
 <div class="navbar">
-  <div class="container">
-    <a href="#home" class="logo-area">
-      <div class="logo-main">Farid<span class="ex">Ex</span> Labs</div>
-      <div class="tagline">Quantifying Product Decisions</div>
-    </a>
-    <div class="nav-links">
-      <a href="#products" class="nav-products">Products</a>
-      <a href="#about" class="nav-about">About</a>
+  <div class="nav-main-tier">
+    <div class="container">
+      <a href="#home" class="logo-area">
+        <div class="logo-main">Farid<span class="ex">Ex</span> Labs</div>
+        <div class="tagline">Quantifying Product Decisions</div>
+      </a>
+      <div class="nav-links">
+        <a href="#products" class="nav-products">Products</a>
+        <a href="#about" class="nav-about">About</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-status-tier">
+    <div class="container">
+      <div class="status-flex">
+        <span><i class="fas fa-shield-halved"></i> Strategy & Consulting Core</span>
+        <span><i class="fas fa-chart-pie"></i> Data-Driven Feasibility</span>
+      </div>
     </div>
   </div>
 </div>
 
 <div class="content-container">
   
-  <section id="home">
-    <div class="hero-layout">
-      <div class="section-label">Institutional Feasibility Intelligence</div>
-      <h1 class="hero-title">
-        Replacing product intuition with <em>verifiable mathematical scoring models.</em>
-      </h1>
-      <p class="hero-subtitle">FaridEx Labs engineers isolated tactical validation frameworks that allow software product leaders, enterprise managers, and founders to audit feature sets and mitigate roadmap vulnerabilities pre-development.</p>
-      <div class="inline-stats">
-        <span class="stat-pill"><i class="fas fa-layer-group"></i>  Enterprise Risk Modules</span>
-        <span class="stat-pill"><i class="fas fa-calculator"></i> Quantitative Validation Logic</span>
+  <section id="home" class="hero-section">
+    <div class="hero-grid-layout">
+      
+      <div class="hero-left-content">
+        <div class="section-label">Institutional Feasibility Intelligence</div>
+        <h1 class="hero-title">
+          Replacing product intuition with <em>verifiable mathematical scoring models.</em>
+        </h1>
+        <p class="hero-subtitle">FaridEx Labs engineers isolated tactical validation frameworks that allow software product leaders, enterprise managers, and founders to audit feature sets and mitigate roadmap vulnerabilities pre-development.</p>
+        
+        <div class="hero-action-row">
+          <a href="#products" class="btn-shine-premium nav-products">
+            <span>Explore Architecture Suite</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+          <a href="#about" class="btn-outline-executive nav-about">
+            <span>Review Operator Profile</span>
+            <i class="fas fa-user-tie"></i>
+          </a>
+        </div>
       </div>
+
+      <div class="hero-right-stack">
+        <div class="interactive-track-pill">
+          <div class="pill-left-node">
+            <div class="pill-icon-frame"><i class="fas fa-chart-line"></i></div>
+            <div class="pill-meta">
+              <h4>Analysis</h4>
+              <p>Quantitative Matrix Logic</p>
+            </div>
+          </div>
+          <i class="fas fa-chevron-right style-arrow pill-arrow-indicator"></i>
+        </div>
+
+        <div class="interactive-track-pill">
+          <div class="pill-left-node">
+            <div class="pill-icon-frame"><i class="fas fa-compass"></i></div>
+            <div class="pill-meta">
+              <h4>Strategy</h4>
+              <p>Risk Vulnerability Buffers</p>
+            </div>
+          </div>
+          <i class="fas fa-chevron-right style-arrow pill-arrow-indicator"></i>
+        </div>
+
+        <div class="interactive-track-pill">
+          <div class="pill-left-node">
+            <div class="pill-icon-frame"><i class="fas fa-gears"></i></div>
+            <div class="pill-meta">
+              <h4>Execution</h4>
+              <p>Pre-Development Verification</p>
+            </div>
+          </div>
+          <i class="fas fa-chevron-right style-arrow pill-arrow-indicator"></i>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -795,9 +971,9 @@
     </div>
     
     <div class="products-grid">
-      <div class="premium-product-card active-module">
+      <div class="premium-product-card" style="border-color: #CBD5E1;">
         <div class="card-top-matter">
-          <div class="coming-soon-badge" style="background: #E6F4F1; color: #0D9488;">
+          <div class="coming-soon-badge" style="background: #ECFDF5; border: 1px solid #A7F3D0; color: #047857;">
             <i class="fas fa-circle-check"></i> Operational Module · Active Engine
           </div>
           <h3 class="product-headline">RevenuePilot</h3>
@@ -806,24 +982,24 @@
         </div>
         
         <div style="display: grid; grid-template-columns: 1fr auto; gap: 0.75rem; margin-top: auto;">
-          <a href="revenue-pilot.html" class="btn-primary" style="text-decoration: none;">
+          <a href="revenue-pilot.html" class="btn-card-primary" style="text-decoration: none;">
             <span>Initialize Engine Control Panel</span>
             <i class="fas fa-bolt"></i>
           </a>
-          <button class="btn-primary" id="openModalBtn" style="background: #F1F5F9; color: #0F172A; width: 50px; padding: 0;" title="Review Core Specifications">
+          <button class="btn-card-primary" id="openModalBtn" style="background: #F1F5F9; color: #0F172A; width: 50px; padding: 0;" title="Review Core Specifications">
             <i class="fas fa-info-circle"></i>
           </button>
         </div>
       </div>
 
-      <div class="premium-product-card locked-module" style="opacity: 0.85;">
+      <div class="premium-product-card" style="opacity: 0.85;">
         <div class="card-top-matter">
-          <div class="coming-soon-badge" style="background: #FFF7ED; color: #C2410C;"><i class="far fa-clock"></i> Deployment Phase · Coming Soon</div>
+          <div class="coming-soon-badge"><i class="far fa-clock"></i> Deployment Phase · Coming Soon</div>
           <h3 class="product-headline">FeatureImpact OS</h3>
           <div class="product-meta-sub"><i class="fas fa-shuffle"></i> Pre-Deployment Feature Impact Simulator</div>
           <p class="product-description-text">Predicts how a feature modification may impact users and overall product performance vectors before deployment. Simulates onboarding friction, retention stability indexes, and UX disruption indicators.</p>
         </div>
-        <button class="btn-primary" disabled style="background: #E2E8F0; color: #94A3B8; cursor: not-allowed; border: none;">
+        <button class="btn-card-primary" disabled style="background: #E2E8F0; color: #94A3B8; cursor: not-allowed; border: none;">
           <span>Pipeline Stage Locked</span>
           <i class="fas fa-lock"></i>
         </button>
@@ -842,7 +1018,7 @@
         <div class="founder-header-meta">
           <span class="founder-label">Founder and Operator, FaridEx Labs</span>
           <h3 class="founder-name">GHULAM FARID</h3>
-          <div class="founder-title-sub">Corporate Strategy & Digital Product Consultant</div>
+          <div class="founder-title-sub">Business Strategy and Product Analyst</div>
         </div>
 
         <p>I operate within heavy-data system integration nodes, developing structural evaluation frameworks designed to isolate high-risk business initiatives from active engineering execution streams.</p>
@@ -850,9 +1026,9 @@
         <p>My work centers around replacing speculative launch methodologies with quantitative telemetry. I engineer clean system architectures, structure product governance pipelines, and construct scalable market entry blueprints optimized to match complex engineering footprints.</p>
         
         <ul class="bullets-list">
-          <li><i class="fas fa-circle" style="font-size: 0.5rem; margin-top: 0.5rem;"></i> <span>I formulate granular product roadmaps and strategic market alignment models for modern high-performance frameworks.</span></li>
-          <li><i class="fas fa-circle" style="font-size: 0.5rem; margin-top: 0.5rem;"></i> <span>I direct systemic performance matrices spanning high-velocity e-commerce and complex enterprise software structures.</span></li>
-          <li><i class="fas fa-circle" style="font-size: 0.5rem; margin-top: 0.5rem;"></i> <span>I designed FaridEx Labs to function as an independent quantitative verification buffer to eliminate systemic launch volatility.</span></li>
+          <li><i class="fas fa-minus"></i> <span>I formulate granular product roadmaps and strategic market alignment models for modern high-performance frameworks.</span></li>
+          <li><i class="fas fa-minus"></i> <span>I direct systemic performance matrices spanning high-velocity e-commerce and complex enterprise software structures.</span></li>
+          <li><i class="fas fa-minus"></i> <span>I designed FaridEx Labs to function as an independent quantitative verification buffer to eliminate systemic launch volatility.</span></li>
         </ul>
         
         <div class="quote-box">
@@ -888,7 +1064,7 @@
   </section>
 
   <div class="footer">
-    Ghulam Farid — Corporate Strategy & Digital Product Consultant <br>
+    Ghulam Farid — Business Strategy & Product Analyst <br>
     <span>© 2026 FaridEx Labs · Strategic Advisory & Analytics Core</span>
   </div>
 </div>
@@ -968,23 +1144,24 @@
       if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
     });
 
-    const productsLink = document.querySelector('.nav-products');
-    const aboutLink = document.querySelector('.nav-about');
+    const productsLinks = document.querySelectorAll('.nav-products');
+    const aboutLinks = document.querySelectorAll('.nav-about');
     const productsSection = document.getElementById('products');
     const aboutSection = document.getElementById('about');
     
-    if (productsLink) {
-      productsLink.addEventListener('click', (e) => {
+    productsLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
         e.preventDefault();
         productsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
-    }
-    if (aboutLink) {
-      aboutLink.addEventListener('click', (e) => {
+    });
+
+    aboutLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
         e.preventDefault();
         aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
-    }
+    });
   })();
 </script>
 </body>
