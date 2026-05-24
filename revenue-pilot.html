@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>RevenuePilot // Decision Intelligence Engine — FaridEx Labs</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #F8FAFC;
+      color: #0F172A;
+      line-height: 1.6;
+      padding-top: 80px;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, h4 { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; }
+
+    /* NAVIGATION SUB-SYSTEM */
+    .navbar {
+      position: fixed; top: 0; left: 0; width: 100%;
+      background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.8); z-index: 1000; padding: 1rem 0;
+    }
+    .navbar .container {
+      max-width: 1200px; margin: 0 auto; padding: 0 40px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .logo-area { display: flex; flex-direction: column; text-decoration: none; }
+    .logo-main { font-size: 1.25rem; font-family: 'Playfair Display', serif; font-weight: 700; color: #0F172A; }
+    .logo-main .ex { color: #1E3A8A; font-style: italic; }
+    .logo-area .tagline { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.58rem; color: #64748B; letter-spacing: 0.1em; font-weight: 700; text-transform: uppercase; margin-top: 2px; }
+    .nav-back { display: inline-flex; align-items: center; gap: 0.5rem; color: #475569; text-decoration: none; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; transition: color 0.2s; }
+    .nav-back:hover { color: #1E3A8A; }
+
+    /* CORE INTERFACE LAYOUT */
+    .app-container { max-width: 1200px; margin: 0 auto; padding: 2rem 40px 6rem 40px; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 3rem; }
+    
+    /* CONTROL PANEL PANEL */
+    .control-panel { background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 8px; padding: 2.5rem; box-shadow: 0 4px 20px -5px rgba(15, 23, 42, 0.03); }
+    .panel-header { margin-bottom: 2rem; border-left: 3px solid #1E3A8A; padding-left: 12px; }
+    .panel-header p { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #1E3A8A; }
+    .panel-header h2 { font-size: 1.75rem; color: #0F172A; }
+    
+    .form-group { margin-bottom: 1.75rem; }
+    .form-label { display: flex; justify-content: space-between; font-weight: 600; font-size: 0.88rem; color: #334155; margin-bottom: 0.5rem; }
+    .form-label span.value-display { color: #1E3A8A; font-weight: 700; background: #F1F5F9; padding: 2px 8px; border-radius: 3px; font-size: 0.8rem; }
+    
+    select, input[type="range"] { width: 100%; display: block; }
+    select { padding: 0.75rem; border: 1px solid #CBD5E1; border-radius: 4px; font-family: inherit; font-size: 0.95rem; color: #334155; background-color: #FFF; outline: none; transition: border 0.2s; }
+    select:focus { border-color: #1E3A8A; }
+    
+    /* CUSTOM SLIDER STYLING */
+    input[type="range"] { -webkit-appearance: none; height: 6px; background: #E2E8F0; border-radius: 3px; outline: none; margin: 10px 0; }
+    input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; border-radius: 50%; background: #1E3A8A; cursor: pointer; transition: transform 0.1s; }
+    input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.2); }
+
+    /* TELEMETRY DISPLAY MONITOR */
+    .telemetry-monitor { position: sticky; top: 120px; height: fit-content; display: flex; flex-direction: column; gap: 2rem; }
+    .score-summary-card { background: #0F172A; color: #FFFFFF; border-radius: 8px; padding: 3rem 2.5rem; text-align: center; box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.25); position: relative; overflow: hidden; }
+    .score-summary-card h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.15em; color: #94A3B8; margin-bottom: 1rem; }
+    .main-score-display { font-family: 'Playfair Display', serif; font-size: 5.5rem; font-weight: 700; line-height: 1; color: #FFFFFF; margin-bottom: 0.5rem; }
+    .score-interpretation { display: inline-block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; padding: 4px 12px; border-radius: 2px; background: #1E3A8A; color: #FFFFFF; }
+    
+    /* OUTPUT PARAMETER GRID */
+    .metrics-matrix-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    .matrix-node { background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 6px; padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; }
+    .matrix-node h4 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #64748B; margin-bottom: 0.5rem; }
+    .matrix-node .metric-output { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; color: #0F172A; }
+    
+    .risk-banner { padding: 0.75rem 1rem; border-radius: 4px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; text-align: center; border: 1px solid transparent; }
+    .risk-low { background: #F0FDF4; border-color: #BBF7D0; color: #166534; }
+    .risk-med { background: #FFFBEB; border-color: #FDE68A; color: #92400E; }
+    .risk-high { background: #FEF2F2; border-color: #FEE2E2; color: #991B1B; }
+
+    @media (max-width: 992px) { .app-container { grid-template-columns: 1fr; gap: 2.5rem; } .telemetry-monitor { position: relative; top: 0; } }
+    @media (max-width: 768px) { .app-container { padding: 1rem 20px 4rem 20px; } .control-panel { padding: 1.75rem; } .score-summary-card { padding: 2rem 1.5rem; } }
+  </style>
+</head>
+<body>
+
+<div class="navbar">
+  <div class="container">
+    <a href="#" class="logo-area">
+      <div class="logo-main">Farid<span class="ex">Ex</span> Labs</div>
+      <div class="tagline">Feasibility Verification Module</div>
+    </a>
+    <a href="index.html" class="nav-back"><i class="fas fa-arrow-left"></i> Core Ecosystem</a>
+  </div>
+</div>
+
+<div class="app-container">
+  
+  <div class="control-panel">
+    <div class="panel-header">
+      <p>Operational Module 0.1</p>
+      <h2>RevenuePilot Modeling Core</h2>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Monetization Archetype Mapping</label>
+      <select id="pricingModel">
+        <option value="enterprise">High-Tier Enterprise Contract (B2B)</option>
+        <option value="saas" selected>Recurring Monthly Subscription (SaaS Product)</option>
+        <option value="transactional">Volume Transaction Commission (FinTech Node)</option>
+        <option value="freemium">Ad-Supported Premium Conversion Layer</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">
+        Target Market Depth (TAM Baseline)
+        <span class="value-display" id="marketDisplay">50,000 entities</span>
+      </label>
+      <input type="range" id="targetMarket" min="1000" max="500000" step="1000" value="50000">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">
+        Expected Velocity Penetration (Adoption Rate)
+        <span class="value-display" id="adoptionDisplay">4.5%</span>
+      </label>
+      <input type="range" id="estimatedAdoption" min="0.1" max="30" step="0.1" value="4.5">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">
+        Development Operational Burden (Est. Cost)
+        <span class="value-display" id="costDisplay">$15,000</span>
+      </label>
+      <input type="range" id="implementationCost" min="2000" max="150000" step="1000" value="15000">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Target Audience Sophistication Alignment</label>
+      <select id="customerSegment">
+        <option value="smb">Small-Medium Business Operators (High Agility)</option>
+        <option value="midmarket" selected>Mid-Market Operations Frameworks</option>
+        <option value="enterprise_segment">Global Enterprise Infrastructure Units</option>
+        <option value="consumer">Mass Consumer Scale Mobile Ecosystems</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="telemetry-monitor">
+    
+    <div class="score-summary-card">
+      <h3>Revenue Feasibility Index</h3>
+      <div class="main-score-display" id="feasibilityScore">74</div>
+      <div class="score-interpretation" id="scoreVerdict">Optimal Viability Interval</div>
+    </div>
+
+    <div class="metrics-matrix-grid">
+      
+      <div class="matrix-node">
+        <h4>ROI Confidence Matrix</h4>
+        <div class="metric-output" id="roiConfidence">82%</div>
+      </div>
+
+      <div class="matrix-node">
+        <h4>Monetization Vector Latency</h4>
+        <div class="metric-output" id="monetizationProb">Medium-High</div>
+      </div>
+
+      <div class="matrix-node">
+        <h4>Capital Breakeven Threshold</h4>
+        <div class="metric-output" id="breakevenEst">4.2 Mo.</div>
+      </div>
+
+      <div class="matrix-node">
+        <h4>System Optimization Weight</h4>
+        <div class="metric-output" id="featureWeight">1.4x</div>
+      </div>
+    </div>
+
+    <div class="risk-banner risk-low" id="riskBanner">
+      Monetization Risk Exposure Vector: Minimal Stability Threshold Passed
+    </div>
+  </div>
+</div>
+
+<script>
+  (function() {
+    // Dynamic Element Registration Core Hooks
+    const pricingModel = document.getElementById('pricingModel');
+    const targetMarket = document.getElementById('targetMarket');
+    const estimatedAdoption = document.getElementById('estimatedAdoption');
+    const implementationCost = document.getElementById('implementationCost');
+    const customerSegment = document.getElementById('customerSegment');
+
+    const marketDisplay = document.getElementById('marketDisplay');
+    const adoptionDisplay = document.getElementById('adoptionDisplay');
+    const costDisplay = document.getElementById('costDisplay');
+
+    const feasibilityScore = document.getElementById('feasibilityScore');
+    const scoreVerdict = document.getElementById('scoreVerdict');
+    const roiConfidence = document.getElementById('roiConfidence');
+    const monetizationProb = document.getElementById('monetizationProb');
+    const breakevenEst = document.getElementById('breakevenEst');
+    const featureWeight = document.getElementById('featureWeight');
+    const riskBanner = document.getElementById('riskBanner');
+
+    function calculateTelemetry() {
+      // Step 1: Base Numeric Normalization Transformations
+      const tamVal = parseInt(targetMarket.value);
+      const adoptPct = parseFloat(estimatedAdoption.value) / 100;
+      const budgetBurd = parseInt(implementationCost.value);
+      
+      // Dynamic Readout Synchronization Text Render Loops
+      marketDisplay.textContent = tamVal.toLocaleString() + " entities";
+      adoptionDisplay.textContent = estimatedAdoption.value + "%";
+      costDisplay.textContent = "$" + budgetBurd.toLocaleString();
+
+      // Step 2: Extract Architecture Coefficients Based on Structural Selection Dropdowns
+      let modelMultiplier = 1.0;
+      let modelRiskPenalty = 0;
+      switch(pricingModel.value) {
+        case 'enterprise': modelMultiplier = 1.4; modelRiskPenalty = 5; break;
+        case 'saas':       modelMultiplier = 1.2; modelRiskPenalty = 0; break;
+        case 'transactional': modelMultiplier = 1.0; modelRiskPenalty = 10; break;
+        case 'freemium':   modelMultiplier = 0.7; modelRiskPenalty = 20; break;
+      }
+
+      let audienceMultiplier = 1.0;
+      switch(customerSegment.value) {
+        case 'enterprise_segment': audienceMultiplier = 1.3; break;
+        case 'midmarket':          audienceMultiplier = 1.1; break;
+        case 'smb':                audienceMultiplier = 0.9; break;
+        case 'consumer':           audienceMultiplier = 0.6; break;
+      }
+
+      // Step 3: Run Algorithmic Projections For Product Success Matrices
+      const projectedUserBase = tamVal * adoptPct;
+      const localizedViabilityRaw = (projectedUserBase * modelMultiplier * audienceMultiplier * 150) / (budgetBurd / 100);
+      
+      // Bound the Feasibility Scoring Sequence exactly inside institutional 0-100 metrics bounds
+      let analyticalScore = Math.min(Math.max(Math.round(localizedViabilityRaw - modelRiskPenalty), 12), 99);
+      feasibilityScore.textContent = analyticalScore;
+
+      // Step 4: Perform Mathematical Multi-Threaded Derived Metric Computations
+      let confidenceCalc = Math.min(Math.max(Math.round(85 - (budgetBurd / 2500) + (analyticalScore / 4)), 35), 96);
+      roiConfidence.textContent = confidenceCalc + "%";
+
+      let breakEvenTimeRaw = (budgetBurd) / ((projectedUserBase * (modelMultiplier * 12) + 1));
+      let calibratedMonths = Math.min(Math.max(parseFloat(breakEvenTimeRaw).toFixed(1), 0.5), 24.0);
+      breakevenEst.textContent = calibratedMonths + " Mo.";
+
+      // Map Variant Optimization Indexes based heavily on Audience Sophistication Profiles
+      let finalWeightRatio = (modelMultiplier * audienceMultiplier).toFixed(2);
+      featureWeight.textContent = finalWeightRatio + "x";
+
+      // Step 5: Assign Platform Categorization Labels and Security Status Styles
+      if (analyticalScore >= 75) {
+        scoreVerdict.textContent = "Elite Viability Architecture";
+        scoreVerdict.style.background = "#15803D";
+        monetizationProb.textContent = "High Velocity";
+        
+        riskBanner.textContent = "Monetization Risk Exposure Vector: Minimal Stability Threshold Passed";
+        riskBanner.className = "risk-banner risk-low";
+      } else if (analyticalScore >= 45) {
+        scoreVerdict.textContent = "Optimal Viability Interval";
+        scoreVerdict.style.background = "#1E3A8A";
+        monetizationProb.textContent = "Sustained Vector";
+        
+        riskBanner.textContent = "Monetization Risk Exposure Vector: Moderate / Controlled Variance";
+        riskBanner.className = "risk-banner risk-med";
+      } else {
+        scoreVerdict.textContent = "Sub-Critical Capital Yield Profile";
+        scoreVerdict.style.background = "#B91C1C";
+        monetizationProb.textContent = "Volatile Latency";
+        
+        riskBanner.textContent = "CRITICAL RISK: Structural Capital Burden Outweighs Target Yield Footprint";
+        riskBanner.className = "risk-banner risk-high";
+      }
+    }
+
+    // Initialize Event Listeners for Live Reactive Rendering Execution
+    const trackingNodes = [pricingModel, targetMarket, estimatedAdoption, implementationCost, customerSegment];
+    trackingNodes.forEach(node => {
+      if (node) node.addEventListener('input', calculateTelemetry);
+    });
+
+    // Run primary runtime sequence loop immediately upon initiation initialization
+    calculateTelemetry();
+  })();
+</script>
+</body>
+</html>
