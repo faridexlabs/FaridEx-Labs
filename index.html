@@ -411,7 +411,7 @@
       color: #10B981;
     }
 
-    /* REAL-TIME CHROMATIC MULTI-COLOR BARS */
+    /* REAL-TIME CHROMATIC MULTI-COLOR BARS & TRENDLINE */
     .telemetry-output-grid {
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
@@ -426,15 +426,16 @@
       height: 85px;
       padding: 0 0.5rem;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative; /* Context anchor layer for absolute SVG line matrix */
     }
 
-    /* Distinct individual color templates via CSS variables and high-end core gradients */
     .growth-chart-bar {
       width: 15%;
       border-radius: 3px 3px 0 0;
       height: 50%;
       transition: height 0.35s cubic-bezier(0.1, 0.8, 0.2, 1);
       position: relative;
+      z-index: 1;
     }
 
     .bar-cyan   { background: linear-gradient(to top, #0E7490, #22D3EE); box-shadow: 0 0 10px rgba(34, 211, 238, 0.2); }
@@ -975,6 +976,11 @@
 
           <div class="telemetry-output-grid">
             <div class="growth-bars-display" id="barsDisplay">
+              
+              <svg id="trendLineSvg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; z-index: 5;">
+                <polyline id="dynamicTrendLine" points="" style="fill: none; stroke: #F59E0B; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0px 0px 5px rgba(245, 158, 11, 0.7)); transition: all 0.35s cubic-bezier(0.1, 0.8, 0.2, 1);" />
+              </svg>
+
               <div class="growth-chart-bar bar-cyan" style="height: 45%;"></div>
               <div class="growth-chart-bar bar-blue" style="height: 70%;"></div>
               <div class="growth-chart-bar bar-green" style="height: 85%;"></div>
@@ -1190,7 +1196,7 @@
       });
     });
 
-    // CHROMATIC HIGH FREQUENCY TELEMETRY ENGINE
+    // INTEGRATED CHROMATIC & TRENDLINE TELEMETRY ENGINE
     const conduitTrack = document.getElementById('conduitTrack');
     const chartBars = document.querySelectorAll('.growth-chart-bar');
     const telemetryValue = document.getElementById('telemetryValue');
@@ -1198,6 +1204,7 @@
     const deltaStatusBox = document.getElementById('deltaStatusBox');
     const deltaIcon = document.getElementById('deltaIcon');
     const sourceCards = document.querySelectorAll('.pipeline-source-card');
+    const dynamicTrendLine = document.getElementById('dynamicTrendLine');
     
     let baseFeasibilityScore = 64.50;
 
@@ -1213,13 +1220,25 @@
       setTimeout(() => packet.remove(), 250);
     }, 200);
 
-    // 2. RUNTIME UPDATES & CHROMATIC RE-CALCULATION (Every 0.5 Seconds)
-    setInterval(() => {
-      // Bouncing multi-color bars mapping custom organic ranges
-      chartBars.forEach(bar => {
-        const randomHeight = Math.floor(Math.random() * 65) + 30; // 30% to 95% range
+    // 2. RUNTIME TELEMETRY SYSTEM LOOP (Every 0.5 Seconds)
+    function runTelemetryRefresh() {
+      let pointsCoordArray = [];
+
+      // Loop through each uniquely-gradiented bar node
+      chartBars.forEach((bar) => {
+        const randomHeight = Math.floor(Math.random() * 65) + 30; // Spans wide range: 30% to 95%
         bar.style.height = `${randomHeight}%`;
+        
+        // Dynamic Vector Mapping for Trendline Center Coordinates
+        const posX = bar.offsetLeft + (bar.offsetWidth / 2);
+        const posY = 85 - (85 * randomHeight / 100); // 85px canvas base framework
+        pointsCoordArray.push(`${posX},${posY}`);
       });
+
+      // Commit coordinates to active SVG polyline
+      if (dynamicTrendLine) {
+        dynamicTrendLine.setAttribute('points', pointsCoordArray.join(' '));
+      }
 
       // Expand calculation steps to target a sweeping wide index window (30.00% to 95.00%)
       const mathematicalSwing = (Math.random() * 12) - 5.5; 
@@ -1231,7 +1250,7 @@
 
       telemetryValue.textContent = `${baseFeasibilityScore.toFixed(2)}%`;
       
-      // Calculate delta indicator layouts
+      // Calculate delta indicators & vector directions
       const finalDelta = baseFeasibilityScore - originalScore;
       if (finalDelta >= 0) {
         deltaStatusBox.className = "delta-status-row positive";
@@ -1242,7 +1261,11 @@
         deltaIcon.className = "fas fa-caret-down";
         deltaValue.textContent = `${finalDelta.toFixed(2)}%`;
       }
-    }, 500);
+    }
+
+    // Initialize layout positions on initialization payload step
+    setTimeout(runTelemetryRefresh, 60);
+    setInterval(runTelemetryRefresh, 500);
 
     // Dynamic Tracking Interaction States 
     sourceCards.forEach((card, idx) => {
