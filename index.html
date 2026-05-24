@@ -411,7 +411,7 @@
       color: #10B981;
     }
 
-    /* REAL-TIME ACCELERATED METRICS */
+    /* REAL-TIME CHROMATIC MULTI-COLOR BARS */
     .telemetry-output-grid {
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
@@ -428,15 +428,20 @@
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
+    /* Distinct individual color templates via CSS variables and high-end core gradients */
     .growth-chart-bar {
-      width: 14%;
-      background: linear-gradient(to top, #1E3A8A, #38BDF8);
+      width: 15%;
       border-radius: 3px 3px 0 0;
-      height: 30%;
+      height: 50%;
       transition: height 0.35s cubic-bezier(0.1, 0.8, 0.2, 1);
       position: relative;
-      box-shadow: 0 0 10px rgba(56, 189, 248, 0.2);
     }
+
+    .bar-cyan   { background: linear-gradient(to top, #0E7490, #22D3EE); box-shadow: 0 0 10px rgba(34, 211, 238, 0.2); }
+    .bar-blue   { background: linear-gradient(to top, #1E40AF, #60A5FA); box-shadow: 0 0 10px rgba(96, 165, 250, 0.2); }
+    .bar-green  { background: linear-gradient(to top, #065F46, #34D399); box-shadow: 0 0 10px rgba(52, 211, 153, 0.2); }
+    .bar-purple { background: linear-gradient(to top, #6B21A8, #C084FC); box-shadow: 0 0 10px rgba(192, 132, 252, 0.2); }
+    .bar-indigo { background: linear-gradient(to top, #3730A3, #818CF8); box-shadow: 0 0 10px rgba(129, 140, 248, 0.2); }
 
     .metric-readout-panel {
       display: flex;
@@ -970,14 +975,14 @@
 
           <div class="telemetry-output-grid">
             <div class="growth-bars-display" id="barsDisplay">
-              <div class="growth-chart-bar" style="height: 45%;"></div>
-              <div class="growth-chart-bar" style="height: 70%;"></div>
-              <div class="growth-chart-bar" style="height: 85%;"></div>
-              <div class="growth-chart-bar" style="height: 60%;"></div>
-              <div class="growth-chart-bar" style="height: 90%;"></div>
+              <div class="growth-chart-bar bar-cyan" style="height: 45%;"></div>
+              <div class="growth-chart-bar bar-blue" style="height: 70%;"></div>
+              <div class="growth-chart-bar bar-green" style="height: 85%;"></div>
+              <div class="growth-chart-bar bar-purple" style="height: 60%;"></div>
+              <div class="growth-chart-bar bar-indigo" style="height: 90%;"></div>
             </div>
             <div class="metric-readout-panel">
-              <div class="value-node" id="telemetryValue">74.50%</div>
+              <div class="value-node" id="telemetryValue">64.50%</div>
               <div class="delta-status-row positive" id="deltaStatusBox">
                 <i class="fas id-icon fa-caret-up" id="deltaIcon"></i> <span id="deltaValue">+1.45%</span>
               </div>
@@ -1185,7 +1190,7 @@
       });
     });
 
-    // WIDE-SPECTRUM HIGH FREQUENCY TELEMETRY ENGINE
+    // CHROMATIC HIGH FREQUENCY TELEMETRY ENGINE
     const conduitTrack = document.getElementById('conduitTrack');
     const chartBars = document.querySelectorAll('.growth-chart-bar');
     const telemetryValue = document.getElementById('telemetryValue');
@@ -1194,10 +1199,9 @@
     const deltaIcon = document.getElementById('deltaIcon');
     const sourceCards = document.querySelectorAll('.pipeline-source-card');
     
-    // Starting metric safely positioned mid-matrix
     let baseFeasibilityScore = 64.50;
 
-    // 1. HIGH SPEED DATA PACKET INJECTION LOOP (Every 0.2 Seconds)
+    // 1. DATA PACKET INJECTION PIPELINE (Every 0.2 Seconds)
     setInterval(() => {
       const packet = document.createElement('div');
       packet.classList.add('dynamic-packet');
@@ -1209,11 +1213,11 @@
       setTimeout(() => packet.remove(), 250);
     }, 200);
 
-    // 2. STRETCHED SPECTRUM RUNTIME UPDATES (Every 0.5 Seconds)
+    // 2. RUNTIME UPDATES & CHROMATIC RE-CALCULATION (Every 0.5 Seconds)
     setInterval(() => {
-      // Bouncing bar chart updates
+      // Bouncing multi-color bars mapping custom organic ranges
       chartBars.forEach(bar => {
-        const randomHeight = Math.floor(Math.random() * 65) + 30; // 30% to 95%
+        const randomHeight = Math.floor(Math.random() * 65) + 30; // 30% to 95% range
         bar.style.height = `${randomHeight}%`;
       });
 
@@ -1222,13 +1226,12 @@
       let originalScore = baseFeasibilityScore;
       baseFeasibilityScore += mathematicalSwing;
       
-      // Hard ceiling and floor caps matching the target data array rules
       if (baseFeasibilityScore > 95.00) baseFeasibilityScore = 88.50;
       if (baseFeasibilityScore < 30.00) baseFeasibilityScore = 42.10;
 
       telemetryValue.textContent = `${baseFeasibilityScore.toFixed(2)}%`;
       
-      // Dynamically calculate positive or negative telemetry delta indicators
+      // Calculate delta indicator layouts
       const finalDelta = baseFeasibilityScore - originalScore;
       if (finalDelta >= 0) {
         deltaStatusBox.className = "delta-status-row positive";
