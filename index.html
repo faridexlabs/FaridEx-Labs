@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>FaridEx Labs — Decision Intelligence for Product Teams</title>
+  <title>FaridEx Labs — Institutional Decision Intelligence & Strategic Analysis</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   
   <style>
-    /* RESET & CORE LIGHT THEME VARIABLES */
+    /* EXECUTIVE STRUCTURE & DESIGN TOKENS */
     * {
       margin: 0;
       padding: 0;
@@ -24,45 +24,43 @@
     }
 
     body {
-      font-family: 'Inter', sans-serif;
-      /* Pure premium white background with a very subtle top gradient glow */
+      font-family: 'Plus Jakarta Sans', sans-serif;
       background-color: #FFFFFF;
-      background-image: 
-        radial-gradient(circle at 50% -20%, rgba(124, 58, 237, 0.06) 0%, transparent 50%),
-        radial-gradient(circle at 90% 40%, rgba(59, 130, 246, 0.04) 0%, transparent 40%);
-      background-attachment: fixed;
-      /* Deep slate color for maximum contrast and readability */
+      /* Precise institutional slate font for fatigue-free editorial reading */
       color: #0F172A; 
-      line-height: 1.6;
-      padding-top: 90px;
+      line-height: 1.65;
+      padding-top: 100px;
       -webkit-font-smoothing: antialiased;
+      letter-spacing: -0.01em;
     }
 
-    /* PREMIUM TYPOGRAPHY Hierarchy */
-    h1, h2, h3, h4 {
-      font-family: 'Sora', sans-serif;
+    /* INSTITUTIONAL SERIF TYPOGRAPHY (McKinsey Aesthetic) */
+    h1, h2, h3, h4, .serif-heading {
+      font-family: 'Playfair Display', Georgia, serif;
       color: #0F172A;
-      letter-spacing: -0.03em;
+      font-weight: 700;
+      letter-spacing: -0.02em;
     }
 
-    /* STICKY LIGHT GLASS NAVBAR */
+    /* STRUCTURED MINIMALIST NAVIGATION */
     .navbar {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
       border-bottom: 1px solid #E2E8F0;
       z-index: 1000;
-      padding: 1.2rem 0;
+      padding: 1.5rem 0;
+      transition: padding 0.3s ease;
     }
 
     .navbar .container {
-      max-width: 1140px;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 0 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -75,123 +73,126 @@
     }
 
     .logo-main {
-      font-size: 1.4rem;
-      font-weight: 800;
+      font-size: 1.5rem;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
       color: #0F172A;
+      letter-spacing: -0.02em;
     }
 
     .logo-main .ex {
-      color: #7C3AED;
+      color: #1E3A8A; /* Saturated Editorial Deep Blue */
+      font-style: italic;
     }
 
     .logo-area .tagline {
-      font-size: 0.68rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.65rem;
       color: #64748B;
-      letter-spacing: 0.06em;
-      font-weight: 600;
+      letter-spacing: 0.12em;
+      font-weight: 700;
       text-transform: uppercase;
-      margin-top: 2px;
+      margin-top: 4px;
     }
 
     .nav-links {
       display: flex;
-      gap: 2.5rem;
+      gap: 3rem;
       align-items: center;
     }
 
     .nav-links a {
       color: #475569;
       text-decoration: none;
-      font-weight: 500;
-      font-size: 0.95rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
       transition: color 0.2s ease;
-      position: relative;
-      padding: 0.2rem 0;
     }
 
     .nav-links a:hover {
-      color: #7C3AED;
+      color: #1E3A8A;
     }
 
-    /* GRID & CONTAINER SYSTEM */
+    /* THE GRID ENVIRONMENT */
     .content-container {
-      max-width: 1140px;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 0 40px;
     }
 
     section {
-      padding: 80px 0 40px 0;
+      padding: 120px 0 60px 0; /* Expanded spacing discipline */
     }
 
-    /* HERO LAYOUT */
+    /* HERO FRAMEWORK */
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 4rem;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 5rem;
       align-items: center;
     }
 
     .hero-text .section-label {
-      color: #7C3AED;
-      background: #F5F3FF;
-      border: 1px solid #DDD6FE;
+      color: #1E3A8A;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-size: 0.75rem;
+      font-weight: 700;
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      padding: 0.4rem 1rem;
-      border-radius: 100px;
-      font-size: 0.78rem;
-      font-weight: 600;
+      gap: 0.6rem;
       margin-bottom: 1.5rem;
+      border-left: 2px solid #1E3A8A;
+      padding-left: 10px;
     }
 
     .hero-title {
-      font-size: 3.5rem;
-      font-weight: 800;
+      font-size: 3.8rem;
       line-height: 1.15;
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
+      color: #0F172A;
     }
 
-    .hero-title .highlight {
-      color: #7C3AED;
-      background: linear-gradient(135deg, #7C3AED 0%, #3B82F6 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    .hero-title em {
+      font-weight: 400;
+      color: #475569;
     }
 
     .hero-subtitle {
-      font-size: 1.15rem;
+      font-size: 1.2rem;
       color: #475569;
-      max-width: 90%;
-      line-height: 1.7;
-      margin-bottom: 2rem;
+      max-width: 95%;
+      line-height: 1.75;
+      margin-bottom: 2.5rem;
     }
 
     .inline-stats {
       display: flex;
-      gap: 1rem;
+      gap: 1.5rem;
       flex-wrap: wrap;
     }
 
     .stat-pill {
       background: #F8FAFC;
       border: 1px solid #E2E8F0;
-      padding: 0.5rem 1.1rem;
-      border-radius: 100px;
+      padding: 0.6rem 1.2rem;
+      border-radius: 4px; /* Crisp structural edges */
       font-size: 0.85rem;
-      font-weight: 500;
+      font-weight: 600;
       color: #334155;
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.6rem;
     }
 
     .stat-pill i {
-      color: #3B82F6;
+      color: #1E3A8A;
     }
 
-    /* STRIPE-STYLE PREMIUM LIGHT CARDS */
+    /* FIXED-GRID ASYMMETRICAL EDITORIAL COMPONENT CARD */
     .product-card-area {
       display: flex;
       justify-content: flex-end;
@@ -199,69 +200,76 @@
 
     .featured-card {
       background: #FFFFFF;
-      border: 1px solid #E2E8F0;
-      border-radius: 24px;
-      padding: 2.5rem;
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      border-top: 4px solid #1E3A8A; /* Top anchor color bar used by Systems Limited */
+      border-left: 1px solid #E2E8F0;
+      border-right: 1px solid #E2E8F0;
+      border-bottom: 1px solid #E2E8F0;
+      border-radius: 0px; /* Editorial square configuration */
+      padding: 3rem 2.5rem;
+      transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
       width: 100%;
-      max-width: 400px;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 10px 15px -3px rgba(0, 0, 0, 0.03), 0 12px 24px rgba(0, 0, 0, 0.03);
+      max-width: 440px;
+      box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.04);
     }
 
     .featured-card:hover {
       transform: translateY(-4px);
-      border-color: #CBD5E1;
-      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+      box-shadow: 0 30px 60px -15px rgba(15, 23, 42, 0.08);
     }
 
     .coming-soon-badge {
-      background: #FEF3C7;
-      border: 1px solid #FCD34D;
-      color: #D97706;
-      border-radius: 100px;
-      padding: 0.3rem 0.8rem;
-      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #B45309;
+      font-size: 0.7rem;
       font-weight: 700;
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1.5rem;
     }
 
     .featured-card h3 {
-      font-size: 1.75rem;
+      font-size: 2rem;
       font-weight: 700;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.5rem;
     }
 
     .module-sub {
-      color: #7C3AED;
-      font-weight: 600;
-      margin-bottom: 1.25rem;
+      color: #1E3A8A;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1.5rem;
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      font-size: 0.88rem;
+      font-size: 0.8rem;
     }
 
     .featured-card p {
       color: #475569;
-      margin-bottom: 2rem;
-      font-size: 0.95rem;
+      font-size: 0.98rem;
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
     }
 
-    /* SOLID PREMIUM ACCENT BUTTON */
+    /* INSTITUTIONAL ACTION BUTTON */
     .btn-primary {
-      background: #7C3AED;
+      background: #0F172A;
       color: #FFFFFF;
-      font-weight: 600;
-      padding: 0.85rem 1.5rem;
-      border-radius: 12px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 700;
+      padding: 1.1rem 2rem;
+      border-radius: 0px;
       cursor: pointer;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.8rem;
       transition: all 0.2s ease;
       border: none;
       width: 100%;
@@ -269,47 +277,48 @@
     }
 
     .btn-primary:hover {
-      background: #6D28D9;
-      box-shadow: 0 8px 20px rgba(124, 58, 237, 0.25);
+      background: #1E3A8A;
     }
 
-    /* ABOUT SECTION BLOCK */
+    /* ANALYSIS & STRATEGY SECTION */
     .about-section {
-      background: #F8FAFC;
-      border: 1px solid #E2E8F0;
-      border-radius: 28px;
-      padding: 3.5rem;
+      border-top: 1px solid #E2E8F0;
+      padding-top: 6px;
     }
 
     .section-header-area {
-      margin-bottom: 2.5rem;
+      margin-bottom: 4rem;
+      border-bottom: 1px solid #E2E8F0;
+      padding-bottom: 2rem;
     }
 
     .section-title-label {
-      color: #7C3AED;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #64748B;
       text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 0.78rem;
+      letter-spacing: 0.15em;
+      font-size: 0.8rem;
       font-weight: 700;
       display: block;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.75rem;
     }
 
     .section-title {
-      font-size: 2.2rem;
+      font-size: 2.8rem;
       font-weight: 700;
     }
 
     .about-grid {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 3.5rem;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 5rem;
     }
 
     .about-left p {
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.5rem;
       color: #334155;
-      font-size: 1rem;
+      font-size: 1.1rem;
+      line-height: 1.75;
     }
 
     .highlight-name {
@@ -319,147 +328,147 @@
 
     .bullets-list {
       list-style: none;
-      margin: 1.5rem 0;
+      margin: 2.5rem 0;
     }
 
     .bullets-list li {
       display: flex;
       align-items: flex-start;
-      gap: 0.75rem;
-      margin-bottom: 1rem;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
       color: #334155;
-      font-size: 0.95rem;
+      font-size: 1.05rem;
+      line-height: 1.6;
     }
 
     .bullets-list li i {
-      color: #10B981;
-      margin-top: 0.25rem;
+      color: #1E3A8A;
+      margin-top: 0.35rem;
       font-size: 0.95rem;
     }
 
     .quote-box {
-      border-left: 3px solid #7C3AED;
-      padding-left: 1.25rem;
+      font-family: 'Playfair Display', serif;
       font-style: italic;
-      color: #475569;
-      margin-top: 1.5rem;
+      font-size: 1.35rem;
+      border-left: 3px solid #1E3A8A;
+      padding-left: 1.75rem;
+      color: #1E293B;
+      margin: 3rem 0;
+      line-height: 1.6;
     }
 
     .about-right {
-      background: #FFFFFF;
-      padding: 2.25rem;
-      border-radius: 20px;
+      background: #F8FAFC;
+      padding: 3rem 2.5rem;
+      border-radius: 0px;
       border: 1px solid #E2E8F0;
       display: flex;
       flex-direction: column;
-      gap: 1.75rem;
-      justify-content: center;
+      gap: 2.5rem;
+      height: fit-content;
     }
 
     .info-block {
       display: flex;
-      gap: 1rem;
-    }
-
-    .info-block i {
-      color: #3B82F6;
-      font-size: 1.1rem;
-      margin-top: 0.1rem;
-      background: #EFF6FF;
-      padding: 0.6rem;
-      border-radius: 10px;
-      height: fit-content;
+      flex-direction: column;
+      gap: 0.5rem;
     }
 
     .info-block h5 {
-      font-size: 1.05rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
       font-weight: 700;
       color: #0F172A;
-      margin-bottom: 0.25rem;
     }
 
     .info-block p {
       color: #475569;
-      font-size: 0.9rem;
-      line-height: 1.5;
+      font-size: 0.95rem;
+      line-height: 1.6;
     }
 
-    /* CONTACT COMPONENT */
+    /* SYSTEM ENDPOINTS ARCHITECTURE */
     .contact-info {
-      margin-top: 3.5rem;
-      background: #FFFFFF;
-      border-radius: 20px;
-      padding: 2.5rem;
-      border: 1px solid #E2E8F0;
+      margin-top: 5rem;
+      background: #0F172A;
+      color: #FFFFFF;
+      padding: 4rem;
       text-align: center;
     }
 
     .contact-info h4 {
-      font-size: 1.3rem;
-      font-weight: 700;
-      margin-bottom: 1.25rem;
+      color: #FFFFFF;
+      font-size: 2rem;
+      margin-bottom: 2rem;
     }
 
     .contact-details {
       display: flex;
       justify-content: center;
-      gap: 2.5rem;
+      gap: 3.5rem;
       flex-wrap: wrap;
     }
 
     .contact-details a, .contact-details span {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      color: #475569;
+      gap: 0.6rem;
+      color: #94A3B8;
       text-decoration: none;
-      font-weight: 500;
+      font-weight: 600;
       font-size: 0.95rem;
       transition: color 0.2s;
     }
 
     .contact-details a:hover {
-      color: #7C3AED;
+      color: #FFFFFF;
+      text-decoration: underline;
     }
 
     .contact-details i {
-      color: #7C3AED;
+      color: #38BDF8;
     }
 
-    /* FOOTER */
+    /* ANCHOR FOOTER */
     .footer {
       text-align: center;
-      padding: 3rem 0;
+      padding: 4rem 0;
       border-top: 1px solid #E2E8F0;
-      margin-top: 4rem;
+      margin-top: 6rem;
       font-size: 0.85rem;
       color: #64748B;
       line-height: 1.8;
+      letter-spacing: 0.02em;
     }
 
     .footer span {
       display: block;
-      margin-top: 0.4rem;
-      color: #94A3B8;
+      margin-top: 0.6rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 0.75rem;
+      color: #475569;
+      letter-spacing: 0.08em;
     }
 
-    /* MODAL WINDOW SYSTEM */
+    /* INSTITUTIONAL MODAL OVERLAY Framework */
     .modal-overlay {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(15, 23, 42, 0.4);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
+      background-color: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
       z-index: 1100;
       display: flex;
       align-items: center;
       justify-content: center;
       visibility: hidden;
       opacity: 0;
-      transition: visibility 0.2s, opacity 0.2s ease;
+      transition: visibility 0.25s, opacity 0.25s ease;
     }
 
     .modal-overlay.active {
@@ -469,15 +478,15 @@
 
     .modal-container {
       background: #FFFFFF;
-      border: 1px solid #E2E8F0;
-      max-width: 660px;
+      border-top: 6px solid #1E3A8A;
+      max-width: 720px;
       width: 90%;
-      border-radius: 24px;
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-      padding: 2.5rem;
+      border-radius: 0px;
+      box-shadow: 0 40px 80px -15px rgba(15, 23, 42, 0.3);
+      padding: 3.5rem;
       position: relative;
-      transform: scale(0.97);
-      transition: transform 0.2s ease;
+      transform: scale(0.98);
+      transition: transform 0.25s ease;
       max-height: 85vh;
       overflow-y: auto;
     }
@@ -491,117 +500,111 @@
       justify-content: space-between;
       align-items: center;
       border-bottom: 1px solid #E2E8F0;
-      padding-bottom: 1.25rem;
-      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
     }
 
     .modal-header h2 {
-      font-size: 1.45rem;
-      font-weight: 700;
+      font-size: 1.8rem;
     }
 
     .close-modal {
       background: none;
       border: none;
       color: #94A3B8;
-      font-size: 1.4rem;
+      font-size: 1.5rem;
       cursor: pointer;
       transition: color 0.2s;
     }
 
     .close-modal:hover {
-      color: #EF4444;
+      color: #0F172A;
     }
 
     .detail-section {
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
     }
 
     .detail-section h4 {
-      font-size: 1rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #1E3A8A;
+      margin-bottom: 0.6rem;
       font-weight: 700;
-      color: #7C3AED;
-      margin-bottom: 0.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
     }
 
     .detail-section p {
       color: #475569;
-      font-size: 0.92rem;
+      font-size: 1rem;
+      line-height: 1.7;
     }
 
-    .badge-container {
+    .badge-container, .grid-outputs {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 0.5rem;
+      gap: 0.6rem;
+      margin-top: 0.75rem;
     }
 
     .input-badge {
       background: #F1F5F9;
-      padding: 0.35rem 0.85rem;
-      border-radius: 100px;
+      padding: 0.4rem 1rem;
       font-size: 0.8rem;
-      font-weight: 500;
+      font-weight: 600;
       color: #334155;
       border: 1px solid #E2E8F0;
     }
 
-    .grid-outputs {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 0.5rem;
-    }
-
     .output-chip {
-      background: #EFF6FF;
-      border: 1px solid #BFDBFE;
-      border-radius: 100px;
-      padding: 0.35rem 0.85rem;
+      background: #F0Fdf4;
+      border: 1px solid #BBF7D0;
+      padding: 0.4rem 1rem;
       font-size: 0.8rem;
-      font-weight: 600;
-      color: #1E40AF;
+      font-weight: 700;
+      color: #166534;
     }
 
     .ecosystem-callout {
-      background: #F5F3FF;
-      padding: 1rem;
-      border-radius: 12px;
-      margin-top: 10px;
-      border-left: 3px solid #7C3AED;
-      font-size: 0.9rem;
-      color: #4C1D95;
+      background: #F8FAFC;
+      padding: 1.25rem;
+      margin-top: 15px;
+      border-left: 3px solid #64748B;
+      font-size: 0.95rem;
+      color: #334155;
+      line-height: 1.6;
     }
 
     .btn-secondary-close {
       background: #F1F5F9;
-      border: 1px solid #E2E8F0;
-      color: #475569;
-      font-weight: 600;
-      padding: 0.6rem 1.2rem;
-      border-radius: 8px;
+      border: 1px solid #CBD5E1;
+      color: #334155;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 700;
+      padding: 0.75rem 1.5rem;
       cursor: pointer;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       transition: all 0.2s;
     }
 
     .btn-secondary-close:hover {
-      background: #E2E8F0;
-      color: #1E293B;
+      background: #0F172A;
+      color: #FFFFFF;
+      border-color: #0F172A;
     }
 
-    /* RESPONSIVE DESIGN WINDOWS */
+    /* RESPONSIVE VECTOR INTERPOLATIONS */
     @media (max-width: 1024px) {
       .hero-grid {
         grid-template-columns: 1fr;
-        gap: 3.5rem;
+        gap: 4rem;
         text-align: center;
       }
       .hero-subtitle {
-        margin: 0 auto 2rem auto;
+        margin: 0 auto 2.5rem auto;
       }
       .inline-stats, .product-card-area {
         justify-content: center;
@@ -610,36 +613,36 @@
         width: 100%;
       }
       .featured-card {
-        max-width: 480px;
+        max-width: 520px;
         margin: 0 auto;
         text-align: left;
       }
       .about-grid {
         grid-template-columns: 1fr;
-        gap: 2.5rem;
+        gap: 4rem;
       }
     }
 
     @media (max-width: 768px) {
       body {
-        padding-top: 80px;
+        padding-top: 90px;
       }
       section {
-        padding: 50px 0 25px 0;
+        padding: 80px 0 40px 0;
       }
       .hero-title {
-        font-size: 2.5rem;
-      }
-      .about-section {
-        padding: 2rem;
+        font-size: 2.6rem;
       }
       .section-title {
-        font-size: 1.8rem;
+        font-size: 2rem;
       }
       .contact-details {
         flex-direction: column;
-        gap: 1rem;
+        gap: 1.5rem;
         align-items: center;
+      }
+      .contact-info {
+        padding: 2.5rem;
       }
     }
   </style>
@@ -653,8 +656,8 @@
       <div class="tagline">Quantifying Product Decisions</div>
     </a>
     <div class="nav-links">
-      <a href="#home" class="nav-home">Home</a>
-      <a href="#about" class="nav-about">About</a>
+      <a href="#home" class="nav-home">Overview</a>
+      <a href="#about" class="nav-about">Analysis & Portfolio</a>
     </div>
   </div>
 </div>
@@ -664,142 +667,131 @@
   <section id="home">
     <div class="hero-grid">
       <div class="hero-text">
-        <div class="section-label"><i class="fas fa-chart-line"></i> Decision Intelligence Suite</div>
-        <h2 class="hero-title">
-          Turn uncertainty into <span class="highlight">measurable scores</span> before building.
-        </h2>
-        <p class="hero-subtitle">FaridEx Labs creates data-backed validation systems that help product managers, startup founders, and software teams grade features and reduce launch risk mathematically.</p>
+        <div class="section-label">Institutional Feasibility Intelligence</div>
+        <h1 class="hero-title">
+          Replacing product intuition with <em>verifiable mathematical scoring models.</em>
+        </h1>
+        <p class="hero-subtitle">FaridEx Labs engineers isolated tactical validation frameworks that allow software product leaders, enterprise managers, and founders to audit feature sets and mitigate roadmap vulnerabilities pre-development.</p>
         <div class="inline-stats">
-          <span class="stat-pill"><i class="fas fa-cubes"></i> 10 Intelligence Modules</span>
-          <span class="stat-pill"><i class="fas fa-chart-pie"></i> Predictive Evaluation Logic</span>
+          <span class="stat-pill"><i class="fas fa-layer-group"></i> 10 Enterprise Risk Modules</span>
+          <span class="stat-pill"><i class="fas fa-calculator"></i> Quantitative Validation Logic</span>
         </div>
       </div>
       
       <div class="product-card-area">
         <div class="featured-card">
-          <div class="coming-soon-badge"><i class="fas fa-hourglass-half"></i> First Release · Coming Soon</div>
+          <div class="coming-soon-badge"><i class="far fa-clock"></i> Deployment Phase · Beta Release</div>
           <h3>RevenuePilot</h3>
-          <div class="module-sub"><i class="fas fa-coins"></i> Revenue Feasibility Intelligence Engine</div>
-          <p>Stop investing engineering assets into financially weak metrics. RevenuePilot processes localized pricing configurations, target dynamic scope sizes, and product unit economic variables instantly.</p>
+          <div class="module-sub">Revenue Sustainability Assessment Core</div>
+          <p>Insulate engineering teams from non-viable architectures. RevenuePilot audits target market parameters, variable baseline pricing tiers, and direct micro-economic monetization vectors before a single line of script is committed.</p>
           <button class="btn-primary" id="openModalBtn">
-            <span>View System Full Description</span>
-            <i class="fas fa-arrow-right"></i>
+            <span>Review Core Specifications</span>
+            <i class="fas fa-chevron-right"></i>
           </button>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="about">
-    <div class="about-section">
-      <div class="section-header-area">
-        <span class="section-title-label">Ecosystem & Background</span>
-        <h3 class="section-title">Strategic Architecture</h3>
+  <section id="about" class="about-section">
+    <div class="section-header-area">
+      <span class="section-title-label">Strategic Perspective</span>
+      <h2 class="section-title">Institutional Architecture</h2>
+    </div>
+    
+    <div class="about-grid">
+      <div class="about-left">
+        <p><strong class="highlight-name">Ghulam Farid</strong> operates as an expert Corporate Strategy & Product Analyst within heavy-data system integration nodes, developing algorithmic evaluation frameworks designed to isolate high-risk business initiatives from execution streams.</p>
+        
+        <ul class="bullets-list">
+          <li><i class="fas fa-minus"></i> <span>Formulates deep product roadmaps and strategic market alignment models for modern high-performance cloud frameworks.</span></li>
+          <li><i class="fas fa-minus"></i> <span>Directs systemic performance matrices spanning high-velocity e-commerce and complex enterprise software structures.</span></li>
+          <li><i class="fas fa-minus"></i> <span>Designed FaridEx Labs as an independent quantitative verification buffer to eliminate systemic launch volatility.</span></li>
+        </ul>
+        
+        <div class="quote-box">
+          “Strict parameter verification ahead of engineering deployment isolates and mitigates operational error vectors. Our objective is total mathematical transparency over early product life cycles.”
+        </div>
       </div>
       
-      <div class="about-grid">
-        <div class="about-left">
-          <p><strong class="highlight-name">Ghulam Farid</strong> operates as a dedicated **Business Strategy & Product Analyst** working directly within the intersection of systemic metrics and product leadership frameworks. He specializes in designing analytical environments that trade intuition for reliable quantitative data.</p>
-          
-          <ul class="bullets-list">
-            <li><i class="fas fa-check-circle"></i> <span>Engineers robust roadmap structures and go-to-market funnels for high-growth modern tech structures.</span></li>
-            <li><i class="fas fa-check-circle"></i> <span>Directs detailed performance analysis processes inside scalable e-commerce, software ecosystems, and SaaS environments.</span></li>
-            <li><i class="fas fa-check-circle"></i> <span>Created FaridEx Labs to function as an independent verification layer to keep launch risk footprints minimal.</span></li>
-          </ul>
-          
-          <div class="quote-box">
-            “Better feature vetting produces better user outcomes. FaridEx Labs exists to apply absolute visual clarity over complex business validation metrics.”
-          </div>
+      <div class="about-right">
+        <div class="info-block">
+          <h5>Structural Mission</h5>
+          <p>To process and standardize loose product assumptions into clean, data-backed feasibility indexes utilizing localized matrix logic models.</p>
         </div>
         
-        <div class="about-right">
-          <div class="info-block">
-            <i class="fas fa-bullseye"></i>
-            <div>
-              <h5>Primary Mission</h5>
-              <p>To convert qualitative product intuition into accurate, comparable scores using custom feasibility analysis models.</p>
-            </div>
-          </div>
-          
-          <div class="info-block">
-            <i class="fas fa-cube"></i>
-            <div>
-              <h5>Modular Ecosystem</h5>
-              <p>Composed of 10 targeted micro-engines built to evaluate separate risks—stretching from RevenuePilot parameters up to ChurnShield mechanics.</p>
-            </div>
-          </div>
-          
-          <div class="info-block">
-            <i class="fas fa-project-diagram"></i>
-            <div>
-              <h5>The Evaluation Layer</h5>
-              <p>This is not an everyday task board. It is a separate validation environment optimized specifically to confirm strategic viability.</p>
-            </div>
-          </div>
+        <div class="info-block">
+          <h5>System Density</h5>
+          <p>Consists of 10 micro-evaluation environments running specific data tracks from fundamental asset protection arrays to revenue tracking engines.</p>
+        </div>
+        
+        <div class="info-block">
+          <h5>The Integrity Buffer</h5>
+          <p>Functions outside typical engineering logs, serving strictly as an institutional strategy layer dedicated to confirming early viability metrics.</p>
         </div>
       </div>
+    </div>
 
-      <div class="contact-info">
-        <h4>Connect with FaridEx Labs</h4>
-        <div class="contact-details">
-          <a href="mailto:faridexlabs@gmail.com"><i class="fas fa-envelope"></i> faridexlabs@gmail.com</a>
-          <span><i class="fas fa-phone-alt"></i> +92 308 6007904</span>
-          <a href="https://www.linkedin.com/in/ghulam-farid-29514a336" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn Profile</a>
-          <a href="https://gf1488360-cell.github.io/FaridStrategy/" target="_blank"><i class="fas fa-globe"></i> Strategy Portfolio</a>
-        </div>
+    <div class="contact-info">
+      <h4 class="serif-heading">Communication Protocols</h4>
+      <div class="contact-details">
+        <a href="mailto:faridexlabs@gmail.com"><i class="far fa-envelope"></i> faridexlabs@gmail.com</a>
+        <span><i class="fas fa-mobile-alt"></i> +92 308 6007904</span>
+        <a href="https://www.linkedin.com/in/ghulam-farid-29514a336" target="_blank"><i class="fab fa-linkedin-in"></i> Executive Network</a>
+        <a href="https://gf1488360-cell.github.io/FaridStrategy/" target="_blank"><i class="fas fa-globe"></i> Analytical Dossier</a>
       </div>
     </div>
   </section>
 
   <div class="footer">
-    <i class="fas fa-brain"></i> Ghulam Farid — Business Strategy & Product Analyst · Quantifying Product Decisions<br>
-    <span>© 2026 FaridEx Labs | Enterprise Decision Support Ecosystem</span>
+    Ghulam Farid — Strategy & Product Analytics Frameworks · Quantifying Digital Ecosystems<br>
+    <span>© 2026 FaridEx Labs · Strategic Advisory & Analytics Core</span>
   </div>
 </div>
 
 <div id="productModal" class="modal-overlay">
   <div class="modal-container">
     <div class="modal-header">
-      <h2><i class="fas fa-chart-line" style="color:#7C3AED; margin-right: 6px;"></i> RevenuePilot Module Specifications</h2>
-      <button class="close-modal" id="closeModalBtn"><i class="fas fa-times-circle"></i></button>
+      <h2 class="serif-heading">RevenuePilot Engineering Specifications</h2>
+      <button class="close-modal" id="closeModalBtn"><i class="fas fa-times"></i></button>
     </div>
     
     <div class="detail-section">
-      <h4><i class="fas fa-bullhorn"></i> Architectural Intent</h4>
-      <p>Calculates and checks if a potential concept possesses legitimate structural revenue capabilities long before allocating deep developer windows. Keeps code bases clean from financially underperforming features.</p>
+      <h4>Architectural Intent</h4>
+      <p>Systematically models conceptual return profiles to ensure enterprise assets are not deployed into inefficient layout variants. Protects development velocity from market misalignment anomalies.</p>
     </div>
     
     <div class="detail-section">
-      <h4><i class="fas fa-microchip"></i> Monitored Input Parameters</h4>
+      <h4>Monitored Input Fields</h4>
       <div class="badge-container">
-        <span class="input-badge">Pricing Tiers Layout</span>
-        <span class="input-badge">Target Dynamic Market Size</span>
-        <span class="input-badge">Projected Adoption Rate Thresholds</span>
-        <span class="input-badge">Engineering Complexity Estimates</span>
-        <span class="input-badge">Segment Behavior Weights</span>
+        <span class="input-badge">Tiered Pricing Matrices</span>
+        <span class="input-badge">Dynamic TAM Volume Metrics</span>
+        <span class="input-badge">Probability Curve Adjustments</span>
+        <span class="input-badge">Engineering Drag Index</span>
+        <span class="input-badge">Unit Marginal Values</span>
       </div>
     </div>
     
     <div class="detail-section">
-      <h4><i class="fas fa-chart-pie"></i> Evaluation Output Telemetry</h4>
+      <h4>Derived Analytical Outputs</h4>
       <div class="grid-outputs">
-        <span class="output-chip">Revenue Feasibility Coeff (0-100)</span>
-        <span class="output-chip">ROI Confidence Score Interval</span>
-        <span class="output-chip">Monetization Probability Percentage</span>
-        <span class="output-chip">Break-even Window Projection (Months)</span>
-        <span class="output-chip">Risk Classification Matrix Tier</span>
+        <span class="output-chip">Feasibility Quotient (0-100)</span>
+        <span class="output-chip">ROI Deviation Intervals</span>
+        <span class="output-chip">Adoption Velocity Factor</span>
+        <span class="output-chip">Break-even Horizon (Months)</span>
+        <span class="output-chip">Risk Matrix Classification</span>
       </div>
     </div>
     
     <div class="detail-section">
-      <h4><i class="fas fa-rocket"></i> Suite Node Integration</h4>
-      <p>RevenuePilot launches as the introductory framework step within the upcoming comprehensive FaridEx Labs strategy suite.</p>
+      <h4>Ecosystem Context Node</h4>
+      <p>RevenuePilot serves as the initial assessment gateway for the planned analytical suite developed by FaridEx Labs.</p>
       <div class="ecosystem-callout">
-        <i class="fas fa-flask"></i> <strong>Early Phase Notice:</strong> Initial sandbox access vectors are opening soon for vetted beta accounts.
+        <strong>Corporate Security Protocol:</strong> Access channels for evaluation accounts will initialize systematically following phase verification gates.
       </div>
     </div>
     
-    <div style="margin-top: 2rem; text-align: right;">
+    <div style="margin-top: 2.5rem; text-align: right;">
       <button id="closeModalFooterBtn" class="btn-secondary-close">Dismiss Interface Panel</button>
     </div>
   </div>
