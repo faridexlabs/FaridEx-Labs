@@ -4,8 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Faridex Labs — Decision Intelligence for Product Teams</title>
-  <!-- Google Fonts + Font Awesome 6 -->
+  <!-- Inter Font (same as faridsview.netlify.app) -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 (free) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * {
@@ -16,298 +17,267 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background: #0B0E17;
-      color: #EFF3FC;
+      background: #FFFFFF;
+      color: #1E293B;
       scroll-behavior: smooth;
       line-height: 1.5;
     }
 
-    /* subtle grid pattern (inspired by modern dark theme) */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: radial-gradient(rgba(108, 99, 255, 0.08) 1px, transparent 1px);
-      background-size: 40px 40px;
-      pointer-events: none;
-      z-index: 0;
+    /* subtle background texture like his site (very light) */
+    .bg-subtle {
+      background: #F9FAFE;
     }
 
     .container {
-      max-width: 1280px;
+      max-width: 1200px;
       margin: 0 auto;
       padding: 0 28px;
-      position: relative;
-      z-index: 2;
     }
 
-    /* glassmorphism elements */
-    .glass-card {
-      background: rgba(18, 25, 45, 0.7);
-      backdrop-filter: blur(14px);
-      border: 1px solid rgba(108, 99, 255, 0.25);
-      border-radius: 2rem;
-      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.4);
-    }
-
-    /* navigation */
+    /* Navigation */
     .navbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1.5rem 0;
+      padding: 1.6rem 0;
       flex-wrap: wrap;
-      gap: 1rem;
-      border-bottom: 1px solid rgba(108, 99, 255, 0.2);
-      margin-bottom: 2rem;
+      gap: 1.2rem;
+      border-bottom: 1px solid #E9EDF2;
     }
 
     .logo-area h1 {
       font-size: 1.8rem;
       font-weight: 700;
-      background: linear-gradient(135deg, #FFFFFF 0%, #B1A9FF 100%);
+      background: linear-gradient(135deg, #0F172A 0%, #3B3F5C 100%);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
       letter-spacing: -0.02em;
     }
-
     .logo-area p {
       font-size: 0.85rem;
-      color: #9BA3C7;
-      letter-spacing: 0.3px;
+      color: #5B6E8C;
+      letter-spacing: 0.2px;
+      font-weight: 500;
     }
 
     .nav-links {
       display: flex;
-      gap: 2.2rem;
+      gap: 2rem;
       align-items: center;
     }
-
     .nav-links a {
-      color: #D1D9FF;
+      color: #334155;
       text-decoration: none;
       font-weight: 500;
       transition: 0.2s;
       font-size: 1rem;
     }
-
     .nav-links a:hover {
-      color: #A699FF;
-      border-bottom: 1px solid #6C63FF;
+      color: #4F46E5;
+      border-bottom: 2px solid #4F46E5;
+      padding-bottom: 2px;
     }
-
     .name-badge {
-      background: rgba(108, 99, 255, 0.2);
-      padding: 0.5rem 1.2rem;
+      background: #F1F4F9;
+      padding: 0.45rem 1.2rem;
       border-radius: 40px;
       font-size: 0.85rem;
-      font-weight: 500;
-      border: 1px solid rgba(108, 99, 255, 0.4);
-      backdrop-filter: blur(4px);
+      font-weight: 600;
+      color: #1E293B;
+      border: 1px solid #E2E8F0;
     }
-
     .name-badge i {
       margin-right: 8px;
-      color: #6C63FF;
+      color: #4F46E5;
     }
 
-    /* hero + card layout */
+    /* hero grid */
     .hero-grid {
       display: flex;
       flex-wrap: wrap;
       gap: 3rem;
       align-items: center;
-      margin: 3rem 0 5rem 0;
+      margin: 3.5rem 0 5rem 0;
     }
-
     .hero-text {
       flex: 1.2;
     }
-
     .hero-text .tag {
-      background: #6C63FF20;
+      background: #EEF2FF;
       display: inline-block;
       padding: 0.3rem 1rem;
       border-radius: 30px;
       font-size: 0.8rem;
-      font-weight: 500;
-      color: #C2B8FF;
+      font-weight: 600;
+      color: #4F46E5;
       margin-bottom: 1rem;
-      border: 0.5px solid #6C63FF60;
+      border: 0.5px solid #C7D2FE;
     }
-
     .hero-text h2 {
-      font-size: 3.2rem;
-      font-weight: 700;
+      font-size: 3rem;
+      font-weight: 800;
       line-height: 1.2;
       letter-spacing: -0.02em;
       margin-bottom: 1.2rem;
+      color: #0F172A;
     }
-
     .hero-text h2 span {
-      color: #6C63FF;
-      border-bottom: 2px solid #6C63FF;
+      color: #4F46E5;
+      border-bottom: 3px solid #E0E7FF;
     }
-
     .hero-text p {
       font-size: 1.1rem;
-      color: #B9C3E6;
+      color: #475569;
       max-width: 90%;
       margin-bottom: 1.8rem;
     }
-
     .product-card-area {
       flex: 0.9;
       display: flex;
       justify-content: center;
     }
 
-    /* single product card */
+    /* single card style (clean white card with shadow, border radius) */
     .featured-card {
-      background: linear-gradient(145deg, #101826 0%, #0C111F 100%);
-      border-radius: 2rem;
+      background: #FFFFFF;
+      border-radius: 1.5rem;
       padding: 1.8rem;
-      border: 1px solid rgba(108, 99, 255, 0.5);
-      box-shadow: 0 25px 40px -12px #00000060;
-      transition: transform 0.2s ease;
+      border: 1px solid #EFF3F8;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.02);
+      transition: transform 0.2s ease, box-shadow 0.2s;
       width: 100%;
       max-width: 380px;
     }
-
     .featured-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.12);
     }
-
     .coming-soon-badge {
-      background: #ffb34720;
-      border: 1px solid #FFB347;
-      color: #FFD966;
+      background: #FEF9E3;
+      border: 1px solid #FDE68A;
+      color: #B45309;
       border-radius: 100px;
       padding: 0.2rem 1rem;
       font-size: 0.75rem;
-      font-weight: 600;
+      font-weight: 700;
       display: inline-block;
       margin-bottom: 1rem;
     }
-
     .featured-card h3 {
       font-size: 1.8rem;
       font-weight: 700;
       margin-bottom: 0.5rem;
+      color: #0F172A;
     }
-
-    .featured-card .module-sub {
-      color: #6C63FF;
-      font-weight: 500;
+    .module-sub {
+      color: #4F46E5;
+      font-weight: 600;
       margin-bottom: 1rem;
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      font-size: 0.9rem;
     }
-
     .featured-card p {
-      color: #B2BCE0;
-      margin-bottom: 1.5rem;
+      color: #475569;
+      margin-bottom: 1.6rem;
       font-size: 0.95rem;
+      line-height: 1.5;
     }
-
     .btn-desc {
-      background: #6C63FF;
+      background: #4F46E5;
       border: none;
       color: white;
       font-weight: 600;
-      padding: 0.8rem 1.5rem;
-      border-radius: 3rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: 2rem;
       cursor: pointer;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
       transition: all 0.2s;
-      box-shadow: 0 4px 12px rgba(108, 99, 255, 0.3);
+      box-shadow: 0 2px 6px rgba(79, 70, 229, 0.2);
     }
-
     .btn-desc:hover {
-      background: #8179ff;
+      background: #6366F1;
       transform: scale(1.02);
-      box-shadow: 0 8px 20px rgba(108, 99, 255, 0.4);
     }
 
-    /* about section */
+    /* About section (clean light) */
     .about-section {
-      margin: 4rem 0 5rem 0;
-      background: rgba(12, 18, 28, 0.7);
-      border-radius: 2rem;
-      padding: 2.5rem;
-      border: 1px solid #20273f;
+      margin: 3rem 0 5rem 0;
+      background: #F8FAFE;
+      border-radius: 1.5rem;
+      padding: 2.2rem;
+      border: 1px solid #EFF3F8;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
     }
-
     .about-section h3 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      font-weight: 600;
+      font-size: 1.6rem;
+      margin-bottom: 0.8rem;
+      font-weight: 700;
       display: flex;
       align-items: center;
-      gap: 0.7rem;
+      gap: 0.6rem;
+      color: #0F172A;
     }
-
+    .divider {
+      height: 3px;
+      background: #4F46E5;
+      width: 60px;
+      margin: 0.5rem 0 1.5rem 0;
+      border-radius: 3px;
+    }
     .about-grid {
       display: flex;
       flex-wrap: wrap;
       gap: 2rem;
-      margin-top: 1.5rem;
+      margin-top: 1rem;
     }
-
     .about-left {
       flex: 1.2;
     }
-
     .about-right {
       flex: 1;
-      background: #0F1524;
+      background: #FFFFFF;
       padding: 1.5rem;
-      border-radius: 1.5rem;
+      border-radius: 1.2rem;
+      border: 1px solid #E9EDF2;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.02);
     }
-
-    .about-right p i {
-      color: #6C63FF;
-      width: 28px;
-    }
-
     .highlight-name {
-      color: #B1A9FF;
-      font-weight: 700;
+      font-weight: 800;
+      color: #4F46E5;
     }
-
-    .divider {
-      height: 2px;
-      background: linear-gradient(90deg, #6C63FF, transparent);
-      width: 80px;
-      margin: 1rem 0 1.2rem 0;
+    .about-left p, .about-right p {
+      margin-bottom: 0.9rem;
+      color: #334155;
     }
-
+    .about-right i {
+      color: #4F46E5;
+      width: 28px;
+      margin-right: 6px;
+    }
     .footer {
       text-align: center;
       padding: 2rem 0 2.5rem;
-      border-top: 1px solid rgba(108, 99, 255, 0.2);
-      margin-top: 2rem;
-      font-size: 0.9rem;
-      color: #8A94B8;
+      border-top: 1px solid #E9EDF2;
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      color: #5B6E8C;
     }
 
-    /* MODAL (new screen) */
+    /* MODAL (light theme clean) */
     .modal-overlay {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(5, 8, 18, 0.92);
-      backdrop-filter: blur(10px);
+      background-color: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(4px);
       z-index: 1000;
       display: flex;
       align-items: center;
@@ -316,19 +286,17 @@
       opacity: 0;
       transition: visibility 0.2s, opacity 0.2s ease;
     }
-
     .modal-overlay.active {
       visibility: visible;
       opacity: 1;
     }
-
     .modal-container {
-      background: #0E1424;
-      max-width: 750px;
+      background: #FFFFFF;
+      max-width: 720px;
       width: 90%;
-      border-radius: 2rem;
-      border: 1px solid rgba(108, 99, 255, 0.6);
-      box-shadow: 0 30px 50px rgba(0, 0, 0, 0.6);
+      border-radius: 1.5rem;
+      border: 1px solid #E2E8F0;
+      box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.2);
       padding: 2rem;
       position: relative;
       transform: scale(0.96);
@@ -336,82 +304,73 @@
       max-height: 85vh;
       overflow-y: auto;
     }
-
     .modal-overlay.active .modal-container {
       transform: scale(1);
     }
-
     .modal-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid #2A3150;
+      border-bottom: 1px solid #E9EDF2;
       padding-bottom: 1rem;
       margin-bottom: 1.5rem;
     }
-
     .modal-header h2 {
-      font-size: 1.8rem;
-      background: linear-gradient(135deg, #fff, #B6ABFF);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #0F172A;
     }
-
     .close-modal {
       background: none;
       border: none;
-      color: #C2C9F0;
-      font-size: 1.8rem;
+      color: #94A3B8;
+      font-size: 1.6rem;
       cursor: pointer;
       transition: 0.2s;
     }
-
     .close-modal:hover {
-      color: #FF6B6B;
+      color: #EF4444;
     }
-
     .detail-section {
-      margin-bottom: 1.8rem;
+      margin-bottom: 1.6rem;
     }
-
     .detail-section h4 {
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: #B1A9FF;
-      margin-bottom: 0.75rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #4F46E5;
+      margin-bottom: 0.6rem;
       display: flex;
       align-items: center;
       gap: 0.5rem;
     }
-
     .input-badge {
-      background: #1E253F;
-      padding: 0.2rem 0.8rem;
+      background: #F1F5F9;
+      padding: 0.2rem 1rem;
       border-radius: 40px;
       font-size: 0.8rem;
+      font-weight: 500;
       display: inline-block;
-      margin: 0.3rem 0.3rem;
+      margin: 0.2rem 0.3rem;
+      color: #1E293B;
+      border: 1px solid #E2E8F0;
     }
-
     .grid-outputs {
       display: flex;
       flex-wrap: wrap;
       gap: 0.6rem;
-      margin-top: 0.5rem;
+      margin-top: 0.4rem;
     }
-
     .output-chip {
-      background: #2A2F55;
+      background: #EFF6FF;
       border-radius: 30px;
       padding: 0.3rem 1rem;
-      font-size: 0.8rem;
-      font-weight: 500;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #1E40AF;
     }
-
-    @media (max-width: 800px) {
+    @media (max-width: 750px) {
       .hero-text h2 {
-        font-size: 2.4rem;
+        font-size: 2.2rem;
       }
       .navbar {
         flex-direction: column;
@@ -427,32 +386,29 @@
         flex-direction: column;
       }
     }
-
     button {
       background: none;
       border: none;
     }
-
     a {
       text-decoration: none;
     }
-
     ::-webkit-scrollbar {
-      width: 6px;
+      width: 5px;
     }
     ::-webkit-scrollbar-track {
-      background: #0B0E17;
+      background: #F1F5F9;
     }
     ::-webkit-scrollbar-thumb {
-      background: #6C63FF;
-      border-radius: 6px;
+      background: #A5B4FC;
+      border-radius: 8px;
     }
   </style>
 </head>
 <body>
 
 <div class="container">
-  <!-- Navigation with Home & About -->
+  <!-- Navigation: Home, About, and name badge -->
   <div class="navbar">
     <div class="logo-area">
       <h1>Faridex Labs</h1>
@@ -462,21 +418,21 @@
       <a href="#home" class="nav-home">Home</a>
       <a href="#about" class="nav-about">About</a>
       <div class="name-badge">
-        <i class="fas fa-user-astronaut"></i> Ghulam Farid
+        <i class="fas fa-user-check"></i> Ghulam Farid
       </div>
     </div>
   </div>
 
-  <!-- HOME section (anchor) -->
+  <!-- HOME section -->
   <section id="home">
     <div class="hero-grid">
       <div class="hero-text">
-        <div class="tag"><i class="fas fa-brain"></i> Decision Intelligence Ecosystem</div>
+        <div class="tag"><i class="fas fa-chart-line"></i> Decision Intelligence Ecosystem</div>
         <h2>Turn uncertainty into <span>measurable scores</span> before a single line of code.</h2>
         <p>Faridex Labs helps PMs, founders & product teams evaluate features, predict adoption, and reduce launch risks — with structured scoring engines.</p>
-        <div style="display: flex; gap: 1rem; margin-top: 1rem;">
-          <span style="background:#1A1F33; padding: 0.4rem 1rem; border-radius: 40px; font-size:0.8rem;"><i class="fas fa-chart-line"></i> 10+ intelligence modules</span>
-          <span style="background:#1A1F33; padding: 0.4rem 1rem; border-radius: 40px; font-size:0.8rem;"><i class="fas fa-microchip"></i> AI-powered simulation</span>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
+          <span style="background:#F1F4F9; padding: 0.4rem 1rem; border-radius: 40px; font-size:0.8rem; font-weight:500;"><i class="fas fa-cubes"></i> 10+ intelligence modules</span>
+          <span style="background:#F1F4F9; padding: 0.4rem 1rem; border-radius: 40px; font-size:0.8rem; font-weight:500;"><i class="fas fa-chart-simple"></i> predictive evaluation</span>
         </div>
       </div>
       <div class="product-card-area">
@@ -484,7 +440,7 @@
         <div class="featured-card">
           <div class="coming-soon-badge"><i class="fas fa-hourglass-half"></i> First release · Coming Soon</div>
           <h3>RevenuePilot</h3>
-          <div class="module-sub"><i class="fas fa-chart-simple"></i> Revenue Feasibility Intelligence Engine</div>
+          <div class="module-sub"><i class="fas fa-coins"></i> Revenue Feasibility Intelligence Engine</div>
           <p>Stop building financially weak features. RevenuePilot evaluates revenue potential before dev starts — using pricing models, adoption estimates and market data.</p>
           <button class="btn-desc" id="openModalBtn"><i class="fas fa-info-circle"></i> Full description</button>
         </div>
@@ -492,39 +448,41 @@
     </div>
   </section>
 
-  <!-- ABOUT section (including Ghulam Farid details + Faridex Labs mission) -->
+  <!-- ABOUT section (includes Ghulam Farid details and Faridex Labs mission) -->
   <section id="about">
     <div class="about-section">
-      <h3><i class="fas fa-chalkboard-user" style="color:#6C63FF;"></i> About Faridex Labs & Creator</h3>
+      <h3><i class="fas fa-bullhorn"></i> About Faridex Labs & Creator</h3>
       <div class="divider"></div>
       <div class="about-grid">
         <div class="about-left">
-          <p style="font-size: 1.05rem; margin-bottom: 1rem;"><strong class="highlight-name">Ghulam Farid</strong> — Business Strategy & Product Analyst operating at the intersection of data science and product leadership. Passionate about structured decision-making, Ghulam designed Faridex Labs to solve the missing layer in modern product management: <strong>pre-deployment decision intelligence</strong>.</p>
-          <p style="margin: 1rem 0;">✔ Data Science background (BS, CGPA 3.8) & Product School certified.<br>
+          <p><strong class="highlight-name">Ghulam Farid</strong> — <strong>Business Strategy & Product Analyst</strong> operating at the intersection of data science and product leadership. Passionate about structured decision-making, Ghulam designed Faridex Labs to solve the missing layer in modern product management: <strong>pre-deployment decision intelligence</strong>.</p>
+          <p>✔ Data Science background (BS, CGPA 3.8) & Product School certified.<br>
           ✔ BCG job simulation (Forage) – Data for Decision Making & Business Strategy.<br>
-          ✔ Built strategic roadmaps for e-commerce, SaaS scale-ups, and hyperlocal platforms.</p>
-          <p><i class="fas fa-quote-left" style="color:#6C63FF; margin-right: 8px;"></i> “Better product decisions create better products — that’s why Faridex Labs exists.”</p>
+          ✔ Built strategic roadmaps for e-commerce, SaaS scale-ups, and hyperlocal platforms.<br>
+          ✔ Based in Lahore, Pakistan — building global tools for product teams.</p>
+          <p><i class="fas fa-quote-left" style="color:#4F46E5; margin-right: 8px;"></i> “Better product decisions create better products — that’s why Faridex Labs exists.”</p>
         </div>
         <div class="about-right">
           <p><i class="fas fa-bullseye"></i> <strong>Mission:</strong> Transform subjective PM decisions into measurable intelligence using scoring systems, feasibility analysis and impact simulations.</p>
-          <p style="margin-top: 1rem;"><i class="fas fa-cube"></i> <strong>Ecosystem vision:</strong> 10 specialized modules — from RevenuePilot to ChurnShield — to simulate feature impact, MVP scope risk, adoption probability, and launch readiness.</p>
-          <p style="margin-top: 1rem;"><i class="fas fa-chart-line"></i> Faridex Labs is <strong>not</strong> a project management tool. It’s the <strong>decision evaluation layer</strong> for product teams who want to reduce uncertainty, prioritize smarter, and launch with confidence.</p>
+          <p><i class="fas fa-cube"></i> <strong>Ecosystem vision:</strong> 10 specialized modules — from RevenuePilot to ChurnShield — to simulate feature impact, MVP scope risk, adoption probability, and launch readiness.</p>
+          <p><i class="fas fa-chart-line"></i> Faridex Labs is <strong>not</strong> a project management tool. It’s the <strong>decision evaluation layer</strong> for product teams who want to reduce uncertainty, prioritize smarter, and launch with confidence.</p>
+          <p><i class="fas fa-calendar-alt"></i> Founded with the vision to become the operating intelligence layer for modern product management.</p>
         </div>
       </div>
     </div>
   </section>
 
   <div class="footer">
-    <i class="fas fa-code-branch"></i> Ghulam Farid — Business Strategy & Product Analyst · Quantifying every product decision<br>
-    <span style="font-size: 0.75rem;">© 2025 Faridex Labs | Decision Intelligence Ecosystem</span>
+    <i class="fas fa-brain"></i> Ghulam Farid — Business Strategy & Product Analyst · Quantifying every product decision<br>
+    <span style="font-size: 0.75rem;">© 2026 Faridex Labs | Decision Intelligence Ecosystem</span>
   </div>
 </div>
 
-<!-- MODAL / NEW SCREEN: full product description (RevenuePilot details) -->
+<!-- MODAL: full product description for RevenuePilot (First product) -->
 <div id="productModal" class="modal-overlay">
   <div class="modal-container">
     <div class="modal-header">
-      <h2><i class="fas fa-chart-line"></i> RevenuePilot · Intelligence Engine</h2>
+      <h2><i class="fas fa-chart-line" style="color:#4F46E5;"></i> RevenuePilot · Intelligence Engine</h2>
       <button class="close-modal" id="closeModalBtn"><i class="fas fa-times-circle"></i></button>
     </div>
     <div class="detail-section">
@@ -551,7 +509,7 @@
         <span class="output-chip">Break-even Estimation (months)</span>
         <span class="output-chip">Revenue Risk Level (Low/Med/High)</span>
       </div>
-      <p style="margin-top: 12px; font-size: 0.9rem;">Each score is derived from weighted metrics, market benchmarks, and simulated unit economics.</p>
+      <p style="margin-top: 10px; font-size: 0.9rem; color:#334155;">Each score is derived from weighted metrics, market benchmarks, and simulated unit economics.</p>
     </div>
     <div class="detail-section">
       <h4><i class="fas fa-flag-checkered"></i> Primary Goal</h4>
@@ -560,87 +518,75 @@
     <div class="detail-section">
       <h4><i class="fas fa-rocket"></i> Part of Faridex Labs Ecosystem</h4>
       <p>RevenuePilot is the first module of a complete decision intelligence suite (FeatureImpact OS, ScopeRisk IQ, ChurnShield, PriorityMatrix AI, etc.) that turns product decisions into measurable, comparable intelligence.</p>
-      <div style="background:#111827; padding: 0.8rem; border-radius: 1rem; margin-top: 10px;">
+      <div style="background:#F8FAFE; padding: 0.8rem; border-radius: 1rem; margin-top: 12px; border-left: 3px solid #4F46E5;">
         <i class="fas fa-flask"></i> <strong>Coming soon:</strong> early access for beta testers. Get ready to quantify every product bet.
       </div>
     </div>
-    <div style="margin-top: 1rem; text-align: right;">
-      <button id="closeModalFooterBtn" class="btn-desc" style="background: #2D325A; box-shadow: none;"><i class="fas fa-arrow-left"></i> Close</button>
+    <div style="margin-top: 1.5rem; text-align: right;">
+      <button id="closeModalFooterBtn" class="btn-desc" style="background: #EFF3F8; color:#1E293B; box-shadow: none;"><i class="fas fa-arrow-left"></i> Close</button>
     </div>
   </div>
 </div>
 
 <script>
   (function() {
-    // Get modal elements
-    const modalOverlay = document.getElementById('productModal');
-    const openModalBtn = document.getElementById('openModalBtn');
-    const closeModalBtn = document.getElementById('closeModalBtn');
-    const closeFooterBtn = document.getElementById('closeModalFooterBtn');
+    // Modal handling
+    const modal = document.getElementById('productModal');
+    const openBtn = document.getElementById('openModalBtn');
+    const closeBtn = document.getElementById('closeModalBtn');
+    const closeFooter = document.getElementById('closeModalFooterBtn');
 
-    // Function to open modal (new screen)
     function openModal() {
-      modalOverlay.classList.add('active');
+      modal.classList.add('active');
       document.body.style.overflow = 'hidden';
     }
-
     function closeModal() {
-      modalOverlay.classList.remove('active');
+      modal.classList.remove('active');
       document.body.style.overflow = '';
     }
 
-    // event listeners
-    if (openModalBtn) openModalBtn.addEventListener('click', openModal);
-    if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
-    if (closeFooterBtn) closeFooterBtn.addEventListener('click', closeModal);
+    if (openBtn) openBtn.addEventListener('click', openModal);
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (closeFooter) closeFooter.addEventListener('click', closeModal);
 
-    // Click outside to close
-    modalOverlay.addEventListener('click', function(e) {
-      if (e.target === modalOverlay) {
+    // Click outside overlay closes
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) {
         closeModal();
       }
     });
 
-    // Escape key support
+    // Escape key
     document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
         closeModal();
       }
     });
 
-    // Smooth scroll for navigation links (Home, About)
-    const homeLinks = document.querySelectorAll('.nav-home, a[href="#home"]');
-    const aboutLinks = document.querySelectorAll('.nav-about, a[href="#about"]');
-    
-    homeLinks.forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const homeSection = document.getElementById('home');
-        if (homeSection) {
-          homeSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
-    });
-    
-    aboutLinks.forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const aboutSection = document.getElementById('about');
-        if (aboutSection) {
-          aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
-    });
+    // Smooth scroll for Home and About links
+    const homeLink = document.querySelector('.nav-home');
+    const aboutLink = document.querySelector('.nav-about');
+    const homeSection = document.getElementById('home');
+    const aboutSection = document.getElementById('about');
 
-    // Additionally for any manual hash? we also support initial clean
+    if (homeLink) {
+      homeLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        homeSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
+    if (aboutLink) {
+      aboutLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
+
+    // If URL has hash, handle initial scroll
     if (window.location.hash === '#about') {
-      setTimeout(() => {
-        document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
+      setTimeout(() => aboutSection?.scrollIntoView({ behavior: 'smooth' }), 100);
     } else if (window.location.hash === '#home') {
-      setTimeout(() => {
-        document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
+      setTimeout(() => homeSection?.scrollIntoView({ behavior: 'smooth' }), 100);
     }
   })();
 </script>
