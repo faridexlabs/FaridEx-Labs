@@ -26,7 +26,7 @@
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
       background-color: #F8FAFC; 
-      background-image: 
+      background-image: \
         radial-gradient(circle at 100% 0%, rgba(30, 58, 138, 0.04) 0%, transparent 45%),
         radial-gradient(circle at 0% 100%, rgba(15, 23, 42, 0.02) 0%, transparent 40%);
       color: #0F172A; 
@@ -426,7 +426,7 @@
       height: 85px;
       padding: 0 0.5rem;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      position: relative; /* Context anchor layer for absolute SVG line matrix */
+      position: relative; 
     }
 
     .growth-chart-bar {
@@ -443,6 +443,27 @@
     .bar-green  { background: linear-gradient(to top, #065F46, #34D399); box-shadow: 0 0 10px rgba(52, 211, 153, 0.2); }
     .bar-purple { background: linear-gradient(to top, #6B21A8, #C084FC); box-shadow: 0 0 10px rgba(192, 132, 252, 0.2); }
     .bar-indigo { background: linear-gradient(to top, #3730A3, #818CF8); box-shadow: 0 0 10px rgba(129, 140, 248, 0.2); }
+
+    /* DYNAMIC USER-PC MATRIX MARKER WATCHER */
+    .user-pc-watcher {
+      position: absolute;
+      z-index: 10;
+      pointer-events: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: #0F172A;
+      color: #F59E0B;
+      border: 1px solid rgba(245, 158, 11, 0.6);
+      padding: 3px 5px;
+      border-radius: 4px;
+      font-size: 0.62rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+      transition: all 0.35s cubic-bezier(0.1, 0.8, 0.2, 1);
+      filter: drop-shadow(0 0 4px rgba(245, 158, 11, 0.4));
+    }
+    .user-pc-watcher i.fa-user { color: #FFFFFF; }
+    .user-pc-watcher i.fa-desktop { color: #F59E0B; font-size: 0.58rem; }
 
     .metric-readout-panel {
       display: flex;
@@ -981,6 +1002,11 @@
                 <polyline id="dynamicTrendLine" points="" style="fill: none; stroke: #F59E0B; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0px 0px 5px rgba(245, 158, 11, 0.7)); transition: all 0.35s cubic-bezier(0.1, 0.8, 0.2, 1);" />
               </svg>
 
+              <div id="userTrendWatcher" class="user-pc-watcher">
+                <i class="fas fa-user"></i>
+                <i class="fas fa-desktop"></i>
+              </div>
+
               <div class="growth-chart-bar bar-cyan" style="height: 45%;"></div>
               <div class="growth-chart-bar bar-blue" style="height: 70%;"></div>
               <div class="growth-chart-bar bar-green" style="height: 85%;"></div>
@@ -1196,7 +1222,7 @@
       });
     });
 
-    // INTEGRATED CHROMATIC & TRENDLINE TELEMETRY ENGINE
+    // INTEGRATED CHROMATIC & TRENDLINE TELEMETRY ENGINE WITH LIVE WATCHER
     const conduitTrack = document.getElementById('conduitTrack');
     const chartBars = document.querySelectorAll('.growth-chart-bar');
     const telemetryValue = document.getElementById('telemetryValue');
@@ -1205,6 +1231,7 @@
     const deltaIcon = document.getElementById('deltaIcon');
     const sourceCards = document.querySelectorAll('.pipeline-source-card');
     const dynamicTrendLine = document.getElementById('dynamicTrendLine');
+    const userTrendWatcher = document.getElementById('userTrendWatcher');
     
     let baseFeasibilityScore = 64.50;
 
@@ -1223,9 +1250,11 @@
     // 2. RUNTIME TELEMETRY SYSTEM LOOP (Every 0.5 Seconds)
     function runTelemetryRefresh() {
       let pointsCoordArray = [];
+      let targetWatcherX = 0;
+      let targetWatcherY = 0;
 
       // Loop through each uniquely-gradiented bar node
-      chartBars.forEach((bar) => {
+      chartBars.forEach((bar, index) => {
         const randomHeight = Math.floor(Math.random() * 65) + 30; // Spans wide range: 30% to 95%
         bar.style.height = `${randomHeight}%`;
         
@@ -1233,11 +1262,23 @@
         const posX = bar.offsetLeft + (bar.offsetWidth / 2);
         const posY = 85 - (85 * randomHeight / 100); // 85px canvas base framework
         pointsCoordArray.push(`${posX},${posY}`);
+
+        // Track the middle data cluster (index 2) to anchor the trend analyst
+        if (index === 2) {
+          targetWatcherX = posX;
+          targetWatcherY = posY;
+        }
       });
 
       // Commit coordinates to active SVG polyline
       if (dynamicTrendLine) {
         dynamicTrendLine.setAttribute('points', pointsCoordArray.join(' '));
+      }
+
+      // Synchronously reposition the User + PC widget parallel to the trendline (floating slightly above it)
+      if (userTrendWatcher) {
+        userTrendWatcher.style.left = `${targetWatcherX - 18}px`;
+        userTrendWatcher.style.top = `${targetWatcherY - 26}px`;
       }
 
       // Expand calculation steps to target a sweeping wide index window (30.00% to 95.00%)
