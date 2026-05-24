@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Faridex Labs — Decision Intelligence for Product Teams</title>
-  <!-- Inter Font (matching faridsview.netlify.app) -->
+  <!-- Inter Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
@@ -20,39 +20,58 @@
       color: #1E293B;
       scroll-behavior: smooth;
       line-height: 1.5;
+      /* padding top to account for fixed header */
+      padding-top: 88px;
     }
 
-    .container {
+    /* FIXED HEADER */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(2px);
+      box-shadow: 0 1px 0 #E9EDF2;
+      z-index: 1000;
+      padding: 1rem 28px;
+    }
+
+    .navbar .container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 28px;
-    }
-
-    /* Navigation */
-    .navbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1.6rem 0;
-      flex-wrap: wrap;
-      gap: 1.2rem;
-      border-bottom: 1px solid #E9EDF2;
+      gap: 1rem;
     }
 
-    .logo-area h1 {
-      font-size: 1.8rem;
-      font-weight: 700;
-      background: linear-gradient(135deg, #0F172A 0%, #3B3F5C 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      letter-spacing: -0.02em;
+    /* logo area: "Farid" black, "ex" blue, "Labs" black/grey */
+    .logo-area {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
     }
-    .logo-area p {
-      font-size: 0.85rem;
+    .logo-main {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+    .logo-main .farid {
+      color: #0F172A;  /* black-ish */
+    }
+    .logo-main .ex {
+      color: #4F46E5;  /* brand blue */
+    }
+    .logo-main .labs {
+      color: #334155;
+    }
+    .logo-area .tagline {
+      font-size: 0.7rem;
       color: #5B6E8C;
       letter-spacing: 0.2px;
       font-weight: 500;
+      margin-top: 2px;
     }
 
     .nav-links {
@@ -73,13 +92,20 @@
       padding-bottom: 2px;
     }
 
+    /* main container (non-fixed content) */
+    .content-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
     /* Hero grid */
     .hero-grid {
       display: flex;
       flex-wrap: wrap;
       gap: 3rem;
       align-items: center;
-      margin: 3.5rem 0 5rem 0;
+      margin: 2.5rem 0 4rem 0;
     }
     .hero-text {
       flex: 1.2;
@@ -96,7 +122,7 @@
       border: 0.5px solid #C7D2FE;
     }
     .hero-text h2 {
-      font-size: 3rem;
+      font-size: 2.8rem;
       font-weight: 800;
       line-height: 1.2;
       letter-spacing: -0.02em;
@@ -108,10 +134,10 @@
       border-bottom: 3px solid #E0E7FF;
     }
     .hero-text p {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       color: #475569;
       max-width: 90%;
-      margin-bottom: 1.8rem;
+      margin-bottom: 1.5rem;
     }
     .product-card-area {
       flex: 0.9;
@@ -119,11 +145,11 @@
       justify-content: center;
     }
 
-    /* Single product card (light & clean) */
+    /* Product card */
     .featured-card {
       background: #FFFFFF;
       border-radius: 1.5rem;
-      padding: 1.8rem;
+      padding: 1.6rem;
       border: 1px solid #EFF3F8;
       box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.02);
       transition: transform 0.2s ease, box-shadow 0.2s;
@@ -140,7 +166,7 @@
       color: #B45309;
       border-radius: 100px;
       padding: 0.2rem 1rem;
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       font-weight: 700;
       display: inline-block;
       margin-bottom: 1rem;
@@ -158,44 +184,46 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
     }
     .featured-card p {
       color: #475569;
-      margin-bottom: 1.6rem;
-      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
       line-height: 1.5;
     }
+    /* ROUNDED RECTANGLE WITH BLUE BORDER BUTTON */
     .btn-desc {
-      background: #4F46E5;
-      border: none;
-      color: white;
+      background: transparent;
+      border: 2px solid #4F46E5;
+      color: #4F46E5;
       font-weight: 600;
-      padding: 0.7rem 1.4rem;
+      padding: 0.6rem 1.4rem;
       border-radius: 2rem;
       cursor: pointer;
       font-size: 0.85rem;
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      transition: all 0.2s;
-      box-shadow: 0 2px 6px rgba(79, 70, 229, 0.2);
+      transition: all 0.2s ease;
+      box-shadow: none;
     }
     .btn-desc:hover {
-      background: #6366F1;
+      background: #4F46E5;
+      color: white;
       transform: scale(1.02);
     }
 
-    /* About section (elite positioning) */
+    /* About section */
     .about-section {
-      margin: 3rem 0 5rem 0;
+      margin: 2rem 0 4rem 0;
       background: #F8FAFE;
       border-radius: 1.5rem;
-      padding: 2.2rem;
+      padding: 2rem;
       border: 1px solid #EFF3F8;
     }
     .about-section h3 {
-      font-size: 1.6rem;
+      font-size: 1.5rem;
       margin-bottom: 0.8rem;
       font-weight: 700;
       display: flex;
@@ -284,7 +312,7 @@
       padding: 2rem 0 2.5rem;
       border-top: 1px solid #E9EDF2;
       margin-top: 1rem;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       color: #5B6E8C;
     }
 
@@ -297,7 +325,7 @@
       height: 100%;
       background-color: rgba(15, 23, 42, 0.8);
       backdrop-filter: blur(4px);
-      z-index: 1000;
+      z-index: 1100;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -388,28 +416,76 @@
       color: #1E40AF;
     }
 
-    @media (max-width: 750px) {
-      .hero-text h2 {
-        font-size: 2.2rem;
+    /* MOBILE: keep both logo and nav in same line, no wrap, reduce logo size */
+    @media (max-width: 680px) {
+      body {
+        padding-top: 75px;
       }
       .navbar {
-        flex-direction: column;
-        align-items: flex-start;
+        padding: 0.7rem 20px;
       }
-      .hero-grid {
-        flex-direction: column;
+      .navbar .container {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+      }
+      .logo-main {
+        font-size: 1.2rem;
+      }
+      .logo-area .tagline {
+        font-size: 0.6rem;
+      }
+      .nav-links {
+        gap: 1.2rem;
+      }
+      .nav-links a {
+        font-size: 0.9rem;
+      }
+      .hero-text h2 {
+        font-size: 2rem;
       }
       .hero-text p {
-        max-width: 100%;
+        font-size: 0.95rem;
       }
-      .about-grid {
-        flex-direction: column;
+      .hero-grid {
+        gap: 2rem;
       }
-      .contact-details {
-        flex-direction: column;
+      .featured-card {
+        padding: 1.2rem;
+      }
+      .btn-desc {
+        padding: 0.5rem 1.2rem;
+        font-size: 0.8rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .navbar .container {
         gap: 0.8rem;
-        align-items: center;
       }
+      .logo-main {
+        font-size: 1rem;
+      }
+      .nav-links {
+        gap: 1rem;
+      }
+      .hero-text h2 {
+        font-size: 1.8rem;
+      }
+    }
+
+    /* additional utility */
+    .inline-stats {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+    .stat-pill {
+      background: #F1F4F9;
+      padding: 0.4rem 1rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 500;
     }
     button {
       background: none;
@@ -432,19 +508,24 @@
 </head>
 <body>
 
-<div class="container">
-  <!-- Navigation: only Home and About tabs, no name badge -->
-  <div class="navbar">
+<!-- FIXED HEADER (always visible) -->
+<div class="navbar">
+  <div class="container">
     <div class="logo-area">
-      <h1>Faridex Labs</h1>
-      <p>Quantifying Product Decisions</p>
+      <div class="logo-main">
+        <span class="farid">Farid</span><span class="ex">ex</span> <span class="labs">Labs</span>
+      </div>
+      <div class="tagline">Quantifying Product Decisions</div>
     </div>
     <div class="nav-links">
       <a href="#home" class="nav-home">Home</a>
       <a href="#about" class="nav-about">About</a>
     </div>
   </div>
+</div>
 
+<!-- MAIN CONTENT (offset by padding on body) -->
+<div class="content-container">
   <!-- HOME section -->
   <section id="home">
     <div class="hero-grid">
@@ -452,25 +533,26 @@
         <div class="tag"><i class="fas fa-chart-line"></i> Decision Intelligence Ecosystem</div>
         <h2>Turn uncertainty into <span>measurable scores</span> before a single line of code.</h2>
         <p>Faridex Labs helps PMs, founders & product teams evaluate features, predict adoption, and reduce launch risks — with structured scoring engines.</p>
-        <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
-          <span style="background:#F1F4F9; padding: 0.4rem 1rem; border-radius: 40px; font-size:0.8rem; font-weight:500;"><i class="fas fa-cubes"></i> 10+ intelligence modules</span>
-          <span style="background:#F1F4F9; padding: 0.4rem 1rem; border-radius: 40px; font-size:0.8rem; font-weight:500;"><i class="fas fa-chart-simple"></i> predictive evaluation</span>
+        <div class="inline-stats">
+          <span class="stat-pill"><i class="fas fa-cubes"></i> 10+ intelligence modules</span>
+          <span class="stat-pill"><i class="fas fa-chart-simple"></i> predictive evaluation</span>
         </div>
       </div>
       <div class="product-card-area">
-        <!-- Only one product card: RevenuePilot Coming Soon -->
+        <!-- single product card: RevenuePilot Coming Soon -->
         <div class="featured-card">
           <div class="coming-soon-badge"><i class="fas fa-hourglass-half"></i> First release · Coming Soon</div>
           <h3>RevenuePilot</h3>
           <div class="module-sub"><i class="fas fa-coins"></i> Revenue Feasibility Intelligence Engine</div>
           <p>Stop building financially weak features. RevenuePilot evaluates revenue potential before dev starts — using pricing models, adoption estimates and market data.</p>
+          <!-- blue border rounded button -->
           <button class="btn-desc" id="openModalBtn"><i class="fas fa-info-circle"></i> Full description</button>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT section (elite positioning, no GPA/certifications) -->
+  <!-- ABOUT section -->
   <section id="about">
     <div class="about-section">
       <h3><i class="fas fa-bullhorn"></i> About Faridex Labs & Founder</h3>
@@ -491,7 +573,7 @@
         </div>
       </div>
 
-      <!-- Contact Info: replaced email with faridexlabs@gmail.com, kept mobile same -->
+      <!-- Contact Info -->
       <div class="contact-info">
         <h4><i class="fas fa-address-card"></i> Connect with Faridex Labs</h4>
         <div class="contact-details">
@@ -555,7 +637,7 @@
       </div>
     </div>
     <div style="margin-top: 1.5rem; text-align: right;">
-      <button id="closeModalFooterBtn" class="btn-desc" style="background: #EFF3F8; color:#1E293B; box-shadow: none;"><i class="fas fa-arrow-left"></i> Close</button>
+      <button id="closeModalFooterBtn" class="btn-desc" style="background: transparent; border: 2px solid #4F46E5; color:#4F46E5;"><i class="fas fa-arrow-left"></i> Close</button>
     </div>
   </div>
 </div>
@@ -593,11 +675,24 @@
     const aboutLink = document.querySelector('.nav-about');
     const homeSection = document.getElementById('home');
     const aboutSection = document.getElementById('about');
-    if (homeLink) homeLink.addEventListener('click', (e) => { e.preventDefault(); homeSection.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
-    if (aboutLink) aboutLink.addEventListener('click', (e) => { e.preventDefault(); aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+    if (homeLink) {
+      homeLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        homeSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
+    if (aboutLink) {
+      aboutLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
 
-    if (window.location.hash === '#about') setTimeout(() => aboutSection?.scrollIntoView({ behavior: 'smooth' }), 100);
-    else if (window.location.hash === '#home') setTimeout(() => homeSection?.scrollIntoView({ behavior: 'smooth' }), 100);
+    if (window.location.hash === '#about') {
+      setTimeout(() => aboutSection?.scrollIntoView({ behavior: 'smooth' }), 100);
+    } else if (window.location.hash === '#home') {
+      setTimeout(() => homeSection?.scrollIntoView({ behavior: 'smooth' }), 100);
+    }
   })();
 </script>
 </body>
