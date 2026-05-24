@@ -31,7 +31,7 @@
         radial-gradient(circle at 0% 100%, rgba(15, 23, 42, 0.02) 0%, transparent 40%);
       color: #0F172A; 
       line-height: 1.65;
-      padding-top: 135px; /* Accounted for double-tier premium dark navbar grid */
+      padding-top: 135px;
       -webkit-font-smoothing: antialiased;
       letter-spacing: -0.01em;
     }
@@ -43,13 +43,13 @@
       letter-spacing: -0.015em;
     }
 
-    /* ELITE DARK MULTI-TIER NAV SYSTEM */
+    /* ELITE DARK NAV SYSTEM */
     .navbar {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      background: #0A192F; /* Deep premium dark canvas background */
+      background: #0A192F; 
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       z-index: 1000;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
@@ -84,7 +84,7 @@
     }
 
     .logo-main .ex {
-      color: #38BDF8; /* Premium sharp blue highlight */
+      color: #38BDF8; 
       font-style: italic;
     }
 
@@ -112,14 +112,12 @@
       text-transform: uppercase;
       letter-spacing: 0.06em;
       transition: color 0.2s ease;
-      position: relative;
     }
 
     .nav-links a:hover {
       color: #38BDF8;
     }
 
-    /* Premium Sub-Header Status Ribbon Track (Matching Reference Image) */
     .nav-status-tier {
       background: #1E293B;
       border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -149,24 +147,15 @@
     }
 
     section {
-      padding: 80px 0 50px 0;
+      padding: 60px 0 50px 0;
     }
 
-    /* MCKINSEY HERO ASYMMETRIC GRID ARCHITECTURE */
-    .hero-section {
-      padding-top: 45px;
-      padding-bottom: 55px;
-    }
-
+    /* HERO ASYMMETRIC GRID ARCHITECTURE */
     .hero-grid-layout {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 4rem;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
       align-items: center;
-    }
-
-    .hero-left-content {
-      text-align: left;
     }
 
     .hero-left-content .section-label {
@@ -185,7 +174,7 @@
     }
 
     .hero-title {
-      font-size: 3.5rem;
+      font-size: 3.3rem;
       line-height: 1.2;
       margin-bottom: 1.75rem;
       color: #0F172A;
@@ -193,7 +182,7 @@
 
     .hero-title em {
       font-weight: 400;
-      color: #2563EB; /* Elegant blue focus */
+      color: #2563EB; 
     }
 
     .hero-subtitle {
@@ -203,7 +192,6 @@
       line-height: 1.75;
     }
 
-    /* ACTION WRAPPER FRAME */
     .hero-action-row {
       display: flex;
       gap: 1.25rem;
@@ -211,7 +199,6 @@
       flex-wrap: wrap;
     }
 
-    /* SHINING INTERACTIVE CALL-TO-ACTION BUTTONS */
     .btn-shine-premium {
       position: relative;
       background: linear-gradient(135deg, #1E3A8A 0%, #0F172A 100%);
@@ -234,7 +221,6 @@
       text-decoration: none;
     }
 
-    /* Loop Light Ray Shine Effect Animation */
     .btn-shine-premium::after {
       content: '';
       position: absolute;
@@ -242,12 +228,7 @@
       left: -60%;
       width: 30%;
       height: 200%;
-      background: linear-gradient(
-        to right,
-        rgba(255, 255, 255, 0) 0%,
-        rgba(255, 255, 255, 0.3) 50%,
-        rgba(255, 255, 255, 0) 100%
-      );
+      background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
       transform: rotate(25deg);
       animation: buttonShineRay 4.5s infinite ease-in-out;
     }
@@ -283,169 +264,259 @@
       text-decoration: none;
     }
 
-    .btn-outline-executive:hover {
-      background: #F8FAFC;
-      border-color: #94A3B8;
-      color: #0F172A;
-    }
-
-    /* RIGHT COLUMN HIGH-END FLOATING OVERLAY & TELEMETRY MODULES */
-    .hero-right-stack {
+    /* DIGITAL PIPELINE & PROCESSING HUB VISUAL */
+    .pipeline-dashboard-container {
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
-      animation: floatingAsset 6s infinite ease-in-out;
-    }
-
-    @keyframes floatingAsset {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
-      100% { transform: translateY(0px); }
-    }
-
-    .interactive-track-pill {
       background: #FFFFFF;
       border: 1px solid #E2E8F0;
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.06);
+      position: relative;
+    }
+
+    .source-cards-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      z-index: 2;
+    }
+
+    .pipeline-source-card {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 1rem 0.75rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+
+    .pipeline-source-card i {
+      font-size: 1.25rem;
+      color: #475569;
+      margin-bottom: 0.5rem;
+      transition: transform 0.3s, color 0.3s;
+    }
+
+    .pipeline-source-card h4 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #334155;
+    }
+
+    .pipeline-source-card p {
+      font-size: 0.68rem;
+      color: #64748B;
+      margin-top: 2px;
+    }
+
+    /* Hover & Active System States */
+    .pipeline-source-card:hover, .pipeline-source-card.active {
+      background: #FFFFFF;
+      border-color: #2563EB;
+      box-shadow: 0 10px 20px -5px rgba(37, 99, 235, 0.15);
+      transform: translateY(-3px);
+    }
+
+    .pipeline-source-card:hover i, .pipeline-source-card.active i {
+      color: #2563EB;
+      transform: scale(1.1);
+    }
+
+    /* THE DROP CONDUIT SPACE */
+    .conduit-channel {
+      height: 70px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .stream-line-conduit {
+      position: absolute;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(to bottom, #E2E8F0, rgba(37, 99, 235, 0.4), #1E3A8A);
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    /* Falling Data Nodes Simulation */
+    .data-packet-node {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: #2563EB;
+      border-radius: 50%;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      box-shadow: 0 0 8px #38BDF8;
+    }
+
+    .conduit-channel.processing .data-packet-node {
+      animation: dropDataPacket 1.2s infinite linear;
+    }
+
+    @keyframes dropDataPacket {
+      0% { top: 0%; opacity: 0; transform: translateX(-50%) scale(0.6); }
+      20% { opacity: 1; }
+      80% { opacity: 1; }
+      100% { top: 100%; opacity: 0; transform: translateX(-50%) scale(1.2); }
+    }
+
+    /* THE FARIDEX CENTRAL PROCESSING BUCKET */
+    .faridex-processing-bucket {
+      background: linear-gradient(135deg, #0A192F 0%, #1E293B 100%);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 12px;
       padding: 1.5rem;
-      display: grid;
-      grid-template-columns: auto 1fr auto;
-      align-items: center;
-      gap: 1.25rem;
-      box-shadow: 0 10px 25px -15px rgba(15, 23, 42, 0.08);
-      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      color: #FFFFFF;
       position: relative;
+      box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3), 0 12px 24px -10px rgba(10, 25, 47, 0.4);
       overflow: hidden;
     }
 
-    .pill-icon-frame {
-      width: 48px;
-      height: 48px;
-      background: rgba(37, 99, 235, 0.06);
-      border-radius: 8px;
+    .bucket-header-zone {
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
-      color: #2563EB;
-      font-size: 1.2rem;
-      transition: all 0.3s ease;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 0.75rem;
+      margin-bottom: 1.25rem;
     }
 
-    .pill-meta {
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
-    }
-
-    .pill-meta h4 {
+    .bucket-title-meta h5 {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 1.1rem;
+      font-size: 0.95rem;
       font-weight: 700;
-      color: #0F172A;
+      color: #FFFFFF;
       letter-spacing: -0.01em;
     }
 
-    .pill-meta p {
-      font-size: 0.8rem;
-      color: #64748B;
-      font-weight: 500;
+    .bucket-title-meta p {
+      font-size: 0.7rem;
+      color: #38BDF8;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 1px;
     }
 
-    /* PREMIUM EMBEDDED DATA TELEMETRY VECTORS */
-    .pill-telemetry-engine {
+    .engine-status-puck {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 3px 8px;
+      border-radius: 4px;
+      color: #10B981;
+    }
+
+    .engine-status-puck.active-load {
+      animation: heartbeatPuck 1.5s infinite ease-in-out;
+    }
+
+    @keyframes heartbeatPuck {
+      0%, 100% { opacity: 0.8; }
+      50% { opacity: 1; background: rgba(16, 185, 129, 0.2); }
+    }
+
+    /* THE ARISING TELEMETRY / METRIC VECTORS (GROWTH OUTCOMES) */
+    .telemetry-output-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 1.25rem;
+      align-items: center;
+    }
+
+    /* Growth bars surging upward */
+    .growth-bars-display {
       display: flex;
-      flex-direction: column;
       align-items: flex-end;
-      gap: 0.35rem;
-      padding-right: 0.5rem;
-    }
-
-    /* Live Data Sparkline Simulation Row */
-    .sparkline-vector {
-      display: flex;
-      align-items: flex-end;
-      gap: 3px;
-      height: 16px;
-    }
-
-    .spark-bar {
-      width: 3px;
-      background: #CBD5E1;
-      border-radius: 1px;
-      transition: all 0.3s ease;
-    }
-
-    /* Dynamic heights mimicking changing charts */
-    .sparkline-vector .bar-1 { height: 40%; animation: barPulse 1.8s infinite alternate ease-in-out; }
-    .sparkline-vector .bar-2 { height: 85%; animation: barPulse 1.2s infinite alternate ease-in-out 0.2s; }
-    .sparkline-vector .bar-3 { height: 55%; animation: barPulse 1.5s infinite alternate ease-in-out 0.4s; }
-    .sparkline-vector .bar-4 { height: 100%; animation: barPulse 1.1s infinite alternate ease-in-out 0.1s; }
-    .sparkline-vector .bar-5 { height: 70%; animation: barPulse 1.6s infinite alternate ease-in-out 0.3s; }
-
-    @keyframes barPulse {
-      0% { transform: scaleY(0.4); background-color: #CBD5E1; }
-      100% { transform: scaleY(1.1); background-color: #2563EB; }
-    }
-
-    /* Processing Line Status Trackers */
-    .live-status-line {
-      width: 65px;
-      height: 3px;
-      background: #F1F5F9;
-      border-radius: 2px;
+      justify-content: space-between;
+      height: 75px;
+      padding: 0 0.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       position: relative;
-      overflow: hidden;
     }
 
-    .live-status-line::after {
+    .growth-chart-bar {
+      width: 14%;
+      background: linear-gradient(to top, #1E3A8A, #2563EB);
+      border-radius: 3px 3px 0 0;
+      height: 20%;
+      transition: height 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+
+    .growth-chart-bar::after {
       content: '';
       position: absolute;
-      left: 0;
       top: 0;
+      left: 0;
+      width: 100%;
       height: 100%;
-      width: 40%;
-      background: #10B981; /* Premium Active Status Teal Line */
-      border-radius: 2px;
-      animation: trackingScan 2s infinite linear;
+      background: linear-gradient(to top, transparent, rgba(56, 189, 248, 0.4));
+      opacity: 0;
+      transition: opacity 0.3s;
     }
 
-    @keyframes trackingScan {
-      0% { left: -40%; width: 30%; }
-      50% { width: 50%; }
-      100% { left: 110%; width: 20%; }
+    /* Dynamic runtime growth states triggered by layout engine */
+    .pipeline-dashboard-container.load-state-1 .bar-a { height: 85%; }
+    .pipeline-dashboard-container.load-state-1 .bar-b { height: 45%; }
+    .pipeline-dashboard-container.load-state-1 .bar-c { height: 95%; }
+    .pipeline-dashboard-container.load-state-1 .bar-d { height: 60%; }
+    .pipeline-dashboard-container.load-state-1 .bar-e { height: 75%; }
+
+    .pipeline-dashboard-container.load-state-2 .bar-a { height: 40%; }
+    .pipeline-dashboard-container.load-state-2 .bar-b { height: 90%; }
+    .pipeline-dashboard-container.load-state-2 .bar-c { height: 65%; }
+    .pipeline-dashboard-container.load-state-2 .bar-d { height: 80%; }
+    .pipeline-dashboard-container.load-state-2 .bar-e { height: 50%; }
+
+    .pipeline-dashboard-container.load-state-3 .bar-a { height: 70%; }
+    .pipeline-dashboard-container.load-state-3 .bar-b { height: 60%; }
+    .pipeline-dashboard-container.load-state-3 .bar-c { height: 55%; }
+    .pipeline-dashboard-container.load-state-3 .bar-d { height: 95%; }
+    .pipeline-dashboard-container.load-state-3 .bar-e { height: 90%; }
+
+    /* Ascending Growth Rate Numbers Panel */
+    .metric-readout-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      text-align: right;
     }
 
-    .pill-arrow-indicator {
+    .metric-readout-panel .value-node {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: #38BDF8;
+      line-height: 1;
+    }
+
+    .metric-readout-panel .label-node {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
       color: #94A3B8;
-      font-size: 0.9rem;
-      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s;
-    }
-
-    /* UPLIFTED PILL HOVER STATES */
-    .interactive-track-pill:hover {
-      transform: translateY(-4px) scale(1.02);
-      border-color: #2563EB;
-      box-shadow: 0 20px 35px -10px rgba(30, 58, 138, 0.12);
-    }
-
-    .interactive-track-pill:hover .pill-icon-frame {
-      background: #2563EB;
-      color: #FFFFFF;
-    }
-
-    .interactive-track-pill:hover .spark-bar {
-      background-color: #1E3A8A;
-    }
-
-    .interactive-track-pill:hover .pill-arrow-indicator {
-      color: #2563EB;
-      transform: translateX(4px);
     }
 
     /* SCALABLE PRODUCT GRID SYSTEM */
     .products-grid-section {
       border-top: 1px solid #E2E8F0;
-      padding-top: 70px;
+      padding-top: 60px;
     }
 
     .section-header-area {
@@ -799,123 +870,15 @@
       overflow-y: auto;
     }
 
-    .modal-overlay.active .modal-container {
-      transform: scale(1);
-    }
-
-    .modal-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #E2E8F0;
-      padding-bottom: 1.5rem;
-      margin-bottom: 2rem;
-    }
-
-    .modal-header h2 {
-      font-size: 1.8rem;
-    }
-
-    .close-modal {
-      background: none;
-      border: none;
-      color: #94A3B8;
-      font-size: 1.5rem;
-      cursor: pointer;
-      transition: color 0.2s;
-    }
-
-    .close-modal:hover {
-      color: #0F172A;
-    }
-
-    .detail-section {
-      margin-bottom: 2rem;
-    }
-
-    .detail-section h4 {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: #1E3A8A;
-      margin-bottom: 0.6rem;
-      font-weight: 700;
-    }
-
-    .detail-section p {
-      color: #475569;
-      font-size: 1rem;
-      line-height: 1.7;
-    }
-
-    .badge-container, .grid-outputs {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-top: 0.75rem;
-    }
-
-    .input-badge {
-      background: #F1F5F9;
-      padding: 0.4rem 1rem;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: #334155;
-      border: 1px solid #E2E8F0;
-    }
-
-    .output-chip {
-      background: #F0FDF4;
-      border: 1px solid #BBF7D0;
-      padding: 0.4rem 1rem;
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: #166534;
-    }
-
-    .ecosystem-callout {
-      background: #F8FAFC;
-      padding: 1.25rem;
-      margin-top: 15px;
-      border-left: 3px solid #64748B;
-      font-size: 0.95rem;
-      color: #334155;
-      line-height: 1.6;
-    }
-
-    .btn-secondary-close {
-      background: #F1F5F9;
-      border: 1px solid #CBD5E1;
-      color: #334155;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      font-weight: 700;
-      padding: 0.75rem 1.5rem;
-      cursor: pointer;
-      font-size: 0.8rem;
-      transition: all 0.2s;
-    }
-
-    .btn-secondary-close:hover {
-      background: #0F172A;
-      color: #FFFFFF;
-      border-color: #0F172A;
-    }
-
     /* RESPONSIVE LAYOUT ENGINE */
     @media (max-width: 1024px) {
       .hero-grid-layout {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: 3.5rem;
       }
       .about-grid {
         grid-template-columns: 1fr;
         gap: 3.5rem;
-      }
-      .hero-right-stack {
-        animation: none; /* Turn off float movement vectors on touch tablets */
       }
     }
 
@@ -935,12 +898,8 @@
       .nav-links a {
         font-size: 0.75rem;
       }
-      .status-flex {
-        justify-content: center;
-        font-size: 0.65rem;
-      }
       section {
-        padding: 50px 0 35px 0;
+        padding: 40px 0 30px 0;
       }
       .hero-title {
         font-size: 2.35rem;
@@ -958,9 +917,6 @@
       .products-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
-      }
-      .premium-product-card {
-        padding: 2.25rem 1.75rem;
       }
     }
   </style>
@@ -1014,59 +970,54 @@
         </div>
       </div>
 
-      <div class="hero-right-stack">
+      <div class="pipeline-dashboard-container load-state-1" id="dashboardHub">
         
-        <div class="interactive-track-pill">
-          <div class="pill-icon-frame"><i class="fas fa-chart-line"></i></div>
-          <div class="pill-meta">
+        <div class="source-cards-row">
+          <div class="pipeline-source-card active" data-target-state="1" id="cardAnalysis">
+            <i class="fas fa-chart-line"></i>
             <h4>Analysis</h4>
-            <p>Quantitative Matrix Logic</p>
+            <p>Quantitative Logic</p>
           </div>
-          <div class="pill-telemetry-engine">
-            <div class="sparkline-vector">
-              <div class="spark-bar bar-1"></div>
-              <div class="spark-bar bar-2"></div>
-              <div class="spark-bar bar-3"></div>
-              <div class="spark-bar bar-4"></div>
-              <div class="spark-bar bar-5"></div>
-            </div>
-            <div class="live-status-line"></div>
-          </div>
-        </div>
-
-        <div class="interactive-track-pill">
-          <div class="pill-icon-frame"><i class="fas fa-compass"></i></div>
-          <div class="pill-meta">
+          <div class="pipeline-source-card" data-target-state="2" id="cardStrategy">
+            <i class="fas fa-compass"></i>
             <h4>Strategy</h4>
-            <p>Risk Vulnerability Buffers</p>
+            <p>Risk Vulnerability</p>
           </div>
-          <div class="pill-telemetry-engine">
-            <div class="sparkline-vector">
-              <div class="spark-bar bar-3"></div>
-              <div class="spark-bar bar-5"></div>
-              <div class="spark-bar bar-1"></div>
-              <div class="spark-bar bar-2"></div>
-              <div class="spark-bar bar-4"></div>
-            </div>
-            <div class="live-status-line"></div>
+          <div class="pipeline-source-card" data-target-state="3" id="cardExecution">
+            <i class="fas fa-gears"></i>
+            <h4>Execution</h4>
+            <p>Pre-Dev Verification</p>
           </div>
         </div>
 
-        <div class="interactive-track-pill">
-          <div class="pill-icon-frame"><i class="fas fa-gears"></i></div>
-          <div class="pill-meta">
-            <h4>Execution</h4>
-            <p>Pre-Development Verification</p>
-          </div>
-          <div class="pill-telemetry-engine">
-            <div class="sparkline-vector">
-              <div class="spark-bar bar-5"></div>
-              <div class="spark-bar bar-2"></div>
-              <div class="spark-bar bar-4"></div>
-              <div class="spark-bar bar-1"></div>
-              <div class="spark-bar bar-3"></div>
+        <div class="conduit-channel processing" id="conduitTrack">
+          <div class="stream-line-conduit"></div>
+          <div class="data-packet-node"></div>
+        </div>
+
+        <div class="faridex-processing-bucket">
+          <div class="bucket-header-zone">
+            <div class="bucket-title-meta">
+              <h5>FaridEx Lab Engine Core</h5>
+              <p id="activeTrackLabel">Active Node: Analysis Metrics</p>
             </div>
-            <div class="live-status-line"></div>
+            <div class="engine-status-puck active-load">
+              <i class="fas fa-circle" style="font-size:0.5rem; margin-right:2px;"></i> Processing
+            </div>
+          </div>
+
+          <div class="telemetry-output-grid">
+            <div class="growth-bars-display">
+              <div class="growth-chart-bar bar-a"></div>
+              <div class="growth-chart-bar bar-b"></div>
+              <div class="growth-chart-bar bar-c"></div>
+              <div class="growth-chart-bar bar-d"></div>
+              <div class="growth-chart-bar bar-e"></div>
+            </div>
+            <div class="metric-readout-panel">
+              <div class="value-node" id="telemetryValue">88.4%</div>
+              <div class="label-node">Feasibility Growth Index</div>
+            </div>
           </div>
         </div>
 
@@ -1230,6 +1181,7 @@
 
 <script>
   (function() {
+    // MODAL ACCESS CONTROLLER
     const modal = document.getElementById('productModal');
     const openBtn = document.getElementById('openModalBtn');
     const closeBtn = document.getElementById('closeModalBtn');
@@ -1247,14 +1199,9 @@
     if (openBtn) openBtn.addEventListener('click', openModal);
     if (closeBtn) closeBtn.addEventListener('click', closeModal);
     if (closeFooter) closeFooter.addEventListener('click', closeModal);
+    modal.addEventListener('click', function(e) { if (e.target === modal) closeModal(); });
 
-    modal.addEventListener('click', function(e) {
-      if (e.target === modal) closeModal();
-    });
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
-    });
-
+    // NAVIGATION SMOOTH SCROLL INTEGRATION
     const productsLinks = document.querySelectorAll('.nav-products');
     const aboutLinks = document.querySelectorAll('.nav-about');
     const productsSection = document.getElementById('products');
@@ -1266,13 +1213,78 @@
         productsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
-
     aboutLinks.forEach(link => {
       link.addEventListener('click', (e) => {
         e.preventDefault();
         aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
+
+    // INTERACTIVE RUNTIME DATA PIPELINE ANIMATION LOGIC
+    const dashboardHub = document.getElementById('dashboardHub');
+    const sourceCards = document.querySelectorAll('.pipeline-source-card');
+    const activeTrackLabel = document.getElementById('activeTrackLabel');
+    const telemetryValue = document.getElementById('telemetryValue');
+    const conduitTrack = document.getElementById('conduitTrack');
+
+    const telemetryDataConfigs = {
+      "1": { label: "Active Node: Analysis Metrics", value: "91.4%", class: "load-state-1" },
+      "2": { label: "Active Node: Strategy Simulation", value: "78.2%", class: "load-state-2" },
+      "3": { label: "Active Node: Execution Telemetry", value: "96.8%", class: "load-state-3" }
+    };
+
+    function processStateTransition(targetIndex) {
+      // 1. Clear old system statuses
+      sourceCards.forEach(c => c.classList.remove('active'));
+      conduitTrack.classList.remove('processing');
+      
+      // 2. Trigger drop drop visual packet animation
+      void conduitTrack.offsetWidth; // Force CSS reflow node
+      conduitTrack.classList.add('processing');
+
+      // 3. Update state data parameters once dropped into core bucket
+      setTimeout(() => {
+        const config = telemetryDataConfigs[targetIndex];
+        
+        // Remove previous structural state classes
+        dashboardHub.classList.remove('load-state-1', 'load-state-2', 'load-state-3');
+        dashboardHub.classList.add(config.class);
+        
+        activeTrackLabel.textContent = config.label;
+        telemetryValue.textContent = config.value;
+      }, 300);
+    }
+
+    sourceCards.forEach(card => {
+      card.addEventListener('mouseenter', function() {
+        const targetState = this.getAttribute('data-target-state');
+        sourceCards.forEach(c => c.classList.remove('active'));
+        this.classList.add('active');
+        processStateTransition(targetState);
+      });
+
+      card.addEventListener('click', function() {
+        const targetState = this.getAttribute('data-target-state');
+        sourceCards.forEach(c => c.classList.remove('active'));
+        this.classList.add('active');
+        processStateTransition(targetState);
+      });
+    });
+
+    // Run an automated looping check to rotate states every 5 seconds if left idle
+    let idleLoopInterval = setInterval(() => {
+      let currentActive = document.querySelector('.pipeline-source-card.active');
+      let nextActive = currentActive.nextElementSibling || sourceCards[0];
+      
+      if(nextActive && nextActive.classList.contains('pipeline-source-card')) {
+        currentActive.classList.remove('active');
+        nextActive.classList.add('active');
+        processStateTransition(nextActive.getAttribute('data-target-state'));
+      }
+    }, 5000);
+
+    // Cancel automation loop whenever user manual interface engagement occurs
+    dashboardHub.addEventListener('mouseenter', () => clearInterval(idleLoopInterval));
   })();
 </script>
 </body>
