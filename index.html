@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>FaridEx Labs — Institutional Decision Intelligence & Strategic Analysis</title>
+  <title>FaridEx Labs — Decision Intelligence for Product Teams</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,7 +25,7 @@
 
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      /* Off-white canvas base layer to avoid harsh flat-white glare */
+      /* Premium off-white canvas base layer to avoid harsh flat-white glare */
       background-color: #F8FAFC; 
       background-image: 
         radial-gradient(circle at 100% 0%, rgba(30, 58, 138, 0.03) 0%, transparent 40%),
@@ -45,7 +45,7 @@
       letter-spacing: -0.02em;
     }
 
-    /* COMPACT DYNAMIC NAVIGATION (Optimized for Desktop & Mobile) */
+    /* COMPACT DYNAMIC NAVIGATION */
     .navbar {
       position: fixed;
       top: 0;
@@ -154,9 +154,10 @@
 
     .hero-title {
       font-size: 3.75rem;
-      line-height: 1.15;
+      line-height: 1.2;
       margin-bottom: 2rem;
       color: #0F172A;
+      word-wrap: break-word;
     }
 
     .hero-title em {
@@ -170,6 +171,7 @@
       max-width: 85%;
       margin: 0 auto 3rem auto;
       line-height: 1.8;
+      text-align: center;
     }
 
     .inline-stats {
@@ -197,7 +199,7 @@
       color: #1E3A8A;
     }
 
-    /* AUTONOMOUS SCALABLE PRODUCT GRID SYSTEM */
+    /* SCALABLE PRODUCT GRID SYSTEM */
     .products-grid-section {
       border-top: 1px solid #E2E8F0;
       padding-top: 80px;
@@ -205,17 +207,16 @@
 
     .products-grid {
       display: grid;
-      /* Advanced structural configuration: Add more cards seamlessly in the future */
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
       gap: 3rem;
       margin-top: 3.5rem;
     }
 
-    /* ATTRACTIVE HIGH-END PRODUCT CORE SURFACES */
+    /* PREMIUM PRODUCT CARD COMPONENT */
     .premium-product-card {
       background: #FFFFFF;
       border: 1px solid #E2E8F0;
-      border-radius: 8px; /* Elegant geometric profile used by elite consulting engines */
+      border-radius: 8px; 
       padding: 3rem 2.5rem;
       transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
       position: relative;
@@ -226,7 +227,6 @@
       box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.05);
     }
 
-    /* Subtle top accent bar that lights up on hover */
     .premium-product-card::before {
       content: '';
       position: absolute;
@@ -245,7 +245,7 @@
     }
 
     .premium-product-card:hover::before {
-      background: #1E3A8A; /* Shifts to brand blue when engaged */
+      background: #1E3A8A; 
     }
 
     .card-top-matter {
@@ -293,7 +293,6 @@
       line-height: 1.7;
     }
 
-    /* COMPACT PREMIUM CTA BUTTON */
     .btn-primary {
       background: #0F172A;
       color: #FFFFFF;
@@ -319,7 +318,7 @@
       background: #1E3A8A;
     }
 
-    /* FIRST-PERSON ABOUT SECTION BLOCK */
+    /* ABOUT ME SECTION BLOCK */
     .about-section-container {
       border-top: 1px solid #E2E8F0;
       padding-top: 80px;
@@ -349,6 +348,39 @@
       display: grid;
       grid-template-columns: 1.25fr 0.75fr;
       gap: 4.5rem;
+    }
+
+    /* Structured Founder Identity Title Block */
+    .founder-header-meta {
+      margin-bottom: 2rem;
+      border-left: 3px solid #1E3A8A;
+      padding-left: 15px;
+    }
+
+    .founder-label {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #1E3A8A;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .founder-name {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #0F172A;
+      line-height: 1.2;
+    }
+
+    .founder-title-sub {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1rem;
+      color: #475569;
+      font-weight: 500;
+      margin-top: 2px;
     }
 
     .about-left p {
@@ -421,7 +453,7 @@
       line-height: 1.6;
     }
 
-    /* SYSTEM ENDPOINTS ARCHITECTURE */
+    /* COMMUNICATIONS PROTOCOLS */
     .contact-info {
       margin-top: 5rem;
       background: #0F172A;
@@ -464,7 +496,7 @@
       color: #38BDF8;
     }
 
-    /* ANCHOR FOOTER */
+    /* FOOTER */
     .footer {
       text-align: center;
       padding: 4rem 0;
@@ -486,7 +518,7 @@
       letter-spacing: 0.08em;
     }
 
-    /* MODAL OVERLAY ARCHITECTURE */
+    /* MODAL OVERLAY */
     .modal-overlay {
       position: fixed;
       top: 0;
@@ -630,7 +662,7 @@
       border-color: #0F172A;
     }
 
-    /* CRITICAL MOBILE SPECIFIC SCALING LAYOUT RULES */
+    /* MOBILE SPECIFIC SCALING LAYOUT RULES */
     @media (max-width: 1024px) {
       .about-grid {
         grid-template-columns: 1fr;
@@ -640,11 +672,10 @@
 
     @media (max-width: 768px) {
       body {
-        /* Scale down body padding for tighter mobile layout headers */
         padding-top: 70px; 
       }
       
-      /* HEAVY MOBILE NAV COMPRESSION ENGINE */
+      /* MOBILE NAV COMPRESSION Engine */
       .navbar {
         padding: 0.85rem 0; 
       }
@@ -669,13 +700,18 @@
       section {
         padding: 60px 0 40px 0;
       }
+      
+      /* Balanced Mobile Typography Engine */
       .hero-title {
-        font-size: 2.35rem;
+        font-size: 2.2rem;
+        line-height: 1.3;
+        text-align: center;
       }
       .hero-subtitle {
         font-size: 1.05rem;
         width: 100%;
         margin-bottom: 2rem;
+        text-align: center;
       }
       .products-grid-section {
         padding-top: 40px;
@@ -683,6 +719,7 @@
       .products-grid {
         gap: 2rem;
         margin-top: 2rem;
+        grid-template-columns: 1fr;
       }
       .premium-product-card {
         padding: 2.25rem 1.75rem;
@@ -692,6 +729,9 @@
       }
       .about-section-container {
         padding-top: 40px;
+      }
+      .founder-name {
+        font-size: 1.75rem;
       }
       .section-title {
         font-size: 1.95rem;
@@ -730,7 +770,7 @@
   
   <section id="home">
     <div class="hero-layout">
-      <div class="hero-layout .section-label" style="display:inline-block; border-bottom: 2px solid #1E3A8A; padding-bottom:4px; font-weight:700; text-transform:uppercase; letter-spacing:0.15em; font-size:0.75rem; color:#1E3A8A; margin-bottom:1.75rem;">Institutional Feasibility Intelligence</div>
+      <div class="section-label" style="display:inline-block; border-bottom: 2px solid #1E3A8A; padding-bottom:4px; font-weight:700; text-transform:uppercase; letter-spacing:0.15em; font-size:0.75rem; color:#1E3A8A; margin-bottom:1.75rem;">Institutional Feasibility Intelligence</div>
       <h1 class="hero-title">
         Replacing product intuition with <em>verifiable mathematical scoring models.</em>
       </h1>
@@ -761,8 +801,7 @@
           <i class="fas fa-chevron-right"></i>
         </button>
       </div>
-
-      </div>
+    </div>
   </section>
 
   <section id="about" class="about-section-container">
@@ -773,7 +812,13 @@
     
     <div class="about-grid">
       <div class="about-left">
-        <p>As a **Corporate Strategy & Digital Product Consultant**, I operate within heavy-data system integration nodes, developing structural evaluation frameworks designed to isolate high-risk business initiatives from active engineering execution streams.</p>
+        <div class="founder-header-meta">
+          <span class="founder-label">Founder and Operator, FaridEx Labs</span>
+          <h3 class="founder-name">GHULAM FARID</h3>
+          <div class="founder-title-sub">Corporate Strategy and Product Analyst</div>
+        </div>
+
+        <p>I operate within heavy-data system integration nodes, developing structural evaluation frameworks designed to isolate high-risk business initiatives from active engineering execution streams.</p>
         
         <p>My work centers around replacing speculative launch methodologies with quantitative telemetry. I engineer clean system architectures, structure product governance pipelines, and construct scalable market entry blueprints optimized to match complex engineering footprints.</p>
         
@@ -898,7 +943,6 @@
       if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
     });
 
-    // Smooth scroll configuration matrices
     const productsLink = document.querySelector('.nav-products');
     const aboutLink = document.querySelector('.nav-about');
     const productsSection = document.getElementById('products');
