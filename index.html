@@ -264,7 +264,7 @@
       text-decoration: none;
     }
 
-    /* DIGITAL PIPELINE & PROCESSING HUB VISUAL */
+    /* HIGH-SPEED DIGITAL PIPELINE Visual */
     .pipeline-dashboard-container {
       display: flex;
       flex-direction: column;
@@ -291,7 +291,7 @@
       padding: 1rem 0.75rem;
       text-align: center;
       cursor: pointer;
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
       position: relative;
     }
 
@@ -299,7 +299,7 @@
       font-size: 1.25rem;
       color: #475569;
       margin-bottom: 0.5rem;
-      transition: transform 0.3s, color 0.3s;
+      transition: transform 0.25s, color 0.25s;
     }
 
     .pipeline-source-card h4 {
@@ -315,7 +315,6 @@
       margin-top: 2px;
     }
 
-    /* Hover & Active System States */
     .pipeline-source-card:hover, .pipeline-source-card.active {
       background: #FFFFFF;
       border-color: #2563EB;
@@ -328,49 +327,43 @@
       transform: scale(1.1);
     }
 
-    /* THE DROP CONDUIT SPACE */
+    /* HIGH FREQUENCY DROPPING CHANNEL */
     .conduit-channel {
-      height: 70px;
+      height: 80px;
       position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      overflow: hidden;
     }
 
     .stream-line-conduit {
       position: absolute;
       width: 2px;
       height: 100%;
-      background: linear-gradient(to bottom, #E2E8F0, rgba(37, 99, 235, 0.4), #1E3A8A);
+      background: linear-gradient(to bottom, #E2E8F0, rgba(56, 189, 248, 0.6), #2563EB);
       left: 50%;
       transform: translateX(-50%);
     }
 
-    /* Falling Data Nodes Simulation */
-    .data-packet-node {
+    /* Dynamic Generated Fast Streaming Elements */
+    .dynamic-packet {
       position: absolute;
-      width: 8px;
-      height: 8px;
-      background: #2563EB;
+      width: 6px;
+      height: 6px;
+      background: #38BDF8;
       border-radius: 50%;
       left: 50%;
       transform: translateX(-50%);
-      opacity: 0;
-      box-shadow: 0 0 8px #38BDF8;
+      box-shadow: 0 0 10px #38BDF8;
+      animation: rapidDrop 0.25s linear forwards;
     }
 
-    .conduit-channel.processing .data-packet-node {
-      animation: dropDataPacket 1.2s infinite linear;
+    @keyframes rapidDrop {
+      0% { top: 0%; opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { top: 100%; opacity: 0; }
     }
 
-    @keyframes dropDataPacket {
-      0% { top: 0%; opacity: 0; transform: translateX(-50%) scale(0.6); }
-      20% { opacity: 1; }
-      80% { opacity: 1; }
-      100% { top: 100%; opacity: 0; transform: translateX(-50%) scale(1.2); }
-    }
-
-    /* THE FARIDEX CENTRAL PROCESSING BUCKET */
+    /* THE FARIDEX CENTRAL DATA BUCKET */
     .faridex-processing-bucket {
       background: linear-gradient(135deg, #0A192F 0%, #1E293B 100%);
       border: 1px solid rgba(255, 255, 255, 0.1);
@@ -379,7 +372,6 @@
       color: #FFFFFF;
       position: relative;
       box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3), 0 12px 24px -10px rgba(10, 25, 47, 0.4);
-      overflow: hidden;
     }
 
     .bucket-header-zone {
@@ -396,7 +388,6 @@
       font-size: 0.95rem;
       font-weight: 700;
       color: #FFFFFF;
-      letter-spacing: -0.01em;
     }
 
     .bucket-title-meta p {
@@ -405,7 +396,6 @@
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      margin-top: 1px;
     }
 
     .engine-status-puck {
@@ -415,95 +405,65 @@
       font-size: 0.65rem;
       font-weight: 700;
       text-transform: uppercase;
-      background: rgba(16, 185, 129, 0.1);
-      border: 1px solid rgba(16, 185, 129, 0.3);
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.4);
       padding: 3px 8px;
       border-radius: 4px;
       color: #10B981;
     }
 
-    .engine-status-puck.active-load {
-      animation: heartbeatPuck 1.5s infinite ease-in-out;
-    }
-
-    @keyframes heartbeatPuck {
-      0%, 100% { opacity: 0.8; }
-      50% { opacity: 1; background: rgba(16, 185, 129, 0.2); }
-    }
-
-    /* THE ARISING TELEMETRY / METRIC VECTORS (GROWTH OUTCOMES) */
+    /* REAL-TIME ACCELERATED METRICS */
     .telemetry-output-grid {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns: 1.1fr 0.9fr;
       gap: 1.25rem;
       align-items: center;
     }
 
-    /* Growth bars surging upward */
     .growth-bars-display {
       display: flex;
       align-items: flex-end;
       justify-content: space-between;
-      height: 75px;
+      height: 85px;
       padding: 0 0.5rem;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      position: relative;
     }
 
     .growth-chart-bar {
       width: 14%;
-      background: linear-gradient(to top, #1E3A8A, #2563EB);
+      background: linear-gradient(to top, #1E3A8A, #38BDF8);
       border-radius: 3px 3px 0 0;
-      height: 20%;
-      transition: height 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      height: 30%;
+      transition: height 0.35s cubic-bezier(0.1, 0.8, 0.2, 1);
       position: relative;
+      box-shadow: 0 0 10px rgba(56, 189, 248, 0.2);
     }
 
-    .growth-chart-bar::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(to top, transparent, rgba(56, 189, 248, 0.4));
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-
-    /* Dynamic runtime growth states triggered by layout engine */
-    .pipeline-dashboard-container.load-state-1 .bar-a { height: 85%; }
-    .pipeline-dashboard-container.load-state-1 .bar-b { height: 45%; }
-    .pipeline-dashboard-container.load-state-1 .bar-c { height: 95%; }
-    .pipeline-dashboard-container.load-state-1 .bar-d { height: 60%; }
-    .pipeline-dashboard-container.load-state-1 .bar-e { height: 75%; }
-
-    .pipeline-dashboard-container.load-state-2 .bar-a { height: 40%; }
-    .pipeline-dashboard-container.load-state-2 .bar-b { height: 90%; }
-    .pipeline-dashboard-container.load-state-2 .bar-c { height: 65%; }
-    .pipeline-dashboard-container.load-state-2 .bar-d { height: 80%; }
-    .pipeline-dashboard-container.load-state-2 .bar-e { height: 50%; }
-
-    .pipeline-dashboard-container.load-state-3 .bar-a { height: 70%; }
-    .pipeline-dashboard-container.load-state-3 .bar-b { height: 60%; }
-    .pipeline-dashboard-container.load-state-3 .bar-c { height: 55%; }
-    .pipeline-dashboard-container.load-state-3 .bar-d { height: 95%; }
-    .pipeline-dashboard-container.load-state-3 .bar-e { height: 90%; }
-
-    /* Ascending Growth Rate Numbers Panel */
     .metric-readout-panel {
       display: flex;
       flex-direction: column;
-      gap: 0.5rem;
+      gap: 0.25rem;
       text-align: right;
     }
 
     .metric-readout-panel .value-node {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 1.65rem;
+      font-size: 2rem;
       font-weight: 700;
-      color: #38BDF8;
+      color: #FFFFFF;
       line-height: 1;
+      letter-spacing: -0.02em;
+      transition: color 0.2s;
+    }
+
+    .delta-status-row {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #10B981;
     }
 
     .metric-readout-panel .label-node {
@@ -511,6 +471,7 @@
       text-transform: uppercase;
       letter-spacing: 0.05em;
       color: #94A3B8;
+      margin-top: 2px;
     }
 
     /* SCALABLE PRODUCT GRID SYSTEM */
@@ -970,10 +931,10 @@
         </div>
       </div>
 
-      <div class="pipeline-dashboard-container load-state-1" id="dashboardHub">
+      <div class="pipeline-dashboard-container" id="dashboardHub">
         
         <div class="source-cards-row">
-          <div class="pipeline-source-card active" data-target-state="1" id="cardAnalysis">
+          <div class="pipeline-source-card active" data-target="1" id="cardAnalysis">
             <i class="fas fa-chart-line"></i>
             <h4>Analysis</h4>
             <p>Quantitative Logic</p>
@@ -990,33 +951,35 @@
           </div>
         </div>
 
-        <div class="conduit-channel processing" id="conduitTrack">
+        <div class="conduit-channel" id="conduitTrack">
           <div class="stream-line-conduit"></div>
-          <div class="data-packet-node"></div>
         </div>
 
         <div class="faridex-processing-bucket">
           <div class="bucket-header-zone">
             <div class="bucket-title-meta">
               <h5>FaridEx Lab Engine Core</h5>
-              <p id="activeTrackLabel">Active Node: Analysis Metrics</p>
+              <p id="activeTrackLabel">Processing Pipeline Active</p>
             </div>
-            <div class="engine-status-puck active-load">
-              <i class="fas fa-circle" style="font-size:0.5rem; margin-right:2px;"></i> Processing
+            <div class="engine-status-puck">
+              <i class="fas fa-bolt" style="font-size:0.6rem; color:#10B981;"></i> High Frequency
             </div>
           </div>
 
           <div class="telemetry-output-grid">
-            <div class="growth-bars-display">
-              <div class="growth-chart-bar bar-a"></div>
-              <div class="growth-chart-bar bar-b"></div>
-              <div class="growth-chart-bar bar-c"></div>
-              <div class="growth-chart-bar bar-d"></div>
-              <div class="growth-chart-bar bar-e"></div>
+            <div class="growth-bars-display" id="barsDisplay">
+              <div class="growth-chart-bar" style="height: 45%;"></div>
+              <div class="growth-chart-bar" style="height: 70%;"></div>
+              <div class="growth-chart-bar" style="height: 85%;"></div>
+              <div class="growth-chart-bar" style="height: 60%;"></div>
+              <div class="growth-chart-bar" style="height: 90%;"></div>
             </div>
             <div class="metric-readout-panel">
-              <div class="value-node" id="telemetryValue">88.4%</div>
-              <div class="label-node">Feasibility Growth Index</div>
+              <div class="value-node" id="telemetryValue">94.20%</div>
+              <div class="delta-status-row">
+                <i class="fas fa-caret-up"></i> <span id="deltaValue">+1.45%</span>
+              </div>
+              <div class="label-node">Feasibility Growth Core</div>
             </div>
           </div>
         </div>
@@ -1220,71 +1183,69 @@
       });
     });
 
-    // INTERACTIVE RUNTIME DATA PIPELINE ANIMATION LOGIC
-    const dashboardHub = document.getElementById('dashboardHub');
-    const sourceCards = document.querySelectorAll('.pipeline-source-card');
-    const activeTrackLabel = document.getElementById('activeTrackLabel');
-    const telemetryValue = document.getElementById('telemetryValue');
+    // RE-ENGINEERED ULTRA-FAST HIGH FREQUENCY TELEMETRY SYSTEM
     const conduitTrack = document.getElementById('conduitTrack');
+    const chartBars = document.querySelectorAll('.growth-chart-bar');
+    const telemetryValue = document.getElementById('telemetryValue');
+    const deltaValue = document.getElementById('deltaValue');
+    const sourceCards = document.querySelectorAll('.pipeline-source-card');
+    
+    let baseFeasibilityScore = 94.20;
 
-    const telemetryDataConfigs = {
-      "1": { label: "Active Node: Analysis Metrics", value: "91.4%", class: "load-state-1" },
-      "2": { label: "Active Node: Strategy Simulation", value: "78.2%", class: "load-state-2" },
-      "3": { label: "Active Node: Execution Telemetry", value: "96.8%", class: "load-state-3" }
-    };
-
-    function processStateTransition(targetIndex) {
-      // 1. Clear old system statuses
-      sourceCards.forEach(c => c.classList.remove('active'));
-      conduitTrack.classList.remove('processing');
+    // 1. HIGH SPEED DATA PACKET INJECTION LOOP (Every 0.2 Seconds)
+    setInterval(() => {
+      const packet = document.createElement('div');
+      packet.classList.add('dynamic-packet');
       
-      // 2. Trigger drop drop visual packet animation
-      void conduitTrack.offsetWidth; // Force CSS reflow node
-      conduitTrack.classList.add('processing');
+      // Dynamic horizontal injection offsets to make streaming look organic
+      const randomSpread = Math.floor(Math.random() * 30) - 15;
+      packet.style.marginLeft = `${randomSpread}px`;
+      
+      conduitTrack.appendChild(packet);
+      
+      // Clean up executed DOM elements efficiently
+      setTimeout(() => packet.remove(), 250);
+    }, 200);
 
-      // 3. Update state data parameters once dropped into core bucket
-      setTimeout(() => {
-        const config = telemetryDataConfigs[targetIndex];
-        
-        // Remove previous structural state classes
-        dashboardHub.classList.remove('load-state-1', 'load-state-2', 'load-state-3');
-        dashboardHub.classList.add(config.class);
-        
-        activeTrackLabel.textContent = config.label;
-        telemetryValue.textContent = config.value;
-      }, 300);
-    }
-
-    sourceCards.forEach(card => {
-      card.addEventListener('mouseenter', function() {
-        const targetState = this.getAttribute('data-target-state');
-        sourceCards.forEach(c => c.classList.remove('active'));
-        this.classList.add('active');
-        processStateTransition(targetState);
+    // 2. HIGH SPEED CHART & VALUE MATRIX RE-CALCULATION (Every 0.5 Seconds)
+    setInterval(() => {
+      // Bouncing bar chart updates
+      chartBars.forEach(bar => {
+        const randomHeight = Math.floor(Math.random() * 65) + 30; // 30% to 95%
+        bar.style.height = `${randomHeight}%`;
       });
 
-      card.addEventListener('click', function() {
-        const targetState = this.getAttribute('data-target-state');
+      // Micro incremental logic adjustments
+      const variance = (Math.random() * 0.4) - 0.18; 
+      baseFeasibilityScore += variance;
+      if (baseFeasibilityScore > 99.5) baseFeasibilityScore = 93.10;
+      if (baseFeasibilityScore < 85.0) baseFeasibilityScore = 95.50;
+
+      telemetryValue.textContent = `${baseFeasibilityScore.toFixed(2)}%`;
+      
+      // Delta fluctuate positive growth indicator arrays
+      const currentDelta = (Math.random() * 1.5) + 0.2;
+      deltaValue.textContent = `+${currentDelta.toFixed(2)}%`;
+    }, 500);
+
+    // Dynamic Tracking Interaction States 
+    sourceCards.forEach((card, idx) => {
+      const labelTracker = document.getElementById('activeTrackLabel');
+      const networkLabels = [
+        "Processing Pipeline: Analysis Mode", 
+        "Processing Pipeline: Strategy Core", 
+        "Processing Pipeline: Execution Node"
+      ];
+      
+      const triggerInteraction = () => {
         sourceCards.forEach(c => c.classList.remove('active'));
-        this.classList.add('active');
-        processStateTransition(targetState);
-      });
+        card.classList.add('active');
+        labelTracker.textContent = networkLabels[idx];
+      };
+
+      card.addEventListener('mouseenter', triggerInteraction);
+      card.addEventListener('click', triggerInteraction);
     });
-
-    // Run an automated looping check to rotate states every 5 seconds if left idle
-    let idleLoopInterval = setInterval(() => {
-      let currentActive = document.querySelector('.pipeline-source-card.active');
-      let nextActive = currentActive.nextElementSibling || sourceCards[0];
-      
-      if(nextActive && nextActive.classList.contains('pipeline-source-card')) {
-        currentActive.classList.remove('active');
-        nextActive.classList.add('active');
-        processStateTransition(nextActive.getAttribute('data-target-state'));
-      }
-    }, 5000);
-
-    // Cancel automation loop whenever user manual interface engagement occurs
-    dashboardHub.addEventListener('mouseenter', () => clearInterval(idleLoopInterval));
   })();
 </script>
 </body>
