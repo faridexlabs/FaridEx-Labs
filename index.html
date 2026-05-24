@@ -160,7 +160,7 @@
 
     .hero-grid-layout {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns: 1.15fr 0.85fr;
       gap: 4rem;
       align-items: center;
     }
@@ -289,46 +289,57 @@
       color: #0F172A;
     }
 
-    /* RIGHT COLUMN VERTICAL MODULE PILLS (FOLLOWING EXACT EXCEL TEMPLATE) */
+    /* RIGHT COLUMN HIGH-END FLOATING OVERLAY & TELEMETRY MODULES */
     .hero-right-stack {
       display: flex;
       flex-direction: column;
-      gap: 1.25rem;
+      gap: 1.5rem;
+      animation: floatingAsset 6s infinite ease-in-out;
+    }
+
+    @keyframes floatingAsset {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
     }
 
     .interactive-track-pill {
       background: #FFFFFF;
       border: 1px solid #E2E8F0;
-      border-radius: 8px;
-      padding: 1.5rem 1.75rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.02);
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .pill-left-node {
-      display: flex;
+      border-radius: 12px;
+      padding: 1.5rem;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
       align-items: center;
       gap: 1.25rem;
+      box-shadow: 0 10px 25px -15px rgba(15, 23, 42, 0.08);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
     }
 
     .pill-icon-frame {
-      width: 44px;
-      height: 44px;
+      width: 48px;
+      height: 48px;
       background: rgba(37, 99, 235, 0.06);
-      border-radius: 6px;
+      border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
       color: #2563EB;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+    }
+
+    .pill-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
     }
 
     .pill-meta h4 {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       font-weight: 700;
       color: #0F172A;
       letter-spacing: -0.01em;
@@ -340,21 +351,95 @@
       font-weight: 500;
     }
 
+    /* PREMIUM EMBEDDED DATA TELEMETRY VECTORS */
+    .pill-telemetry-engine {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.35rem;
+      padding-right: 0.5rem;
+    }
+
+    /* Live Data Sparkline Simulation Row */
+    .sparkline-vector {
+      display: flex;
+      align-items: flex-end;
+      gap: 3px;
+      height: 16px;
+    }
+
+    .spark-bar {
+      width: 3px;
+      background: #CBD5E1;
+      border-radius: 1px;
+      transition: all 0.3s ease;
+    }
+
+    /* Dynamic heights mimicking changing charts */
+    .sparkline-vector .bar-1 { height: 40%; animation: barPulse 1.8s infinite alternate ease-in-out; }
+    .sparkline-vector .bar-2 { height: 85%; animation: barPulse 1.2s infinite alternate ease-in-out 0.2s; }
+    .sparkline-vector .bar-3 { height: 55%; animation: barPulse 1.5s infinite alternate ease-in-out 0.4s; }
+    .sparkline-vector .bar-4 { height: 100%; animation: barPulse 1.1s infinite alternate ease-in-out 0.1s; }
+    .sparkline-vector .bar-5 { height: 70%; animation: barPulse 1.6s infinite alternate ease-in-out 0.3s; }
+
+    @keyframes barPulse {
+      0% { transform: scaleY(0.4); background-color: #CBD5E1; }
+      100% { transform: scaleY(1.1); background-color: #2563EB; }
+    }
+
+    /* Processing Line Status Trackers */
+    .live-status-line {
+      width: 65px;
+      height: 3px;
+      background: #F1F5F9;
+      border-radius: 2px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .live-status-line::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 40%;
+      background: #10B981; /* Premium Active Status Teal Line */
+      border-radius: 2px;
+      animation: trackingScan 2s infinite linear;
+    }
+
+    @keyframes trackingScan {
+      0% { left: -40%; width: 30%; }
+      50% { width: 50%; }
+      100% { left: 110%; width: 20%; }
+    }
+
     .pill-arrow-indicator {
       color: #94A3B8;
       font-size: 0.9rem;
-      transition: transform 0.25s ease, color 0.25s;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s;
     }
 
+    /* UPLIFTED PILL HOVER STATES */
     .interactive-track-pill:hover {
-      transform: translateX(4px);
+      transform: translateY(-4px) scale(1.02);
       border-color: #2563EB;
-      box-shadow: 0 10px 25px -8px rgba(37, 99, 235, 0.12);
+      box-shadow: 0 20px 35px -10px rgba(30, 58, 138, 0.12);
+    }
+
+    .interactive-track-pill:hover .pill-icon-frame {
+      background: #2563EB;
+      color: #FFFFFF;
+    }
+
+    .interactive-track-pill:hover .spark-bar {
+      background-color: #1E3A8A;
     }
 
     .interactive-track-pill:hover .pill-arrow-indicator {
       color: #2563EB;
-      transform: translateX(2px);
+      transform: translateX(4px);
     }
 
     /* SCALABLE PRODUCT GRID SYSTEM */
@@ -829,6 +914,9 @@
         grid-template-columns: 1fr;
         gap: 3.5rem;
       }
+      .hero-right-stack {
+        animation: none; /* Turn off float movement vectors on touch tablets */
+      }
     }
 
     @media (max-width: 768px) {
@@ -892,6 +980,14 @@
       </div>
     </div>
   </div>
+  <div class="nav-status-tier">
+    <div class="container">
+      <div class="status-flex">
+        <span><i class="fas fa-shield-halved"></i> Strategy & Consulting Core</span>
+        <span><i class="fas fa-chart-pie"></i> Data-Driven Feasibility</span>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="content-container">
@@ -919,38 +1015,61 @@
       </div>
 
       <div class="hero-right-stack">
+        
         <div class="interactive-track-pill">
-          <div class="pill-left-node">
-            <div class="pill-icon-frame"><i class="fas fa-chart-line"></i></div>
-            <div class="pill-meta">
-              <h4>Analysis</h4>
-              <p>Quantitative Matrix Logic</p>
-            </div>
+          <div class="pill-icon-frame"><i class="fas fa-chart-line"></i></div>
+          <div class="pill-meta">
+            <h4>Analysis</h4>
+            <p>Quantitative Matrix Logic</p>
           </div>
-          <i class="fas fa-chevron-right style-arrow pill-arrow-indicator"></i>
+          <div class="pill-telemetry-engine">
+            <div class="sparkline-vector">
+              <div class="spark-bar bar-1"></div>
+              <div class="spark-bar bar-2"></div>
+              <div class="spark-bar bar-3"></div>
+              <div class="spark-bar bar-4"></div>
+              <div class="spark-bar bar-5"></div>
+            </div>
+            <div class="live-status-line"></div>
+          </div>
         </div>
 
         <div class="interactive-track-pill">
-          <div class="pill-left-node">
-            <div class="pill-icon-frame"><i class="fas fa-compass"></i></div>
-            <div class="pill-meta">
-              <h4>Strategy</h4>
-              <p>Risk Vulnerability Buffers</p>
-            </div>
+          <div class="pill-icon-frame"><i class="fas fa-compass"></i></div>
+          <div class="pill-meta">
+            <h4>Strategy</h4>
+            <p>Risk Vulnerability Buffers</p>
           </div>
-          <i class="fas fa-chevron-right style-arrow pill-arrow-indicator"></i>
+          <div class="pill-telemetry-engine">
+            <div class="sparkline-vector">
+              <div class="spark-bar bar-3"></div>
+              <div class="spark-bar bar-5"></div>
+              <div class="spark-bar bar-1"></div>
+              <div class="spark-bar bar-2"></div>
+              <div class="spark-bar bar-4"></div>
+            </div>
+            <div class="live-status-line"></div>
+          </div>
         </div>
 
         <div class="interactive-track-pill">
-          <div class="pill-left-node">
-            <div class="pill-icon-frame"><i class="fas fa-gears"></i></div>
-            <div class="pill-meta">
-              <h4>Execution</h4>
-              <p>Pre-Development Verification</p>
-            </div>
+          <div class="pill-icon-frame"><i class="fas fa-gears"></i></div>
+          <div class="pill-meta">
+            <h4>Execution</h4>
+            <p>Pre-Development Verification</p>
           </div>
-          <i class="fas fa-chevron-right style-arrow pill-arrow-indicator"></i>
+          <div class="pill-telemetry-engine">
+            <div class="sparkline-vector">
+              <div class="spark-bar bar-5"></div>
+              <div class="spark-bar bar-2"></div>
+              <div class="spark-bar bar-4"></div>
+              <div class="spark-bar bar-1"></div>
+              <div class="spark-bar bar-3"></div>
+            </div>
+            <div class="live-status-line"></div>
+          </div>
         </div>
+
       </div>
 
     </div>
