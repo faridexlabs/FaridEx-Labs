@@ -4,9 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Faridex Labs — Decision Intelligence for Product Teams</title>
-  <!-- Inter Font (same as faridsview.netlify.app) -->
+  <!-- Inter Font (matching faridsview.netlify.app) -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-  <!-- Font Awesome 6 (free) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * {
@@ -21,11 +20,6 @@
       color: #1E293B;
       scroll-behavior: smooth;
       line-height: 1.5;
-    }
-
-    /* subtle background texture like his site (very light) */
-    .bg-subtle {
-      background: #F9FAFE;
     }
 
     .container {
@@ -92,7 +86,7 @@
       color: #4F46E5;
     }
 
-    /* hero grid */
+    /* Hero grid */
     .hero-grid {
       display: flex;
       flex-wrap: wrap;
@@ -138,7 +132,7 @@
       justify-content: center;
     }
 
-    /* single card style (clean white card with shadow, border radius) */
+    /* Single product card (light & clean) */
     .featured-card {
       background: #FFFFFF;
       border-radius: 1.5rem;
@@ -205,14 +199,13 @@
       transform: scale(1.02);
     }
 
-    /* About section (clean light) */
+    /* About section (no GPA/certs, elite focus) */
     .about-section {
       margin: 3rem 0 5rem 0;
       background: #F8FAFE;
       border-radius: 1.5rem;
       padding: 2.2rem;
       border: 1px solid #EFF3F8;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
     }
     .about-section h3 {
       font-size: 1.6rem;
@@ -245,7 +238,6 @@
       padding: 1.5rem;
       border-radius: 1.2rem;
       border: 1px solid #E9EDF2;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.02);
     }
     .highlight-name {
       font-weight: 800;
@@ -260,6 +252,46 @@
       width: 28px;
       margin-right: 6px;
     }
+
+    /* Contact section (new, replacing old email references) */
+    .contact-info {
+      margin-top: 2rem;
+      background: #FFFFFF;
+      border-radius: 1.2rem;
+      padding: 1.5rem;
+      border: 1px solid #E9EDF2;
+      text-align: center;
+    }
+    .contact-info h4 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      color: #0F172A;
+    }
+    .contact-details {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 0.5rem;
+    }
+    .contact-details a, .contact-details span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #475569;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.2s;
+    }
+    .contact-details a:hover {
+      color: #4F46E5;
+    }
+    .contact-details i {
+      font-size: 1.1rem;
+      color: #4F46E5;
+    }
+
     .footer {
       text-align: center;
       padding: 2rem 0 2.5rem;
@@ -269,7 +301,7 @@
       color: #5B6E8C;
     }
 
-    /* MODAL (light theme clean) */
+    /* Modal */
     .modal-overlay {
       position: fixed;
       top: 0;
@@ -368,6 +400,7 @@
       font-weight: 600;
       color: #1E40AF;
     }
+
     @media (max-width: 750px) {
       .hero-text h2 {
         font-size: 2.2rem;
@@ -384,6 +417,11 @@
       }
       .about-grid {
         flex-direction: column;
+      }
+      .contact-details {
+        flex-direction: column;
+        gap: 0.8rem;
+        align-items: center;
       }
     }
     button {
@@ -408,7 +446,7 @@
 <body>
 
 <div class="container">
-  <!-- Navigation: Home, About, and name badge -->
+  <!-- Navigation -->
   <div class="navbar">
     <div class="logo-area">
       <h1>Faridex Labs</h1>
@@ -436,7 +474,7 @@
         </div>
       </div>
       <div class="product-card-area">
-        <!-- ONLY ONE CARD: FIRST PRODUCT COMING SOON (RevenuePilot) -->
+        <!-- Only one product card: RevenuePilot Coming Soon -->
         <div class="featured-card">
           <div class="coming-soon-badge"><i class="fas fa-hourglass-half"></i> First release · Coming Soon</div>
           <h3>RevenuePilot</h3>
@@ -448,25 +486,35 @@
     </div>
   </section>
 
-  <!-- ABOUT section (includes Ghulam Farid details and Faridex Labs mission) -->
+  <!-- ABOUT section (elite positioning, no GPA/certifications) -->
   <section id="about">
     <div class="about-section">
-      <h3><i class="fas fa-bullhorn"></i> About Faridex Labs & Creator</h3>
+      <h3><i class="fas fa-bullhorn"></i> About Faridex Labs & Founder</h3>
       <div class="divider"></div>
       <div class="about-grid">
         <div class="about-left">
-          <p><strong class="highlight-name">Ghulam Farid</strong> — <strong>Business Strategy & Product Analyst</strong> operating at the intersection of data science and product leadership. Passionate about structured decision-making, Ghulam designed Faridex Labs to solve the missing layer in modern product management: <strong>pre-deployment decision intelligence</strong>.</p>
-          <p>✔ Data Science background (BS, CGPA 3.8) & Product School certified.<br>
-          ✔ BCG job simulation (Forage) – Data for Decision Making & Business Strategy.<br>
-          ✔ Built strategic roadmaps for e-commerce, SaaS scale-ups, and hyperlocal platforms.<br>
-          ✔ Based in Lahore, Pakistan — building global tools for product teams.</p>
+          <p><strong class="highlight-name">Ghulam Farid</strong> — <strong>Business Strategy & Product Analyst</strong> operating at the intersection of data science and product leadership. He architects decision intelligence systems that replace guesswork with measurable frameworks.</p>
+          <p>✔ Specializes in product roadmapping, go-to-market strategy, and financial modeling for high-growth tech.<br>
+          ✔ Leads strategic product analysis across e‑commerce, SaaS, and emerging tech sectors.<br>
+          ✔ Designed Faridex Labs as the first dedicated Decision Intelligence ecosystem for product teams.<br>
+          ✔ Focused on reducing uncertainty, quantifying risks, and increasing launch success probability.</p>
           <p><i class="fas fa-quote-left" style="color:#4F46E5; margin-right: 8px;"></i> “Better product decisions create better products — that’s why Faridex Labs exists.”</p>
         </div>
         <div class="about-right">
-          <p><i class="fas fa-bullseye"></i> <strong>Mission:</strong> Transform subjective PM decisions into measurable intelligence using scoring systems, feasibility analysis and impact simulations.</p>
-          <p><i class="fas fa-cube"></i> <strong>Ecosystem vision:</strong> 10 specialized modules — from RevenuePilot to ChurnShield — to simulate feature impact, MVP scope risk, adoption probability, and launch readiness.</p>
-          <p><i class="fas fa-chart-line"></i> Faridex Labs is <strong>not</strong> a project management tool. It’s the <strong>decision evaluation layer</strong> for product teams who want to reduce uncertainty, prioritize smarter, and launch with confidence.</p>
-          <p><i class="fas fa-calendar-alt"></i> Founded with the vision to become the operating intelligence layer for modern product management.</p>
+          <p><i class="fas fa-bullseye"></i> <strong>Mission:</strong> Transform subjective product decisions into measurable intelligence using scoring systems, feasibility analysis and impact simulations.</p>
+          <p><i class="fas fa-cube"></i> <strong>Ecosystem:</strong> 10 specialized modules — from RevenuePilot to ChurnShield — that simulate feature impact, MVP scope risk, adoption probability, and launch readiness.</p>
+          <p><i class="fas fa-chart-line"></i> Faridex Labs is <strong>not</strong> a project management tool. It’s the <strong>decision evaluation layer</strong> for teams who want to prioritize smarter and launch with confidence.</p>
+        </div>
+      </div>
+
+      <!-- Contact Info: replaced email with faridexlabs@gmail.com, kept mobile same -->
+      <div class="contact-info">
+        <h4><i class="fas fa-address-card"></i> Connect with Faridex Labs</h4>
+        <div class="contact-details">
+          <a href="mailto:faridexlabs@gmail.com"><i class="fas fa-envelope"></i> faridexlabs@gmail.com</a>
+          <span><i class="fas fa-phone-alt"></i> +92 308 6007904</span>
+          <a href="https://www.linkedin.com/in/ghulam-farid-29514a336" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+          <a href="https://gf1488360-cell.github.io/FaridStrategy/" target="_blank"><i class="fas fa-globe"></i> Portfolio</a>
         </div>
       </div>
     </div>
@@ -474,11 +522,11 @@
 
   <div class="footer">
     <i class="fas fa-brain"></i> Ghulam Farid — Business Strategy & Product Analyst · Quantifying every product decision<br>
-    <span style="font-size: 0.75rem;">© 2026 Faridex Labs | Decision Intelligence Ecosystem</span>
+    <span>© 2026 Faridex Labs | Decision Intelligence Ecosystem</span>
   </div>
 </div>
 
-<!-- MODAL: full product description for RevenuePilot (First product) -->
+<!-- MODAL: RevenuePilot full description -->
 <div id="productModal" class="modal-overlay">
   <div class="modal-container">
     <div class="modal-header">
@@ -530,7 +578,7 @@
 
 <script>
   (function() {
-    // Modal handling
+    // Modal logic
     const modal = document.getElementById('productModal');
     const openBtn = document.getElementById('openModalBtn');
     const closeBtn = document.getElementById('closeModalBtn');
@@ -549,45 +597,23 @@
     if (closeBtn) closeBtn.addEventListener('click', closeModal);
     if (closeFooter) closeFooter.addEventListener('click', closeModal);
 
-    // Click outside overlay closes
     modal.addEventListener('click', function(e) {
-      if (e.target === modal) {
-        closeModal();
-      }
+      if (e.target === modal) closeModal();
     });
-
-    // Escape key
     document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && modal.classList.contains('active')) {
-        closeModal();
-      }
+      if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
     });
 
-    // Smooth scroll for Home and About links
+    // Smooth scroll
     const homeLink = document.querySelector('.nav-home');
     const aboutLink = document.querySelector('.nav-about');
     const homeSection = document.getElementById('home');
     const aboutSection = document.getElementById('about');
+    if (homeLink) homeLink.addEventListener('click', (e) => { e.preventDefault(); homeSection.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+    if (aboutLink) aboutLink.addEventListener('click', (e) => { e.preventDefault(); aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
 
-    if (homeLink) {
-      homeLink.addEventListener('click', (e) => {
-        e.preventDefault();
-        homeSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      });
-    }
-    if (aboutLink) {
-      aboutLink.addEventListener('click', (e) => {
-        e.preventDefault();
-        aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      });
-    }
-
-    // If URL has hash, handle initial scroll
-    if (window.location.hash === '#about') {
-      setTimeout(() => aboutSection?.scrollIntoView({ behavior: 'smooth' }), 100);
-    } else if (window.location.hash === '#home') {
-      setTimeout(() => homeSection?.scrollIntoView({ behavior: 'smooth' }), 100);
-    }
+    if (window.location.hash === '#about') setTimeout(() => aboutSection?.scrollIntoView({ behavior: 'smooth' }), 100);
+    else if (window.location.hash === '#home') setTimeout(() => homeSection?.scrollIntoView({ behavior: 'smooth' }), 100);
   })();
 </script>
 </body>
