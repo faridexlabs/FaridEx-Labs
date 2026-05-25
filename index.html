@@ -1025,47 +1025,58 @@
       }
     }
 
-    @media (max-width: 768px) {
-      body {
-        padding-top: 120px; 
-      }
-      .navbar .container {
-        padding: 0 20px;
-      }
-      .logo-main {
-        font-size: 1.2rem;
-      }
-      .nav-links {
-        gap: 1.25rem;
-      }
-      .nav-links a {
-        font-size: 0.75rem;
-      }
-      section {
-        padding: 40px 0 30px 0;
-      }
-      .hero-title {
-        font-size: 2.35rem;
-      }
-      .hero-subtitle {
-        font-size: 1.05rem;
-      }
-      .guide-steps-grid {
-        grid-template-columns: 1fr;
-        gap: 0.75rem;
-      }
-      .hero-action-row {
-        flex-direction: column;
-        align-items: stretch;
-      }
-      .btn-shine-premium, .btn-outline-executive {
-        justify-content: center;
-      }
-      .products-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-    }
+   @media (max-width: 768px) {
+  /* ... keep your existing mobile rules here ... */
+
+  /* FIX FOR MOBILE TEST MANUAL MODAL BOX */
+  .modal-container {
+    width: 95% !important;
+    padding: 1.5rem !important; /* Reduces massive desktop padding */
+    max-height: 90vh !important; /* Gives more dynamic height on mobile */
+  }
+
+  .modal-header {
+    margin-bottom: 1.25rem !important;
+    padding-bottom: 1rem !important;
+  }
+
+  .modal-header h2 {
+    font-size: 1.35rem !important; /* Prevents long heading clipping */
+    line-height: 1.3 !important;
+  }
+
+  .detail-section h4 {
+    font-size: 0.78rem !important;
+    margin-bottom: 0.35rem !important;
+  }
+
+  .detail-section p {
+    font-size: 0.88rem !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Adjust spacing inside layout element matrices */
+  .badge-container, .grid-outputs {
+    gap: 0.4rem !important;
+    margin-top: 0.5rem !important;
+  }
+
+  .input-badge, .output-chip {
+    font-size: 0.72rem !important;
+    padding: 4px 10px !important;
+  }
+
+  .ecosystem-callout {
+    padding: 0.85rem 1rem !important;
+    font-size: 0.82rem !important;
+  }
+
+  .btn-secondary-close {
+    width: 100% !important; /* Makes button easily tappable on phones */
+    text-align: center !important;
+    padding: 0.75rem 1.25rem !important;
+  }
+}
   </style>
 </head>
 <body>
