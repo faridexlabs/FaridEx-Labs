@@ -1026,55 +1026,99 @@
     }
 
    @media (max-width: 768px) {
-  /* ... keep your existing mobile rules here ... */
+  /* ==========================================================================
+     HARDENED MOBILE MODAL BOX OVERRIDES (FOOLPROOF FIX)
+     ========================================================================== */
+  
+  .modal-overlay {
+    padding: 10px !important; /* Forces a safe edge buffer around the container */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
 
-  /* FIX FOR MOBILE TEST MANUAL MODAL BOX */
   .modal-container {
-    width: 95% !important;
-    padding: 1.5rem !important; /* Reduces massive desktop padding */
-    max-height: 90vh !important; /* Gives more dynamic height on mobile */
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important; /* Breaks rigid structural sizing inheritances */
+    padding: 1.25rem !important; /* Compact interior space */
+    margin: 0 auto !important;
+    max-height: 85vh !important; /* Guarantees layout doesn't bleed off screen height */
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
   }
 
   .modal-header {
-    margin-bottom: 1.25rem !important;
-    padding-bottom: 1rem !important;
+    display: flex !important;
+    align-items: flex-start !important; /* Accommodates multi-line header text wraps safely */
+    justify-content: space-between !important;
+    margin-bottom: 1rem !important;
+    padding-bottom: 0.75rem !important;
+    gap: 1rem !important;
   }
 
   .modal-header h2 {
-    font-size: 1.35rem !important; /* Prevents long heading clipping */
+    font-size: 1.2rem !important; /* Keeps heading scale proportional to mobile displays */
     line-height: 1.3 !important;
+    word-break: break-word !important;
+  }
+
+  .close-modal {
+    padding: 0.25rem !important;
+    margin-top: -2px !important;
+  }
+
+  /* Structural Content Node Refactoring */
+  .detail-section {
+    margin-bottom: 1.25rem !important;
+    min-width: 0 !important;
+    word-wrap: break-word !important;
   }
 
   .detail-section h4 {
-    font-size: 0.78rem !important;
+    font-size: 0.75rem !important;
+    letter-spacing: 0.05em !important;
     margin-bottom: 0.35rem !important;
   }
 
   .detail-section p {
-    font-size: 0.88rem !important;
+    font-size: 0.85rem !important;
     line-height: 1.5 !important;
+    color: #475569 !important;
   }
 
-  /* Adjust spacing inside layout element matrices */
+  /* Safe Adaptive Token Matrix Layouts */
   .badge-container, .grid-outputs {
+    display: flex !important;
+    flex-wrap: wrap !important;
     gap: 0.4rem !important;
     margin-top: 0.5rem !important;
+    width: 100% !important;
   }
 
   .input-badge, .output-chip {
-    font-size: 0.72rem !important;
-    padding: 4px 10px !important;
+    font-size: 0.7rem !important;
+    padding: 4px 8px !important;
+    white-space: normal !important; /* Prevents long chips from overflowing horizontally */
+    text-align: center !important;
+    display: inline-block !important;
   }
 
   .ecosystem-callout {
-    padding: 0.85rem 1rem !important;
-    font-size: 0.82rem !important;
+    padding: 0.75rem 1rem !important;
+    font-size: 0.8rem !important;
+    line-height: 1.4 !important;
+    margin-top: 0.5rem !important;
   }
 
+  /* Full-width tap targets for mobile layout integrity */
   .btn-secondary-close {
-    width: 100% !important; /* Makes button easily tappable on phones */
+    width: 100% !important;
     text-align: center !important;
-    padding: 0.75rem 1.25rem !important;
+    padding: 0.85rem 1rem !important;
+    font-size: 0.78rem !important;
+    box-sizing: border-box !important;
   }
 }
   </style>
