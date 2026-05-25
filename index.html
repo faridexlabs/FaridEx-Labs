@@ -809,7 +809,7 @@
       color: #38BDF8;
     }
 
-    /* UNIVERSAL COMPACT DUAL-TAB MODAL ENGINE */
+    /* SEPARATE MODAL ENGINE RULES (USER GUIDE & TESTS MANUAL INDEPENDENT INTERFACE OVERLAYS) */
     .modal-overlay {
       position: fixed;
       top: 0;
@@ -855,7 +855,9 @@
     .modal-header-centered {
       position: relative;
       text-align: center;
-      margin-bottom: 1.5rem;
+      border-bottom: 1px solid #E2E8F0;
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
     }
 
     .modal-avatar {
@@ -881,48 +883,6 @@
       line-height: 1.2;
     }
 
-    /* HIGH IMPACT NAVIGATION SPEC TABS */
-    .modal-spec-tabs {
-      display: flex;
-      justify-content: center;
-      border-bottom: 2px solid #E2E8F0;
-      margin-bottom: 2rem;
-      gap: 1.5rem;
-    }
-
-    .tab-trigger-btn {
-      background: none;
-      border: none;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-weight: 700;
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: #64748B;
-      padding: 0.75rem 0.5rem;
-      cursor: pointer;
-      position: relative;
-      transition: color 0.2s ease;
-    }
-
-    .tab-trigger-btn:hover {
-      color: #1E3A8A;
-    }
-
-    .tab-trigger-btn.active-spec-tab {
-      color: #2563EB;
-    }
-
-    .tab-trigger-btn.active-spec-tab::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background-color: #2563EB;
-    }
-
     /* ABSOLUTE POSITIONED INPUT LAYER SAFETY FRAME */
     .close-modal-absolute {
       position: absolute;
@@ -940,14 +900,6 @@
 
     .close-modal-absolute:hover {
       color: #0F172A;
-    }
-
-    .spec-content-view {
-      display: none;
-    }
-
-    .spec-content-view.active-view {
-      display: block;
     }
 
     .detail-section {
@@ -1008,7 +960,7 @@
       line-height: 1.5;
     }
 
-    /* USER GUIDE INNER LAYOUT */
+    /* USER GUIDE STEP LAYOUTS */
     .guide-inner-step {
       display: flex;
       gap: 1.25rem;
@@ -1124,11 +1076,16 @@
         padding: 2.25rem 1.75rem;
       }
 
-      /* RESPONSIVE MOBILE MODAL MATRICES */
+      /* RESPONSIVE MOBILE MODAL INTERFACES */
       .modal-container {
         width: 92% !important;
         padding: 1.5rem !important;
         max-height: 88vh !important;
+      }
+
+      .modal-header-centered {
+        padding-bottom: 1rem !important;
+        margin-bottom: 1.5rem !important;
       }
 
       .modal-header-centered h2 {
@@ -1138,16 +1095,6 @@
       .close-modal-absolute {
         top: -1rem;
         right: -1rem;
-      }
-
-      .modal-spec-tabs {
-        margin-bottom: 1.5rem !important;
-        gap: 0.75rem !important;
-      }
-
-      .tab-trigger-btn {
-        font-size: 0.78rem !important;
-        padding: 0.5rem 0.25rem !important;
       }
 
       .detail-section h4 {
@@ -1303,7 +1250,7 @@
             <span>Run Feasibility Test</span>
             <i class="fas fa-bolt"></i>
           </a>
-          <button class="btn-card-primary" id="cardOpenManualBtn" style="background: #F1F5F9; color: #1E3A8A; font-size: 0.8rem; padding: 0 1.2rem; width: auto; border: 1px solid #CBD5E1;" title="Review Test Manual">
+          <button class="btn-card-primary open-manual-trigger" data-target-manual="revenuePilotManual" style="background: #F1F5F9; color: #1E3A8A; font-size: 0.8rem; padding: 0 1.2rem; width: auto; border: 1px solid #CBD5E1;" title="Review Test Manual">
             <i class="fas fa-file-invoice"></i> <span style="margin-left: 6px; font-weight: 700;">Test Manual</span>
           </button>
         </div>
@@ -1383,155 +1330,160 @@
   </div>
 </div>
 
-<div id="productModal" class="modal-overlay">
+<div id="userGuideModal" class="modal-overlay">
   <div class="modal-container">
-    
     <div class="modal-header-centered">
       <div class="modal-avatar">
         <i class="fas fa-book-open"></i>
       </div>
-      <h2 id="modalMainHeading">Lab Dashboard</h2>
-      <button class="close-modal-absolute" id="closeModalBtn"><i class="fas fa-times"></i></button>
+      <h2>User Guide</h2>
+      <button class="close-modal-absolute modal-close-trigger"><i class="fas fa-times"></i></button>
     </div>
 
-    <div class="modal-spec-tabs">
-      <button class="tab-trigger-btn active-spec-tab" id="tabManualTrigger">Test Manual</button>
-      <button class="tab-trigger-btn" id="tabGuideTrigger">User Guide</button>
+    <div class="detail-section">
+      <h4>How to Operate the Labs Suite</h4>
+      <p>FaridEx Labs is organized to deliver rapid data streams directly into executive decision points. Follow these operational criteria:</p>
     </div>
-    
-    <div class="spec-content-view active-view" id="viewTestManual">
-      <div class="detail-section">
-        <h4>Architectural Intent</h4>
-        <p>Systematically models conceptual return profiles using standardized localized economic variables to ensure corporate capital assets are not deployed into inefficient project layouts.</p>
-      </div>
-      
-      <div class="detail-section">
-        <h4>Monitored Input Fields (PKR Core Calibration)</h4>
-        <div class="badge-container">
-          <span class="input-badge">Target PKR ACV Margins</span>
-          <span class="input-badge">Engineering Resource Budget (PKR)</span>
-          <span class="input-badge">Localized CAC Burden Matrix</span>
-          <span class="input-badge">Market Penetration Index</span>
-          <span class="input-badge">Regulatory Compliance (SBP Guidelines)</span>
-        </div>
-      </div>
-      
-      <div class="detail-section">
-        <h4>Derived Analytical Outputs</h4>
-        <div class="grid-outputs">
-          <span class="output-chip">Revenue Feasibility Index (0-100)</span>
-          <span class="output-chip">Capital Yield Factor Ratio (x)</span>
-          <span class="output-chip">Market Traction Vector (MTV)</span>
-          <span class="output-chip">Capital Breakeven Horizon (Months)</span>
-          <span class="output-chip">Execution Runway Stability Score</span>
-        </div>
-      </div>
-      
-      <div class="detail-section">
-        <h4>Ecosystem Context Node</h4>
-        <p>RevenuePilot serves as the primary evaluation layer for the planned analytical suite developed by FaridEx Labs.</p>
-        <div class="ecosystem-callout">
-          <strong>Corporate Security Protocol:</strong> Local currency configuration vectors are actively locked down across the execution sandbox environment.
-        </div>
+
+    <div class="guide-inner-step">
+      <div class="guide-step-num">1</div>
+      <div>
+        <h4 style="color:#0F172A; font-size:0.95rem; margin-bottom:2px;">Select Analytics Matrix Tracks</h4>
+        <p style="font-size:0.9rem; color:#475569;">Hover over or touch the primary pipeline filters (Analysis, Strategy, Execution) inside the telemetry module to re-route high-frequency processing trends.</p>
       </div>
     </div>
 
-    <div class="spec-content-view" id="viewUserGuide">
-      <div class="detail-section">
-        <h4>How to Operate the Labs Suite</h4>
-        <p>FaridEx Labs is organized to deliver rapid data streams directly into executive decision points. Follow these operational criteria:</p>
+    <div class="guide-inner-step">
+      <div class="guide-step-num">2</div>
+      <div>
+        <h4 style="color:#0F172A; font-size:0.95rem; margin-bottom:2px;">Audit Specifications via Test Manuals</h4>
+        <p style="font-size:0.9rem; color:#475569;">Review the structural criteria constraints, regulatory rules, and input variables before dedicating live corporate capital resources towards active execution phases.</p>
       </div>
+    </div>
 
-      <div class="guide-inner-step">
-        <div class="guide-step-num">1</div>
-        <div>
-          <h4 style="color:#0F172A; font-size:0.95rem; margin-bottom:2px;">Select Analytics Matrix Tracks</h4>
-          <p style="font-size:0.9rem; color:#475569;">Hover over or touch the primary pipeline filters (Analysis, Strategy, Execution) inside the telemetry module to re-route high-frequency processing trends.</p>
-        </div>
-      </div>
-
-      <div class="guide-inner-step">
-        <div class="guide-step-num">2</div>
-        <div>
-          <h4 style="color:#0F172A; font-size:0.95rem; margin-bottom:2px;">Audit Specifications via Test Manuals</h4>
-          <p style="font-size:0.9rem; color:#475569;">Review the structural criteria constraints, regulatory rules, and input variables before dedicating live corporate capital resources towards active execution phases.</p>
-        </div>
-      </div>
-
-      <div class="guide-inner-step">
-        <div class="guide-step-num">3</div>
-        <div>
-          <h4 style="color:#0F172A; font-size:0.95rem; margin-bottom:2px;">Extract Decision Reports</h4>
-          <p style="font-size:0.9rem; color:#475569;">Isolate high-risk features and eliminate product roadmap variance using mathematical index calculations rather than standard speculative project logs.</p>
-        </div>
+    <div class="guide-inner-step">
+      <div class="guide-step-num">3</div>
+      <div>
+        <h4 style="color:#0F172A; font-size:0.95rem; margin-bottom:2px;">Extract Decision Reports</h4>
+        <p style="font-size:0.9rem; color:#475569;">Isolate high-risk features and eliminate product roadmap variance using mathematical index calculations rather than standard speculative project logs.</p>
       </div>
     </div>
     
     <div style="margin-top: 2.5rem; text-align: right;">
-      <button id="closeModalFooterBtn" class="btn-secondary-close">Dismiss Interface Panel</button>
+      <button class="btn-secondary-close modal-close-trigger">Dismiss Guide Panel</button>
+    </div>
+  </div>
+</div>
+
+<div id="revenuePilotManual" class="modal-overlay">
+  <div class="modal-container">
+    <div class="modal-header-centered">
+      <div class="modal-avatar">
+        <i class="fas fa-file-invoice"></i>
+      </div>
+      <h2>Test Manual</h2>
+      <p style="font-size: 0.85rem; color: #64748B; margin-top: 4px; font-weight: 500;">RevenuePilot Engineering Specifications</p>
+      <button class="close-modal-absolute modal-close-trigger"><i class="fas fa-times"></i></button>
+    </div>
+    
+    <div class="detail-section">
+      <h4>Architectural Intent</h4>
+      <p>Systematically models conceptual return profiles using standardized localized economic variables to ensure corporate capital assets are not deployed into inefficient project layouts.</p>
+    </div>
+    
+    <div class="detail-section">
+      <h4>Monitored Input Fields (PKR Core Calibration)</h4>
+      <div class="badge-container">
+        <span class="input-badge">Target PKR ACV Margins</span>
+        <span class="input-badge">Engineering Resource Budget (PKR)</span>
+        <span class="input-badge">Localized CAC Burden Matrix</span>
+        <span class="input-badge">Market Penetration Index</span>
+        <span class="input-badge">Regulatory Compliance (SBP Guidelines)</span>
+      </div>
+    </div>
+    
+    <div class="detail-section">
+      <h4>Derived Analytical Outputs</h4>
+      <div class="grid-outputs">
+        <span class="output-chip">Revenue Feasibility Index (0-100)</span>
+        <span class="output-chip">Capital Yield Factor Ratio (x)</span>
+        <span class="output-chip">Market Traction Vector (MTV)</span>
+        <span class="output-chip">Capital Breakeven Horizon (Months)</span>
+        <span class="output-chip">Execution Runway Stability Score</span>
+      </div>
+    </div>
+    
+    <div class="detail-section">
+      <h4>Ecosystem Context Node</h4>
+      <p>RevenuePilot serves as the primary evaluation layer for the planned analytical suite developed by FaridEx Labs.</p>
+      <div class="ecosystem-callout">
+        <strong>Corporate Security Protocol:</strong> Local currency configuration vectors are actively locked down across the execution sandbox environment.
+      </div>
+    </div>
+    
+    <div style="margin-top: 2.5rem; text-align: right;">
+      <button class="btn-secondary-close modal-close-trigger">Dismiss Test Manual</button>
     </div>
   </div>
 </div>
 
 <script>
   (function() {
-    // MODAL ACCESS RUNTIME CONTROLLER
-    const modal = document.getElementById('productModal');
-    const closeModalBtn = document.getElementById('closeModalBtn');
-    const closeFooter = document.getElementById('closeModalFooterBtn');
+    // MODAL CONTROL INTERFACE ENGINE (COMPLETELY DECOUPLED SYSTEMS)
+    const userGuideModal = document.getElementById('userGuideModal');
     
-    // Tab Triggers & Views
-    const tabManualTrigger = document.getElementById('tabManualTrigger');
-    const tabGuideTrigger = document.getElementById('tabGuideTrigger');
-    const viewTestManual = document.getElementById('viewTestManual');
-    const viewUserGuide = document.getElementById('viewUserGuide');
-    const modalMainHeading = document.getElementById('modalMainHeading');
-
-    // UI Entry Access Elements
     const navOpenGuideBtn = document.getElementById('navOpenGuideBtn');
     const heroOpenGuideBtn = document.getElementById('heroOpenGuideBtn');
-    const cardOpenManualBtn = document.getElementById('cardOpenManualBtn');
+    const manualTriggers = document.querySelectorAll('.open-manual-trigger');
+    const closeTriggers = document.querySelectorAll('.modal-close-trigger');
+    const allOverlays = document.querySelectorAll('.modal-overlay');
 
-    function selectTab(mode) {
-      if (mode === 'manual') {
-        tabManualTrigger.classList.add('active-spec-tab');
-        tabGuideTrigger.classList.remove('active-spec-tab');
-        viewTestManual.classList.add('active-view');
-        viewUserGuide.classList.remove('active-view');
-        modalMainHeading.textContent = 'Test Manual';
-      } else {
-        tabGuideTrigger.classList.add('active-spec-tab');
-        tabManualTrigger.classList.remove('active-spec-tab');
-        viewUserGuide.classList.add('active-view');
-        viewTestManual.classList.remove('active-view');
-        modalMainHeading.textContent = 'User Guide';
+    // Global Registry of Open Modals to handle keyboard shortcuts cleanly
+    let activeModalInstance = null;
+
+    function openModal(modalTarget) {
+      if (!modalTarget) return;
+      modalTarget.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      activeModalInstance = modalTarget;
+    }
+
+    function closeModal() {
+      if (activeModalInstance) {
+        activeModalInstance.classList.remove('active');
+        document.body.style.overflow = '';
+        activeModalInstance = null;
       }
     }
 
-    function openLabModal(initialTab) {
-      selectTab(initialTab);
-      modal.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
+    // Connect User Guide Action Core
+    if (navOpenGuideBtn) navOpenGuideBtn.addEventListener('click', () => openModal(userGuideModal));
+    if (heroOpenGuideBtn) heroOpenGuideBtn.addEventListener('click', () => openModal(userGuideModal));
 
-    function closeLabModal() {
-      modal.classList.remove('active');
-      document.body.style.overflow = '';
-    }
+    // Dynamic Route Engine for Multiple Test Manuals via data attributes
+    manualTriggers.forEach(btn => {
+      btn.addEventListener('click', function() {
+        const targetId = this.getAttribute('data-target-manual');
+        const targetModalElement = document.getElementById(targetId);
+        openModal(targetModalElement);
+      });
+    });
 
-    // Assign Triggers
-    if (navOpenGuideBtn) navOpenGuideBtn.addEventListener('click', () => openLabModal('guide'));
-    if (heroOpenGuideBtn) heroOpenGuideBtn.addEventListener('click', () => openLabModal('guide'));
-    if (cardOpenManualBtn) cardOpenManualBtn.addEventListener('click', () => openLabModal('manual'));
+    // Wire up all unified escape closes inside the components
+    closeTriggers.forEach(trigger => {
+      trigger.addEventListener('click', closeModal);
+    });
 
-    tabManualTrigger.addEventListener('click', () => selectTab('manual'));
-    tabGuideTrigger.addEventListener('click', () => selectTab('guide'));
+    // Backdrop Click Dismiss Rule
+    allOverlays.forEach(overlay => {
+      overlay.addEventListener('click', function(e) {
+        if (e.target === this) closeModal();
+      });
+    });
 
-    if (closeModalBtn) closeModalBtn.addEventListener('click', closeLabModal);
-    if (closeFooter) closeFooter.addEventListener('click', closeLabModal);
-    modal.addEventListener('click', function(e) { if (e.target === modal) closeLabModal(); });
+    // Keyboard Accessibility Core Listener
     document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && modal.classList.contains('active')) closeLabModal();
+      if (e.key === 'Escape' && activeModalInstance) closeModal();
     });
 
     // NAVIGATION SMOOTH SCROLL SYSTEM
