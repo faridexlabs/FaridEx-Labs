@@ -188,8 +188,53 @@
     .hero-subtitle {
       font-size: 1.15rem;
       color: #475569;
-      margin-bottom: 2.5rem;
+      margin-bottom: 2rem;
       line-height: 1.75;
+    }
+
+    /* USER GUIDE SECTION SETUP */
+    .lab-user-guide {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 1.25rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.02);
+    }
+
+    .guide-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #0F172A;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .guide-title i {
+      color: #2563EB;
+    }
+
+    .guide-steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .guide-step-item {
+      font-size: 0.8rem;
+      color: #475569;
+      line-height: 1.5;
+    }
+
+    .guide-step-item strong {
+      color: #0F172A;
+      display: block;
+      margin-bottom: 0.2rem;
     }
 
     .hero-action-row {
@@ -342,10 +387,9 @@
       transform: translateX(-50%);
     }
 
-    /* PLACING THE USER+PC WATCHER DIRECTLY WHERE DATA ENTERS FROM THE CONDUIT */
     .user-pc-watcher {
       position: absolute;
-      top: -12px; /* Positioned directly up where packets originate */
+      top: -12px; 
       left: 50%;
       transform: translateX(-50%);
       z-index: 20;
@@ -504,7 +548,7 @@
       margin-top: 2px;
     }
 
-    /* SCALABLE PRODUCT GRID SYSTEM */
+    /* SCALABLE VALIDATION GRID SYSTEM */
     .products-grid-section {
       border-top: 1px solid #E2E8F0;
       padding-top: 60px;
@@ -643,6 +687,114 @@
       background: #1E3A8A;
     }
 
+    /* MODAL AND SPECS STYLING INJECTIONS */
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #E2E8F0;
+      padding-bottom: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .modal-header h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #0F172A;
+    }
+
+    .close-modal {
+      background: none;
+      border: none;
+      font-size: 1.25rem;
+      color: #64748B;
+      cursor: pointer;
+      transition: color 0.2s ease;
+      padding: 0.5rem;
+    }
+
+    .close-modal:hover {
+      color: #0F172A;
+    }
+
+    .detail-section {
+      margin-bottom: 1.75rem;
+    }
+
+    .detail-section h4 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #1E3A8A;
+      margin-bottom: 0.5rem;
+    }
+
+    .detail-section p {
+      font-size: 0.95rem;
+      color: #475569;
+      line-height: 1.6;
+    }
+
+    .badge-container, .grid-outputs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 0.75rem;
+    }
+
+    .input-badge {
+      background: #F1F5F9;
+      border: 1px solid #E2E8F0;
+      color: #334155;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 4px;
+    }
+
+    .output-chip {
+      background: rgba(37, 99, 235, 0.05);
+      border: 1px solid rgba(37, 99, 235, 0.15);
+      color: #2563EB;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 4px;
+    }
+
+    .ecosystem-callout {
+      background: #FFFBEB;
+      border-left: 4px solid #F59E0B;
+      padding: 1rem 1.25rem;
+      border-radius: 0 4px 4px 0;
+      margin-top: 0.75rem;
+      font-size: 0.9rem;
+      color: #78350F;
+      line-height: 1.5;
+    }
+
+    .btn-secondary-close {
+      background: #F1F5F9;
+      color: #334155;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+      padding: 0.85rem 1.75rem;
+      border-radius: 4px;
+      border: 1px solid #E2E8F0;
+      cursor: pointer;
+      font-size: 0.8rem;
+      transition: all 0.2s ease;
+    }
+
+    .btn-secondary-close:hover {
+      background: #E2E8F0;
+      color: #0F172A;
+    }
+
     /* ABOUT ME SECTION BLOCK */
     .about-section-container {
       border-top: 1px solid #E2E8F0;
@@ -757,119 +909,6 @@
       line-height: 1.6;
     }
 
-    /* ==========================================================================
-   FARIDEX LABS COMPACT MODAL MODULE FIX
-   ========================================================================== */
-
-.modal-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #E2E8F0;
-  padding-bottom: 1.25rem;
-  margin-bottom: 2rem;
-}
-
-.modal-header h2 {
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: #0F172A;
-}
-
-.close-modal {
-  background: none;
-  border: none;
-  font-size: 1.25rem;
-  color: #64748B;
-  cursor: pointer;
-  transition: color 0.2s ease;
-  padding: 0.5rem;
-}
-
-.close-modal:hover {
-  color: #0F172A;
-}
-
-.detail-section {
-  margin-bottom: 1.75rem;
-}
-
-.detail-section h4 {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.85rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #1E3A8A;
-  margin-bottom: 0.5rem;
-}
-
-.detail-section p {
-  font-size: 0.95rem;
-  color: #475569;
-  line-height: 1.6;
-}
-
-/* Badge and Output Chip Matrix Layouts */
-.badge-container, .grid-outputs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  margin-top: 0.75rem;
-}
-
-.input-badge {
-  background: #F1F5F9;
-  border: 1px solid #E2E8F0;
-  color: #334155;
-  font-size: 0.78rem;
-  font-weight: 600;
-  padding: 6px 12px;
-  border-radius: 4px;
-}
-
-.output-chip {
-  background: rgba(37, 99, 235, 0.05);
-  border: 1px solid rgba(37, 99, 235, 0.15);
-  color: #2563EB;
-  font-size: 0.78rem;
-  font-weight: 600;
-  padding: 6px 12px;
-  border-radius: 4px;
-}
-
-/* Callout Box and Footer Layout */
-.ecosystem-callout {
-  background: #FFFBEB;
-  border-left: 4px solid #F59E0B;
-  padding: 1rem 1.25rem;
-  border-radius: 0 4px 4px 0;
-  margin-top: 0.75rem;
-  font-size: 0.9rem;
-  color: #78350F;
-  line-height: 1.5;
-}
-
-.btn-secondary-close {
-  background: #F1F5F9;
-  color: #334155;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-weight: 700;
-  padding: 0.85rem 1.75rem;
-  border-radius: 4px;
-  border: 1px solid #E2E8F0;
-  cursor: pointer;
-  font-size: 0.8rem;
-  transition: all 0.2s ease;
-}
-
-.btn-secondary-close:hover {
-  background: #E2E8F0;
-  color: #0F172A;
-}
-    
     /* COMMUNICATIONS PROTOCOLS */
     .contact-info {
       margin-top: 5rem;
@@ -1011,6 +1050,10 @@
       .hero-subtitle {
         font-size: 1.05rem;
       }
+      .guide-steps-grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+      }
       .hero-action-row {
         flex-direction: column;
         align-items: stretch;
@@ -1035,8 +1078,16 @@
         <div class="tagline">Quantifying Product Decisions</div>
       </a>
       <div class="nav-links">
-        <a href="#products" class="nav-products">Products</a>
+        <a href="#validation-tests" class="nav-products">Validation Tests</a>
         <a href="#about" class="nav-about">About</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-status-tier">
+    <div class="container">
+      <div class="status-flex">
+        <span><i class="fas fa-shield-halved"></i> Strategy & Consulting Core</span>
+        <span><i class="fas fa-chart-pie"></i> Data-Driven Feasibility</span>
       </div>
     </div>
   </div>
@@ -1054,9 +1105,29 @@
         </h1>
         <p class="hero-subtitle">FaridEx Labs engineers isolated tactical validation frameworks that allow software product leaders, enterprise managers, and founders to audit feature sets and mitigate roadmap vulnerabilities pre-development.</p>
         
+        <div class="lab-user-guide">
+          <div class="guide-title">
+            <i class="fas fa-book-open"></i> Lab User Guide: How to Test Your Product
+          </div>
+          <div class="guide-steps-grid">
+            <div class="guide-step-item">
+              <strong>1. Select Matrix Track</strong>
+              Hover or click telemetry modules to route automated live analytics streams.
+            </div>
+            <div class="guide-step-item">
+              <strong>2. Study Test Manuals</strong>
+              Review technical constraints, regulatory rules, and parameters before deployment.
+            </div>
+            <div class="guide-step-item">
+              <strong>3. Analyze Decisions</strong>
+              Extract calculated risk scores to drive highly reliable corporate strategy.
+            </div>
+          </div>
+        </div>
+
         <div class="hero-action-row">
-          <a href="#products" class="btn-shine-premium nav-products">
-            <span>Explore Architecture Suite</span>
+          <a href="#validation-tests" class="btn-shine-premium nav-products">
+            <span>Explore Validation Tests</span>
             <i class="fas fa-arrow-right"></i>
           </a>
           <a href="#about" class="btn-outline-executive nav-about">
@@ -1067,7 +1138,6 @@
       </div>
 
       <div class="pipeline-dashboard-container" id="dashboardHub">
-        
         <div class="source-cards-row">
           <div class="pipeline-source-card active" data-target-state="1" id="cardAnalysis">
             <i class="fas fa-chart-line"></i>
@@ -1088,7 +1158,6 @@
 
         <div class="conduit-channel" id="conduitTrack">
           <div class="stream-line-conduit"></div>
-          
           <div id="userTrendWatcher" class="user-pc-watcher">
             <i class="fas fa-user"></i>
             <i class="fas fa-desktop"></i>
@@ -1108,11 +1177,9 @@
 
           <div class="telemetry-output-grid">
             <div class="growth-bars-display" id="barsDisplay">
-              
               <svg id="trendLineSvg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; z-index: 5;">
                 <polyline id="dynamicTrendLine" points="" style="fill: none; stroke: #F59E0B; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0px 0px 5px rgba(245, 158, 11, 0.7)); transition: all 0.35s cubic-bezier(0.1, 0.8, 0.2, 1);" />
               </svg>
-
               <div class="growth-chart-bar bar-cyan" style="height: 45%;"></div>
               <div class="growth-chart-bar bar-blue" style="height: 70%;"></div>
               <div class="growth-chart-bar bar-green" style="height: 85%;"></div>
@@ -1128,49 +1195,48 @@
             </div>
           </div>
         </div>
-
       </div>
 
     </div>
   </section>
 
-  <section id="products" class="products-grid-section">
+  <section id="validation-tests" class="products-grid-section">
     <div class="section-header-area">
       <span class="section-title-label">Available Modules</span>
-      <h2 class="section-title">Analytical Platform Engines</h2>
+      <h2 class="section-title">Validation Test Architecture</h2>
     </div>
     
     <div class="products-grid">
       <div class="premium-product-card" style="border-color: #CBD5E1;">
         <div class="card-top-matter">
           <div class="coming-soon-badge" style="background: #ECFDF5; border: 1px solid #A7F3D0; color: #047857;">
-            <i class="fas fa-circle-check"></i> Operational Module · Active Engine
+            <i class="fas fa-circle-check"></i> Operational Test · Active Engine
           </div>
           <h3 class="product-headline">RevenuePilot</h3>
-          <div class="product-meta-sub"><i class="fas fa-coins"></i> Revenue Feasibility Intelligence Engine</div>
-          <p class="product-description-text">Insulate engineering teams from non-viable architectures. RevenuePilot audits target market parameters, variable baseline pricing tiers, and direct micro-economic monetization vectors before a single line of script is committed.</p>
+          <div class="product-meta-sub"><i class="fas fa-coins"></i> Revenue Feasibility Test Platform</div>
+          <p class="product-description-text">Insulate engineering teams from non-viable architectures. RevenuePilot audits target market parameters, variable baseline pricing tiers, and direct monetization vectors before a single line of script is committed.</p>
         </div>
         
         <div style="display: grid; grid-template-columns: 1fr auto; gap: 0.75rem; margin-top: auto;">
           <a href="revenue-pilot.html" class="btn-card-primary" style="text-decoration: none;">
-            <span>Initialize Engine Control Panel</span>
+            <span>Run Feasibility Test</span>
             <i class="fas fa-bolt"></i>
           </a>
-          <button class="btn-card-primary" id="openModalBtn" style="background: #F1F5F9; color: #0F172A; width: 50px; padding: 0;" title="Review Core Specifications">
-            <i class="fas fa-info-circle"></i>
+          <button class="btn-card-primary" id="openModalBtn" style="background: #F1F5F9; color: #1E3A8A; font-size: 0.8rem; padding: 0 1.2rem; width: auto; border: 1px solid #CBD5E1;" title="Review Test Manual">
+            <i class="fas fa-file-invoice"></i> <span style="margin-left: 6px; font-weight: 700;">Test Manual</span>
           </button>
         </div>
       </div>
 
       <div class="premium-product-card" style="opacity: 0.85;">
         <div class="card-top-matter">
-          <div class="coming-soon-badge"><i class="far fa-clock"></i> Deployment Phase · Coming Soon</div>
+          <div class="coming-soon-badge"><i class="far fa-clock"></i> Development Phase · Coming Soon</div>
           <h3 class="product-headline">FeatureImpact OS</h3>
           <div class="product-meta-sub"><i class="fas fa-shuffle"></i> Pre-Deployment Feature Impact Simulator</div>
           <p class="product-description-text">Predicts how a feature modification may impact users and overall product performance vectors before deployment. Simulates onboarding friction, retention stability indexes, and UX disruption indicators.</p>
         </div>
         <button class="btn-card-primary" disabled style="background: #E2E8F0; color: #94A3B8; cursor: not-allowed; border: none;">
-          <span>Pipeline Stage Locked</span>
+          <span>Pipeline Test Locked</span>
           <i class="fas fa-lock"></i>
         </button>
       </div>
@@ -1192,7 +1258,6 @@
         </div>
 
         <p>I operate within heavy-data system integration nodes, developing structural evaluation frameworks designed to isolate high-risk business initiatives from active engineering execution streams.</p>
-        
         <p>My work centers around replacing speculative launch methodologies with quantitative telemetry. I engineer clean system architectures, structure product governance pipelines, and construct scalable market entry blueprints optimized to match complex engineering footprints.</p>
         
         <ul class="bullets-list">
@@ -1211,12 +1276,10 @@
           <h5>My Mission</h5>
           <p>To process and standardize loose product assumptions into clean, data-backed feasibility indexes utilizing localized matrix logic models.</p>
         </div>
-        
         <div class="info-block">
           <h5>System Density</h5>
           <p>Consists of micro-evaluation environments running specific data tracks from fundamental asset protection arrays to revenue tracking engines.</p>
         </div>
-        
         <div class="info-block">
           <h5>The Integrity Buffer</h5>
           <p>Functions outside typical engineering logs, serving strictly as an institutional strategy layer dedicated to confirming early viability metrics.</p>
@@ -1242,7 +1305,7 @@
 <div id="productModal" class="modal-overlay">
   <div class="modal-container">
     <div class="modal-header">
-      <h2 class="serif-heading">RevenuePilot Engineering Specifications</h2>
+      <h2 class="serif-heading">RevenuePilot Test Manual Specifications</h2>
       <button class="close-modal" id="closeModalBtn"><i class="fas fa-times"></i></button>
     </div>
     
@@ -1282,7 +1345,7 @@
     </div>
     
     <div style="margin-top: 2.5rem; text-align: right;">
-      <button id="closeModalFooterBtn" class="btn-secondary-close">Dismiss Interface Panel</button>
+      <button id="closeModalFooterBtn" class="btn-secondary-close">Dismiss Test Manual</button>
     </div>
   </div>
 </div>
@@ -1312,7 +1375,7 @@
     // NAVIGATION SMOOTH SCROLL INTEGRATION
     const productsLinks = document.querySelectorAll('.nav-products');
     const aboutLinks = document.querySelectorAll('.nav-about');
-    const productsSection = document.getElementById('products');
+    const productsSection = document.getElementById('validation-tests');
     const aboutSection = document.getElementById('about');
     
     productsLinks.forEach(link => {
@@ -1357,21 +1420,18 @@
       let pointsCoordArray = [];
 
       chartBars.forEach((bar) => {
-        const randomHeight = Math.floor(Math.random() * 65) + 30; // 30% to 95%
+        const randomHeight = Math.floor(Math.random() * 65) + 30; 
         bar.style.height = `${randomHeight}%`;
         
-        // Dynamic Vector Mapping for Trendline Center Coordinates
         const posX = bar.offsetLeft + (bar.offsetWidth / 2);
         const posY = 85 - (85 * randomHeight / 100); 
         pointsCoordArray.push(`${posX},${posY}`);
       });
 
-      // Commit coordinates to active SVG polyline
       if (dynamicTrendLine) {
         dynamicTrendLine.setAttribute('points', pointsCoordArray.join(' '));
       }
 
-      // Sweeping wide index window calculations
       const mathematicalSwing = (Math.random() * 12) - 5.5; 
       let originalScore = baseFeasibilityScore;
       baseFeasibilityScore += mathematicalSwing;
@@ -1381,7 +1441,6 @@
 
       telemetryValue.textContent = `${baseFeasibilityScore.toFixed(2)}%`;
       
-      // Calculate delta indicators & vector directions
       const finalDelta = baseFeasibilityScore - originalScore;
       if (finalDelta >= 0) {
         deltaStatusBox.className = "delta-status-row positive";
@@ -1394,11 +1453,9 @@
       }
     }
 
-    // Initialize layout positions on initialization payload step
     setTimeout(runTelemetryRefresh, 60);
     setInterval(runTelemetryRefresh, 500);
 
-    // Dynamic Tracking Interaction States 
     sourceCards.forEach((card, idx) => {
       const labelTracker = document.getElementById('activeTrackLabel');
       const networkLabels = [
