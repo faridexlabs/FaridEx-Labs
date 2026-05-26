@@ -153,7 +153,7 @@
       margin-bottom: 0.4rem;
     }
 
-    /* COMPOUND FIELD WITH SCALE MOVED TO THE RIGHT SIDE */
+    /* SCALE SELECTOR MOVED TO THE RIGHT SIDE */
     .compound-field {
       display: flex;
       border: 1px solid #CBD5E1;
@@ -233,6 +233,8 @@
       flex-direction: column;
       gap: 1.75rem;
       box-shadow: 0 20px 40px -15px rgba(10, 25, 47, 0.3);
+      position: sticky;
+      top: 130px;
       height: fit-content;
     }
 
@@ -289,7 +291,7 @@
       color: #CBD5E1;
     }
 
-    /* 10 FACTORS REPORT COMPREHENSIVE BLOCK */
+    /* 10 FACTORS INDIVIDUAL FACTOR SCORE BLOCK */
     .breakdown-list {
       display: flex;
       flex-direction: column;
@@ -317,6 +319,10 @@
       font-weight: 700;
       font-size: 0.92rem;
     }
+
+    .val.score-good { color: #10B981; }
+    .val.score-alert { color: #F59E0B; }
+    .val.score-danger { color: #EF4444; }
 
     /* STRATEGIC SUGGESTIONS TERMINAL BLOCK */
     .suggestions-box {
@@ -553,7 +559,7 @@
 
     <div class="output-panel">
       <div>
-        <h3>Validation Test Report</h3>
+        <h3>Validation Test Diagnostic Report</h3>
         <div class="score-split-container">
           <div class="feasibility-value" id="outScore">0%</div>
           <div class="score-comment-box">
@@ -565,43 +571,43 @@
 
       <div class="breakdown-list">
         <div class="breakdown-item">
-          <span class="lbl">1. Absolute Addressable Market Pool (TAM)</span>
+          <span class="lbl">1. Absolute Addressable Market (TAM) Health</span>
           <span class="val" id="m1">-</span>
         </div>
         <div class="breakdown-item">
-          <span class="lbl">2. Serviceable Market Target (SAM)</span>
+          <span class="lbl">2. Serviceable Market Target (SAM) Efficiency</span>
           <span class="val" id="m2">-</span>
         </div>
         <div class="breakdown-item">
-          <span class="lbl">3. Capture Goal Boundary Pool (SOM)</span>
+          <span class="lbl">3. Capture Goal Volume (SOM) Realism</span>
           <span class="val" id="m3">-</span>
         </div>
         <div class="breakdown-item">
-          <span class="lbl">4. Unit Contract Economic Yield (ACV)</span>
-          <span class="val" id="m4" style="color: #38BDF8;">-</span>
+          <span class="lbl">4. Unit Contract Margin Strength</span>
+          <span class="val" id="m4">-</span>
         </div>
         <div class="breakdown-item">
-          <span class="lbl">5. Customer Acquisition Velocity Cost</span>
+          <span class="lbl">5. Customer Acquisition Velocity Health</span>
           <span class="val" id="m5">-</span>
         </div>
         <div class="breakdown-item">
-          <span class="lbl">6. Derived LTV-to-CAC Structural Ratio</span>
+          <span class="lbl">6. Derived LTV-to-CAC Structural Score</span>
           <span class="val" id="m6">-</span>
         </div>
         <div class="breakdown-item">
-          <span class="lbl">7. Pre-Launch Capital Sunk Asset Load</span>
+          <span class="lbl">7. Pre-Launch Capital Risk Exposure</span>
           <span class="val" id="m7">-</span>
         </div>
         <div class="breakdown-item">
-          <span class="lbl">8. Estimated Monthly Burn Framework</span>
+          <span class="lbl">8. Estimated Monthly Burn Sustainability</span>
           <span class="val" id="m8">-</span>
         </div>
         <div class="breakdown-item">
-          <span class="lbl">9. Competitive Saturation Risk Index</span>
+          <span class="lbl">9. Competitive Saturation Defense Index</span>
           <span class="val" id="m9">-</span>
         </div>
         <div class="breakdown-item">
-          <span class="lbl">10. Ecosystem Stability Vector Status</span>
+          <span class="lbl">10. Ecosystem & Operational Safety Status</span>
           <span class="val" id="m10">-</span>
         </div>
       </div>
@@ -633,8 +639,6 @@
     });
 
     const calcBtn = document.getElementById('calcBtn');
-
-    // Output Mapping Targets
     const outScore = document.getElementById('outScore');
     const outCommentTag = document.getElementById('outCommentTag');
     const outCommentText = document.getElementById('outCommentText');
@@ -646,16 +650,14 @@
       return val * mult;
     }
 
-    function formatSuffix(value) {
-      if (value === 0) return '0.00';
-      if (value >= 1000000000) return (value / 1000000000).toFixed(2) + 'B';
-      if (value >= 1000000) return (value / 1000000).toFixed(2) + 'M';
-      if (value >= 1000) return (value / 1000).toFixed(2) + 'K';
-      return value.toFixed(2);
+    function getClassForScore(s) {
+      if (s < 40) return 'val score-danger';
+      if (s < 70) return 'val score-alert';
+      return 'val score-good';
     }
 
     function generateReportEngine() {
-      // 1. Compute Base Factors
+      // 1. Unpack Raw Data Matrix
       const tam = getAbsoluteValue('tam');
       const sam = getAbsoluteValue('sam');
       const som = getAbsoluteValue('som');
@@ -674,96 +676,123 @@
       const salescycle = parseFloat(DOM.salescycle.value) || 0;
       const conversion = parseFloat(DOM.conversion.value) || 0;
 
-      // Force verification safeguard if everything is left untouched
+      // Validation guard
       if(tam === 0 && acv === 0 && dev === 0) {
-        alert("Please modify the zero values to generate a valid feasibility report.");
+        alert("Please input your model values to run the diagnostic matrix analysis.");
         return;
       }
 
-      // 2. Comprehensive 1-100 Mathematical Logic Score System
-      let score = 55; 
+      // 2. DIAGNOSTIC FORMULAS — GENERATING 10 INDEPENDENT 1-100 SCORES
+      
+      // Score 1: TAM Volume Health (checks macro scale size)
+      let s1 = tam > 10000000 ? 95 : (tam > 1000000 ? 75 : 45);
+      if (growth > 15) s1 += 5;
 
-      if (sam > tam || som > sam) score -= 15;
-      if (growth > 15) score += 5;
+      // Score 2: SAM Filtering Efficiency
+      let s2 = 85;
+      if (tam > 0) {
+        const ratio = sam / tam;
+        if (ratio > 0.6 || ratio < 0.05) s2 = 40; // unrealistic structure
+      } else { s2 = 10; }
 
+      // Score 3: SOM Realism 
+      let s3 = 90;
+      if (sam > 0) {
+        const ratio = som / sam;
+        if (ratio > 0.4) s3 = 35; // scaling goal too aggressive pre-launch
+      } else { s3 = 10; }
+
+      // Score 4: Unit Contract Margin Strength
+      let s4 = 50;
+      if (acv > 0) {
+        const marginPct = ((acv - servicing) / acv) * 100;
+        s4 = marginPct > 80 ? 95 : (marginPct > 50 ? 70 : 30);
+      }
+
+      // Score 5: Customer Acquisition Velocity Health
+      let s5 = 75;
+      if (salescycle > 6) s5 -= 25;
+      if (conversion < 10) s5 -= 20;
+      if (conversion > 25) s5 += 15;
+
+      // Score 6: LTV-to-CAC Structural Score
       const annualMargin = acv - servicing;
       const lifeYears = churn > 0 ? (100 / churn) : 5;
       const ltv = annualMargin * lifeYears;
-      const ltvCac = cac > 0 ? (ltv / cac) : 0;
+      const ltvCacRatio = cac > 0 ? (ltv / cac) : 0;
+      let s6 = 15;
+      if (ltvCacRatio >= 4) s6 = 98;
+      else if (ltvCacRatio >= 3) s6 = 80;
+      else if (ltvCacRatio >= 2) s6 = 55;
 
-      if (ltvCac >= 3.5) score += 18;
-      else if (ltvCac >= 2.0) score += 5;
-      else score -= 20;
+      // Score 7: Pre-Launch Capital Risk Load
+      let s7 = 80;
+      const totalSunk = dev + marketing;
+      if (totalSunk > 5000000) s7 -= 30; // heavy early liability stress
+      if (dev > marketing * 3) s7 -= 15; // tech spending out of balance with sales
 
-      const sunkCapital = dev + marketing;
-      if (runway >= 18) score += 12;
-      else if (runway < 6) score -= 25;
+      // Score 8: Monthly Operational Burn Sustainability
+      let s8 = 50;
+      if (runway >= 18) s8 = 95;
+      else if (runway >= 12) s8 = 75;
+      else if (runway >= 6) s8 = 45;
+      else s8 = 15;
 
-      if (competitors > 6) score -= 10;
-      if (reg >= 4) score -= 12;
-      if (integ >= 4) score -= 8;
-      if (conversion >= 20) score += 5;
+      // Score 9: Competitive Saturation Defense Index
+      let s9 = 100 - (competitors * 8);
+      if (s9 < 15) s9 = 15;
 
-      // Clamp absolute limits securely
-      if (score > 100) score = 100;
-      if (score < 1) score = 1;
+      // Score 10: Ecosystem & Operational Safety Status
+      let s10 = 100 - (reg * 12) - (integ * 10);
+      if (s10 < 10) s10 = 10;
 
-      // 3. Render Score Comment Profiles dynamically on the right side
-      outScore.textContent = Math.round(score) + '%';
-      
-      if (score < 40) {
+      // Constrain individual matrix boundaries securely
+      const allScores = [s1, s2, s3, s4, s5, s6, s7, s8, s9, s10];
+      const normalized = allScores.map(val => Math.max(1, Math.min(100, Math.round(val))));
+
+      // Calculate Weighted Macro Score
+      const macroScore = Math.round(normalized.reduce((a, b) => a + b, 0) / 10);
+
+      // 3. Render Header Macro Status Display
+      outScore.textContent = macroScore + '%';
+      if (macroScore < 45) {
         outCommentTag.textContent = "Dangerous";
         outCommentTag.className = "comment-tag tag-danger";
-        outCommentText.textContent = "High architectural risk profile. Severe unit economic deficiencies or runway failure vectors detected.";
-      } else if (score < 70) {
+        outCommentText.textContent = "Critical bottlenecks detected. Review red elements on the dashboard immediately.";
+      } else if (macroScore < 72) {
         outCommentTag.textContent = "Borderline";
         outCommentTag.className = "comment-tag tag-alert";
-        outCommentText.textContent = "Moderate market or economic traction. Requires careful resource tightening and validation testing optimization.";
+        outCommentText.textContent = "Viable model but contains structural drag factors. Refine weak vectors before execution.";
       } else {
         outCommentTag.textContent = "Highly Viable";
         outCommentTag.className = "comment-tag tag-good";
-        outCommentText.textContent = "Excellent foundational indicators. High safety margins, optimal unit metrics, and stable scalable profile.";
+        outCommentText.textContent = "Strong systemic indicators. Low risk profile with optimized market traction mechanics.";
       }
 
-      // 4. Output values directly into the 10 Report Fields
-      document.getElementById('m1').textContent = formatSuffix(tam);
-      document.getElementById('m2').textContent = formatSuffix(sam);
-      document.getElementById('m3').textContent = formatSuffix(som);
-      document.getElementById('m4').textContent = formatSuffix(acv);
-      document.getElementById('m5').textContent = formatSuffix(cac);
-      document.getElementById('m6').textContent = ltvCac > 0 ? ltvCac.toFixed(1) + 'x' : '0.0x';
-      document.getElementById('m7').textContent = formatSuffix(sunkCapital);
-      document.getElementById('m8').textContent = formatSuffix(overhead);
-      document.getElementById('m9').textContent = competitors + " Entities";
-      
-      const statusElement = document.getElementById('m10');
-      if (score < 40) {
-        statusElement.textContent = "Critical Risk Profile";
-        statusElement.className = "val status-danger";
-      } else if (score < 70) {
-        statusElement.textContent = "Conditional Target";
-        statusElement.className = "val status-alert";
-      } else {
-        statusElement.textContent = "Institutional Grade";
-        statusElement.className = "val status-good";
+      // 4. Inject 1-100 Diagnostic Scores directly with Color Classes
+      for (let i = 1; i <= 10; i++) {
+        const itemScore = normalized[i - 1];
+        const el = document.getElementById(`m${i}`);
+        el.textContent = itemScore + " / 100";
+        el.className = getClassForScore(itemScore);
       }
 
-      // 5. Build Contextual Strategic Suggestions Output List
+      // 5. Contextual Action Items Engine
       let suggestionsHTML = '';
-      if (ltvCac < 3.0) {
-        suggestionsHTML += `<li><i class="fas fa-exclamation-triangle"></i> Improve unit profitability by raising ACV packages or optimizing acquisition systems to lower CAC.</li>`;
+      if (normalized[5] < 60) {
+        suggestionsHTML += `<li><i class="fas fa-exclamation-triangle"></i> <strong>Unit Economics Issue:</strong> Your LTV-to-CAC ratio is unviable. Reduce customer acquisition costs or optimize recurring yields immediately.</li>`;
       }
-      if (runway < 12) {
-        suggestionsHTML += `<li><i class="fas fa-hourglass-half"></i> Short runway alert. Protect capital resources or secure supplementary angel backup to stabilize operations.</li>`;
+      if (normalized[7] < 50) {
+        suggestionsHTML += `<li><i class="fas fa-hourglass-half"></i> <strong>Runway Warning:</strong> High operational burn combined with a low month buffer creates a fatal cash vector. Shorten production deadlines.</li>`;
       }
-      if (reg >= 4) {
-        suggestionsHTML += `<li><i class="fas fa-gavel"></i> High regulatory weight. Schedule early legal review to streamline production approvals before launching.</li>`;
+      if (normalized[1] < 50 || normalized[2] < 50) {
+        suggestionsHTML += `<li><i class="fas fa-chart-pie"></i> <strong>Market Fit Hazard:</strong> The breakdown from TAM down to SAM indicates a bad segment strategy. Expand your ideal target consumer scope.</li>`;
       }
-      if (competitors > 5) {
-        suggestionsHTML += `<li><i class="fas fa-bullseye"></i> High saturation market. Refine unique distribution loops to protect your SOM niche boundaries.</li>`;
+      if (normalized[9] < 50) {
+        suggestionsHTML += `<li><i class="fas fa-shield-alt"></i> <strong>High Competition Load:</strong> Your defense index is low. Focus on unique distribution access methods to avoid a price war.</li>`;
       }
       if (suggestionsHTML === '') {
-        suggestionsHTML = `<li><i class="fas fa-check-circle"></i> Foundations clear. Advance sandbox experiments to pilot phase and deploy target metrics monitors.</li>`;
+        suggestionsHTML = `<li><i class="fas fa-check-circle"></i> No critical vulnerabilities detected. Proceed with deploying verification tests to field users.</li>`;
       }
       suggestionsContainer.innerHTML = suggestionsHTML;
     }
