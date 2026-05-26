@@ -3,111 +3,299 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>RevenuePilot // Product Decision Intelligence Core — FaridEx Labs</title>
+  <title>RevenuePilot — FaridEx Labs</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+  
   <style>
-    /* DESIGN SYSTEM TOKENS */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
       background-color: #F8FAFC;
       color: #0F172A;
       line-height: 1.6;
-      padding-top: 80px;
-      -webkit-font-smoothing: antialiased;
+      padding-top: 110px;
     }
-    h1, h2, h3, h4, h5 { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; }
 
-    /* CORE NAVIGATION PANEL */
+    /* ELITE DARK NAVBAR */
     .navbar {
-      position: fixed; top: 0; left: 0; width: 100%;
-      background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(226, 232, 240, 0.8); z-index: 1000; padding: 1rem 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #0A192F;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      z-index: 1000;
+      padding: 1.2rem 0;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     }
+
     .navbar .container {
-      max-width: 1400px; margin: 0 auto; padding: 0 40px;
-      display: flex; justify-content: space-between; align-items: center;
-    }
-    .logo-area { display: flex; flex-direction: column; text-decoration: none; }
-    .logo-main { font-size: 1.25rem; font-family: 'Playfair Display', serif; font-weight: 700; color: #0F172A; }
-    .logo-main .ex { color: #1E3A8A; font-style: italic; }
-    .logo-area .tagline { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.58rem; color: #64748B; letter-spacing: 0.1em; font-weight: 700; text-transform: uppercase; margin-top: 2px; }
-    .nav-back { display: inline-flex; align-items: center; gap: 0.5rem; color: #475569; text-decoration: none; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; transition: color 0.2s; }
-    .nav-back:hover { color: #1E3A8A; }
-
-    /* DUAL-COLUMN SYSTEM ARCHITECTURE */
-    .app-viewport {
-      max-width: 1450px; margin: 0 auto; padding: 2rem 40px 6rem 40px;
-      display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 3rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    /* LEFT SIDE: INPUT VECTOR CONFIGURATOR */
-    .input-matrix-container { display: flex; flex-direction: column; gap: 2rem; }
-    .vector-card { background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 8px; padding: 2rem; box-shadow: 0 4px 20px -5px rgba(15, 23, 42, 0.02); }
-    .vector-title { font-size: 1.25rem; margin-bottom: 1.5rem; border-left: 3px solid #1E3A8A; padding-left: 10px; display: flex; align-items: center; gap: 0.5rem; }
-    .vector-title i { color: #1E3A8A; font-size: 1rem; }
-
-    .factor-group { margin-bottom: 1.5rem; }
-    .factor-group:last-child { margin-bottom: 0; }
-    .factor-label { display: flex; justify-content: space-between; font-weight: 600; font-size: 0.85rem; color: #334155; margin-bottom: 0.4rem; }
-    .factor-label span.display-node { color: #1E3A8A; font-weight: 700; background: #F1F5F9; padding: 1px 6px; border-radius: 3px; font-size: 0.78rem; }
-    
-    select, input[type="range"] { width: 100%; display: block; }
-    select { padding: 0.65rem; border: 1px solid #CBD5E1; border-radius: 4px; font-family: inherit; font-size: 0.9rem; color: #334155; background-color: #FFF; outline: none; }
-    select:focus { border-color: #1E3A8A; }
-    
-    input[type="range"] { -webkit-appearance: none; height: 5px; background: #E2E8F0; border-radius: 3px; outline: none; margin: 8px 0; }
-    input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 16px; height: 16px; border-radius: 50%; background: #1E3A8A; cursor: pointer; transition: transform 0.1s; }
-    input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.2); }
-
-    /* RIGHT SIDE: TELEMETRY ENGINE & REAL-TIME OUTPUTS */
-    .output-dashboard { position: sticky; top: 110px; height: fit-content; display: flex; flex-direction: column; gap: 2rem; }
-    
-    /* 5 DYNAMIC SCORE METRIC GRID */
-    .scores-grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; }
-    .score-node-box { background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 6px; padding: 1.5rem 1.25rem; text-align: center; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 10px rgba(0,0,0,0.01); position: relative; }
-    .score-node-box.primary-node { background: #0F172A; color: #FFFFFF; grid-column: span 2; padding: 2rem 1.5rem; }
-    
-    .score-node-box h4 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #64748B; margin-bottom: 0.5rem; }
-    .score-node-box.primary-node h4 { color: #94A3B8; font-size: 0.8rem; letter-spacing: 0.12em; }
-    
-    .score-large-render { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 700; color: #0F172A; margin: 0.25rem 0; }
-    .score-node-box.primary-node .score-large-render { font-size: 4rem; color: #FFFFFF; line-height: 1.1; }
-    
-    .score-badge { display: inline-block; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; padding: 2px 8px; border-radius: 2px; margin-top: 4px; align-self: center; }
-    
-    /* RISK PROFILES CONTEXT BOX */
-    .risk-matrix-card { background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 8px; padding: 2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.02); }
-    .risk-matrix-card h3 { font-size: 1.15rem; margin-bottom: 1.25rem; color: #0F172A; border-bottom: 1px solid #F1F5F9; padding-bottom: 0.5rem; }
-    
-    .risk-item-row { display: flex; align-items: center; justify-content: space-between; padding: 0.85rem 0; border-bottom: 1px solid #F8FAFC; }
-    .risk-item-row:last-child { border-bottom: none; }
-    .risk-meta-left { display: flex; flex-direction: column; gap: 2px; }
-    .risk-label-name { font-size: 0.88rem; font-weight: 600; color: #334155; }
-    .risk-desc-sub { font-size: 0.75rem; color: #64748B; }
-    
-    .risk-status-indicator { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; padding: 4px 10px; border-radius: 3px; border: 1px solid transparent; min-width: 90px; text-align: center; }
-    
-    /* RISK COLOR CODES */
-    .status-low { background: #F0FDF4; border-color: #BBF7D0; color: #166534; }
-    .status-med { background: #FFFBEB; border-color: #FDE68A; color: #92400E; }
-    .status-high { background: #FEF2F2; border-color: #FEE2E2; color: #991B1B; }
-
-    /* RESPONSIVE SCALING LAYOUT ENGINE */
-    @media (max-width: 1150px) {
-      .app-viewport { grid-template-columns: 1fr; gap: 2.5rem; }
-      .output-dashboard { position: relative; top: 0; }
+    .logo-area {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
     }
+
+    .logo-main {
+      font-size: 1.3rem;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      color: #FFFFFF;
+    }
+
+    .logo-main .ex {
+      color: #38BDF8;
+      font-style: italic;
+    }
+
+    .back-btn {
+      color: #CBD5E1;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.2s;
+    }
+
+    .back-btn:hover {
+      color: #38BDF8;
+    }
+
+    /* MAIN CONTENT WRAPPER */
+    .main-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    .header-block {
+      margin-bottom: 2.5rem;
+    }
+
+    .header-block h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .header-block p {
+      color: #475569;
+      font-size: 1.05rem;
+    }
+
+    /* TWO-COLUMN GRID WORKSPACE */
+    .workspace-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 2rem;
+    }
+
+    /* INPUT CARD WORKSPACE */
+    .card-panel {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 12px;
+      padding: 2.5rem;
+      box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.02);
+    }
+
+    .card-panel h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: #1E3A8A;
+      border-bottom: 1px solid #F1F5F9;
+      padding-bottom: 0.5rem;
+    }
+
+    .input-group {
+      margin-bottom: 1.75rem;
+    }
+
+    .input-group label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: #334155;
+      margin-bottom: 0.4rem;
+    }
+
+    .input-group .help-text {
+      font-size: 0.8rem;
+      color: #64748B;
+      margin-bottom: 0.6rem;
+    }
+
+    /* SCALABLE COMPOUND FIELD MECHANISM */
+    .compound-field {
+      display: flex;
+      border: 1px solid #CBD5E1;
+      border-radius: 6px;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+
+    .compound-field:focus-within {
+      border-color: #2563EB;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+
+    /* Left Side Scale Selector Dropdown */
+    .scale-select {
+      background: #F8FAFC;
+      border: none;
+      border-right: 1px solid #CBD5E1;
+      color: #475569;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 0 0.75rem;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .scale-select:hover {
+      background: #F1F5F9;
+    }
+
+    /* Manual Numeric Input Field */
+    .manual-input {
+      flex: 1;
+      border: none;
+      padding: 0.75rem 1rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+      color: #0F172A;
+      outline: none;
+    }
+
+    .manual-input::placeholder {
+      color: #94A3B8;
+    }
+
+    /* CALCULATE ACTION BUTTON */
+    .btn-calculate {
+      background: #0F172A;
+      color: #FFFFFF;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-size: 0.85rem;
+      padding: 1rem;
+      border: none;
+      border-radius: 6px;
+      width: 100%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      transition: background 0.2s;
+      margin-top: 1rem;
+    }
+
+    .btn-calculate:hover {
+      background: #1E3A8A;
+    }
+
+    /* DYNAMIC REAL-TIME OUTPUT RADAR DISPLAY */
+    .output-panel {
+      background: #0A192F;
+      color: #FFFFFF;
+      border-radius: 12px;
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 20px 40px -15px rgba(10, 25, 47, 0.3);
+      height: fit-content;
+    }
+
+    .output-panel h3 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #38BDF8;
+      margin-bottom: 2rem;
+    }
+
+    .score-circle-area {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .feasibility-value {
+      font-size: 4rem;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.03em;
+    }
+
+    .feasibility-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #94A3B8;
+      margin-top: 0.5rem;
+    }
+
+    .breakdown-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 1.5rem;
+    }
+
+    .breakdown-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .breakdown-item .lbl {
+      font-size: 0.85rem;
+      color: #94A3B8;
+    }
+
+    .breakdown-item .val {
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .val.status-good { color: #10B981; }
+    .val.status-alert { color: #F59E0B; }
+
     @media (max-width: 768px) {
-      .app-viewport { padding: 1rem 20px 4rem 20px; }
-      .scores-grid-layout { grid-template-columns: 1fr; }
-      .score-node-box.primary-node { grid-column: span 1; }
-      .vector-card { padding: 1.5rem; }
+      .workspace-grid {
+        grid-template-columns: 1fr;
+      }
+      body {
+        padding-top: 90px;
+      }
     }
   </style>
 </head>
@@ -115,207 +303,108 @@
 
 <div class="navbar">
   <div class="container">
-    <a href="#" class="logo-area">
+    <a href="index.html" class="logo-area">
       <div class="logo-main">Farid<span class="ex">Ex</span> Labs</div>
-      <div class="tagline">Product Feasibility Systems Core</div>
     </a>
-    <a href="index.html" class="nav-back"><i class="fas fa-arrow-left"></i> Framework Dashboard</a>
+    <a href="index.html" class="back-btn">
+      <i class="fas fa-arrow-left"></i> Return to Hub
+    </a>
   </div>
 </div>
 
-<div class="app-viewport">
+<div class="main-container">
   
-  <div class="input-matrix-container">
-    
-    <div class="vector-card">
-      <div class="vector-title"><i class="fas fa-chart-pie"></i> Vector Alpha: Market & Volume Density</div>
-      
-      <div class="factor-group">
-        <div class="factor-label">Target Market Depth (TAM Base) <span class="display-node" id="f1_disp">25,000</span></div>
-        <input type="range" id="f1_tam" min="1000" max="250000" step="1000" value="25000">
-      </div>
-      
-      <div class="factor-group">
-        <div class="factor-label">Target Market Penetration Rate <span class="display-node" id="f2_disp">3.5%</span></div>
-        <input type="range" id="f2_penetration" min="0.1" max="25" step="0.1" value="3.5">
-      </div>
-      
-      <div class="factor-group">
-        <div class="factor-label">Audience Scale Alignment</div>
-        <select id="f3_segment">
-          <option value="1.3">Premium Enterprise & Financial Institutions (High LTV)</option>
-          <option value="1.1" selected>Mid-Market Corporate / Local Technology Sector</option>
-          <option value="0.85">SME / Local Retail Commercial Operations</option>
-          <option value="0.6">Mass Consumer Digital Platforms & Logistics</option>
-        </select>
-      </div>
-      
-      <div class="factor-group">
-        <div class="factor-label">Alternative Pre-existing Solutions Density</div>
-        <select id="f4_competition">
-          <option value="1.2">Greenfield Domain (Zero Viable Direct Alternatives)</option>
-          <option value="1.0" selected>Fragmented Landscape (Moderate / Dispersed Competitors)</option>
-          <option value="0.75">Highly Saturated Market Verticals (Aggressive Price Pressure)</option>
-        </select>
-      </div>
-      
-      <div class="factor-group">
-        <div class="factor-label">B2B Procurement Lifecycle Barrier <span class="display-node" id="f5_disp">Medium</span></div>
-        <input type="range" id="f5_barrier" min="1" max="5" step="1" value="3">
-      </div>
-    </div>
-
-    <div class="vector-card">
-      <div class="vector-title"><i class="fas fa-vault"></i> Vector Beta: Financial Engineering & Revenue Matrix (PKR)</div>
-      
-      <div class="factor-group">
-        <div class="factor-label">Primary Monetization Architecture Mapping</div>
-        <select id="f6_model">
-          <option value="1.4">High-Tier Fixed Enterprise Contract Layer</option>
-          <option value="1.2" selected>Recurring Subscription Mechanics (SaaS / Seat Based)</option>
-          <option value="1.0">Volume Transaction Fee Processing Model</option>
-          <option value="0.7">Freemium Tier Multi-Level Upgrade Funnel</option>
-        </select>
-      </div>
-      
-      <div class="factor-group">
-        <div class="factor-label">Target Average Annual Contract Value (ACV) <span class="display-node" id="f7_disp">PKR 150,000</span></div>
-        <input type="range" id="f7_acv" min="5000" max="2500000" step="5000" value="150000">
-      </div>
-      
-      <div class="factor-group">
-        <div class="factor-label">Projected Customer LTV Horizon <span class="display-node" id="f8_disp">36 Mo.</span></div>
-        <input type="range" id="f8_ltv" min="6" max="60" step="1" value="36">
-      </div>
-      
-      <div class="factor-group">
-        <div class="factor-label">Estimated Customer Acquisition Cost (CAC) <span class="display-node" id="f9_cac">PKR 25,000</span></div>
-        <input type="range" id="f9_cac_input" min="1000" max="500000" step="1000" value="25000">
-      </div>
-      
-      <div class="factor-group">
-        <div class="factor-label">System Margins Operational Data Overhead <span class="display-node" id="f10_disp">15%</span></div>
-        <input type="range" id="f10_overhead" min="5" max="75" step="5" value="15">
-      </div>
-    </div>
-
-    <div class="vector-card">
-      <div class="vector-title"><i class="fas fa-layer-group"></i> Vector Gamma: Execution Complexity & Governance</div>
-      
-      <div class="factor-group">
-        <div class="factor-label">Initial Engineering Resource Allocation Budget <span class="display-node" id="f11_disp">PKR 3,500,000</span></div>
-        <input type="range" id="f11_budget" min="200000" max="25000000" step="100000" value="3500000">
-      </div>
-      
-      <div class="factor-group">
-        <div class="factor-label">Target Development Core Pipeline Lifecycle <span class="display-node" id="f12_disp">4.5 Mo.</span></div>
-        <input type="range" id="f12_timeline" min="1" max="18" step="0.5" value="4.5">
-      </div>
-      
-      <div class="factor-group">
-        <div class="factor-label">Third-Party Sub-system API Dependency Density</div>
-        <select id="f13_api">
-          <option value="1.2">Autonomous (Decoupled Modular Architecture, Self-Contained)</option>
-          <option value="1.0" selected>Moderate (Standard Core Integration Framework Connectors)</option>
-          <option value="0.7">Complex (Deep Structural Legacy Cross-Platform Coupling)</option>
-        </select>
-      </div>
-      
-      <div class="factor-group">
-        <div class="factor-label">Regulatory and Policy Compliance Governance Level</div>
-        <select id="f14_compliance">
-          <option value="1.1">Standard Domain Frameworks (Minimal Sovereign Compliance Barriers)</option>
-          <option value="0.9" selected>Protected Sector Auditing Standards (SBP Guidelines, Local Audits)</option>
-          <option value="0.65">High-Security Encrypted Isolation Channels (Healthcare, Sovereign Infrastructure)</option>
-        </select>
-      </div>
-      
-      <div class="factor-group">
-        <div class="factor-label">End-User Operational Onboarding Churn Friction <span class="display-node" id="f15_disp">Low Friction</span></div>
-        <input type="range" id="f15_friction" min="1" max="3" step="1" value="1">
-      </div>
-    </div>
-
+  <div class="header-block">
+    <h1>RevenuePilot</h1>
+    <p>Pre-launch dynamic revenue and economic yield modeling application sandbox.</p>
   </div>
 
-  <div class="output-dashboard">
+  <div class="workspace-grid">
     
-    <div class="scores-grid-layout">
+    <div class="card-panel">
+      <h2>Feasibility Configuration Matrix</h2>
       
-      <div class="score-node-box primary-node">
-        <h4>Revenue Feasibility Index (RFI)</h4>
-        <div class="score-large-render" id="score_rfi">72</div>
-        <span class="score-badge" id="badge_rfi" style="background: #1E3A8A; color: #FFF;">Optimal Interval</span>
+      <div class="input-group">
+        <label for="targetMarket">Target Market Size</label>
+        <div class="help-text">Example: 500, 600, or 1200 maximum addressable consumer/entity units.</div>
+        <div class="compound-field">
+          <select id="scaleMarket" class="scale-select">
+            <option value="1">No Scale</option>
+            <option value="1000">K</option>
+            <option value="1000000" selected>Million</option>
+            <option value="1000000000">Billion</option>
+          </select>
+          <input type="number" id="targetMarket" class="manual-input" placeholder="e.g. 500" value="500">
+        </div>
       </div>
 
-      <div class="score-node-box">
-        <h4>Capital Yield Factor</h4>
-        <div class="score-large-render" id="score_cyf">4.2x</div>
-        <span class="score-badge" id="badge_cyf" style="background: #F1F5F9; color: #334155;">Steady</span>
+      <div class="input-group">
+        <label for="acv">Annual Contract Value (ACV)</label>
+        <div class="help-text">Example: 15, 50, or 120 average yearly baseline package transaction size.</div>
+        <div class="compound-field">
+          <select id="scaleAcv" class="scale-select">
+            <option value="1">No Scale</option>
+            <option value="1000" selected>K</option>
+            <option value="1000000">Million</option>
+            <option value="1000000000">Billion</option>
+          </select>
+          <input type="number" id="acv" class="manual-input" placeholder="e.g. 25" value="25">
+        </div>
       </div>
 
-      <div class="score-node-box">
-        <h4>Market Traction Vector</h4>
-        <div class="score-large-render" id="score_mtv">68</div>
-        <span class="score-badge" id="badge_mtv" style="background: #F1F5F9; color: #334155;">Sustainable</span>
+      <div class="input-group">
+        <label for="budget">Engineering Resource Budget</label>
+        <div class="help-text">Example: 4, 10, or 15 capital allocation threshold reserved for production.</div>
+        <div class="compound-field">
+          <select id="scaleBudget" class="scale-select">
+            <option value="1">No Scale</option>
+            <option value="1000">K</option>
+            <option value="1000000" selected>Million</option>
+            <option value="1000000000">Billion</option>
+          </select>
+          <input type="number" id="budget" class="manual-input" placeholder="e.g. 5" value="5">
+        </div>
       </div>
 
-      <div class="score-node-box">
-        <h4>Execution Runway</h4>
-        <div class="score-large-render" id="score_er">8.4</div>
-        <span class="score-badge" id="badge_er" style="background: #F1F5F9; color: #334155;">Highly Viable</span>
+      <div class="input-group">
+        <label for="runway">Execution Runway Stability Score</label>
+        <div class="help-text">Example: 6, 12, 18, or 24 expected months of operational runtime funding buffer.</div>
+        <div class="compound-field">
+          <select id="scaleRunway" class="scale-select" disabled style="cursor: not-allowed; opacity: 0.7;">
+            <option value="1" selected>Months</option>
+          </select>
+          <input type="number" id="runway" class="manual-input" placeholder="e.g. 12" value="12">
+        </div>
       </div>
 
-      <div class="score-node-box">
-        <h4>Breakeven Horizon</h4>
-        <div class="score-large-render" id="score_beh">5.1 Mo</div>
-        <span class="score-badge" id="badge_beh" style="background: #F1F5F9; color: #334155;">Accelerated</span>
-      </div>
+      <button id="calcBtn" class="btn-calculate">
+        <i class="fas fa-calculator"></i> Calculate Feasibility Index
+      </button>
     </div>
 
-    <div class="risk-matrix-card">
-      <h3>Systemic Risk Vector Projections</h3>
-      
-      <div class="risk-item-row">
-        <div class="risk-meta-left">
-          <span class="risk-label-name">Capital Sunk Vector Exposure</span>
-          <span class="risk-desc-sub">Quantifies potential resource exhaustion anomalies based on initial engineering burn rates.</span>
+    <div class="output-panel">
+      <div>
+        <h3>Derived Processing Output</h3>
+        <div class="score-circle-area">
+          <div class="feasibility-value" id="outScore">72%</div>
+          <div class="feasibility-label">Feasibility Index Rating</div>
         </div>
-        <div class="risk-status-indicator status-low" id="risk_capital">Low Exposure</div>
       </div>
 
-      <div class="risk-item-row">
-        <div class="risk-meta-left">
-          <span class="risk-label-name">Market Adoption Latency Risk</span>
-          <span class="risk-desc-sub">Evaluates timeline delay vectors from legacy software solution churn resistance.</span>
+      <div class="breakdown-list">
+        <div class="breakdown-item">
+          <span class="lbl">Total Addressable TAM Pool</span>
+          <span class="val" id="outTam">500.00M</span>
         </div>
-        <div class="risk-status-indicator status-med" id="risk_adoption">Controlled</div>
-      </div>
-
-      <div class="risk-item-row">
-        <div class="risk-meta-left">
-          <span class="risk-label-name">CAC Degradation Overhead Risk</span>
-          <span class="risk-desc-sub">Tracks potential unit marginal value erosion from unoptimized user acquisition pipelines.</span>
+        <div class="breakdown-item">
+          <span class="lbl">Unit Economic Yield</span>
+          <span class="val" id="outYield" style="color: #38BDF8;">25.00K</span>
         </div>
-        <div class="risk-status-indicator status-low" id="risk_cac">Controlled</div>
-      </div>
-
-      <div class="risk-item-row">
-        <div class="risk-meta-left">
-          <span class="risk-label-name">External System API Lock-in Vulnerability</span>
-          <span class="risk-desc-sub">Measures the structural impact and operational drag of downstream infrastructure coupling.</span>
+        <div class="breakdown-item">
+          <span class="lbl">Capitalization Safety Tier</span>
+          <span class="val status-good" id="outStatus">Stable Runway</span>
         </div>
-        <div class="risk-status-indicator status-high" id="risk_api">High Volatility</div>
       </div>
-
-      <div class="risk-item-row">
-        <div class="risk-meta-left">
-          <span class="risk-label-name">Sovereign Compliance Friction Index</span>
-          <span class="risk-desc-sub">Analyzes operational deceleration caused by cross-border data protection policies.</span>
-        </div>
-        <div class="risk-status-indicator status-med" id="risk_compliance">Standard Friction</div>
-      </div>
-
     </div>
 
   </div>
@@ -323,200 +412,92 @@
 
 <script>
   (function() {
-    // 15 Parameter Control Node Targets Hook Registration Elements Array
-    const f1_tam = document.getElementById('f1_tam');
-    const f2_penetration = document.getElementById('f2_penetration');
-    const f3_segment = document.getElementById('f3_segment');
-    const f4_competition = document.getElementById('f4_competition');
-    const f5_barrier = document.getElementById('f5_barrier');
-    const f6_model = document.getElementById('f6_model');
-    const f7_acv = document.getElementById('f7_acv');
-    const f8_ltv = document.getElementById('f8_ltv');
-    const f9_cac_input = document.getElementById('f9_cac_input');
-    const f10_overhead = document.getElementById('f10_overhead');
-    const f11_budget = document.getElementById('f11_budget');
-    const f12_timeline = document.getElementById('f12_timeline');
-    const f13_api = document.getElementById('f13_api');
-    const f14_compliance = document.getElementById('f14_compliance');
-    const f15_friction = document.getElementById('f15_friction');
+    const targetMarketInput = document.getElementById('targetMarket');
+    const scaleMarketSelect = document.getElementById('scaleMarket');
+    const acvInput = document.getElementById('acv');
+    const scaleAcvSelect = document.getElementById('scaleAcv');
+    const budgetInput = document.getElementById('budget');
+    const scaleBudgetSelect = document.getElementById('scaleBudget');
+    const runwayInput = document.getElementById('runway');
+    
+    const calcBtn = document.getElementById('calcBtn');
 
-    // Display Output UI Element Hooks Node Targets Registry
-    const f1_disp = document.getElementById('f1_disp');
-    const f2_disp = document.getElementById('f2_disp');
-    const f5_disp = document.getElementById('f5_disp');
-    const f7_disp = document.getElementById('f7_disp');
-    const f8_disp = document.getElementById('f8_disp');
-    const f9_cac = document.getElementById('f9_cac');
-    const f10_overhead_disp = document.getElementById('f10_overhead');
-    const f11_disp = document.getElementById('f11_disp');
-    const f12_disp = document.getElementById('f12_disp');
-    const f15_disp = document.getElementById('f15_disp');
+    // UI Output Targets
+    const outScore = document.getElementById('outScore');
+    const outTam = document.getElementById('outTam');
+    const outYield = document.getElementById('outYield');
+    const outStatus = document.getElementById('outStatus');
 
-    // Target System Score Box Nodes Registry 
-    const score_rfi = document.getElementById('score_rfi');
-    const badge_rfi = document.getElementById('badge_rfi');
-    const score_cyf = document.getElementById('score_cyf');
-    const badge_cyf = document.getElementById('badge_cyf');
-    const score_mtv = document.getElementById('score_mtv');
-    const badge_mtv = document.getElementById('badge_mtv');
-    const score_er = document.getElementById('score_er');
-    const badge_er = document.getElementById('badge_er');
-    const score_beh = document.getElementById('score_beh');
-    const badge_beh = document.getElementById('badge_beh');
-
-    // Risk Status Outputs Elements Row Target Mapping
-    const risk_capital = document.getElementById('risk_capital');
-    const risk_adoption = document.getElementById('risk_adoption');
-    const risk_cac = document.getElementById('risk_cac');
-    const risk_api = document.getElementById('risk_api');
-    const risk_compliance = document.getElementById('risk_compliance');
-
-    function executeSimulationModel() {
-      // Vector Conversion Layer Alpha Raw Values Extraction 
-      const tamVal = parseInt(f1_tam.value);
-      const penetrationPct = parseFloat(f2_penetration.value);
-      const segmentMult = parseFloat(f3_segment.value);
-      const compMult = parseFloat(f4_competition.value);
-      const barrierLevel = parseInt(f5_barrier.value);
-
-      // Vector Conversion Layer Beta Financial Engineering Raw Metrics 
-      const modelMult = parseFloat(f6_model.value);
-      const acvVal = parseInt(f7_acv.value);
-      const ltvMonths = parseInt(f8_ltv.value);
-      const cacCost = parseInt(f9_cac_input.value);
-      const overheadPct = parseInt(f10_overhead.value);
-
-      // Vector Conversion Layer Gamma Operational Infrastructure Variables
-      const devBudget = parseInt(f11_budget.value);
-      const devMonths = parseFloat(f12_timeline.value);
-      const apiMult = parseFloat(f13_api.value);
-      const complianceMult = parseFloat(f14_compliance.value);
-      const frictionLevel = parseInt(f15_friction.value);
-
-      // Sync Numeric Readouts to GUI Input Label Tags Live (with PKR scaling)
-      f1_disp.textContent = tamVal.toLocaleString();
-      f2_disp.textContent = penetrationPct + "%";
-      
-      let barrierTxt = "Low"; if(barrierLevel > 2) barrierTxt = "Medium"; if(barrierLevel > 4) barrierTxt = "Heavy";
-      f5_disp.textContent = barrierTxt;
-      
-      f7_disp.textContent = "PKR " + acvVal.toLocaleString();
-      f8_disp.textContent = ltvMonths + " Mo.";
-      f9_cac.textContent = "PKR " + cacCost.toLocaleString();
-      document.getElementById('f10_disp').textContent = overheadPct + "%";
-      f11_disp.textContent = "PKR " + devBudget.toLocaleString();
-      f12_disp.textContent = devMonths + " Mo.";
-      
-      let frictionTxt = "Low Friction"; if(frictionLevel === 2) frictionTxt = "Moderate Churn"; if(frictionLevel === 3) frictionTxt = "High Churn Friction";
-      f15_disp.textContent = frictionTxt;
-
-      // --- MATHEMATICAL CORE EXECUTION SYSTEMS MATRIX ALGORITHMS ---
-      const projectedTargetAcquisitions = tamVal * (penetrationPct / 100);
-      const grossRevenueRunrate = projectedTargetAcquisitions * acvVal * modelMult;
-      const operationalMarginMultiplier = (100 - overheadPct) / 100;
-      const netYieldValuePotential = grossRevenueRunrate * operationalMarginMultiplier;
-
-      // 1. MARKET TRACTION VECTOR (MTV) [0-100]
-      let calculatedMtv = Math.round((penetrationPct * 3) * segmentMult * compMult * (6 - barrierLevel) * (4 - frictionLevel) * 1.5);
-      calculatedMtv = Math.min(Math.max(calculatedMtv, 15), 98);
-      score_mtv.textContent = calculatedMtv;
-      
-      if(calculatedMtv > 75) { badge_mtv.textContent = "High Velocity"; badge_mtv.style.background = "#DCFCE7"; badge_mtv.style.color = "#166534"; }
-      else if(calculatedMtv > 45) { badge_mtv.textContent = "Sustainable"; badge_mtv.style.background = "#FEF3C7"; badge_mtv.style.color = "#92400E"; }
-      else { badge_mtv.textContent = "Stagnant Horizon"; badge_mtv.style.background = "#FEE2E2"; badge_mtv.style.color = "#991B1B"; }
-
-      // 2. CAPITAL YIELD FACTOR (CYF)
-      let totalCostBase = devBudget + (projectedTargetAcquisitions * cacCost);
-      let yieldRatioRaw = netYieldValuePotential / (totalCostBase + 1);
-      let calculatedCyf = Math.min(Math.max(parseFloat(yieldRatioRaw).toFixed(1), 0.1), 25.0);
-      score_cyf.textContent = calculatedCyf + "x";
-      
-      if(calculatedCyf > 5.0) { badge_cyf.textContent = "Elite Return"; badge_cyf.style.background = "#DDBEFE"; badge_cyf.style.color = "#6B21A8"; }
-      else if(calculatedCyf > 1.5) { badge_cyf.textContent = "Steady Yield"; badge_cyf.style.background = "#F1F5F9"; badge_cyf.style.color = "#334155"; }
-      else { badge_cyf.textContent = "Sub-Economic"; badge_cyf.style.background = "#FEF2F2"; badge_cyf.style.color = "#991B1B"; }
-
-      // 3. EXECUTION RUNWAY RESILIENCY VALUE (ER) [0-10]
-      let rawExecutionResiliency = ((10 - devMonths) * apiMult * complianceMult * (6 - barrierLevel)) / 1.5;
-      let calculatedEr = Math.min(Math.max(parseFloat(rawExecutionResiliency).toFixed(1), 1.0), 10.0);
-      score_er.textContent = calculatedEr;
-      
-      if(calculatedEr > 7.5) { badge_er.textContent = "Fluid Framework"; badge_er.style.background = "#E0F2FE"; badge_er.style.color = "#075985"; }
-      else if(calculatedEr > 4.5) { badge_er.textContent = "Manageable Drag"; badge_er.style.background = "#F1F5F9"; badge_er.style.color = "#334155"; }
-      else { badge_er.textContent = "Development Bottleneck"; badge_er.style.background = "#FEF2F2"; badge_er.style.color = "#991B1B"; }
-
-      // 4. CAPITAL BREAKEVEN HORIZON MARGIN INDEX (BEH)
-      let monthlyRevenueRunrate = grossRevenueRunrate / 12;
-      let timelineRecoupRaw = totalCostBase / (monthlyRevenueRunrate + 1);
-      let calculatedBeh = Math.min(Math.max(parseFloat(timelineRecoupRaw).toFixed(1), 0.5), 24.0);
-      score_beh.textContent = calculatedBeh + " Mo";
-      
-      if(calculatedBeh < 5.0) { badge_beh.textContent = "Instant Recoup"; badge_beh.style.background = "#DCFCE7"; badge_beh.style.color = "#166534"; }
-      else if(calculatedBeh < 12.0) { badge_beh.textContent = "Standard Track"; badge_beh.style.background = "#F1F5F9"; badge_beh.style.color = "#334155"; }
-      else { badge_beh.textContent = "High Capital Burn"; badge_beh.style.background = "#FEE2E2"; badge_beh.style.color = "#991B1B"; }
-
-      // 5. PRIMARY MASTER SYSTEM INDEX: REVENUE FEASIBILITY INDEX (RFI)
-      let calculatedCyfPoints = Math.min(parseFloat(calculatedCyf) * 8, 30); 
-      let combinedRfiAggregate = (calculatedMtv * 0.35) + calculatedCyfPoints + (parseFloat(calculatedEr) * 3.5) + ((24 - calculatedBeh) * 1.2);
-      let finalRfiIndex = Math.min(Math.max(Math.round(combinedRfiAggregate), 10), 99);
-      score_rfi.textContent = finalRfiIndex;
-
-      if (finalRfiIndex >= 76) {
-        badge_rfi.textContent = "Institutional Viability Validated";
-        badge_rfi.style.background = "#166534";
-      } else if (finalRfiIndex >= 48) {
-        badge_rfi.textContent = "Optimal Performance Interval";
-        badge_rfi.style.background = "#1E3A8A";
-      } else {
-        badge_rfi.textContent = "Sub-Critical Return Profile Risk";
-        badge_rfi.style.background = "#991B1B";
-      }
-
-      // --- FIVE DISTINCT SYSTEM RISK LAYER CLASSIFICATION ARRAYS ENGINE ---
-      // Risk Array 1: Capital Dev Budget Resource Drain Exposure
-      if(devBudget > 10000000) { risk_capital.textContent = "Severe Exposure"; risk_capital.className = "risk-status-indicator status-high"; }
-      else if(devBudget > 3000000) { risk_capital.textContent = "Moderate Burn"; risk_capital.className = "risk-status-indicator status-med"; }
-      else { risk_capital.textContent = "Minimal Risk"; risk_capital.className = "risk-status-indicator status-low"; }
-
-      // Risk Array 2: Market Lifecycle Penetration Deceleration Delays Risk
-      let marketRiskFactor = barrierLevel + frictionLevel;
-      if(marketRiskFactor >= 7) { risk_adoption.textContent = "High Friction"; risk_adoption.className = "risk-status-indicator status-high"; }
-      else if(marketRiskFactor >= 4) { risk_adoption.textContent = "Controlled"; risk_adoption.className = "risk-status-indicator status-med"; }
-      else { risk_adoption.textContent = "Frictionless"; risk_adoption.className = "risk-status-indicator status-low"; }
-
-      // Risk Array 3: CAC Degradation Multiplier Overrun Risk Checks
-      let cacRiskRatio = cacCost / (acvVal + 1);
-      if(cacRiskRatio > 0.5) { risk_cac.textContent = "Margin Drain"; risk_cac.className = "risk-status-indicator status-high"; }
-      else if(cacRiskRatio > 0.15) { risk_cac.textContent = "Elevated Cost"; risk_cac.className = "risk-status-indicator status-med"; }
-      else { risk_cac.textContent = "High Efficiency"; risk_cac.className = "risk-status-indicator status-low"; }
-
-      // Risk Array 4: Downstream Infrastructure API System Dependency Mapping Vulnerability
-      if(apiMult === 0.7) { risk_api.textContent = "High Coupling"; risk_api.className = "risk-status-indicator status-high"; }
-      else if(apiMult === 1.0) { risk_api.textContent = "Standard Node"; risk_api.className = "risk-status-indicator status-med"; }
-      else { risk_api.textContent = "Autonomous Core"; risk_api.className = "risk-status-indicator status-low"; }
-
-      // Risk Array 5: Policy Regulatory Auditing Sovereign DECELERATION Risks
-      if(complianceMult === 0.65) { risk_compliance.textContent = "Heavy Auditing"; risk_compliance.className = "risk-status-indicator status-high"; }
-      else if(complianceMult === 0.9) { risk_compliance.textContent = "Sovereign Shift"; risk_compliance.className = "risk-status-indicator status-med"; }
-      else { risk_compliance.textContent = "Open Framework"; risk_compliance.className = "risk-status-indicator status-low"; }
+    // Formatting Helper to print clean short suffixes (K, M, B)
+    function formatSuffix(value) {
+      if (value >= 1000000000) return (value / 1000000000).toFixed(2) + 'B';
+      if (value >= 1000000) return (value / 1000000).toFixed(2) + 'M';
+      if (value >= 1000) return (value / 1000).toFixed(2) + 'K';
+      return value.toFixed(2);
     }
 
-    // Capture, Array Map & Bind Input Event Dynamic Signals
-    const operationalInputElements = [
-      f1_tam, f2_penetration, f3_segment, f4_competition, f5_barrier,
-      f6_model, f7_acv, f8_ltv, f9_cac_input, f10_overhead,
-      f11_budget, f12_timeline, f13_api, f14_compliance, f15_friction
-    ];
+    function processCalculations() {
+      // 1. Gather raw values and apply selected scale multipliers
+      const marketVal = parseFloat(targetMarketInput.value) || 0;
+      const marketMultiplier = parseFloat(scaleMarketSelect.value);
+      const totalMarketPool = marketVal * marketMultiplier;
 
-    operationalInputElements.forEach(element => {
-      if (element) {
-        element.addEventListener('input', executeSimulationModel);
-        element.addEventListener('change', executeSimulationModel);
+      const acvVal = parseFloat(acvInput.value) || 0;
+      const acvMultiplier = parseFloat(scaleAcvSelect.value);
+      const computedAcv = acvVal * acvMultiplier;
+
+      const budgetVal = parseFloat(budgetInput.value) || 0;
+      const budgetMultiplier = parseFloat(scaleBudgetSelect.value);
+      const computedBudget = budgetVal * budgetMultiplier;
+
+      const runwayMonths = parseFloat(runwayInput.value) || 0;
+
+      // 2. Process logic model matrix parameters safely
+      let scoreBase = 50;
+
+      // Reward healthy runway horizons
+      if (runwayMonths >= 18) scoreBase += 20;
+      else if (runwayMonths >= 12) scoreBase += 15;
+      else if (runwayMonths >= 6) scoreBase += 5;
+      else scoreBase -= 15; // penalize high risk short runway
+
+      // Ratio evaluation between budget threshold and asset size profiles
+      if (computedBudget > 0 && totalMarketPool > 0) {
+        const structuralRatio = (computedBudget / totalMarketPool);
+        if (structuralRatio < 0.1) scoreBase += 15;
+        else if (structuralRatio < 0.5) scoreBase += 5;
       }
-    });
 
-    // Run first operational frame cycle loop immediately at runtime initial pass initialization 
-    executeSimulationModel();
+      // Add incremental weight values based on contract strengths
+      if (computedAcv > 50000) scoreBase += 15;
+      else if (computedAcv > 10000) scoreBase += 10;
+
+      // Restrain limits securely
+      if (scoreBase > 99) scoreBase = 99;
+      if (scoreBase < 5) scoreBase = 5;
+
+      // 3. Update Interface Elements instantly
+      outScore.textContent = Math.round(scoreBase) + '%';
+      outTam.textContent = formatSuffix(totalMarketPool);
+      outYield.textContent = formatSuffix(computedAcv);
+
+      // Dynamic Status assignment matching runway health
+      if (runwayMonths >= 12) {
+        outStatus.textContent = "Stable Runway";
+        outStatus.className = "val status-good";
+      } else {
+        outStatus.textContent = "Capital Vulnerability";
+        outStatus.className = "val status-alert";
+      }
+    }
+
+    // Attach listeners for click operations and automatic modifications
+    calcBtn.addEventListener('click', processCalculations);
+    
+    // Perform initial boot calculation cycle
+    processCalculations();
   })();
 </script>
+
 </body>
 </html>
