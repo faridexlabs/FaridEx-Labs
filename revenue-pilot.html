@@ -289,10 +289,89 @@
     .suggestions-list li { font-size: 0.82rem; color: #E2E8F0; display: flex; align-items: flex-start; gap: 0.5rem; }
     .suggestions-list li i { color: #38BDF8; margin-top: 3px; }
 
-    @media (max-width: 1150px) {
-      .workspace-grid { grid-template-columns: 1fr; }
-      .output-panel { position: static; }
-    }
+    /* ==========================================================================
+   MOBILE RESPONSIVE ARCHITECTURAL FIX 
+   Locks Labels, Compound Inputs, and Unit Drops onto a Single Fluid Line
+   ========================================================================== */
+@media (max-width: 768px) {
+  body {
+    padding-top: 90px;
+  }
+  
+  .main-container {
+    padding: 12px;
+  }
+  
+  .card-panel {
+    padding: 1.25rem 1rem;
+    border-radius: 8px;
+  }
+  
+  .header-block h1 {
+    font-size: 1.85rem;
+  }
+
+  /* Force fields container grid into clean, independent rows */
+  .fields-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.95rem !important;
+  }
+
+  /* Force standard block label and input setup into a single horizontal row node */
+  .input-group {
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 8px;
+    width: 100%;
+  }
+
+  /* Scale the structural label down cleanly so it text-wraps natively on 1 line if needed */
+  .input-group label {
+    font-size: 0.78rem !important;
+    margin-bottom: 0 !important;
+    flex: 1 !important;
+    white-space: normal;
+    padding-right: 4px;
+    color: #334155;
+  }
+
+  /* Enforce structural width boundaries onto the inner elements wrapper */
+  .compound-field {
+    width: 62% !important; /* Locks exact single-line spacing proportion for small displays */
+    flex-shrink: 0 !important;
+    display: flex !important;
+    height: 36px; /* Streamlined clean touch-target layout density */
+  }
+
+  .manual-input {
+    width: 60% !important;
+    padding: 0.4rem 0.5rem !important;
+    font-size: 0.88rem !important;
+  }
+
+  .scale-select {
+    width: 65px !important; /* Tailored metric spacing to fit 'Direct' or 'K' elegantly without breaks */
+    font-size: 0.75rem !important;
+    padding: 0 4px !important;
+    border-left: 1px solid #CBD5E1 !important;
+  }
+  
+  /* Output Panel UI Adjustments */
+  .workspace-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem;
+  }
+  
+  .output-panel {
+    position: static !important;
+    padding: 1.5rem 1.25rem;
+  }
+  
+  .feasibility-value {
+    font-size: 2.75rem !important;
+  }
+}
   </style>
 </head>
 <body>
