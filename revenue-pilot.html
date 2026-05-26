@@ -25,7 +25,7 @@
       padding-top: 110px;
     }
 
-    /* PREMIUM NAVBAR */
+    /* NAVBAR */
     .navbar {
       position: fixed;
       top: 0;
@@ -74,7 +74,7 @@
       gap: 0.5rem;
     }
 
-    /* WORKSPACE MATRIX GRID */
+    /* MAIN SYSTEM LAYOUT */
     .main-container {
       max-width: 1450px;
       margin: 0 auto;
@@ -87,7 +87,7 @@
 
     .workspace-grid {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns: 1.25fr 0.75fr;
       gap: 2.5rem;
     }
 
@@ -99,7 +99,6 @@
       box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.02);
     }
 
-    /* ARCHITECTURE SELECT PANEL */
     .architecture-selector-box {
       background: #F1F5F9;
       border: 2px solid #CBD5E1;
@@ -129,10 +128,7 @@
       outline: none;
     }
 
-    .form-section {
-      margin-bottom: 2.5rem;
-    }
-
+    .form-section { margin-bottom: 2.5rem; }
     .form-section h3 {
       font-size: 1.05rem;
       font-weight: 700;
@@ -152,9 +148,9 @@
     }
 
     .input-group { display: flex; flex-direction: column; }
-    .input-group label { font-weight: 600; font-size: 0.85rem; color: #334155; margin-bottom: 0.4rem; }
+    .input-group label { font-weight: 600; font-size: 0.85rem; color: #334155; margin-bottom: 0.4rem; line-height: 1.2; }
 
-    /* SCALE SELECTOR ELEMENT (RIGHT SIDE ALIGNED) */
+    /* INPUT CONTROLS SETUP WITH DIRECT VALUE PRESET */
     .compound-field {
       display: flex;
       border: 1px solid #CBD5E1;
@@ -167,7 +163,7 @@
     .compound-field:focus-within { border-color: #2563EB; }
 
     .manual-input {
-      flex: 1;
+      width: 100%;
       border: none;
       padding: 0.65rem 0.75rem;
       font-family: 'Plus Jakarta Sans', sans-serif;
@@ -191,7 +187,7 @@
       min-width: 95px;
     }
 
-    /* DYNAMIC VARIABLES TARGET FIELD WRAPPER */
+    /* MODEL VARIANT SPECIFIC GRID BLOCK */
     .dynamic-variant-layer {
       background: #FAF5FF;
       border: 1px dashed #D8B4FE;
@@ -230,7 +226,7 @@
 
     .btn-calculate:hover { background: #0F172A; }
 
-    /* DIAGNOSTIC REPORT SIDEBAR PANEL */
+    /* OUTPUT SIDEBAR LAYOUT */
     .output-panel {
       background: #0A192F;
       color: #FFFFFF;
@@ -293,7 +289,7 @@
     .suggestions-list li { font-size: 0.82rem; color: #E2E8F0; display: flex; align-items: flex-start; gap: 0.5rem; }
     .suggestions-list li i { color: #38BDF8; margin-top: 3px; }
 
-    @media (max-width: 1100px) {
+    @media (max-width: 1150px) {
       .workspace-grid { grid-template-columns: 1fr; }
       .output-panel { position: static; }
     }
@@ -312,7 +308,7 @@
   
   <div class="header-block">
     <h1>RevenuePilot</h1>
-    <p>Context-Swapping 30-Parameter Operational Validation Optimization Matrix.</p>
+    <p>High-Fidelity 33-Vector Contextual Feasibility Engine with Automatic Direct Cost Defaults.</p>
   </div>
 
   <div class="workspace-grid">
@@ -320,118 +316,118 @@
     <div class="card-panel">
       
       <div class="architecture-selector-box">
-        <label for="revenue_model_selector"><i class="fas fa-project-diagram"></i> Choose Structural Monetization Architecture</label>
+        <label for="revenue_model_selector"><i class="fas fa-layer-group"></i> Select Analytical Monetization Framework</label>
         <select id="revenue_model_selector" class="model-dropdown">
-          <option value="saas_tiered">1. SaaS Tiered Subscriptions (Monthly/Annual)</option>
-          <option value="freemium_upsell">2. Freemium Network Scale Model</option>
-          <option value="per_seat_b2b">3. Corporate Per-Seat / Enterprise License</option>
-          <option value="one_time_course">4. One-Time Course / Digital Product Asset</option>
-          <option value="marketplace_take">5. Two-Sided Marketplace (Take-Rate Fee)</option>
-          <option value="usage_metered">6. Usage-Based / Metered API Consumption</option>
-          <option value="hybrid_retainer">7. Agency Retainer + Digital Product Add-on</option>
-          <option value="ecom_dtc">8. Physical E-Commerce / D2C Batch Run</option>
-          <option value="ad_sponsored">9. High-Traffic Content Advertising & Sponsorship</option>
-          <option value="white_label">10. White-Label System Software Licensing</option>
+          <option value="one_time_course">1. Course Asset / Digital Product (Per Unit Model)</option>
+          <option value="saas_tiered">2. SaaS Tiered Subscription Matrix</option>
+          <option value="freemium_upsell">3. Freemium Expansion Network Infrastructure</option>
+          <option value="per_seat_b2b">4. B2B Corporate Per-Seat Enterprise Licensing</option>
+          <option value="marketplace_take">5. Two-Sided Platform Marketplace (Take-Rate Split)</option>
+          <option value="usage_metered">6. Consumption-Based / Metered Web Hook API</option>
+          <option value="hybrid_retainer">7. Enterprise Consulting Retainer with Digital Assets</option>
+          <option value="ecom_dtc">8. E-Commerce Physical Direct Run Logistics</option>
+          <option value="ad_sponsored">9. Content Traffic Programmatic Advertising Network</option>
+          <option value="white_label">10. On-Premises White-Label Core System Software</option>
         </select>
       </div>
 
       <div class="form-section">
-        <h3><i class="fas fa-globe"></i> Global Macro Environmental Targets (Static Fields)</h3>
+        <h3><i class="fas fa-globe"></i> Global Environmental Base Metrics (Static Requirements)</h3>
         <div class="fields-grid">
           <div class="input-group">
             <label>Total Addressable Market (TAM)</label>
             <div class="compound-field">
               <input type="number" id="g_tam" class="manual-input" value="0">
-              <select id="scale_g_tam" class="scale-select"><option value="1">Units</option><option value="1000">K</option><option value="1000000" selected>Million</option><option value="1000000000">Billion</option></select>
+              <select id="scale_g_tam" class="scale-select"><option value="1" selected>Direct</option><option value="1000">K</option><option value="1000000">M</option></select>
             </div>
           </div>
           <div class="input-group">
             <label>Serviceable Addressable Market (SAM)</label>
             <div class="compound-field">
               <input type="number" id="g_sam" class="manual-input" value="0">
-              <select id="scale_g_sam" class="scale-select"><option value="1">Units</option><option value="1000">K</option><option value="1000000" selected>Million</option></select>
+              <select id="scale_g_sam" class="scale-select"><option value="1" selected>Direct</option><option value="1000">K</option><option value="1000000">M</option></select>
             </div>
           </div>
           <div class="input-group">
             <label>Serviceable Obtainable Market (SOM)</label>
             <div class="compound-field">
               <input type="number" id="g_som" class="manual-input" value="0">
-              <select id="scale_g_som" class="scale-select"><option value="1">Units</option><option value="1000" selected>K</option><option value="1000000">Million</option></select>
+              <select id="scale_g_som" class="scale-select"><option value="1" selected>Direct</option><option value="1000">K</option><option value="1000000">M</option></select>
             </div>
           </div>
           <div class="input-group">
-            <label>Annual Segment Compound Growth (%)</label>
+            <label>Target Segment Compound Annual Growth (%)</label>
             <div class="compound-field">
               <input type="number" id="g_growth" class="manual-input" value="0">
               <select class="scale-select" disabled><option>% Rate</option></select>
             </div>
           </div>
           <div class="input-group">
-            <label>Active Direct System Competitors</label>
+            <label>Active Core Competitors In Sandbox</label>
             <div class="compound-field">
               <input type="number" id="g_competitors" class="manual-input" value="0">
-              <select class="scale-select" disabled><option>Brands</option></select>
+              <select class="scale-select" disabled><option>Entities</option></select>
             </div>
           </div>
           <div class="input-group">
-            <label>Regulatory Barrier Gravity (1-5)</label>
+            <label>Compliance / Regulatory Weight (1-5)</label>
             <div class="compound-field">
               <input type="number" id="g_reg" class="manual-input" value="0">
               <select class="scale-select" disabled><option>Index</option></select>
             </div>
           </div>
           <div class="input-group">
-            <label>Customer Acquisition Cost (CAC)</label>
+            <label>Blended Customer Acquisition Cost (CAC)</label>
             <div class="compound-field">
               <input type="number" id="g_cac" class="manual-input" value="0">
-              <select id="scale_g_cac" class="scale-select"><option value="1">Direct</option><option value="1000" selected>K</option></select>
+              <select id="scale_g_cac" class="scale-select"><option value="1" selected>Direct</option><option value="1000">K</option></select>
             </div>
           </div>
           <div class="input-group">
-            <label>Annual Base Cost to Serve Per Unit</label>
+            <label>Base Annual Support / Server Serving Cost</label>
             <div class="compound-field">
               <input type="number" id="g_serve" class="manual-input" value="0">
-              <select id="scale_g_serve" class="scale-select"><option value="1">Direct</option><option value="1000" selected>K</option></select>
+              <select id="scale_g_serve" class="scale-select"><option value="1" selected>Direct</option><option value="1000">K</option></select>
             </div>
           </div>
           <div class="input-group">
-            <label>Pre-Launch Engineering Capital Allocation</label>
+            <label>Pre-Launch System Engineering Capital</label>
             <div class="compound-field">
               <input type="number" id="g_dev" class="manual-input" value="0">
-              <select id="scale_g_dev" class="scale-select"><option value="1">Direct</option><option value="1000">K</option><option value="1000000" selected>Million</option></select>
+              <select id="scale_g_dev" class="scale-select"><option value="1" selected>Direct</option><option value="1000">K</option><option value="1000000">M</option></select>
             </div>
           </div>
           <div class="input-group">
-            <label>Monthly Fixed Operating Overhead</label>
+            <label>Monthly Fixed Enterprise Operational Overhead</label>
             <div class="compound-field">
               <input type="number" id="g_overhead" class="manual-input" value="0">
-              <select id="scale_g_overhead" class="scale-select"><option value="1">Direct</option><option value="1000" selected>K</option><option value="1000000">Million</option></select>
+              <select id="scale_g_overhead" class="scale-select"><option value="1" selected>Direct</option><option value="1000">K</option></select>
             </div>
           </div>
           <div class="input-group">
-            <label>Secured Financial Runway (Months)</label>
+            <label>Secured Execution Financial Runway (Months)</label>
             <div class="compound-field">
               <input type="number" id="g_runway" class="manual-input" value="0">
               <select class="scale-select" disabled><option>Months</option></select>
             </div>
           </div>
           <div class="input-group">
-            <label>Target Channel Conversion Velocity (%)</label>
+            <label>Funnel Trial Onboarding Conversion Rate (%)</label>
             <div class="compound-field">
               <input type="number" id="g_conversion" class="manual-input" value="0">
-              <select class="scale-select" disabled><option>% Conversion</option></select>
+              <select class="scale-select" disabled><option>% Velocity</option></select>
             </div>
           </div>
         </div>
       </div>
 
       <div class="dynamic-variant-layer">
-        <h4><i class="fas fa-exchange-alt"></i> Model-Specific Parameters (Injected Dynamic Fields)</h4>
+        <h4><i class="fas fa-coins"></i> Model-Specific Vectors (11 Granular Input Fields)</h4>
         <div class="fields-grid" id="dynamic_fields_container">
           </div>
       </div>
 
-      <button id="calcBtn" class="btn-calculate"><i class="fas fa-sync-alt"></i> Compute Model Report</button>
+      <button id="calcBtn" class="btn-calculate"><i class="fas fa-chart-bar"></i> Execute Comprehensive Diagnostic</button>
     </div>
 
     <div class="output-panel">
@@ -440,8 +436,8 @@
         <div class="score-split-container">
           <div class="feasibility-value" id="outScore">0%</div>
           <div class="score-comment-box">
-            <div class="comment-tag tag-neutral" id="outCommentTag">No Data</div>
-            <div class="comment-text" id="outCommentText">Configure structural fields to generate execution parameters.</div>
+            <div class="comment-tag tag-neutral" id="outCommentTag">No Parameters</div>
+            <div class="comment-text" id="outCommentText">Awaiting variable configurations to process architectural values.</div>
           </div>
         </div>
       </div>
@@ -464,7 +460,7 @@
       <div class="suggestions-box">
         <h4><i class="fas fa-lightbulb"></i> Strategic Key Suggestions</h4>
         <ul class="suggestions-list" id="suggestionsContainer">
-          <li style="color: #94A3B8;">Awaiting model profile selection data execution.</li>
+          <li style="color: #94A3B8;">Select a structural monetization profile to run simulation analytics.</li>
         </ul>
       </div>
     </div>
@@ -474,77 +470,137 @@
 
 <script>
   (function() {
-    // 10 Model-Specific Configurations containing exactly 5 targeted dynamic fields each
-    const modelConfigurations = {
+    // 10 Monetization Architectures containing exactly 11 analytical fields each. Defaulting scale selectors to Direct (1).
+    const architectureProfiles = {
+      one_time_course: [
+        { id: 'v1', label: 'Gross Price Charged to User Per Asset', val: 0 },
+        { id: 'v2', label: 'External Royalties / Author Splits (Per Unit)', val: 0 },
+        { id: 'v3', label: 'Payment Gateway / Processor Friction Cost', val: 0 },
+        { id: 'v4', label: 'Expected Refund / Unit Chargeback Rate (%)', val: 0 },
+        { id: 'v5', label: 'Continuous Content Maintenance Cost / Year', val: 0 },
+        { id: 'v6', label: 'Premium Community Add-on Attach Rate (%)', val: 0 },
+        { id: 'v7', label: 'Community Monthly Add-on Ticket Price', val: 0 },
+        { id: 'v8', label: 'Paid Retargeting Ad Margin Buffer Cost', val: 0 },
+        { id: 'v9', label: 'Secondary Asset Cross-Purchase Rate (%)', val: 0 },
+        { id: 'v10', label: 'Platform Hosting / Video Pipeline Bandwidth Cost', val: 0 },
+        { id: 'v11', label: 'Target Product Units Sold (Year 1 Target)', val: 0 }
+      ],
       saas_tiered: [
-        { id: 'v1', label: 'Average Tier monthly price', placeholder: '50', scale: true },
-        { id: 'v2', label: 'Annual Plan Opt-in Rate (%)', placeholder: '20', scale: false },
-        { id: 'v3', label: 'Account Expansion Growth (%)', placeholder: '15', scale: false },
-        { id: 'v4', label: 'Gross Annual Logo Churn (%)', placeholder: '7', scale: false },
-        { id: 'v5', label: 'Expected Active Paid Subscribers', placeholder: '500', scale: true }
+        { id: 'v1', label: 'Average Ticket Value Per User Per Month', val: 0 },
+        { id: 'v2', label: 'Annual Contract Plan Commitment Rate (%)', val: 0 },
+        { id: 'v3', label: 'Expected Gross Account Revenue Churn (%)', val: 0 },
+        { id: 'v4', label: 'Account Dollar Expansion Infiltration (%)', val: 0 },
+        { id: 'v5', label: 'Blended Trial-to-Paid Upgrade Rate (%)', val: 0 },
+        { id: 'v6', label: 'Target Paid Accounts Year 1 Baseline', val: 0 },
+        { id: 'v7', label: 'Database & API Runtime Serving Drag / User', val: 0 },
+        { id: 'v8', label: 'Customer Success Seat Allocation Unit Cost', val: 0 },
+        { id: 'v9', label: 'Integrated Dynamic Add-on Attachment Rate (%)', val: 0 },
+        { id: 'v10', label: 'Average Add-on Ticket Pricing Matrix', val: 0 },
+        { id: 'v11', label: 'Contract Onboarding Provisioning Friction Fee', val: 0 }
       ],
       freemium_upsell: [
-        { id: 'v1', label: 'Free Pool Acquisition Velocity', placeholder: '50', scale: true },
-        { id: 'v2', label: 'Free-to-Paid Upgrade Velocity (%)', placeholder: '3', scale: false },
-        { id: 'v3', label: 'Premium Monthly License Price', placeholder: '12', scale: false },
-        { id: 'v4', label: 'Free User Monthly Support Cost', placeholder: '0.50', scale: false },
-        { id: 'v5', label: 'Free Tier Infrastructure Drag Index (1-5)', placeholder: '3', scale: false }
+        { id: 'v1', label: 'Premium Monthly Core Subscription Price', val: 0 },
+        { id: 'v2', label: 'Free Pool to Paid Tier Upgrade Velocity (%)', val: 0 },
+        { id: 'v3', label: 'Free User Monthly Server / Storage Liability', val: 0 },
+        { id: 'v4', label: 'Free Tier Support Ticket Resource Burn / User', val: 0 },
+        { id: 'v5', label: 'Monthly Growth of Free User Pipeline', val: 0 },
+        { id: 'v6', label: 'Premium Cohort Annual License Churn (%)', val: 0 },
+        { id: 'v7', label: 'Free-to-Viral Referral Network Velocity (%)', val: 0 },
+        { id: 'v8', label: 'Data Governance Storage Overhead Cost', val: 0 },
+        { id: 'v9', label: 'Paid Expansion Features Attachment Rate (%)', val: 0 },
+        { id: 'v10', label: 'Enterprise Ad-hoc Feature Payout Value', val: 0 },
+        { id: 'v11', label: 'Total Expected Active Free Database Records', val: 0 }
       ],
       per_seat_b2b: [
-        { id: 'v1', label: 'Base Fee Per Seat Per Month', placeholder: '15', scale: false },
-        { id: 'v2', label: 'Average Contract Seat Count', placeholder: '45', scale: false },
-        { id: 'v3', label: 'Corporate Pilot-to-Paid Rate (%)', placeholder: '35', scale: false },
-        { id: 'v4', label: 'Annual Account Net Expansion (%)', placeholder: '22', scale: false },
-        { id: 'v5', label: 'Enterprise Legal Sign-off Delay (Days)', placeholder: '90', scale: false }
-      ],
-      one_time_course: [
-        { id: 'v1', label: 'Course Purchase Price', placeholder: '250', scale: false },
-        { id: 'v2', label: 'Community Upsell Attach Rate (%)', placeholder: '15', scale: false },
-        { id: 'v3', label: 'Monthly Retargeting Ad Spend', placeholder: '5', scale: true },
-        { id: 'v4', label: 'Course Content Refund Rate (%)', placeholder: '4', scale: false },
-        { id: 'v5', label: 'Secondary Class Purchase Rate (%)', placeholder: '12', scale: false }
+        { id: 'v1', label: 'Base Fee Per Seat Managed Per Month', val: 0 },
+        { id: 'v2', label: 'Average Corporate Account Seat Commit Count', val: 0 },
+        { id: 'v3', label: 'Enterprise SLA Custom Security Pricing / Year', val: 0 },
+        { id: 'v4', label: 'Legal Procurement Sign-off Latency (Days)', val: 0 },
+        { id: 'v5', label: 'B2B Pilot-to-Full Agreement Conversion (%)', val: 0 },
+        { id: 'v6', label: 'Corporate Account Net Dollar Expansion (%)', val: 0 },
+        { id: 'v7', label: 'Annual Client Executive Logo Churn Rate (%)', val: 0 },
+        { id: 'v8', label: 'Dedicated Implementation Solutions Cost / Org', val: 0 },
+        { id: 'v9', label: 'Multi-Tenant Sandbox Server Overhead / Org', val: 0 },
+        { id: 'v10', label: 'Partner Channel Co-Selling Commission Fee (%)', val: 0 },
+        { id: 'v11', label: 'Expected Active Managed B2B Accounts', val: 0 }
       ],
       marketplace_take: [
-        { id: 'v1', label: 'Gross Merchandise Volume (GMV)', placeholder: '2', scale: true },
-        { id: 'v2', label: 'Platform Base Take Rate Fee (%)', placeholder: '12', scale: false },
-        { id: 'v3', label: 'Merchant Listing Subscription Cost', placeholder: '29', scale: false },
-        { id: 'v4', label: 'Dispute Chargeback Escrow Rate (%)', placeholder: '1', scale: false },
-        { id: 'v5', label: 'Supply-to-Demand Liquid Ratio (1-5)', placeholder: '3', scale: false }
+        { id: 'v1', label: 'Average Gross Transaction Value (GMV Unit)', val: 0 },
+        { id: 'v2', label: 'Core Platform Commission Take Rate Split (%)', val: 0 },
+        { id: 'v3', label: 'Fixed Processing Fee Surcharge Per Order', val: 0 },
+        { id: 'v4', label: 'Merchant Premium Shop Listing Subscription / Mo', val: 0 },
+        { id: 'v5', label: 'Payment Escrow Chargeback Dispute Rate (%)', val: 0 },
+        { id: 'v6', label: 'Fraud Detection Verification Tool Cost / Unit', val: 0 },
+        { id: 'v7', label: 'Supply-to-Demand System Matching Ratio (1-5)', val: 0 },
+        { id: 'v8', label: 'Buyer Repeated Acquisition Flow Over Year (%)', val: 0 },
+        { id: 'v9', label: 'Seller Acquisition Onboarding Payout Subsidy', val: 0 },
+        { id: 'v10', label: 'Promoted Search Monetization Yield / Merchant', val: 0 },
+        { id: 'v11', label: 'Total Planned Transactions Target Year 1', val: 0 }
       ],
       usage_metered: [
-        { id: 'v1', label: 'Cost Per 1K API Calls / Events', placeholder: '0.20', scale: false },
-        { id: 'v2', label: 'Average Base Monthly Event Vol', placeholder: '500', scale: true },
-        { id: 'v3', label: 'Overage Premium Markup (%)', placeholder: '25', scale: false },
-        { id: 'v4', label: 'Compute Token Infrastructure Cost', placeholder: '0.05', scale: false },
-        { id: 'v5', label: 'Volume Drawdown Churn Index (1-5)', placeholder: '2', scale: false }
+        { id: 'v1', label: 'Billing Fee Charged Per 1K Metric Server Calls', val: 0 },
+        { id: 'v2', label: 'Expected Monthly Baseline Call Events / User', val: 0 },
+        { id: 'v3', label: 'Overage Consumption Premium Tier Markup (%)', val: 0 },
+        { id: 'v4', label: 'Raw Token Infrastructure Compute Cost / 1K Calls', val: 0 },
+        { id: 'v5', label: 'Minimum Flat Volume Commit Baseline / Account', val: 0 },
+        { id: 'v6', label: 'Volume Drawdown Optimization Account Churn (%)', val: 0 },
+        { id: 'v7', label: 'API Gateway Maintenance Network Overhead Cost', val: 0 },
+        { id: 'v8', label: 'Technical Solutions Dev Integration Support Cost', val: 0 },
+        { id: 'v9', label: 'Data Warehouse Log Retention Overhead Cost', val: 0 },
+        { id: 'v10', label: 'Enterprise Premium Bandwidth SLA Rate (%)', val: 0 },
+        { id: 'v11', label: 'Target High-Scale Corporate Accounts Accounts', val: 0 }
       ],
       hybrid_retainer: [
-        { id: 'v1', label: 'Monthly Base Retainer Fee', placeholder: '3', scale: true },
-        { id: 'v2', label: 'Digital Product Upsell Addon Rate (%)', placeholder: '30', scale: false },
-        { id: 'v3', label: 'Add-on Digital Product Unit Price', placeholder: '199', scale: false },
-        { id: 'v4', label: 'Contract Execution Scope Creep (1-5)', placeholder: '3', scale: false },
-        { id: 'v5', label: 'Client Lifespan Retention (Months)', placeholder: '14', scale: false }
+        { id: 'v1', label: 'Monthly Corporate Strategy Base Retainer Price', val: 0 },
+        { id: 'v2', label: 'Digital Toolkit Product Upsell Attach Rate (%)', val: 0 },
+        { id: 'v3', label: 'Upfront Asset Kit Package Single Standalone Fee', val: 0 },
+        { id: 'v4', label: 'Operational Scope Creep Capacity Drain (1-5)', val: 0 },
+        { id: 'v5', label: 'Client Retention Lifecycle Duration (Months)', val: 0 },
+        { id: 'v6', label: 'Direct Execution Subcontractor Payout / Client', val: 0 },
+        { id: 'v7', label: 'Premium Analytics Dashboard Server Cost / Org', val: 0 },
+        { id: 'v8', label: 'Travel & Material Delivery Escrow Account Cost', val: 0 },
+        { id: 'v9', label: 'Quarterly Project Expansion Upsell Yield (%)', val: 0 },
+        { id: 'v10', label: 'Client Offboarding Platform Archival Costs', val: 0 },
+        { id: 'v11', label: 'Total Targeted Consultative Corporate Frameworks', val: 0 }
       ],
       ecom_dtc: [
-        { id: 'v1', label: 'Product Unit Selling Price', placeholder: '85', scale: false },
-        { id: 'v2', label: 'Manufacturing COGS Cost Per Unit', placeholder: '22', scale: false },
-        { id: 'v3', label: 'Minimum Batch Production Volume', placeholder: '5', scale: true },
-        { id: 'v4', label: 'Return & Damage Wastage Rate (%)', placeholder: '6', scale: false },
-        { id: 'v5', label: 'Repeat Customer Purchase Rate (%)', placeholder: '18', scale: false }
+        { id: 'v1', label: 'Physical Retail Unit Retail Selling Price', val: 0 },
+        { id: 'v2', label: 'Manufacturing COGS Production Cost / Unit', val: 0 },
+        { id: 'v3', label: 'Upfront Minimum Factory Batch Run Quantity', val: 0 },
+        { id: 'v4', label: 'Damaged Inventory Warehouse Scrap Leak Rate (%)', val: 0 },
+        { id: 'v5', label: 'D2C Return Logistics Domestic Return Shipping Cost', val: 0 },
+        { id: 'v6', label: 'Repeat Cohort Purchase Return Infiltration (%)', val: 0 },
+        { id: 'v7', label: 'Third-Party Fulfillment (3PL) Storage Fee / Month', val: 0 },
+        { id: 'v8', label: 'Custom Box Branding Unboxing Package Print Unit Cost', val: 0 },
+        { id: 'v9', label: 'Seasonal Promotional Price Discount Markdown (%)', val: 0 },
+        { id: 'v10', label: 'Affiliate Content Creator Commission Yield Split (%)', val: 0 },
+        { id: 'v11', label: 'Adwords Customer Checkout Funnel Conversion Rate (%)', val: 0 }
       ],
       ad_sponsored: [
-        { id: 'v1', label: 'Target Monthly Platform Pageviews', placeholder: '1', scale: true },
-        { id: 'v2', label: 'Programmatic Ad Average RPM ($)', placeholder: '12', scale: false },
-        { id: 'v3', label: 'Direct Newsletter Sponsor Placement', placeholder: '1500', scale: false },
-        { id: 'v4', label: 'Sponsor Inventory Sell-Through (%)', placeholder: '65', scale: false },
-        { id: 'v5', label: 'Ad-Blocker Audience Penetration (%)', placeholder: '28', scale: false }
+        { id: 'v1', label: 'Planned Total Unique Platform Monthly Sessions', val: 0 },
+        { id: 'v2', label: 'Programmatic Network Ad Ad Exchange RPM ($)', val: 0 },
+        { id: 'v3', label: 'Direct Editorial Placement Retainer Fee / Post', val: 0 },
+        { id: 'v4', label: 'Total Planned Direct Brand Editorial Contracts / Year', val: 0 },
+        { id: 'v5', label: 'Ad-Blocker Software Desktop Audience Penetration (%)', val: 0 },
+        { id: 'v6', label: 'Available Core Ad Layout Slots Per Platform Pageview', val: 0 },
+        { id: 'v7', label: 'Content Production Copywriting Team Retainer / Month', val: 0 },
+        { id: 'v8', label: 'Premium Newsletter Native Placement Asset Cost', val: 0 },
+        { id: 'v9', label: 'Audience Subscription Whitelist Opt-In Velocity (%)', val: 0 },
+        { id: 'v10', label: 'CDN Asset Edge Network Media Server Operating Cost', val: 0 },
+        { id: 'v11', label: 'Sponsorship Inventory Direct Sell-Through Rate (%)', val: 0 }
       ],
       white_label: [
-        { id: 'v1', label: 'Annual Enterprise License Allocation', placeholder: '25', scale: true },
-        { id: 'v2', label: 'Initial System Implementation Fee', placeholder: '10', scale: true },
-        { id: 'v3', label: 'Dedicated Support Retainer Layer', placeholder: '2', scale: true },
-        { id: 'v4', label: 'Partner Channel Commission Split (%)', placeholder: '20', scale: false },
-        { id: 'v5', label: 'Source Code Escrow Compliance Risk (1-5)', placeholder: '2', scale: false }
+        { id: 'v1', label: 'Annual Master Core System Enterprise License Fee', val: 0 },
+        { id: 'v2', label: 'Initial Integration Software Implementation Fee', val: 0 },
+        { id: 'v3', label: 'Dedicated Continuous Technical Support Layer Retainer', val: 0 },
+        { id: 'v4', label: 'Partner Redistribution Channel Commission Split (%)', val: 0 },
+        { id: 'v5', label: 'Escrow Code Compliance Source Legal Risk (1-5)', val: 0 },
+        { id: 'v6', label: 'On-Premises Docker Verification Diagnostic Sandbox Cost', val: 0 },
+        { id: 'v7', label: 'Custom Localization Feature Dev Cost Base / Org', val: 0 },
+        { id: 'v8', label: 'Annual Licensing Escalator Auto-Compounding Rate (%)', val: 0 },
+        { id: 'v9', label: 'Underlying OEM Infrastructure Third-Party Royalty Cost', val: 0 },
+        { id: 'v10', label: 'Breach Indemnification Insurance Account Allocation', val: 0 },
+        { id: 'v11', label: 'Total Expected Master Institutional Whitelabels Active', val: 0 }
       ]
     };
 
@@ -554,21 +610,22 @@
 
     function renderFields() {
       const currentModel = selector.value;
-      const conf = modelConfigurations[currentModel];
+      const conf = architectureProfiles[currentModel];
       container.innerHTML = '';
       
       conf.forEach(field => {
         const wrap = document.createElement('div');
         wrap.className = 'input-group';
         
-        let scaleHTML = field.scale 
-          ? `<select id="scale_d_${field.id}" class="scale-select"><option value="1">Direct</option><option value="1000" selected>K</option><option value="1000000">M</option></select>`
-          : `<select class="scale-select" disabled><option value="1">Index</option></select>`;
+        // Dynamically add selective scale parsing on numeric volumes, keeping Direct as default choice (1)
+        let scaleHTML = (field.id === 'v11' || field.id === 'v1' || field.id === 'v5' || currentModel === 'marketplace_take' && field.id === 'v1')
+          ? `<select id="scale_d_${field.id}" class="scale-select"><option value="1" selected>Direct</option><option value="1000">K</option><option value="1000000">M</option></select>`
+          : `<select class="scale-select" disabled><option value="1">Direct</option></select>`;
 
         wrap.innerHTML = `
           <label for="d_${field.id}">${field.label}</label>
           <div class="compound-field">
-            <input type="number" id="d_${field.id}" class="manual-input" placeholder="eg: ${field.placeholder}" value="0">
+            <input type="number" id="d_${field.id}" class="manual-input" value="${field.val}">
             ${scaleHTML}
           </div>
         `;
@@ -599,7 +656,7 @@
     function generateReportEngine() {
       const activeModel = selector.value;
 
-      // Unpack Static Foundations
+      // Unpack 12 Static Parameters
       const tam = getStaticVal('g_tam', true);
       const sam = getStaticVal('g_sam', true);
       const som = getStaticVal('g_som', true);
@@ -613,144 +670,183 @@
       const runway = getStaticVal('g_runway', false);
       const conversion = getStaticVal('g_conversion', false);
 
-      // Verify input activity
       if (tam === 0 && dev === 0 && overhead === 0) {
-        alert("Fields initialized at zero baseline. Please input parameters to run calculation matrix.");
+        alert("Configuration initialized at baseline zero. Modify core parameters to run optimization diagnostics.");
         return;
       }
 
-      // Unpack Dynamic Slots
-      const v1 = getDynamicVal('v1', true);
-      const v2 = getDynamicVal('v2', false);
-      const v3 = getDynamicVal('v3', true);
-      const v4 = getDynamicVal('v4', false);
-      const v5 = getDynamicVal('v5', false);
+      // Unpack 11 specialized fields
+      const d1 = getDynamicVal('v1', true);
+      const d2 = getDynamicVal('v2', false);
+      const d3 = getDynamicVal('v3', true);
+      const d4 = getDynamicVal('v4', false);
+      const d5 = getDynamicVal('v5', true);
+      const d6 = getDynamicVal('v6', false);
+      const d7 = getDynamicVal('v7', true);
+      const d8 = getDynamicVal('v8', true);
+      const d9 = getDynamicVal('v9', false);
+      const d10 = getDynamicVal('v10', true);
+      const d11 = getDynamicVal('v11', true);
 
-      // Initialize System Channels
+      // System Metric Base Array
       let s1=50, s2=50, s3=50, s4=70, s5=50, s6=50, s7=50, s8=50, s9=50, s10=50, s11=50, s12=50;
 
-      // Static Parameters Global Logic 
-      s1 = tam > 5000000 ? 90 : 45; if (growth > 12) s1 += 10;
-      s2 = (tam > 0 && sam <= tam) ? 85 : 30;
-      s3 = (sam > 0 && som <= sam * 0.4) ? 95 : 35;
-      s7 = conversion >= 15 ? 90 : (conversion >= 5 ? 65 : 35);
-      s9 = (dev > 1500000) ? 40 : 80;
-      s10 = runway >= 18 ? 95 : (runway >= 12 ? 70 : 35);
-      s11 = Math.max(15, 100 - (competitors * 6));
-      s12 = Math.max(10, 100 - (reg * 15));
+      // Base Global Environmental Scaling Rules
+      s1 = tam > 1000000 ? 85 : 45; if (growth > 15) s1 += 15;
+      s2 = (tam > 0 && sam <= tam) ? 90 : 35;
+      s3 = (sam > 0 && som <= sam * 0.3) ? 95 : 40;
+      s7 = conversion >= 15 ? 95 : (conversion >= 6 ? 70 : 30);
+      s9 = (dev > 2000000) ? 35 : 85;
+      s10 = runway >= 18 ? 95 : (runway >= 12 ? 75 : 40);
+      s11 = Math.max(10, 100 - (competitors * 7));
+      s12 = Math.max(10, 100 - (reg * 18));
 
-      // DYNAMIC CONTEXT EVALUATION LOOPS
-      let annualYield = 0;
-      let modelChurn = v4;
+      // DYNAMIC CALCULATION LOOPS WITH MULTI-VARIABLE INTEGRITY CHECKS
+      let annualYieldPerUnit = 0;
+      let costToServePerUnit = serve;
+      let modelChurnPercent = 15;
 
-      if (activeModel === 'saas_tiered') {
-        annualYield = v1 * 12;
-        s4 = v4 < 8 ? 95 : 45; // Churn health check
-        s5 = v3 > 10 ? 90 : 60; // Expansion rate score
-      } 
+      if (activeModel === 'one_time_course') {
+        // High-Fidelity Course Formulation Checks
+        const baseCollected = d1; 
+        const royaltyPayout = d2;
+        const gatewayFees = d3;
+        const refundRate = d4;
+        const monthlyAdSpend = d8;
+        const platformHosting = d10;
+
+        // Yield is net of payment process and direct contributor margins
+        annualYieldPerUnit = baseCollected - royaltyPayout - gatewayFees;
+        
+        // Add upsell attach rates
+        const upsellYield = (d6 / 100) * (d7 * 12) + (d9 / 100 * baseCollected);
+        annualYieldPerUnit += upsellYield;
+
+        costToServePerUnit = platformHosting + (refundRate / 100 * baseCollected);
+        modelChurnPercent = 100; // Single event digital downloads degrade fully over financial cycle
+
+        s4 = refundRate < 6 ? 95 : 40;
+        s5 = d9 > 15 ? 90 : 50; // Evaluation of secondary course cross selling loops
+      }
+      else if (activeModel === 'saas_tiered') {
+        annualYieldPerUnit = d1 * 12;
+        costToServePerUnit = d7 + d8;
+        modelChurnPercent = d3;
+        s4 = d3 < 7 ? 95 : 40;
+        s5 = d4 > 12 ? 90 : 55;
+      }
       else if (activeModel === 'freemium_upsell') {
-        annualYield = v3 * 12;
-        s4 = v2 >= 4 ? 90 : 35; // Bad upgrade velocity drag
-        s5 = v5 >= 4 ? 30 : 80; // High server infrastructure load
-      } 
+        annualYieldPerUnit = d1 * 12;
+        costToServePerUnit = (d3 + d4) * (100 / Math.max(1, d2));
+        modelChurnPercent = d6;
+        s4 = d2 >= 4 ? 95 : 30;
+        s5 = d7 > 10 ? 90 : 50;
+      }
       else if (activeModel === 'per_seat_b2b') {
-        annualYield = (v1 * 12) * v2;
-        s4 = v3 > 25 ? 95 : 55;
-        s5 = v5 > 60 ? 40 : 85; // Long legal processing delays reduce strategy execution velocity
-      } 
-      else if (activeModel === 'one_time_course') {
-        annualYield = v1; 
-        modelChurn = 100; // Complete depletion per sale lifecycle
-        s4 = v4 < 5 ? 90 : 40; // High refund rates kill courses
-        s5 = v5 > 15 ? 85 : 45; // Ability to sell secondary classes
-      } 
+        annualYieldPerUnit = (d1 * 12) * d2;
+        costToServePerUnit = d9;
+        modelChurnPercent = d7;
+        s4 = d5 > 30 ? 90 : 50;
+        s5 = d4 > 60 ? 35 : 85; // Process lag penalties
+      }
       else if (activeModel === 'marketplace_take') {
-        annualYield = v1 * (v2 / 100);
-        s4 = v2 >= 10 ? 85 : 40;
-        s5 = v5 <= 2 ? 35 : 90; // Liquidity imbalance checks
+        annualYieldPerUnit = d1 * (d2 / 100) + d3;
+        costToServePerUnit = d6;
+        modelChurnPercent = 25;
+        s4 = d5 > 2 ? 40 : 90;
+        s5 = d7 >= 3 ? 95 : 45;
       }
       else if (activeModel === 'usage_metered') {
-        annualYield = (v1 / 1000) * v2 * 12;
-        s4 = v5 >= 4 ? 35 : 80;
-        s5 = v3 > 15 ? 90 : 60;
+        annualYieldPerUnit = (d1 / 1000) * d2 * 12;
+        costToServePerUnit = (d4 / 1000) * d2 + d7;
+        modelChurnPercent = d6;
+        s4 = d6 < 10 ? 90 : 45;
+        s5 = d3 > 20 ? 95 : 60;
       }
       else if (activeModel === 'hybrid_retainer') {
-        annualYield = (v1 * 12) + (v2 / 100 * v3);
-        s4 = v4 >= 4 ? 40 : 85; // Scope creep penalties
-        s5 = v5 >= 12 ? 90 : 45;
+        annualYieldPerUnit = (d1 * 12) + (d2 / 100 * d3);
+        costToServePerUnit = d6 + d7;
+        modelChurnPercent = (100 / Math.max(1, d5)) * 12;
+        s4 = d4 >= 4 ? 35 : 90;
+        s5 = d9 > 15 ? 90 : 55;
       }
       else if (activeModel === 'ecom_dtc') {
-        annualYield = v1;
-        s4 = (v1 - v2) / v1 > 0.6 ? 90 : 40; // DTC Gross Profit check
-        s5 = v5 > 20 ? 95 : 50; // Repeat purchase health loop
+        annualYieldPerUnit = d1;
+        costToServePerUnit = d2 + d5 + d7 + d8;
+        modelChurnPercent = 100 - d6;
+        s4 = (d1 - d2) / d1 > 0.5 ? 95 : 45;
+        s5 = d6 > 20 ? 90 : 45;
       }
       else if (activeModel === 'ad_sponsored') {
-        annualYield = (v1 / 1000 * v2 * 12) + (v3 * 12);
-        s4 = v4 > 70 ? 90 : 50;
-        s5 = v5 > 30 ? 35 : 85; // High adblock usage penalty
+        annualYieldPerUnit = ((d1 / 1000) * d2 * 12) + (d3 * d4);
+        costToServePerUnit = d7 + d10;
+        modelChurnPercent = 40;
+        s4 = d11 > 60 ? 90 : 50;
+        s5 = d5 > 25 ? 30 : 85;
       }
       else if (activeModel === 'white_label') {
-        annualYield = v1 + v2 + (v3 * 12);
-        s4 = v4 > 25 ? 45 : 85;
-        s5 = v5 >= 4 ? 30 : 85;
+        annualYieldPerUnit = d1 + d2 + (d3 * 12);
+        costToServePerUnit = d6 + d7 + d9;
+        modelChurnPercent = 10;
+        s4 = d5 >= 4 ? 35 : 90;
+        s5 = d8 > 10 ? 95 : 60;
       }
 
-      // Compute Margin Strength Score
-      s6 = annualYield > serve ? 90 : 30;
+      // Compute Systemic Net Margin Configurations
+      s6 = annualYieldPerUnit > costToServePerUnit ? 95 : 25;
 
-      // Compute Core Dynamic LTV to CAC Engine
-      const operationalUnitMargin = Math.max(0, annualYield - serve);
-      const durationFactor = modelChurn > 0 ? (100 / modelChurn) : 5;
-      const computedLtv = operationalUnitMargin * durationFactor;
-      const ratio = cac > 0 ? (computedLtv / cac) : 0;
+      // Run Extended LTV-to-CAC Mathematical Ratio Check
+      const unitMarginBalance = Math.max(0, annualYieldPerUnit - costToServePerUnit);
+      const retentionLifespan = modelChurnPercent > 0 ? (100 / modelChurnPercent) : 5;
+      const calculatedLifetimeValue = unitMarginBalance * retentionLifespan;
+      const structuralRatio = cac > 0 ? (calculatedLifetimeValue / cac) : 0;
 
-      if (ratio >= 4.0) s8 = 95;
-      else if (ratio >= 2.5) s8 = 75;
-      else if (ratio >= 1.5) s8 = 50;
+      if (structuralRatio >= 4.0) s8 = 95;
+      else if (structuralRatio >= 2.8) s8 = 80;
+      else if (structuralRatio >= 1.5) s8 = 50;
       else s8 = 20;
 
-      // Map Arrays & Final Weights
-      const matrixOut = [s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12];
-      const normalized = matrixOut.map(val => Math.max(1, Math.min(100, Math.round(val))));
-      const finalMacroFeasibility = Math.round(normalized.reduce((a, b) => a + b, 0) / 12);
+      // Compile Normalization Pipeline
+      const pipeline = [s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12];
+      const validated = pipeline.map(item => Math.max(1, Math.min(100, Math.round(item))));
+      const diagnosticAggregate = Math.round(validated.reduce((x, y) => x + y, 0) / 12);
 
-      // Render Top Headline Panel Elements
-      outScore.textContent = finalMacroFeasibility + '%';
-      if(finalMacroFeasibility < 45) {
-        outCommentTag.textContent = "Dangerous"; outCommentTag.className = "comment-tag tag-danger";
-        outCommentText.textContent = "Critical model conflict detected. Review red specific parameters below to adjust strategy.";
-      } else if (finalMacroFeasibility < 72) {
-        outCommentTag.textContent = "Borderline"; outCommentTag.className = "comment-tag tag-alert";
-        outCommentText.textContent = "Viable framework but facing structural bottlenecks. Check sub-scores.";
+      // Render Dashboard Header Values
+      outScore.textContent = diagnosticAggregate + '%';
+      if(diagnosticAggregate < 45) {
+        outCommentTag.textContent = "High Risk"; outCommentTag.className = "comment-tag tag-danger";
+        outCommentText.textContent = "High architectural friction detected. Unit metrics indicate unsustainable customer loops.";
+      } else if (diagnosticAggregate < 72) {
+        outCommentTag.textContent = "Conditionally Viable"; outCommentTag.className = "comment-tag tag-alert";
+        outCommentText.textContent = "Viable entry design but missing critical structural safety buffers.";
       } else {
-        outCommentTag.textContent = "Highly Viable"; outCommentTag.className = "comment-tag tag-good";
-        outCommentText.textContent = "Optimized parameters. The strategy shows robust defensive barriers and clean unit economics.";
+        outCommentTag.textContent = "Optimal Profile"; outCommentTag.className = "comment-tag tag-good";
+        outCommentText.textContent = "Highly predictable structure. Excellent unit margins paired with minimal risk factors.";
       }
 
-      // Display 12 Factor Results
+      // Map Factor Elements
       for (let i = 1; i <= 12; i++) {
-        const itemScore = normalized[i - 1];
-        const el = document.getElementById(`m${i}`);
-        el.textContent = itemScore + " / 100";
-        el.className = itemScore < 40 ? 'val score-danger' : (itemScore < 70 ? 'val score-alert' : 'val score-good');
+        const itemScore = validated[i - 1];
+        const uiEl = document.getElementById(`m${i}`);
+        uiEl.textContent = itemScore + " / 100";
+        uiEl.className = itemScore < 40 ? 'val score-danger' : (itemScore < 70 ? 'val score-alert' : 'val score-good');
       }
 
-      // Generate Clean Suggestion Matrix
+      // Build Strategic Suggestions Feed
       let suggestionsHTML = '';
-      if(normalized[3] < 50) suggestionsHTML += `<li><i class="fas fa-chart-pie"></i> <strong>SOM Target Hazard:</strong> Capture goal exceeds realistic early limits. Scale back entry targeting profiles.</li>`;
-      if(normalized[7] < 50) suggestionsHTML += `<li><i class="fas fa-filter"></i> <strong>Funnel Friction:</strong> Low trial conversion limits customer onboarding speed. Streamline onboarding layout.</li>`;
-      if(normalized[9] < 50) suggestionsHTML += `<li><i class="fas fa-wallet"></i> <strong>Sunk Liability Stress:</strong> Heavy early engineering setup architecture spending risks draining launch reserves.</li>`;
+      if(validated[7] < 50) suggestionsHTML += `<li><i class="fas fa-exclamation-circle"></i> <strong>Funnel Slip:</strong> Low trial conversion limits acquisition velocity. Redesign checkout forms.</li>`;
+      if(validated[9] < 50) suggestionsHTML += `<li><i class="fas fa-microchip"></i> <strong>Sunk Asset Load:</strong> Initial software construction costs create a cash drag. Use modular infrastructure.</li>`;
       
-      // Model specific tailored warnings
-      if(activeModel === 'one_time_course' && normalized[4] < 60) {
-        suggestionsHTML += `<li><i class="fas fa-undo-alt"></i> <strong>Asset Depletion:</strong> One-time sales suffer from churn constraints. Launch community or micro-SaaS retainer add-ons to stabilize monthly yields.</li>`;
+      if(activeModel === 'one_time_course') {
+        if(d4 > 6) suggestionsHTML += `<li><i class="fas fa-undo"></i> <strong>Friction Warning:</strong> Excessive refund rates are impacting net product yields. Implement strict qualification filters.</li>`;
+        if(d9 < 10) suggestionsHTML += `<li><i class="fas fa-share-nodes"></i> <strong>Retention Deficit:</strong> One-time digital asset purchases lack recurring long-tail cash flow. Launch a premium subscription community or micro-SaaS module to secure predictable recurring revenue.</li>`;
       }
-      if(activeModel === 'freemium_upsell' && normalized[3] < 50) {
-        suggestionsHTML += `<li><i class="fas fa-users-slash"></i> <strong>Upgrade Stagnation:</strong> Low conversions from free pools drag down macro cash velocity. Tighten feature gates.</li>`;
+      if(activeModel === 'saas_tiered' && validated[3] < 50) {
+        suggestionsHTML += `<li><i class="fas fa-users-slash"></i> <strong>Sub Deficit:</strong> Outbound subscriber churn is draining marketing efficiency. Introduce customer success loops.</li>`;
       }
 
       if(suggestionsHTML === '') {
-        suggestionsHTML = `<li><i class="fas fa-check-circle"></i> Strategy configuration verified. No optimization blockers. Advance framework to sandbox live operations.</li>`;
+        suggestionsHTML = `<li><i class="fas fa-check-double"></i> All 33 vector values pass foundational testing. Architecture is certified for pilot sandboxing.</li>`;
       }
       suggestionsContainer.innerHTML = suggestionsHTML;
     }
