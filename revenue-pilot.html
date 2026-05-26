@@ -7,7 +7,7 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght=0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght=400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   
   <style>
@@ -25,7 +25,7 @@
       padding-top: 110px;
     }
 
-    /* PREMIUM NAVBAR */
+    /* NAVBAR */
     .navbar {
       position: fixed;
       top: 0;
@@ -39,7 +39,7 @@
     }
 
     .navbar .container {
-      max-width: 1350px;
+      max-width: 1400px;
       margin: 0 auto;
       padding: 0 24px;
       display: flex;
@@ -75,16 +75,11 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      transition: color 0.2s;
     }
 
-    .back-btn:hover {
-      color: #38BDF8;
-    }
-
-    /* MAIN CONTAINER CONTAINER */
+    /* MAIN ARCHITECTURE GRID */
     .main-container {
-      max-width: 1350px;
+      max-width: 1400px;
       margin: 0 auto;
       padding: 24px;
     }
@@ -99,15 +94,9 @@
       margin-bottom: 0.5rem;
     }
 
-    .header-block p {
-      color: #475569;
-      font-size: 1.05rem;
-    }
-
-    /* WORKSPACE MATRIX GRID LAYOUT */
     .workspace-grid {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-columns: 1.15fr 0.85fr;
       gap: 2rem;
     }
 
@@ -153,14 +142,13 @@
       margin-bottom: 0.4rem;
     }
 
-    /* SCALE SELECTOR MOVED TO THE RIGHT SIDE */
+    /* ALIGNED INPUT COMPOUND BOX WITH SCALE ON RIGHT */
     .compound-field {
       display: flex;
       border: 1px solid #CBD5E1;
       border-radius: 6px;
       overflow: hidden;
       background: #FFFFFF;
-      transition: border-color 0.2s, box-shadow 0.2s;
     }
 
     .compound-field:focus-within {
@@ -168,7 +156,7 @@
       box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
     }
 
-    .manual-input {
+    .manual-input, .select-input-field {
       flex: 1;
       border: none;
       padding: 0.65rem 0.75rem;
@@ -177,7 +165,7 @@
       font-weight: 500;
       color: #0F172A;
       outline: none;
-      width: 100%;
+      background: transparent;
     }
 
     .scale-select {
@@ -191,14 +179,10 @@
       padding: 0 0.6rem;
       cursor: pointer;
       outline: none;
-      min-width: 85px;
+      min-width: 90px;
     }
 
-    .scale-select:hover {
-      background: #F1F5F9;
-    }
-
-    /* ACTION BUTTON TRIGGER */
+    /* RUN BUTTON */
     .btn-calculate {
       background: #1E3A8A;
       color: #FFFFFF;
@@ -207,7 +191,7 @@
       text-transform: uppercase;
       letter-spacing: 0.05em;
       font-size: 0.85rem;
-      padding: 1.1rem;
+      padding: 1.2rem;
       border: none;
       border-radius: 6px;
       width: 100%;
@@ -216,14 +200,13 @@
       align-items: center;
       justify-content: center;
       gap: 0.5rem;
-      transition: background 0.2s;
     }
 
     .btn-calculate:hover {
       background: #0F172A;
     }
 
-    /* OUTPUT COMPREHENSIVE PANELS */
+    /* REPORT PANEL DISPLAY */
     .output-panel {
       background: #0A192F;
       color: #FFFFFF;
@@ -231,7 +214,7 @@
       padding: 2.5rem;
       display: flex;
       flex-direction: column;
-      gap: 1.75rem;
+      gap: 1.5rem;
       box-shadow: 0 20px 40px -15px rgba(10, 25, 47, 0.3);
       position: sticky;
       top: 130px;
@@ -239,7 +222,6 @@
     }
 
     .output-panel h3 {
-      font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 1.1rem;
       font-weight: 700;
       color: #38BDF8;
@@ -247,7 +229,6 @@
       padding-bottom: 0.5rem;
     }
 
-    /* SCORE DISPLAY ROW WITH COMMENTS ON THE RIGHT SIDE */
     .score-split-container {
       display: flex;
       align-items: center;
@@ -262,7 +243,6 @@
       font-size: 4rem;
       font-weight: 700;
       line-height: 1;
-      color: #FFFFFF;
     }
 
     .score-comment-box {
@@ -286,16 +266,13 @@
     .tag-alert { background: #F59E0B; color: #0F172A; }
     .tag-good { background: #10B981; color: #FFFFFF; }
 
-    .comment-text {
-      font-size: 0.85rem;
-      color: #CBD5E1;
-    }
+    .comment-text { font-size: 0.85rem; color: #CBD5E1; }
 
-    /* 10 FACTORS INDIVIDUAL FACTOR SCORE BLOCK */
+    /* 12 METRICS SCORING BLOCK */
     .breakdown-list {
       display: flex;
       flex-direction: column;
-      gap: 0.95rem;
+      gap: 0.85rem;
     }
 
     .breakdown-item {
@@ -303,28 +280,18 @@
       justify-content: space-between;
       align-items: center;
       border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-      padding-bottom: 0.55rem;
+      padding-bottom: 0.5rem;
     }
 
-    .breakdown-item:last-child {
-      border: none;
-    }
-
-    .breakdown-item .lbl {
-      font-size: 0.82rem;
-      color: #94A3B8;
-    }
-
-    .breakdown-item .val {
-      font-weight: 700;
-      font-size: 0.92rem;
-    }
+    .breakdown-item:last-child { border: none; }
+    .breakdown-item .lbl { font-size: 0.82rem; color: #94A3B8; }
+    .breakdown-item .val { font-weight: 700; font-size: 0.92rem; }
 
     .val.score-good { color: #10B981; }
     .val.score-alert { color: #F59E0B; }
     .val.score-danger { color: #EF4444; }
 
-    /* STRATEGIC SUGGESTIONS TERMINAL BLOCK */
+    /* SUGGESTIONS MODULE */
     .suggestions-box {
       background: rgba(56, 189, 248, 0.04);
       border: 1px dashed rgba(56, 189, 248, 0.2);
@@ -336,9 +303,6 @@
       font-size: 0.9rem;
       color: #38BDF8;
       margin-bottom: 0.75rem;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
     }
 
     .suggestions-list {
@@ -356,14 +320,11 @@
       gap: 0.5rem;
     }
 
-    .suggestions-list li i {
-      color: #38BDF8;
-      margin-top: 3px;
-    }
+    .suggestions-list li i { color: #38BDF8; margin-top: 3px; }
 
     @media (max-width: 992px) {
       .workspace-grid { grid-template-columns: 1fr; }
-      .fields-grid { grid-template-columns: 1fr; }
+      .output-panel { position: static; }
     }
   </style>
 </head>
@@ -371,12 +332,8 @@
 
 <div class="navbar">
   <div class="container">
-    <a href="index.html" class="logo-area">
-      <div class="logo-main">Farid<span class="ex">Ex</span> Labs</div>
-    </a>
-    <a href="index.html" class="back-btn">
-      <i class="fas fa-arrow-left"></i> Return to Hub
-    </a>
+    <a href="#" class="logo-area"><div class="logo-main">Farid<span class="ex">Ex</span> Labs</div></a>
+    <a href="#" class="back-btn"><i class="fas fa-arrow-left"></i> Return to Hub</a>
   </div>
 </div>
 
@@ -384,7 +341,7 @@
   
   <div class="header-block">
     <h1>RevenuePilot</h1>
-    <p>Authentic 17-Factor Feasibility Test Modeling Space Matrix.</p>
+    <p>Advanced Corporate Optimization & Monetization Feasibility Diagnostic Matrix.</p>
   </div>
 
   <div class="workspace-grid">
@@ -392,39 +349,86 @@
     <div class="card-panel">
       
       <div class="form-section">
-        <h3><i class="fas fa-globe"></i> 1. Target Market Dimensions</h3>
+        <h3><i class="fas fa-sliders-h"></i> 1. Monetization Strategy Framework</h3>
+        <div class="fields-grid">
+          <div class="input-group">
+            <label for="val_model_type">Primary Business Architecture</label>
+            <div class="compound-field">
+              <select id="val_model_type" class="select-input-field">
+                <option value="saas_monthly">SaaS Monthly Subscription</option>
+                <option value="saas_annual">SaaS Annual Premium</option>
+                <option value="freemium">Freemium Tier Model</option>
+                <option value="per_user">Per-User / Seat License</option>
+                <option value="one_time_course">One-Time Course / Digital Product</option>
+              </select>
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="val_sub_price">Base Product Price (Per Month/Course)</label>
+            <div class="compound-field">
+              <input type="number" id="val_sub_price" class="manual-input" value="0">
+              <select id="scale_sub_price" class="scale-select"><option value="1">Direct Val</option><option value="1000">K</option></select>
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="val_free_pool">Total Free Tier Users (Freemium Only)</label>
+            <div class="compound-field">
+              <input type="number" id="val_free_pool" class="manual-input" value="0">
+              <select id="scale_free_pool" class="scale-select"><option value="1">Units</option><option value="1000">K</option><option value="1000000">Million</option></select>
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="val_free_to_paid">Free-to-Paid Upgrade Velocity (%)</label>
+            <div class="compound-field">
+              <input type="number" id="val_free_to_paid" class="manual-input" value="0">
+              <select id="scale_free_to_paid" class="scale-select" disabled><option value="1">% Conversion</option></select>
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="val_avg_seats">Average Seats / Users Per Account</label>
+            <div class="compound-field">
+              <input type="number" id="val_avg_seats" class="manual-input" value="0">
+              <select id="scale_avg_seats" class="scale-select" disabled><option value="1">Seats</option></select>
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="val_expansion_rate">Annual Account Expansion Revenue (%)</label>
+            <div class="compound-field">
+              <input type="number" id="val_expansion_rate" class="manual-input" value="0">
+              <select id="scale_expansion_rate" class="scale-select" disabled><option value="1">% Expansion</option></select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3><i class="fas fa-globe"></i> 2. Target Market Dimensions</h3>
         <div class="fields-grid">
           <div class="input-group">
             <label for="val_tam">Total Addressable Market (TAM)</label>
             <div class="compound-field">
-              <input type="number" id="val_tam" class="manual-input" placeholder="example: 500" value="0">
-              <select id="scale_tam" class="scale-select">
-                <option value="1">No Scale</option><option value="1000">K</option><option value="1000000" selected>Million</option><option value="1000000000">Billion</option>
-              </select>
+              <input type="number" id="val_tam" class="manual-input" value="0">
+              <select id="scale_tam" class="scale-select"><option value="1">No Scale</option><option value="1000">K</option><option value="1000000" selected>Million</option><option value="1000000000">Billion</option></select>
             </div>
           </div>
           <div class="input-group">
             <label for="val_sam">Serviceable Addressable Market (SAM)</label>
             <div class="compound-field">
-              <input type="number" id="val_sam" class="manual-input" placeholder="example: 150" value="0">
-              <select id="scale_sam" class="scale-select">
-                <option value="1">No Scale</option><option value="1000">K</option><option value="1000000" selected>Million</option><option value="1000000000">Billion</option>
-              </select>
+              <input type="number" id="val_sam" class="manual-input" value="0">
+              <select id="scale_sam" class="scale-select"><option value="1">No Scale</option><option value="1000">K</option><option value="1000000" selected>Million</option><option value="1000000000">Billion</option></select>
             </div>
           </div>
           <div class="input-group">
             <label for="val_som">Serviceable Obtainable Market (SOM)</label>
             <div class="compound-field">
-              <input type="number" id="val_som" class="manual-input" placeholder="example: 25" value="0">
-              <select id="scale_som" class="scale-select">
-                <option value="1">No Scale</option><option value="1000">K</option><option value="1000000" selected>Million</option><option value="1000000000">Billion</option>
-              </select>
+              <input type="number" id="val_som" class="manual-input" value="0">
+              <select id="scale_som" class="scale-select"><option value="1">No Scale</option><option value="1000">K</option><option value="1000000" selected>Million</option><option value="1000000000">Billion</option></select>
             </div>
           </div>
           <div class="input-group">
             <label for="val_growth">Annual Market Growth Rate (%)</label>
             <div class="compound-field">
-              <input type="number" id="val_growth" class="manual-input" placeholder="example: 12" value="0">
+              <input type="number" id="val_growth" class="manual-input" value="0">
               <select id="scale_growth" class="scale-select" disabled><option value="1">% Index</option></select>
             </div>
           </div>
@@ -432,129 +436,88 @@
       </div>
 
       <div class="form-section">
-        <h3><i class="fas fa-coins"></i> 2. Unit Economic Monetization</h3>
+        <h3><i class="fas fa-coins"></i> 3. Unit Economics & Funnel Optimization</h3>
         <div class="fields-grid">
-          <div class="input-group">
-            <label for="val_acv">Annual Contract Value (ACV)</label>
-            <div class="compound-field">
-              <input type="number" id="val_acv" class="manual-input" placeholder="example: 45" value="0">
-              <select id="scale_acv" class="scale-select">
-                <option value="1">No Scale</option><option value="1000" selected>K</option><option value="1000000">Million</option>
-              </select>
-            </div>
-          </div>
           <div class="input-group">
             <label for="val_cac">Customer Acquisition Cost (CAC)</label>
             <div class="compound-field">
-              <input type="number" id="val_cac" class="manual-input" placeholder="example: 10" value="0">
-              <select id="scale_cac" class="scale-select">
-                <option value="1">No Scale</option><option value="1000" selected>K</option><option value="1000000">Million</option>
-              </select>
+              <input type="number" id="val_cac" class="manual-input" value="0">
+              <select id="scale_cac" class="scale-select"><option value="1">No Scale</option><option value="1000" selected>K</option><option value="1000000">Million</option></select>
             </div>
           </div>
           <div class="input-group">
-            <label for="val_servicing">Annual Unit Cost to Serve</label>
+            <label for="val_servicing">Annual Unit Cost to Serve (Hosting/Ops)</label>
             <div class="compound-field">
-              <input type="number" id="val_servicing" class="manual-input" placeholder="example: 3" value="0">
-              <select id="scale_servicing" class="scale-select">
-                <option value="1">No Scale</option><option value="1000" selected>K</option><option value="1000000">Million</option>
-              </select>
+              <input type="number" id="val_servicing" class="manual-input" value="0">
+              <select id="scale_servicing" class="scale-select"><option value="1">No Scale</option><option value="1000" selected>K</option><option value="1000000">Million</option></select>
             </div>
           </div>
           <div class="input-group">
             <label for="val_churn">Expected Annual Churn Rate (%)</label>
             <div class="compound-field">
-              <input type="number" id="val_churn" class="manual-input" placeholder="example: 8" value="0">
+              <input type="number" id="val_churn" class="manual-input" value="0">
               <select id="scale_churn" class="scale-select" disabled><option value="1">% Churn</option></select>
             </div>
           </div>
-        </div>
-      </div>
-
-      <div class="form-section">
-        <h3><i class="fas fa-layer-group"></i> 3. Capital & Production Budgets</h3>
-        <div class="fields-grid">
           <div class="input-group">
-            <label for="val_dev">Pre-Launch Engineering Budget</label>
-            <div class="compound-field">
-              <input type="number" id="val_dev" class="manual-input" placeholder="example: 8" value="0">
-              <select id="scale_dev" class="scale-select">
-                <option value="1">No Scale</option><option value="1000">K</option><option value="1000000" selected>Million</option>
-              </select>
-            </div>
-          </div>
-          <div class="input-group">
-            <label for="val_marketing">Pre-Launch Marketing Budget</label>
-            <div class="compound-field">
-              <input type="number" id="val_marketing" class="manual-input" placeholder="example: 3" value="0">
-              <select id="scale_marketing" class="scale-select">
-                <option value="1">No Scale</option><option value="1000">K</option><option value="1000000" selected>Million</option>
-              </select>
-            </div>
-          </div>
-          <div class="input-group">
-            <label for="val_overhead">Monthly Operational Overhead</label>
-            <div class="compound-field">
-              <input type="number" id="val_overhead" class="manual-input" placeholder="example: 450" value="0">
-              <select id="scale_overhead" class="scale-select">
-                <option value="1">No Scale</option><option value="1000" selected>K</option><option value="1000000">Million</option>
-              </select>
-            </div>
-          </div>
-          <div class="input-group">
-            <label for="val_runway">Execution Runway Balance (Months)</label>
-            <div class="compound-field">
-              <input type="number" id="val_runway" class="manual-input" placeholder="example: 18" value="0">
-              <select id="scale_runway" class="scale-select" disabled><option value="1">Months</option></select>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="form-section">
-        <h3><i class="fas fa-shield-halved"></i> 4. Risk & Environment Matrices</h3>
-        <div class="fields-grid">
-          <div class="input-group">
-            <label for="val_competitors">Count of Direct Active Competitors</label>
-            <div class="compound-field">
-              <input type="number" id="val_competitors" class="manual-input" placeholder="example: 4" value="0">
-              <select id="scale_competitors" class="scale-select" disabled><option value="1">Entities</option></select>
-            </div>
-          </div>
-          <div class="input-group">
-            <label for="val_reg">Regulatory Blockers (Scale 1 to 5)</label>
-            <div class="compound-field">
-              <input type="number" id="val_reg" class="manual-input" placeholder="scale: 1-5" value="0">
-              <select id="scale_reg" class="scale-select" disabled><option value="1">Severity</option></select>
-            </div>
-          </div>
-          <div class="input-group">
-            <label for="val_integ">Tech Stack Complexity (Scale 1-5)</label>
-            <div class="compound-field">
-              <input type="number" id="val_integ" class="manual-input" placeholder="scale: 1-5" value="0">
-              <select id="scale_integ" class="scale-select" disabled><option value="1">Severity</option></select>
-            </div>
-          </div>
-          <div class="input-group">
-            <label for="val_salescycle">Average Enterprise Sales Cycle (Months)</label>
-            <div class="compound-field">
-              <input type="number" id="val_salescycle" class="manual-input" placeholder="example: 3" value="0">
-              <select id="scale_salescycle" class="scale-select" disabled><option value="1">Months</option></select>
-            </div>
-          </div>
-          <div class="input-group" style="grid-column: span 2;">
             <label for="val_conversion">Expected Trial-to-Paid Conversion Rate (%)</label>
             <div class="compound-field">
-              <input type="number" id="val_conversion" class="manual-input" placeholder="example: 15" value="0">
+              <input type="number" id="val_conversion" class="manual-input" value="0">
               <select id="scale_conversion" class="scale-select" disabled><option value="1">% Rate</option></select>
             </div>
           </div>
         </div>
       </div>
 
-      <button id="calcBtn" class="btn-calculate">
-        <i class="fas fa-file-invoice"></i> Get Report
-      </button>
+      <div class="form-section">
+        <h3><i class="fas fa-layer-group"></i> 4. Capital Budgets & Risk Environment</h3>
+        <div class="fields-grid">
+          <div class="input-group">
+            <label for="val_dev">Pre-Launch Engineering Budget</label>
+            <div class="compound-field">
+              <input type="number" id="val_dev" class="manual-input" value="0">
+              <select id="scale_dev" class="scale-select"><option value="1">No Scale</option><option value="1000">K</option><option value="1000000" selected>Million</option></select>
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="val_marketing">Pre-Launch Marketing Budget</label>
+            <div class="compound-field">
+              <input type="number" id="val_marketing" class="manual-input" value="0">
+              <select id="scale_marketing" class="scale-select"><option value="1">No Scale</option><option value="1000">K</option><option value="1000000" selected>Million</option></select>
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="val_overhead">Monthly Operational Overhead</label>
+            <div class="compound-field">
+              <input type="number" id="val_overhead" class="manual-input" value="0">
+              <select id="scale_overhead" class="scale-select"><option value="1">No Scale</option><option value="1000" selected>K</option><option value="1000000">Million</option></select>
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="val_runway">Execution Runway Balance (Months)</label>
+            <div class="compound-field">
+              <input type="number" id="val_runway" class="manual-input" value="0">
+              <select id="scale_runway" class="scale-select" disabled><option value="1">Months</option></select>
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="val_competitors">Count of Direct Active Competitors</label>
+            <div class="compound-field">
+              <input type="number" id="val_competitors" class="manual-input" value="0">
+              <select id="scale_competitors" class="scale-select" disabled><option value="1">Entities</option></select>
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="val_reg">Regulatory / Compliance Barriers</label>
+            <div class="compound-field">
+              <input type="number" id="val_reg" class="manual-input" placeholder="Scale 1-5" value="0">
+              <select id="scale_reg" class="scale-select" disabled><option value="1">Severity</option></select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button id="calcBtn" class="btn-calculate"><i class="fas fa-file-invoice"></i> Get Diagnostic Report</button>
     </div>
 
     <div class="output-panel">
@@ -564,61 +527,32 @@
           <div class="feasibility-value" id="outScore">0%</div>
           <div class="score-comment-box">
             <div class="comment-tag tag-neutral" id="outCommentTag">No Data</div>
-            <div class="comment-text" id="outCommentText">Please enter test parameters and run report execution.</div>
+            <div class="comment-text" id="outCommentText">Please configure architectural settings and evaluate.</div>
           </div>
         </div>
       </div>
 
       <div class="breakdown-list">
-        <div class="breakdown-item">
-          <span class="lbl">1. Absolute Addressable Market (TAM) Health</span>
-          <span class="val" id="m1">-</span>
-        </div>
-        <div class="breakdown-item">
-          <span class="lbl">2. Serviceable Market Target (SAM) Efficiency</span>
-          <span class="val" id="m2">-</span>
-        </div>
-        <div class="breakdown-item">
-          <span class="lbl">3. Capture Goal Volume (SOM) Realism</span>
-          <span class="val" id="m3">-</span>
-        </div>
-        <div class="breakdown-item">
-          <span class="lbl">4. Unit Contract Margin Strength</span>
-          <span class="val" id="m4">-</span>
-        </div>
-        <div class="breakdown-item">
-          <span class="lbl">5. Customer Acquisition Velocity Health</span>
-          <span class="val" id="m5">-</span>
-        </div>
-        <div class="breakdown-item">
-          <span class="lbl">6. Derived LTV-to-CAC Structural Score</span>
-          <span class="val" id="m6">-</span>
-        </div>
-        <div class="breakdown-item">
-          <span class="lbl">7. Pre-Launch Capital Risk Exposure</span>
-          <span class="val" id="m7">-</span>
-        </div>
-        <div class="breakdown-item">
-          <span class="lbl">8. Estimated Monthly Burn Sustainability</span>
-          <span class="val" id="m8">-</span>
-        </div>
-        <div class="breakdown-item">
-          <span class="lbl">9. Competitive Saturation Defense Index</span>
-          <span class="val" id="m9">-</span>
-        </div>
-        <div class="breakdown-item">
-          <span class="lbl">10. Ecosystem & Operational Safety Status</span>
-          <span class="val" id="m10">-</span>
-        </div>
+        <div class="breakdown-item"><span class="lbl">1. Absolute Addressable Market (TAM) Health</span><span class="val" id="m1">-</span></div>
+        <div class="breakdown-item"><span class="lbl">2. Serviceable Market Target (SAM) Efficiency</span><span class="val" id="m2">-</span></div>
+        <div class="breakdown-item"><span class="lbl">3. Capture Goal Volume (SOM) Realism</span><span class="val" id="m3">-</span></div>
+        <div class="breakdown-item"><span class="lbl">4. Monetization Strategy Structural Fit</span><span class="val" id="m4">-</span></div>
+        <div class="breakdown-item"><span class="lbl">5. Expansion & Upgrade Revenue Elasticity</span><span class="val" id="m5">-</span></div>
+        <div class="breakdown-item"><span class="lbl">6. Derived Contract Annual Margin Value</span><span class="val" id="m6">-</span></div>
+        <div class="breakdown-item"><span class="lbl">7. Customer Acquisition Velocity Health</span><span class="val" id="m7">-</span></div>
+        <div class="breakdown-item"><span class="lbl">8. Derived LTV-to-CAC Structural Score</span><span class="val" id="m8">-</span></div>
+        <div class="breakdown-item"><span class="lbl">9. Pre-Launch Capital Risk Load</span><span class="val" id="m9">-</span></div>
+        <div class="breakdown-item"><span class="lbl">10. Monthly Operational Burn Sustainability</span><span class="val" id="m10">-</span></div>
+        <div class="breakdown-item"><span class="lbl">11. Competitive Saturation Defense Index</span><span class="val" id="m11">-</span></div>
+        <div class="breakdown-item"><span class="lbl">12. Ecosystem & Operational Compliance Safety</span><span class="val" id="m12">-</span></div>
       </div>
 
       <div class="suggestions-box">
         <h4><i class="fas fa-lightbulb"></i> Strategic Key Suggestions</h4>
         <ul class="suggestions-list" id="suggestionsContainer">
-          <li style="color: #94A3B8;">Awaiting calculation engine metrics profiles...</li>
+          <li style="color: #94A3B8;">Awaiting calculation engine inputs...</li>
         </ul>
       </div>
-
     </div>
 
   </div>
@@ -627,15 +561,16 @@
 <script>
   (function() {
     const fields = [
-      'tam', 'sam', 'som', 'growth', 'acv', 'cac', 'servicing', 
-      'churn', 'dev', 'marketing', 'overhead', 'runway', 
-      'competitors', 'reg', 'integ', 'salescycle', 'conversion'
+      'tam', 'sam', 'som', 'growth', 'cac', 'servicing', 'churn', 'conversion',
+      'dev', 'marketing', 'overhead', 'runway', 'competitors', 'reg',
+      'model_type', 'sub_price', 'free_pool', 'free_to_paid', 'avg_seats', 'expansion_rate'
     ];
     
     const DOM = {};
+    fields.forEach(f => DOM[f] = document.getElementById(`val_${f}`));
     fields.forEach(f => {
-      DOM[f] = document.getElementById(`val_${f}`);
-      DOM[`scale_${f}`] = document.getElementById(`scale_${f}`);
+      const el = document.getElementById(`scale_${f}`);
+      if(el) DOM[`scale_${f}`] = el;
     });
 
     const calcBtn = document.getElementById('calcBtn');
@@ -657,142 +592,157 @@
     }
 
     function generateReportEngine() {
-      // 1. Unpack Raw Data Matrix
+      // 1. Inputs Unpacking
+      const modelType = DOM.model_type.value;
+      const subPrice = getAbsoluteValue('sub_price');
+      const freePool = getAbsoluteValue('free_pool');
+      const freeToPaid = parseFloat(DOM.free_to_paid.value) || 0;
+      const avgSeats = parseFloat(DOM.avg_seats.value) || 1;
+      const expansionRate = parseFloat(DOM.expansion_rate.value) || 0;
+
       const tam = getAbsoluteValue('tam');
       const sam = getAbsoluteValue('sam');
       const som = getAbsoluteValue('som');
       const growth = parseFloat(DOM.growth.value) || 0;
-      const acv = getAbsoluteValue('acv');
       const cac = getAbsoluteValue('cac');
       const servicing = getAbsoluteValue('servicing');
       const churn = parseFloat(DOM.churn.value) || 0;
+      const conversion = parseFloat(DOM.conversion.value) || 0;
       const dev = getAbsoluteValue('dev');
       const marketing = getAbsoluteValue('marketing');
       const overhead = getAbsoluteValue('overhead');
       const runway = parseFloat(DOM.runway.value) || 0;
       const competitors = parseFloat(DOM.competitors.value) || 0;
       const reg = parseFloat(DOM.reg.value) || 0;
-      const integ = parseFloat(DOM.integ.value) || 0;
-      const salescycle = parseFloat(DOM.salescycle.value) || 0;
-      const conversion = parseFloat(DOM.conversion.value) || 0;
 
-      // Validation guard
-      if(tam === 0 && acv === 0 && dev === 0) {
-        alert("Please input your model values to run the diagnostic matrix analysis.");
+      if(tam === 0 && subPrice === 0 && dev === 0) {
+        alert("Please modify matrix values from zero baseline to parse business diagnostics.");
         return;
       }
 
-      // 2. DIAGNOSTIC FORMULAS — GENERATING 10 INDEPENDENT 1-100 SCORES
-      
-      // Score 1: TAM Volume Health (checks macro scale size)
-      let s1 = tam > 10000000 ? 95 : (tam > 1000000 ? 75 : 45);
-      if (growth > 15) s1 += 5;
-
-      // Score 2: SAM Filtering Efficiency
-      let s2 = 85;
-      if (tam > 0) {
-        const ratio = sam / tam;
-        if (ratio > 0.6 || ratio < 0.05) s2 = 40; // unrealistic structure
-      } else { s2 = 10; }
-
-      // Score 3: SOM Realism 
-      let s3 = 90;
-      if (sam > 0) {
-        const ratio = som / sam;
-        if (ratio > 0.4) s3 = 35; // scaling goal too aggressive pre-launch
-      } else { s3 = 10; }
-
-      // Score 4: Unit Contract Margin Strength
-      let s4 = 50;
-      if (acv > 0) {
-        const marginPct = ((acv - servicing) / acv) * 100;
-        s4 = marginPct > 80 ? 95 : (marginPct > 50 ? 70 : 30);
+      // 2. DYNAMIC CONTRACT STRUCTURING ALGORITHM
+      let annualContractValue = 0;
+      if (modelType === 'saas_monthly') {
+        annualContractValue = subPrice * 12;
+      } else if (modelType === 'saas_annual') {
+        annualContractValue = subPrice;
+      } else if (modelType === 'per_user') {
+        annualContractValue = (subPrice * 12) * (avgSeats || 1);
+      } else if (modelType === 'one_time_course') {
+        annualContractValue = subPrice; 
+      } else if (modelType === 'freemium') {
+        annualContractValue = subPrice * 12;
       }
 
-      // Score 5: Customer Acquisition Velocity Health
-      let s5 = 75;
-      if (salescycle > 6) s5 -= 25;
-      if (conversion < 10) s5 -= 20;
-      if (conversion > 25) s5 += 15;
+      // 3. DIAGNOSTIC CALCULATION OF 12 SYSTEM CHANNELS
+      // S1: TAM Health
+      let s1 = tam > 10000000 ? 95 : (tam > 1000000 ? 75 : 40);
+      if (growth > 12) s1 += 10;
 
-      // Score 6: LTV-to-CAC Structural Score
-      const annualMargin = acv - servicing;
-      const lifeYears = churn > 0 ? (100 / churn) : 5;
-      const ltv = annualMargin * lifeYears;
-      const ltvCacRatio = cac > 0 ? (ltv / cac) : 0;
-      let s6 = 15;
-      if (ltvCacRatio >= 4) s6 = 98;
-      else if (ltvCacRatio >= 3) s6 = 80;
-      else if (ltvCacRatio >= 2) s6 = 55;
+      // S2: SAM Sizing Efficiency 
+      let s2 = 85;
+      if (tam > 0) { const r = sam / tam; if (r > 0.5 || r < 0.03) s2 = 35; } else s2 = 10;
 
-      // Score 7: Pre-Launch Capital Risk Load
-      let s7 = 80;
-      const totalSunk = dev + marketing;
-      if (totalSunk > 5000000) s7 -= 30; // heavy early liability stress
-      if (dev > marketing * 3) s7 -= 15; // tech spending out of balance with sales
+      // S3: SOM Capture Realism
+      let s3 = 90;
+      if (sam > 0) { const r = som / sam; if (r > 0.35) s3 = 30; } else s3 = 10;
 
-      // Score 8: Monthly Operational Burn Sustainability
-      let s8 = 50;
-      if (runway >= 18) s8 = 95;
-      else if (runway >= 12) s8 = 75;
-      else if (runway >= 6) s8 = 45;
-      else s8 = 15;
+      // S4: Monetization Strategy Fit
+      let s4 = 75;
+      if (modelType === 'freemium' && freeToPaid < 2) s4 -= 40; // Freemium warning tag
+      if (modelType === 'per_user' && avgSeats <= 1) s4 -= 25; // Business model conflict
 
-      // Score 9: Competitive Saturation Defense Index
-      let s9 = 100 - (competitors * 8);
-      if (s9 < 15) s9 = 15;
+      // S5: Expansion Elasticity 
+      let s5 = 50;
+      if (expansionRate > 15) s5 = 95;
+      else if (expansionRate > 5) s5 = 75;
+      if (modelType === 'one_time_course') s5 = 30; // One-time courses lack expansion retention channels
 
-      // Score 10: Ecosystem & Operational Safety Status
-      let s10 = 100 - (reg * 12) - (integ * 10);
-      if (s10 < 10) s10 = 10;
+      // S6: Margin Strength
+      let s6 = 50;
+      if (annualContractValue > 0) {
+        const marginPct = ((annualContractValue - servicing) / annualContractValue) * 100;
+        s6 = marginPct > 80 ? 95 : (marginPct > 45 ? 70 : 25);
+      }
 
-      // Constrain individual matrix boundaries securely
-      const allScores = [s1, s2, s3, s4, s5, s6, s7, s8, s9, s10];
-      const normalized = allScores.map(val => Math.max(1, Math.min(100, Math.round(val))));
+      // S7: Acquisition Funnel Velocity
+      let s7 = 75;
+      if (conversion < 8) s7 -= 30;
+      if (conversion >= 20) s7 += 15;
 
-      // Calculate Weighted Macro Score
-      const macroScore = Math.round(normalized.reduce((a, b) => a + b, 0) / 10);
+      // S8: LTV / CAC Structural Ratio Balance
+      const lifeYears = (modelType === 'one_time_course' || churn === 0) ? 1 : (100 / churn);
+      const compositeLtv = (annualContractValue - servicing) * lifeYears * (1 + (expansionRate / 100));
+      const ltvCacRatio = cac > 0 ? (compositeLtv / cac) : 0;
+      let s8 = 20;
+      if (ltvCacRatio >= 4.5) s8 = 98;
+      else if (ltvCacRatio >= 3.0) s8 = 85;
+      else if (ltvCacRatio >= 1.8) s8 = 55;
 
-      // 3. Render Header Macro Status Display
+      // S9: Pre-Launch Sunk Risk Exposure
+      let s9 = 85;
+      if ((dev + marketing) > 2000000) s9 -= 25;
+
+      // S10: Overhead Runway Sustainability
+      let s10 = 40;
+      if (runway >= 18) s10 = 95;
+      else if (runway >= 12) s10 = 70;
+      else if (runway >= 6) s10 = 45;
+
+      // S11: Market Saturation
+      let s11 = 100 - (competitors * 7);
+
+      // S12: Compliance Vectors
+      let s12 = 100 - (reg * 15);
+
+      // 4. MAP DATA SECURELY TO NORMALIZED SPECTRUMS
+      const rawScores = [s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12];
+      const normalized = rawScores.map(v => Math.max(1, Math.min(100, Math.round(v))));
+      const macroScore = Math.round(normalized.reduce((a,b)=>a+b, 0) / 12);
+
+      // 5. UPDATE CORE HEADLINE VISUALS
       outScore.textContent = macroScore + '%';
       if (macroScore < 45) {
         outCommentTag.textContent = "Dangerous";
         outCommentTag.className = "comment-tag tag-danger";
-        outCommentText.textContent = "Critical bottlenecks detected. Review red elements on the dashboard immediately.";
+        outCommentText.textContent = "High architecture failure probability. Severe systemic drag from critical red items below.";
       } else if (macroScore < 72) {
         outCommentTag.textContent = "Borderline";
         outCommentTag.className = "comment-tag tag-alert";
-        outCommentText.textContent = "Viable model but contains structural drag factors. Refine weak vectors before execution.";
+        outCommentText.textContent = "Conditionally viable. Structural changes are highly required to ensure capital preservation.";
       } else {
         outCommentTag.textContent = "Highly Viable";
         outCommentTag.className = "comment-tag tag-good";
-        outCommentText.textContent = "Strong systemic indicators. Low risk profile with optimized market traction mechanics.";
+        outCommentText.textContent = "Optimal enterprise safety profile. Monetization loops perfectly aligned with market buffers.";
       }
 
-      // 4. Inject 1-100 Diagnostic Scores directly with Color Classes
-      for (let i = 1; i <= 10; i++) {
+      // 6. INJECT 12 INDIVIDUAL DIAGNOSTIC SCORE OUTPUTS
+      for (let i = 1; i <= 12; i++) {
         const itemScore = normalized[i - 1];
-        const el = document.getElementById(`m${i}`);
-        el.textContent = itemScore + " / 100";
-        el.className = getClassForScore(itemScore);
+        const element = document.getElementById(`m${i}`);
+        element.textContent = itemScore + " / 100";
+        element.className = getClassForScore(itemScore);
       }
 
-      // 5. Contextual Action Items Engine
+      // 7. CONTEXTUAL SUGGESTIONS WRITER MODULE
       let suggestionsHTML = '';
-      if (normalized[5] < 60) {
-        suggestionsHTML += `<li><i class="fas fa-exclamation-triangle"></i> <strong>Unit Economics Issue:</strong> Your LTV-to-CAC ratio is unviable. Reduce customer acquisition costs or optimize recurring yields immediately.</li>`;
+      if (modelType === 'freemium' && freeToPaid < 4) {
+        suggestionsHTML += `<li><i class="fas fa-exclamation-triangle"></i> <strong>Freemium Stagnation Risk:</strong> Your free-to-paid upgrade velocity is insufficient. Limit feature accessibility on free tiers.</li>`;
+      }
+      if (modelType === 'one_time_course' && normalized[4] < 45) {
+        suggestionsHTML += `<li><i class="fas fa-redo"></i> <strong>One-Time Course Cap:</strong> Digital assets have a weak LTV tail. Introduce secondary recurring community memberships to offset missing expansion revenue loops.</li>`;
       }
       if (normalized[7] < 50) {
-        suggestionsHTML += `<li><i class="fas fa-hourglass-half"></i> <strong>Runway Warning:</strong> High operational burn combined with a low month buffer creates a fatal cash vector. Shorten production deadlines.</li>`;
+        suggestionsHTML += `<li><i class="fas fa-funnel-dollar"></i> <strong>Funnel Blockage:</strong> Low trial conversion rate is driving down customer acquisition velocity. Streamline your onboarding interface.</li>`;
       }
-      if (normalized[1] < 50 || normalized[2] < 50) {
-        suggestionsHTML += `<li><i class="fas fa-chart-pie"></i> <strong>Market Fit Hazard:</strong> The breakdown from TAM down to SAM indicates a bad segment strategy. Expand your ideal target consumer scope.</li>`;
+      if (normalized[1] < 45 || normalized[2] < 45) {
+        suggestionsHTML += `<li><i class="fas fa-chart-line"></i> <strong>Market Scale Cap:</strong> The absolute market pool size cannot sustain long term growth. Pivot or expand to a broader B2B target focus.</li>`;
       }
       if (normalized[9] < 50) {
-        suggestionsHTML += `<li><i class="fas fa-shield-alt"></i> <strong>High Competition Load:</strong> Your defense index is low. Focus on unique distribution access methods to avoid a price war.</li>`;
+        suggestionsHTML += `<li><i class="fas fa-hourglass-end"></i> <strong>Overhead Warning:</strong> High burn rate paired with short execution runway creates a critical financial risk. Immediately reduce engineering operational spend.</li>`;
       }
       if (suggestionsHTML === '') {
-        suggestionsHTML = `<li><i class="fas fa-check-circle"></i> No critical vulnerabilities detected. Proceed with deploying verification tests to field users.</li>`;
+        suggestionsHTML = `<li><i class="fas fa-check-circle"></i> Business design verified. Foundational architecture shows no optimization blocks. Advance safely to pilot framework launch.</li>`;
       }
       suggestionsContainer.innerHTML = suggestionsHTML;
     }
