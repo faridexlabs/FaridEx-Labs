@@ -25,7 +25,7 @@
       padding-top: 110px;
     }
 
-    /* ELITE DARK NAVBAR */
+    /* PREMIUM NAVBAR */
     .navbar {
       position: fixed;
       top: 0;
@@ -39,7 +39,7 @@
     }
 
     .navbar .container {
-      max-width: 1100px;
+      max-width: 1300px;
       margin: 0 auto;
       padding: 0 24px;
       display: flex;
@@ -82,9 +82,9 @@
       color: #38BDF8;
     }
 
-    /* MAIN CONTENT WRAPPER */
+    /* MAIN CONTAINER */
     .main-container {
-      max-width: 1100px;
+      max-width: 1300px;
       margin: 0 auto;
       padding: 24px;
     }
@@ -104,14 +104,14 @@
       font-size: 1.05rem;
     }
 
-    /* TWO-COLUMN GRID WORKSPACE */
+    /* RESPONSIVE LAYOUT GRID */
     .workspace-grid {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns: 1.3fr 0.7fr;
       gap: 2rem;
     }
 
-    /* INPUT CARD WORKSPACE */
+    /* FORM & SECTION ARCHITECTURE */
     .card-panel {
       background: #FFFFFF;
       border: 1px solid #E2E8F0;
@@ -120,40 +120,48 @@
       box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.02);
     }
 
-    .card-panel h2 {
-      font-size: 1.25rem;
+    .form-section {
+      margin-bottom: 2.5rem;
+    }
+
+    .form-section h3 {
+      font-size: 1.1rem;
       font-weight: 700;
-      margin-bottom: 1.5rem;
       color: #1E3A8A;
-      border-bottom: 1px solid #F1F5F9;
-      padding-bottom: 0.5rem;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid #F1F5F9;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .fields-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
     }
 
     .input-group {
-      margin-bottom: 1.75rem;
+      display: flex;
+      flex-direction: column;
     }
 
     .input-group label {
-      display: block;
       font-weight: 600;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       color: #334155;
       margin-bottom: 0.4rem;
     }
 
-    .input-group .help-text {
-      font-size: 0.8rem;
-      color: #64748B;
-      margin-bottom: 0.6rem;
-    }
-
-    /* SCALABLE COMPOUND FIELD MECHANISM */
+    /* COMPOUND SCALE CONDUIT INPUT */
     .compound-field {
       display: flex;
       border: 1px solid #CBD5E1;
       border-radius: 6px;
       overflow: hidden;
-      transition: border-color 0.2s;
+      background: #FFFFFF;
+      transition: border-color 0.2s, box-shadow 0.2s;
     }
 
     .compound-field:focus-within {
@@ -161,7 +169,6 @@
       box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
     }
 
-    /* Left Side Scale Selector Dropdown */
     .scale-select {
       background: #F8FAFC;
       border: none;
@@ -169,33 +176,34 @@
       color: #475569;
       font-family: 'Plus Jakarta Sans', sans-serif;
       font-weight: 600;
-      font-size: 0.85rem;
-      padding: 0 0.75rem;
+      font-size: 0.8rem;
+      padding: 0 0.5rem;
       cursor: pointer;
       outline: none;
+      min-width: 80px;
     }
 
     .scale-select:hover {
       background: #F1F5F9;
     }
 
-    /* Manual Numeric Input Field */
     .manual-input {
       flex: 1;
       border: none;
-      padding: 0.75rem 1rem;
+      padding: 0.65rem 0.75rem;
       font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-weight: 500;
       color: #0F172A;
       outline: none;
+      width: 100%;
     }
 
     .manual-input::placeholder {
       color: #94A3B8;
     }
 
-    /* CALCULATE ACTION BUTTON */
+    /* SUBMIT BUTTON */
     .btn-calculate {
       background: #0F172A;
       color: #FFFFFF;
@@ -204,7 +212,7 @@
       text-transform: uppercase;
       letter-spacing: 0.05em;
       font-size: 0.85rem;
-      padding: 1rem;
+      padding: 1.1rem;
       border: none;
       border-radius: 6px;
       width: 100%;
@@ -214,14 +222,13 @@
       justify-content: center;
       gap: 0.5rem;
       transition: background 0.2s;
-      margin-top: 1rem;
     }
 
     .btn-calculate:hover {
       background: #1E3A8A;
     }
 
-    /* DYNAMIC REAL-TIME OUTPUT RADAR DISPLAY */
+    /* OUTPUT SIDEBAR PANEL */
     .output-panel {
       background: #0A192F;
       color: #FFFFFF;
@@ -229,8 +236,10 @@
       padding: 2.5rem;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      gap: 2rem;
       box-shadow: 0 20px 40px -15px rgba(10, 25, 47, 0.3);
+      position: sticky;
+      top: 130px;
       height: fit-content;
     }
 
@@ -239,16 +248,17 @@
       font-size: 1.1rem;
       font-weight: 700;
       color: #38BDF8;
-      margin-bottom: 2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 0.5rem;
     }
 
     .score-circle-area {
       text-align: center;
-      margin-bottom: 2.5rem;
+      padding: 1rem 0;
     }
 
     .feasibility-value {
-      font-size: 4rem;
+      font-size: 4.5rem;
       font-weight: 700;
       line-height: 1;
       letter-spacing: -0.03em;
@@ -259,21 +269,25 @@
       text-transform: uppercase;
       letter-spacing: 0.1em;
       color: #94A3B8;
-      margin-top: 0.5rem;
+      margin-top: 0.6rem;
     }
 
     .breakdown-list {
       display: flex;
       flex-direction: column;
-      gap: 1.25rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      padding-top: 1.5rem;
+      gap: 1.1rem;
     }
 
     .breakdown-item {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      padding-bottom: 0.6rem;
+    }
+
+    .breakdown-item:last-child {
+      border: none;
     }
 
     .breakdown-item .lbl {
@@ -283,18 +297,22 @@
 
     .breakdown-item .val {
       font-weight: 700;
-      font-size: 1rem;
+      font-size: 0.95rem;
     }
 
     .val.status-good { color: #10B981; }
     .val.status-alert { color: #F59E0B; }
+    .val.status-danger { color: #EF4444; }
 
-    @media (max-width: 768px) {
+    @media (max-width: 992px) {
       .workspace-grid {
         grid-template-columns: 1fr;
       }
-      body {
-        padding-top: 90px;
+      .fields-grid {
+        grid-template-columns: 1fr;
+      }
+      .output-panel {
+        position: static;
       }
     }
   </style>
@@ -316,93 +334,208 @@
   
   <div class="header-block">
     <h1>RevenuePilot</h1>
-    <p>Pre-launch dynamic revenue and economic yield modeling application sandbox.</p>
+    <p>Authentic 17-Factor Feasibility Test Modeling Space Matrix.</p>
   </div>
 
   <div class="workspace-grid">
     
     <div class="card-panel">
-      <h2>Feasibility Configuration Matrix</h2>
       
-      <div class="input-group">
-        <label for="targetMarket">Target Market Size</label>
-        <div class="help-text">Example: 500, 600, or 1200 maximum addressable consumer/entity units.</div>
-        <div class="compound-field">
-          <select id="scaleMarket" class="scale-select">
-            <option value="1">No Scale</option>
-            <option value="1000">K</option>
-            <option value="1000000" selected>Million</option>
-            <option value="1000000000">Billion</option>
-          </select>
-          <input type="number" id="targetMarket" class="manual-input" placeholder="e.g. 500" value="500">
+      <div class="form-section">
+        <h3><i class="fas fa-globe"></i> 1. Target Market Dimensions</h3>
+        <div class="fields-grid">
+          <div class="input-group">
+            <label for="val_tam">Total Addressable Market (TAM)</label>
+            <div class="compound-field">
+              <select id="scale_tam" class="scale-select">
+                <option value="1">No Scale</option><option value="1000">K</option><option value="1000000" selected>Million</option><option value="1000000000">Billion</option>
+              </select>
+              <input type="number" id="val_tam" class="manual-input" placeholder="e.g. 500" value="500">
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="val_sam">Serviceable Addressable Market (SAM)</label>
+            <div class="compound-field">
+              <select id="scale_sam" class="scale-select">
+                <option value="1">No Scale</option><option value="1000">K</option><option value="1000000" selected>Million</option><option value="1000000000">Billion</option>
+              </select>
+              <input type="number" id="val_sam" class="manual-input" placeholder="e.g. 150" value="150">
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="val_som">Serviceable Obtainable Market (SOM)</label>
+            <div class="compound-field">
+              <select id="scale_som" class="scale-select">
+                <option value="1">No Scale</option><option value="1000">K</option><option value="1000000" selected>Million</option><option value="1000000000">Billion</option>
+              </select>
+              <input type="number" id="val_som" class="manual-input" placeholder="e.g. 25" value="25">
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="val_growth">Annual Market Growth Rate (%)</label>
+            <div class="compound-field">
+              <select id="scale_growth" class="scale-select" disabled><option value="1">% Index</option></select>
+              <input type="number" id="val_growth" class="manual-input" placeholder="e.g. 12" value="12">
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="input-group">
-        <label for="acv">Annual Contract Value (ACV)</label>
-        <div class="help-text">Example: 15, 50, or 120 average yearly baseline package transaction size.</div>
-        <div class="compound-field">
-          <select id="scaleAcv" class="scale-select">
-            <option value="1">No Scale</option>
-            <option value="1000" selected>K</option>
-            <option value="1000000">Million</option>
-            <option value="1000000000">Billion</option>
-          </select>
-          <input type="number" id="acv" class="manual-input" placeholder="e.g. 25" value="25">
+      <div class="form-section">
+        <h3><i class="fas fa-coins"></i> 2. Unit Economic Monetization</h3>
+        <div class="fields-grid">
+          <div class="input-group">
+            <label for="val_acv">Annual Contract Value (ACV)</label>
+            <div class="compound-field">
+              <select id="scale_acv" class="scale-select">
+                <option value="1">No Scale</option><option value="1000" selected>K</option><option value="1000000">Million</option>
+              </select>
+              <input type="number" id="val_acv" class="manual-input" placeholder="e.g. 45" value="45">
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="val_cac">Customer Acquisition Cost (CAC)</label>
+            <div class="compound-field">
+              <select id="scale_cac" class="scale-select">
+                <option value="1">No Scale</option><option value="1000" selected>K</option><option value="1000000">Million</option>
+              </select>
+              <input type="number" id="val_cac" class="manual-input" placeholder="e.g. 10" value="10">
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="val_servicing">Annual Unit Cost to Serve</label>
+            <div class="compound-field">
+              <select id="scale_servicing" class="scale-select">
+                <option value="1">No Scale</option><option value="1000" selected>K</option><option value="1000000">Million</option>
+              </select>
+              <input type="number" id="val_servicing" class="manual-input" placeholder="e.g. 3" value="3">
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="val_churn">Expected Annual Churn Rate (%)</label>
+            <div class="compound-field">
+              <select id="scale_churn" class="scale-select" disabled><option value="1">% Churn</option></select>
+              <input type="number" id="val_churn" class="manual-input" placeholder="e.g. 8" value="8">
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="input-group">
-        <label for="budget">Engineering Resource Budget</label>
-        <div class="help-text">Example: 4, 10, or 15 capital allocation threshold reserved for production.</div>
-        <div class="compound-field">
-          <select id="scaleBudget" class="scale-select">
-            <option value="1">No Scale</option>
-            <option value="1000">K</option>
-            <option value="1000000" selected>Million</option>
-            <option value="1000000000">Billion</option>
-          </select>
-          <input type="number" id="budget" class="manual-input" placeholder="e.g. 5" value="5">
+      <div class="form-section">
+        <h3><i class="fas fa-layer-group"></i> 3. Capital & Production Budgets</h3>
+        <div class="fields-grid">
+          <div class="input-group">
+            <label for="val_dev">Pre-Launch Engineering Budget</label>
+            <div class="compound-field">
+              <select id="scale_dev" class="scale-select">
+                <option value="1">No Scale</option><option value="1000">K</option><option value="1000000" selected>Million</option>
+              </select>
+              <input type="number" id="val_dev" class="manual-input" placeholder="e.g. 8" value="8">
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="val_marketing">Pre-Launch Marketing Budget</label>
+            <div class="compound-field">
+              <select id="scale_marketing" class="scale-select">
+                <option value="1">No Scale</option><option value="1000">K</option><option value="1000000" selected>Million</option>
+              </select>
+              <input type="number" id="val_marketing" class="manual-input" placeholder="e.g. 3" value="3">
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="val_overhead">Monthly Operational Overhead</label>
+            <div class="compound-field">
+              <select id="scale_overhead" class="scale-select">
+                <option value="1">No Scale</option><option value="1000" selected>K</option><option value="1000000">Million</option>
+              </select>
+              <input type="number" id="val_overhead" class="manual-input" placeholder="e.g. 450" value="450">
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="val_runway">Execution Runway Balance (Months)</label>
+            <div class="compound-field">
+              <select id="scale_runway" class="scale-select" disabled><option value="1">Months</option></select>
+              <input type="number" id="val_runway" class="manual-input" placeholder="e.g. 18" value="18">
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="input-group">
-        <label for="runway">Execution Runway Stability Score</label>
-        <div class="help-text">Example: 6, 12, 18, or 24 expected months of operational runtime funding buffer.</div>
-        <div class="compound-field">
-          <select id="scaleRunway" class="scale-select" disabled style="cursor: not-allowed; opacity: 0.7;">
-            <option value="1" selected>Months</option>
-          </select>
-          <input type="number" id="runway" class="manual-input" placeholder="e.g. 12" value="12">
+      <div class="form-section">
+        <h3><i class="fas fa-shield-halved"></i> 4. Risk & Environment Matrices</h3>
+        <div class="fields-grid">
+          <div class="input-group">
+            <label for="val_competitors">Count of Direct Active Competitors</label>
+            <div class="compound-field">
+              <select id="scale_competitors" class="scale-select" disabled><option value="1">Entities</option></select>
+              <input type="number" id="val_competitors" class="manual-input" placeholder="e.g. 4" value="4">
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="val_reg">Regulatory Blockers (Scale 1 to 5)</label>
+            <div class="compound-field">
+              <select id="scale_reg" class="scale-select" disabled><option value="1">Severity</option></select>
+              <input type="number" id="val_reg" class="manual-input" placeholder="e.g. 1 (Low) to 5 (High)" value="2">
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="val_integ">Tech Stack Custom Complexity (Scale 1-5)</label>
+            <div class="compound-field">
+              <select id="scale_integ" class="scale-select" disabled><option value="1">Severity</option></select>
+              <input type="number" id="val_integ" class="manual-input" placeholder="e.g. 1 (Low) to 5 (High)" value="3">
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="val_salescycle">Average Enterprise Sales Cycle (Months)</label>
+            <div class="compound-field">
+              <select id="scale_salescycle" class="scale-select" disabled><option value="1">Months</option></select>
+              <input type="number" id="val_salescycle" class="manual-input" placeholder="e.g. 3" value="3">
+            </div>
+          </div>
+          <div class="input-group" style="grid-column: span 2;">
+            <label for="val_conversion">Expected Trial-to-Paid Conversion Rate (%)</label>
+            <div class="compound-field">
+              <select id="scale_conversion" class="scale-select" disabled><option value="1">% Rate</option></select>
+              <input type="number" id="val_conversion" class="manual-input" placeholder="e.g. 15" value="15">
+            </div>
+          </div>
         </div>
       </div>
 
       <button id="calcBtn" class="btn-calculate">
-        <i class="fas fa-calculator"></i> Calculate Feasibility Index
+        <i class="fas fa-shield-consistent"></i> Run Full Feasibility Audit
       </button>
     </div>
 
     <div class="output-panel">
       <div>
-        <h3>Derived Processing Output</h3>
+        <h3>Test Manual Analytical Output</h3>
         <div class="score-circle-area">
-          <div class="feasibility-value" id="outScore">72%</div>
+          <div class="feasibility-value" id="outScore">0%</div>
           <div class="feasibility-label">Feasibility Index Rating</div>
         </div>
       </div>
 
       <div class="breakdown-list">
         <div class="breakdown-item">
-          <span class="lbl">Total Addressable TAM Pool</span>
-          <span class="val" id="outTam">500.00M</span>
+          <span class="lbl">Total Addressable TAM</span>
+          <span class="val" id="outTam">-</span>
         </div>
         <div class="breakdown-item">
-          <span class="lbl">Unit Economic Yield</span>
-          <span class="val" id="outYield" style="color: #38BDF8;">25.00K</span>
+          <span class="lbl">LTV to CAC Ratio Target</span>
+          <span class="val" id="outLtvCac">-</span>
         </div>
         <div class="breakdown-item">
-          <span class="lbl">Capitalization Safety Tier</span>
-          <span class="val status-good" id="outStatus">Stable Runway</span>
+          <span class="lbl">Pre-Launch Sunk Asset Risk</span>
+          <span class="val" id="outSunk">-</span>
+        </div>
+        <div class="breakdown-item">
+          <span class="lbl">Monthly Operational Burn</span>
+          <span class="val" id="outBurn">-</span>
+        </div>
+        <div class="breakdown-item">
+          <span class="lbl">Ecosystem Safety Status</span>
+          <span class="val" id="outStatus">-</span>
         </div>
       </div>
     </div>
@@ -412,23 +545,35 @@
 
 <script>
   (function() {
-    const targetMarketInput = document.getElementById('targetMarket');
-    const scaleMarketSelect = document.getElementById('scaleMarket');
-    const acvInput = document.getElementById('acv');
-    const scaleAcvSelect = document.getElementById('scaleAcv');
-    const budgetInput = document.getElementById('budget');
-    const scaleBudgetSelect = document.getElementById('scaleBudget');
-    const runwayInput = document.getElementById('runway');
+    // Input element mappings
+    const fields = [
+      'tam', 'sam', 'som', 'growth', 'acv', 'cac', 'servicing', 
+      'churn', 'dev', 'marketing', 'overhead', 'runway', 
+      'competitors', 'reg', 'integ', 'salescycle', 'conversion'
+    ];
     
+    const DOM = {};
+    fields.forEach(f => {
+      DOM[f] = document.getElementById(`val_${f}`);
+      DOM[`scale_${f}`] = document.getElementById(`scale_${f}`);
+    });
+
     const calcBtn = document.getElementById('calcBtn');
 
-    // UI Output Targets
+    // Output DOM element references
     const outScore = document.getElementById('outScore');
     const outTam = document.getElementById('outTam');
-    const outYield = document.getElementById('outYield');
+    const outLtvCac = document.getElementById('outLtvCac');
+    const outSunk = document.getElementById('outSunk');
+    const outBurn = document.getElementById('outBurn');
     const outStatus = document.getElementById('outStatus');
 
-    // Formatting Helper to print clean short suffixes (K, M, B)
+    function getAbsoluteValue(field) {
+      const val = parseFloat(DOM[field].value) || 0;
+      const mult = DOM[`scale_${field}`] ? parseFloat(DOM[`scale_${field}`].value) : 1;
+      return val * mult;
+    }
+
     function formatSuffix(value) {
       if (value >= 1000000000) return (value / 1000000000).toFixed(2) + 'B';
       if (value >= 1000000) return (value / 1000000).toFixed(2) + 'M';
@@ -436,66 +581,86 @@
       return value.toFixed(2);
     }
 
-    function processCalculations() {
-      // 1. Gather raw values and apply selected scale multipliers
-      const marketVal = parseFloat(targetMarketInput.value) || 0;
-      const marketMultiplier = parseFloat(scaleMarketSelect.value);
-      const totalMarketPool = marketVal * marketMultiplier;
+    function runAuditEngine() {
+      // 1. Unpack mathematical absolute values
+      const tam = getAbsoluteValue('tam');
+      const sam = getAbsoluteValue('sam');
+      const som = getAbsoluteValue('som');
+      const growth = parseFloat(DOM.growth.value) || 0;
+      
+      const acv = getAbsoluteValue('acv');
+      const cac = getAbsoluteValue('cac');
+      const servicing = getAbsoluteValue('servicing');
+      const churn = parseFloat(DOM.churn.value) || 0;
 
-      const acvVal = parseFloat(acvInput.value) || 0;
-      const acvMultiplier = parseFloat(scaleAcvSelect.value);
-      const computedAcv = acvVal * acvMultiplier;
+      const dev = getAbsoluteValue('dev');
+      const marketing = getAbsoluteValue('marketing');
+      const overhead = getAbsoluteValue('overhead');
+      const runway = parseFloat(DOM.runway.value) || 0;
 
-      const budgetVal = parseFloat(budgetInput.value) || 0;
-      const budgetMultiplier = parseFloat(scaleBudgetSelect.value);
-      const computedBudget = budgetVal * budgetMultiplier;
+      const competitors = parseFloat(DOM.competitors.value) || 0;
+      const reg = parseFloat(DOM.reg.value) || 0;
+      const integ = parseFloat(DOM.integ.value) || 0;
+      const salescycle = parseFloat(DOM.salescycle.value) || 0;
+      const conversion = parseFloat(DOM.conversion.value) || 0;
 
-      const runwayMonths = parseFloat(runwayInput.value) || 0;
+      // 2. Perform validation manual operations formulas
+      let score = 60; // baseline equilibrium anchor
 
-      // 2. Process logic model matrix parameters safely
-      let scoreBase = 50;
+      // Factor A: Market Concentration Profiles
+      if (sam > tam) score -= 10;
+      if (som > sam) score -= 10;
+      if (growth > 15) score += 5;
 
-      // Reward healthy runway horizons
-      if (runwayMonths >= 18) scoreBase += 20;
-      else if (runwayMonths >= 12) scoreBase += 15;
-      else if (runwayMonths >= 6) scoreBase += 5;
-      else scoreBase -= 15; // penalize high risk short runway
+      // Factor B: Unit Economic Viability Formula (LTV vs CAC)
+      const annualMargin = acv - servicing;
+      const lifeYears = churn > 0 ? (100 / churn) : 5;
+      const customerLtv = annualMargin * lifeYears;
+      const ltvCacRatio = cac > 0 ? (customerLtv / cac) : 0;
 
-      // Ratio evaluation between budget threshold and asset size profiles
-      if (computedBudget > 0 && totalMarketPool > 0) {
-        const structuralRatio = (computedBudget / totalMarketPool);
-        if (structuralRatio < 0.1) scoreBase += 15;
-        else if (structuralRatio < 0.5) scoreBase += 5;
-      }
+      if (ltvCacRatio >= 3.5) score += 15;
+      else if (ltvCacRatio >= 2.0) score += 5;
+      else score -= 20; // Critical warning penalization
 
-      // Add incremental weight values based on contract strengths
-      if (computedAcv > 50000) scoreBase += 15;
-      else if (computedAcv > 10000) scoreBase += 10;
+      // Factor C: Capital Runway Security Architecture
+      const totalSunkPreLaunch = dev + marketing;
+      if (runway >= 18) score += 15;
+      else if (runway >= 12) score += 8;
+      else if (runway < 6) score -= 25;
 
-      // Restrain limits securely
-      if (scoreBase > 99) scoreBase = 99;
-      if (scoreBase < 5) scoreBase = 5;
+      // Factor D: Vulnerability Matrices
+      if (competitors > 8) score -= 10;
+      if (reg >= 4) score -= 12;
+      if (integ >= 4) score -= 8;
+      if (salescycle > 6) score -= 5;
+      if (conversion >= 20) score += 5;
 
-      // 3. Update Interface Elements instantly
-      outScore.textContent = Math.round(scoreBase) + '%';
-      outTam.textContent = formatSuffix(totalMarketPool);
-      outYield.textContent = formatSuffix(computedAcv);
+      // Bind calculations limit boundary caps safely
+      if (score > 98) score = 98;
+      if (score < 3) score = 3;
 
-      // Dynamic Status assignment matching runway health
-      if (runwayMonths >= 12) {
-        outStatus.textContent = "Stable Runway";
+      // 3. Render calculations out to display components
+      outScore.textContent = Math.round(score) + '%';
+      outTam.textContent = formatSuffix(tam);
+      outLtvCac.textContent = ltvCacRatio > 0 ? ltvCacRatio.toFixed(1) + 'x' : '0.0x';
+      outSunk.textContent = formatSuffix(totalSunkPreLaunch);
+      outBurn.textContent = formatSuffix(overhead);
+
+      // System Status Matrix Evaluation
+      if (score >= 75 && ltvCacRatio >= 3.0) {
+        outStatus.textContent = "Institutional Viable";
         outStatus.className = "val status-good";
-      } else {
-        outStatus.textContent = "Capital Vulnerability";
+      } else if (score >= 45) {
+        outStatus.textContent = "Conditional Boundary";
         outStatus.className = "val status-alert";
+      } else {
+        outStatus.textContent = "High Risk Vector";
+        outStatus.className = "val status-danger";
       }
     }
 
-    // Attach listeners for click operations and automatic modifications
-    calcBtn.addEventListener('click', processCalculations);
-    
-    // Perform initial boot calculation cycle
-    processCalculations();
+    calcBtn.addEventListener('click', runAuditEngine);
+    runAuditEngine(); // trigger bootstrap render instantly
   })();
 </script>
 
