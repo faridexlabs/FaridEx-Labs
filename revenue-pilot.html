@@ -25,7 +25,7 @@
       padding-top: 110px;
     }
 
-    /* NAVBAR */
+    /* PREMIUM NAVBAR */
     .navbar {
       position: fixed;
       top: 0;
@@ -39,7 +39,7 @@
     }
 
     .navbar .container {
-      max-width: 1400px;
+      max-width: 1450px;
       margin: 0 auto;
       padding: 0 24px;
       display: flex;
@@ -60,10 +60,7 @@
       color: #FFFFFF;
     }
 
-    .logo-main .ex {
-      color: #38BDF8;
-      font-style: italic;
-    }
+    .logo-main .ex { color: #38BDF8; font-style: italic; }
 
     .back-btn {
       color: #CBD5E1;
@@ -77,27 +74,21 @@
       gap: 0.5rem;
     }
 
-    /* MAIN ARCHITECTURE GRID */
+    /* WORKSPACE MATRIX GRID */
     .main-container {
-      max-width: 1400px;
+      max-width: 1450px;
       margin: 0 auto;
       padding: 24px;
     }
 
-    .header-block {
-      margin-bottom: 2.5rem;
-    }
-
-    .header-block h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
+    .header-block { margin-bottom: 2.5rem; }
+    .header-block h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 0.5rem; }
+    .header-block p { color: #475569; font-size: 1.05rem; }
 
     .workspace-grid {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 2rem;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 2.5rem;
     }
 
     .card-panel {
@@ -106,6 +97,36 @@
       border-radius: 12px;
       padding: 2.5rem;
       box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.02);
+    }
+
+    /* ARCHITECTURE SELECT PANEL */
+    .architecture-selector-box {
+      background: #F1F5F9;
+      border: 2px solid #CBD5E1;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .architecture-selector-box label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #0F172A;
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+
+    .model-dropdown {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border-radius: 6px;
+      border: 1px solid #94A3B8;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #1E3A8A;
+      background-color: #FFFFFF;
+      outline: none;
     }
 
     .form-section {
@@ -130,33 +151,22 @@
       gap: 1.25rem;
     }
 
-    .input-group {
-      display: flex;
-      flex-direction: column;
-    }
+    .input-group { display: flex; flex-direction: column; }
+    .input-group label { font-weight: 600; font-size: 0.85rem; color: #334155; margin-bottom: 0.4rem; }
 
-    .input-group label {
-      font-weight: 600;
-      font-size: 0.85rem;
-      color: #334155;
-      margin-bottom: 0.4rem;
-    }
-
-    /* ALIGNED INPUT COMPOUND BOX WITH SCALE ON RIGHT */
+    /* SCALE SELECTOR ELEMENT (RIGHT SIDE ALIGNED) */
     .compound-field {
       display: flex;
       border: 1px solid #CBD5E1;
       border-radius: 6px;
       overflow: hidden;
       background: #FFFFFF;
+      transition: border-color 0.2s;
     }
 
-    .compound-field:focus-within {
-      border-color: #2563EB;
-      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-    }
+    .compound-field:focus-within { border-color: #2563EB; }
 
-    .manual-input, .select-input-field {
+    .manual-input {
       flex: 1;
       border: none;
       padding: 0.65rem 0.75rem;
@@ -165,7 +175,6 @@
       font-weight: 500;
       color: #0F172A;
       outline: none;
-      background: transparent;
     }
 
     .scale-select {
@@ -179,10 +188,27 @@
       padding: 0 0.6rem;
       cursor: pointer;
       outline: none;
-      min-width: 90px;
+      min-width: 95px;
     }
 
-    /* RUN BUTTON */
+    /* DYNAMIC VARIABLES TARGET FIELD WRAPPER */
+    .dynamic-variant-layer {
+      background: #FAF5FF;
+      border: 1px dashed #D8B4FE;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .dynamic-variant-layer h4 {
+      font-size: 0.95rem;
+      color: #6B21A8;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
     .btn-calculate {
       background: #1E3A8A;
       color: #FFFFFF;
@@ -202,11 +228,9 @@
       gap: 0.5rem;
     }
 
-    .btn-calculate:hover {
-      background: #0F172A;
-    }
+    .btn-calculate:hover { background: #0F172A; }
 
-    /* REPORT PANEL DISPLAY */
+    /* DIAGNOSTIC REPORT SIDEBAR PANEL */
     .output-panel {
       background: #0A192F;
       color: #FFFFFF;
@@ -221,13 +245,7 @@
       height: fit-content;
     }
 
-    .output-panel h3 {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: #38BDF8;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      padding-bottom: 0.5rem;
-    }
+    .output-panel h3 { font-size: 1.1rem; font-weight: 700; color: #38BDF8; border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 0.5rem; }
 
     .score-split-container {
       display: flex;
@@ -239,16 +257,8 @@
       border: 1px solid rgba(255, 255, 255, 0.05);
     }
 
-    .feasibility-value {
-      font-size: 4rem;
-      font-weight: 700;
-      line-height: 1;
-    }
-
-    .score-comment-box {
-      text-align: right;
-      max-width: 60%;
-    }
+    .feasibility-value { font-size: 4rem; font-weight: 700; line-height: 1; }
+    .score-comment-box { text-align: right; max-width: 60%; }
 
     .comment-tag {
       font-size: 0.8rem;
@@ -268,22 +278,8 @@
 
     .comment-text { font-size: 0.85rem; color: #CBD5E1; }
 
-    /* 12 METRICS SCORING BLOCK */
-    .breakdown-list {
-      display: flex;
-      flex-direction: column;
-      gap: 0.85rem;
-    }
-
-    .breakdown-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-      padding-bottom: 0.5rem;
-    }
-
-    .breakdown-item:last-child { border: none; }
+    .breakdown-list { display: flex; flex-direction: column; gap: 0.85rem; }
+    .breakdown-item { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255, 255, 255, 0.05); padding-bottom: 0.5rem; }
     .breakdown-item .lbl { font-size: 0.82rem; color: #94A3B8; }
     .breakdown-item .val { font-weight: 700; font-size: 0.92rem; }
 
@@ -291,38 +287,13 @@
     .val.score-alert { color: #F59E0B; }
     .val.score-danger { color: #EF4444; }
 
-    /* SUGGESTIONS MODULE */
-    .suggestions-box {
-      background: rgba(56, 189, 248, 0.04);
-      border: 1px dashed rgba(56, 189, 248, 0.2);
-      border-radius: 8px;
-      padding: 1.25rem;
-    }
-
-    .suggestions-box h4 {
-      font-size: 0.9rem;
-      color: #38BDF8;
-      margin-bottom: 0.75rem;
-    }
-
-    .suggestions-list {
-      list-style-type: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
-    .suggestions-list li {
-      font-size: 0.82rem;
-      color: #E2E8F0;
-      display: flex;
-      align-items: flex-start;
-      gap: 0.5rem;
-    }
-
+    .suggestions-box { background: rgba(56, 189, 248, 0.04); border: 1px dashed rgba(56, 189, 248, 0.2); border-radius: 8px; padding: 1.25rem; }
+    .suggestions-box h4 { font-size: 0.9rem; color: #38BDF8; margin-bottom: 0.75rem; }
+    .suggestions-list { list-style-type: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .suggestions-list li { font-size: 0.82rem; color: #E2E8F0; display: flex; align-items: flex-start; gap: 0.5rem; }
     .suggestions-list li i { color: #38BDF8; margin-top: 3px; }
 
-    @media (max-width: 992px) {
+    @media (max-width: 1100px) {
       .workspace-grid { grid-template-columns: 1fr; }
       .output-panel { position: static; }
     }
@@ -341,183 +312,126 @@
   
   <div class="header-block">
     <h1>RevenuePilot</h1>
-    <p>Advanced Corporate Optimization & Monetization Feasibility Diagnostic Matrix.</p>
+    <p>Context-Swapping 30-Parameter Operational Validation Optimization Matrix.</p>
   </div>
 
   <div class="workspace-grid">
     
     <div class="card-panel">
       
+      <div class="architecture-selector-box">
+        <label for="revenue_model_selector"><i class="fas fa-project-diagram"></i> Choose Structural Monetization Architecture</label>
+        <select id="revenue_model_selector" class="model-dropdown">
+          <option value="saas_tiered">1. SaaS Tiered Subscriptions (Monthly/Annual)</option>
+          <option value="freemium_upsell">2. Freemium Network Scale Model</option>
+          <option value="per_seat_b2b">3. Corporate Per-Seat / Enterprise License</option>
+          <option value="one_time_course">4. One-Time Course / Digital Product Asset</option>
+          <option value="marketplace_take">5. Two-Sided Marketplace (Take-Rate Fee)</option>
+          <option value="usage_metered">6. Usage-Based / Metered API Consumption</option>
+          <option value="hybrid_retainer">7. Agency Retainer + Digital Product Add-on</option>
+          <option value="ecom_dtc">8. Physical E-Commerce / D2C Batch Run</option>
+          <option value="ad_sponsored">9. High-Traffic Content Advertising & Sponsorship</option>
+          <option value="white_label">10. White-Label System Software Licensing</option>
+        </select>
+      </div>
+
       <div class="form-section">
-        <h3><i class="fas fa-sliders-h"></i> 1. Monetization Strategy Framework</h3>
+        <h3><i class="fas fa-globe"></i> Global Macro Environmental Targets (Static Fields)</h3>
         <div class="fields-grid">
           <div class="input-group">
-            <label for="val_model_type">Primary Business Architecture</label>
+            <label>Total Addressable Market (TAM)</label>
             <div class="compound-field">
-              <select id="val_model_type" class="select-input-field">
-                <option value="saas_monthly">SaaS Monthly Subscription</option>
-                <option value="saas_annual">SaaS Annual Premium</option>
-                <option value="freemium">Freemium Tier Model</option>
-                <option value="per_user">Per-User / Seat License</option>
-                <option value="one_time_course">One-Time Course / Digital Product</option>
-              </select>
+              <input type="number" id="g_tam" class="manual-input" value="0">
+              <select id="scale_g_tam" class="scale-select"><option value="1">Units</option><option value="1000">K</option><option value="1000000" selected>Million</option><option value="1000000000">Billion</option></select>
             </div>
           </div>
           <div class="input-group">
-            <label for="val_sub_price">Base Product Price (Per Month/Course)</label>
+            <label>Serviceable Addressable Market (SAM)</label>
             <div class="compound-field">
-              <input type="number" id="val_sub_price" class="manual-input" value="0">
-              <select id="scale_sub_price" class="scale-select"><option value="1">Direct Val</option><option value="1000">K</option></select>
+              <input type="number" id="g_sam" class="manual-input" value="0">
+              <select id="scale_g_sam" class="scale-select"><option value="1">Units</option><option value="1000">K</option><option value="1000000" selected>Million</option></select>
             </div>
           </div>
           <div class="input-group">
-            <label for="val_free_pool">Total Free Tier Users (Freemium Only)</label>
+            <label>Serviceable Obtainable Market (SOM)</label>
             <div class="compound-field">
-              <input type="number" id="val_free_pool" class="manual-input" value="0">
-              <select id="scale_free_pool" class="scale-select"><option value="1">Units</option><option value="1000">K</option><option value="1000000">Million</option></select>
+              <input type="number" id="g_som" class="manual-input" value="0">
+              <select id="scale_g_som" class="scale-select"><option value="1">Units</option><option value="1000" selected>K</option><option value="1000000">Million</option></select>
             </div>
           </div>
           <div class="input-group">
-            <label for="val_free_to_paid">Free-to-Paid Upgrade Velocity (%)</label>
+            <label>Annual Segment Compound Growth (%)</label>
             <div class="compound-field">
-              <input type="number" id="val_free_to_paid" class="manual-input" value="0">
-              <select id="scale_free_to_paid" class="scale-select" disabled><option value="1">% Conversion</option></select>
+              <input type="number" id="g_growth" class="manual-input" value="0">
+              <select class="scale-select" disabled><option>% Rate</option></select>
             </div>
           </div>
           <div class="input-group">
-            <label for="val_avg_seats">Average Seats / Users Per Account</label>
+            <label>Active Direct System Competitors</label>
             <div class="compound-field">
-              <input type="number" id="val_avg_seats" class="manual-input" value="0">
-              <select id="scale_avg_seats" class="scale-select" disabled><option value="1">Seats</option></select>
+              <input type="number" id="g_competitors" class="manual-input" value="0">
+              <select class="scale-select" disabled><option>Brands</option></select>
             </div>
           </div>
           <div class="input-group">
-            <label for="val_expansion_rate">Annual Account Expansion Revenue (%)</label>
+            <label>Regulatory Barrier Gravity (1-5)</label>
             <div class="compound-field">
-              <input type="number" id="val_expansion_rate" class="manual-input" value="0">
-              <select id="scale_expansion_rate" class="scale-select" disabled><option value="1">% Expansion</option></select>
+              <input type="number" id="g_reg" class="manual-input" value="0">
+              <select class="scale-select" disabled><option>Index</option></select>
+            </div>
+          </div>
+          <div class="input-group">
+            <label>Customer Acquisition Cost (CAC)</label>
+            <div class="compound-field">
+              <input type="number" id="g_cac" class="manual-input" value="0">
+              <select id="scale_g_cac" class="scale-select"><option value="1">Direct</option><option value="1000" selected>K</option></select>
+            </div>
+          </div>
+          <div class="input-group">
+            <label>Annual Base Cost to Serve Per Unit</label>
+            <div class="compound-field">
+              <input type="number" id="g_serve" class="manual-input" value="0">
+              <select id="scale_g_serve" class="scale-select"><option value="1">Direct</option><option value="1000" selected>K</option></select>
+            </div>
+          </div>
+          <div class="input-group">
+            <label>Pre-Launch Engineering Capital Allocation</label>
+            <div class="compound-field">
+              <input type="number" id="g_dev" class="manual-input" value="0">
+              <select id="scale_g_dev" class="scale-select"><option value="1">Direct</option><option value="1000">K</option><option value="1000000" selected>Million</option></select>
+            </div>
+          </div>
+          <div class="input-group">
+            <label>Monthly Fixed Operating Overhead</label>
+            <div class="compound-field">
+              <input type="number" id="g_overhead" class="manual-input" value="0">
+              <select id="scale_g_overhead" class="scale-select"><option value="1">Direct</option><option value="1000" selected>K</option><option value="1000000">Million</option></select>
+            </div>
+          </div>
+          <div class="input-group">
+            <label>Secured Financial Runway (Months)</label>
+            <div class="compound-field">
+              <input type="number" id="g_runway" class="manual-input" value="0">
+              <select class="scale-select" disabled><option>Months</option></select>
+            </div>
+          </div>
+          <div class="input-group">
+            <label>Target Channel Conversion Velocity (%)</label>
+            <div class="compound-field">
+              <input type="number" id="g_conversion" class="manual-input" value="0">
+              <select class="scale-select" disabled><option>% Conversion</option></select>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="form-section">
-        <h3><i class="fas fa-globe"></i> 2. Target Market Dimensions</h3>
-        <div class="fields-grid">
-          <div class="input-group">
-            <label for="val_tam">Total Addressable Market (TAM)</label>
-            <div class="compound-field">
-              <input type="number" id="val_tam" class="manual-input" value="0">
-              <select id="scale_tam" class="scale-select"><option value="1">No Scale</option><option value="1000">K</option><option value="1000000" selected>Million</option><option value="1000000000">Billion</option></select>
-            </div>
+      <div class="dynamic-variant-layer">
+        <h4><i class="fas fa-exchange-alt"></i> Model-Specific Parameters (Injected Dynamic Fields)</h4>
+        <div class="fields-grid" id="dynamic_fields_container">
           </div>
-          <div class="input-group">
-            <label for="val_sam">Serviceable Addressable Market (SAM)</label>
-            <div class="compound-field">
-              <input type="number" id="val_sam" class="manual-input" value="0">
-              <select id="scale_sam" class="scale-select"><option value="1">No Scale</option><option value="1000">K</option><option value="1000000" selected>Million</option><option value="1000000000">Billion</option></select>
-            </div>
-          </div>
-          <div class="input-group">
-            <label for="val_som">Serviceable Obtainable Market (SOM)</label>
-            <div class="compound-field">
-              <input type="number" id="val_som" class="manual-input" value="0">
-              <select id="scale_som" class="scale-select"><option value="1">No Scale</option><option value="1000">K</option><option value="1000000" selected>Million</option><option value="1000000000">Billion</option></select>
-            </div>
-          </div>
-          <div class="input-group">
-            <label for="val_growth">Annual Market Growth Rate (%)</label>
-            <div class="compound-field">
-              <input type="number" id="val_growth" class="manual-input" value="0">
-              <select id="scale_growth" class="scale-select" disabled><option value="1">% Index</option></select>
-            </div>
-          </div>
-        </div>
       </div>
 
-      <div class="form-section">
-        <h3><i class="fas fa-coins"></i> 3. Unit Economics & Funnel Optimization</h3>
-        <div class="fields-grid">
-          <div class="input-group">
-            <label for="val_cac">Customer Acquisition Cost (CAC)</label>
-            <div class="compound-field">
-              <input type="number" id="val_cac" class="manual-input" value="0">
-              <select id="scale_cac" class="scale-select"><option value="1">No Scale</option><option value="1000" selected>K</option><option value="1000000">Million</option></select>
-            </div>
-          </div>
-          <div class="input-group">
-            <label for="val_servicing">Annual Unit Cost to Serve (Hosting/Ops)</label>
-            <div class="compound-field">
-              <input type="number" id="val_servicing" class="manual-input" value="0">
-              <select id="scale_servicing" class="scale-select"><option value="1">No Scale</option><option value="1000" selected>K</option><option value="1000000">Million</option></select>
-            </div>
-          </div>
-          <div class="input-group">
-            <label for="val_churn">Expected Annual Churn Rate (%)</label>
-            <div class="compound-field">
-              <input type="number" id="val_churn" class="manual-input" value="0">
-              <select id="scale_churn" class="scale-select" disabled><option value="1">% Churn</option></select>
-            </div>
-          </div>
-          <div class="input-group">
-            <label for="val_conversion">Expected Trial-to-Paid Conversion Rate (%)</label>
-            <div class="compound-field">
-              <input type="number" id="val_conversion" class="manual-input" value="0">
-              <select id="scale_conversion" class="scale-select" disabled><option value="1">% Rate</option></select>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="form-section">
-        <h3><i class="fas fa-layer-group"></i> 4. Capital Budgets & Risk Environment</h3>
-        <div class="fields-grid">
-          <div class="input-group">
-            <label for="val_dev">Pre-Launch Engineering Budget</label>
-            <div class="compound-field">
-              <input type="number" id="val_dev" class="manual-input" value="0">
-              <select id="scale_dev" class="scale-select"><option value="1">No Scale</option><option value="1000">K</option><option value="1000000" selected>Million</option></select>
-            </div>
-          </div>
-          <div class="input-group">
-            <label for="val_marketing">Pre-Launch Marketing Budget</label>
-            <div class="compound-field">
-              <input type="number" id="val_marketing" class="manual-input" value="0">
-              <select id="scale_marketing" class="scale-select"><option value="1">No Scale</option><option value="1000">K</option><option value="1000000" selected>Million</option></select>
-            </div>
-          </div>
-          <div class="input-group">
-            <label for="val_overhead">Monthly Operational Overhead</label>
-            <div class="compound-field">
-              <input type="number" id="val_overhead" class="manual-input" value="0">
-              <select id="scale_overhead" class="scale-select"><option value="1">No Scale</option><option value="1000" selected>K</option><option value="1000000">Million</option></select>
-            </div>
-          </div>
-          <div class="input-group">
-            <label for="val_runway">Execution Runway Balance (Months)</label>
-            <div class="compound-field">
-              <input type="number" id="val_runway" class="manual-input" value="0">
-              <select id="scale_runway" class="scale-select" disabled><option value="1">Months</option></select>
-            </div>
-          </div>
-          <div class="input-group">
-            <label for="val_competitors">Count of Direct Active Competitors</label>
-            <div class="compound-field">
-              <input type="number" id="val_competitors" class="manual-input" value="0">
-              <select id="scale_competitors" class="scale-select" disabled><option value="1">Entities</option></select>
-            </div>
-          </div>
-          <div class="input-group">
-            <label for="val_reg">Regulatory / Compliance Barriers</label>
-            <div class="compound-field">
-              <input type="number" id="val_reg" class="manual-input" placeholder="Scale 1-5" value="0">
-              <select id="scale_reg" class="scale-select" disabled><option value="1">Severity</option></select>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <button id="calcBtn" class="btn-calculate"><i class="fas fa-file-invoice"></i> Get Diagnostic Report</button>
+      <button id="calcBtn" class="btn-calculate"><i class="fas fa-sync-alt"></i> Compute Model Report</button>
     </div>
 
     <div class="output-panel">
@@ -527,7 +441,7 @@
           <div class="feasibility-value" id="outScore">0%</div>
           <div class="score-comment-box">
             <div class="comment-tag tag-neutral" id="outCommentTag">No Data</div>
-            <div class="comment-text" id="outCommentText">Please configure architectural settings and evaluate.</div>
+            <div class="comment-text" id="outCommentText">Configure structural fields to generate execution parameters.</div>
           </div>
         </div>
       </div>
@@ -550,7 +464,7 @@
       <div class="suggestions-box">
         <h4><i class="fas fa-lightbulb"></i> Strategic Key Suggestions</h4>
         <ul class="suggestions-list" id="suggestionsContainer">
-          <li style="color: #94A3B8;">Awaiting calculation engine inputs...</li>
+          <li style="color: #94A3B8;">Awaiting model profile selection data execution.</li>
         </ul>
       </div>
     </div>
@@ -560,189 +474,283 @@
 
 <script>
   (function() {
-    const fields = [
-      'tam', 'sam', 'som', 'growth', 'cac', 'servicing', 'churn', 'conversion',
-      'dev', 'marketing', 'overhead', 'runway', 'competitors', 'reg',
-      'model_type', 'sub_price', 'free_pool', 'free_to_paid', 'avg_seats', 'expansion_rate'
-    ];
-    
-    const DOM = {};
-    fields.forEach(f => DOM[f] = document.getElementById(`val_${f}`));
-    fields.forEach(f => {
-      const el = document.getElementById(`scale_${f}`);
-      if(el) DOM[`scale_${f}`] = el;
-    });
+    // 10 Model-Specific Configurations containing exactly 5 targeted dynamic fields each
+    const modelConfigurations = {
+      saas_tiered: [
+        { id: 'v1', label: 'Average Tier monthly price', placeholder: '50', scale: true },
+        { id: 'v2', label: 'Annual Plan Opt-in Rate (%)', placeholder: '20', scale: false },
+        { id: 'v3', label: 'Account Expansion Growth (%)', placeholder: '15', scale: false },
+        { id: 'v4', label: 'Gross Annual Logo Churn (%)', placeholder: '7', scale: false },
+        { id: 'v5', label: 'Expected Active Paid Subscribers', placeholder: '500', scale: true }
+      ],
+      freemium_upsell: [
+        { id: 'v1', label: 'Free Pool Acquisition Velocity', placeholder: '50', scale: true },
+        { id: 'v2', label: 'Free-to-Paid Upgrade Velocity (%)', placeholder: '3', scale: false },
+        { id: 'v3', label: 'Premium Monthly License Price', placeholder: '12', scale: false },
+        { id: 'v4', label: 'Free User Monthly Support Cost', placeholder: '0.50', scale: false },
+        { id: 'v5', label: 'Free Tier Infrastructure Drag Index (1-5)', placeholder: '3', scale: false }
+      ],
+      per_seat_b2b: [
+        { id: 'v1', label: 'Base Fee Per Seat Per Month', placeholder: '15', scale: false },
+        { id: 'v2', label: 'Average Contract Seat Count', placeholder: '45', scale: false },
+        { id: 'v3', label: 'Corporate Pilot-to-Paid Rate (%)', placeholder: '35', scale: false },
+        { id: 'v4', label: 'Annual Account Net Expansion (%)', placeholder: '22', scale: false },
+        { id: 'v5', label: 'Enterprise Legal Sign-off Delay (Days)', placeholder: '90', scale: false }
+      ],
+      one_time_course: [
+        { id: 'v1', label: 'Course Purchase Price', placeholder: '250', scale: false },
+        { id: 'v2', label: 'Community Upsell Attach Rate (%)', placeholder: '15', scale: false },
+        { id: 'v3', label: 'Monthly Retargeting Ad Spend', placeholder: '5', scale: true },
+        { id: 'v4', label: 'Course Content Refund Rate (%)', placeholder: '4', scale: false },
+        { id: 'v5', label: 'Secondary Class Purchase Rate (%)', placeholder: '12', scale: false }
+      ],
+      marketplace_take: [
+        { id: 'v1', label: 'Gross Merchandise Volume (GMV)', placeholder: '2', scale: true },
+        { id: 'v2', label: 'Platform Base Take Rate Fee (%)', placeholder: '12', scale: false },
+        { id: 'v3', label: 'Merchant Listing Subscription Cost', placeholder: '29', scale: false },
+        { id: 'v4', label: 'Dispute Chargeback Escrow Rate (%)', placeholder: '1', scale: false },
+        { id: 'v5', label: 'Supply-to-Demand Liquid Ratio (1-5)', placeholder: '3', scale: false }
+      ],
+      usage_metered: [
+        { id: 'v1', label: 'Cost Per 1K API Calls / Events', placeholder: '0.20', scale: false },
+        { id: 'v2', label: 'Average Base Monthly Event Vol', placeholder: '500', scale: true },
+        { id: 'v3', label: 'Overage Premium Markup (%)', placeholder: '25', scale: false },
+        { id: 'v4', label: 'Compute Token Infrastructure Cost', placeholder: '0.05', scale: false },
+        { id: 'v5', label: 'Volume Drawdown Churn Index (1-5)', placeholder: '2', scale: false }
+      ],
+      hybrid_retainer: [
+        { id: 'v1', label: 'Monthly Base Retainer Fee', placeholder: '3', scale: true },
+        { id: 'v2', label: 'Digital Product Upsell Addon Rate (%)', placeholder: '30', scale: false },
+        { id: 'v3', label: 'Add-on Digital Product Unit Price', placeholder: '199', scale: false },
+        { id: 'v4', label: 'Contract Execution Scope Creep (1-5)', placeholder: '3', scale: false },
+        { id: 'v5', label: 'Client Lifespan Retention (Months)', placeholder: '14', scale: false }
+      ],
+      ecom_dtc: [
+        { id: 'v1', label: 'Product Unit Selling Price', placeholder: '85', scale: false },
+        { id: 'v2', label: 'Manufacturing COGS Cost Per Unit', placeholder: '22', scale: false },
+        { id: 'v3', label: 'Minimum Batch Production Volume', placeholder: '5', scale: true },
+        { id: 'v4', label: 'Return & Damage Wastage Rate (%)', placeholder: '6', scale: false },
+        { id: 'v5', label: 'Repeat Customer Purchase Rate (%)', placeholder: '18', scale: false }
+      ],
+      ad_sponsored: [
+        { id: 'v1', label: 'Target Monthly Platform Pageviews', placeholder: '1', scale: true },
+        { id: 'v2', label: 'Programmatic Ad Average RPM ($)', placeholder: '12', scale: false },
+        { id: 'v3', label: 'Direct Newsletter Sponsor Placement', placeholder: '1500', scale: false },
+        { id: 'v4', label: 'Sponsor Inventory Sell-Through (%)', placeholder: '65', scale: false },
+        { id: 'v5', label: 'Ad-Blocker Audience Penetration (%)', placeholder: '28', scale: false }
+      ],
+      white_label: [
+        { id: 'v1', label: 'Annual Enterprise License Allocation', placeholder: '25', scale: true },
+        { id: 'v2', label: 'Initial System Implementation Fee', placeholder: '10', scale: true },
+        { id: 'v3', label: 'Dedicated Support Retainer Layer', placeholder: '2', scale: true },
+        { id: 'v4', label: 'Partner Channel Commission Split (%)', placeholder: '20', scale: false },
+        { id: 'v5', label: 'Source Code Escrow Compliance Risk (1-5)', placeholder: '2', scale: false }
+      ]
+    };
 
+    const selector = document.getElementById('revenue_model_selector');
+    const container = document.getElementById('dynamic_fields_container');
     const calcBtn = document.getElementById('calcBtn');
-    const outScore = document.getElementById('outScore');
-    const outCommentTag = document.getElementById('outCommentTag');
-    const outCommentText = document.getElementById('outCommentText');
-    const suggestionsContainer = document.getElementById('suggestionsContainer');
 
-    function getAbsoluteValue(field) {
-      const val = parseFloat(DOM[field].value) || 0;
-      const mult = DOM[`scale_${field}`] ? parseFloat(DOM[`scale_${field}`].value) : 1;
-      return val * mult;
+    function renderFields() {
+      const currentModel = selector.value;
+      const conf = modelConfigurations[currentModel];
+      container.innerHTML = '';
+      
+      conf.forEach(field => {
+        const wrap = document.createElement('div');
+        wrap.className = 'input-group';
+        
+        let scaleHTML = field.scale 
+          ? `<select id="scale_d_${field.id}" class="scale-select"><option value="1">Direct</option><option value="1000" selected>K</option><option value="1000000">M</option></select>`
+          : `<select class="scale-select" disabled><option value="1">Index</option></select>`;
+
+        wrap.innerHTML = `
+          <label for="d_${field.id}">${field.label}</label>
+          <div class="compound-field">
+            <input type="number" id="d_${field.id}" class="manual-input" placeholder="eg: ${field.placeholder}" value="0">
+            ${scaleHTML}
+          </div>
+        `;
+        container.appendChild(wrap);
+      });
     }
 
-    function getClassForScore(s) {
-      if (s < 40) return 'val score-danger';
-      if (s < 70) return 'val score-alert';
-      return 'val score-good';
+    selector.addEventListener('change', renderFields);
+    window.addEventListener('DOMContentLoaded', renderFields);
+
+    function getStaticVal(id, hasScale) {
+      const v = parseFloat(document.getElementById(id).value) || 0;
+      if(!hasScale) return v;
+      const mult = parseFloat(document.getElementById(`scale_${id}`).value) || 1;
+      return v * mult;
+    }
+
+    function getDynamicVal(id, hasScale) {
+      const el = document.getElementById(`d_${id}`);
+      if(!el) return 0;
+      const v = parseFloat(el.value) || 0;
+      if(!hasScale) return v;
+      const scaleEl = document.getElementById(`scale_d_${id}`);
+      const mult = scaleEl ? parseFloat(scaleEl.value) : 1;
+      return v * mult;
     }
 
     function generateReportEngine() {
-      // 1. Inputs Unpacking
-      const modelType = DOM.model_type.value;
-      const subPrice = getAbsoluteValue('sub_price');
-      const freePool = getAbsoluteValue('free_pool');
-      const freeToPaid = parseFloat(DOM.free_to_paid.value) || 0;
-      const avgSeats = parseFloat(DOM.avg_seats.value) || 1;
-      const expansionRate = parseFloat(DOM.expansion_rate.value) || 0;
+      const activeModel = selector.value;
 
-      const tam = getAbsoluteValue('tam');
-      const sam = getAbsoluteValue('sam');
-      const som = getAbsoluteValue('som');
-      const growth = parseFloat(DOM.growth.value) || 0;
-      const cac = getAbsoluteValue('cac');
-      const servicing = getAbsoluteValue('servicing');
-      const churn = parseFloat(DOM.churn.value) || 0;
-      const conversion = parseFloat(DOM.conversion.value) || 0;
-      const dev = getAbsoluteValue('dev');
-      const marketing = getAbsoluteValue('marketing');
-      const overhead = getAbsoluteValue('overhead');
-      const runway = parseFloat(DOM.runway.value) || 0;
-      const competitors = parseFloat(DOM.competitors.value) || 0;
-      const reg = parseFloat(DOM.reg.value) || 0;
+      // Unpack Static Foundations
+      const tam = getStaticVal('g_tam', true);
+      const sam = getStaticVal('g_sam', true);
+      const som = getStaticVal('g_som', true);
+      const growth = getStaticVal('g_growth', false);
+      const competitors = getStaticVal('g_competitors', false);
+      const reg = getStaticVal('g_reg', false);
+      const cac = getStaticVal('g_cac', true);
+      const serve = getStaticVal('g_serve', true);
+      const dev = getStaticVal('g_dev', true);
+      const overhead = getStaticVal('g_overhead', true);
+      const runway = getStaticVal('g_runway', false);
+      const conversion = getStaticVal('g_conversion', false);
 
-      if(tam === 0 && subPrice === 0 && dev === 0) {
-        alert("Please modify matrix values from zero baseline to parse business diagnostics.");
+      // Verify input activity
+      if (tam === 0 && dev === 0 && overhead === 0) {
+        alert("Fields initialized at zero baseline. Please input parameters to run calculation matrix.");
         return;
       }
 
-      // 2. DYNAMIC CONTRACT STRUCTURING ALGORITHM
-      let annualContractValue = 0;
-      if (modelType === 'saas_monthly') {
-        annualContractValue = subPrice * 12;
-      } else if (modelType === 'saas_annual') {
-        annualContractValue = subPrice;
-      } else if (modelType === 'per_user') {
-        annualContractValue = (subPrice * 12) * (avgSeats || 1);
-      } else if (modelType === 'one_time_course') {
-        annualContractValue = subPrice; 
-      } else if (modelType === 'freemium') {
-        annualContractValue = subPrice * 12;
+      // Unpack Dynamic Slots
+      const v1 = getDynamicVal('v1', true);
+      const v2 = getDynamicVal('v2', false);
+      const v3 = getDynamicVal('v3', true);
+      const v4 = getDynamicVal('v4', false);
+      const v5 = getDynamicVal('v5', false);
+
+      // Initialize System Channels
+      let s1=50, s2=50, s3=50, s4=70, s5=50, s6=50, s7=50, s8=50, s9=50, s10=50, s11=50, s12=50;
+
+      // Static Parameters Global Logic 
+      s1 = tam > 5000000 ? 90 : 45; if (growth > 12) s1 += 10;
+      s2 = (tam > 0 && sam <= tam) ? 85 : 30;
+      s3 = (sam > 0 && som <= sam * 0.4) ? 95 : 35;
+      s7 = conversion >= 15 ? 90 : (conversion >= 5 ? 65 : 35);
+      s9 = (dev > 1500000) ? 40 : 80;
+      s10 = runway >= 18 ? 95 : (runway >= 12 ? 70 : 35);
+      s11 = Math.max(15, 100 - (competitors * 6));
+      s12 = Math.max(10, 100 - (reg * 15));
+
+      // DYNAMIC CONTEXT EVALUATION LOOPS
+      let annualYield = 0;
+      let modelChurn = v4;
+
+      if (activeModel === 'saas_tiered') {
+        annualYield = v1 * 12;
+        s4 = v4 < 8 ? 95 : 45; // Churn health check
+        s5 = v3 > 10 ? 90 : 60; // Expansion rate score
+      } 
+      else if (activeModel === 'freemium_upsell') {
+        annualYield = v3 * 12;
+        s4 = v2 >= 4 ? 90 : 35; // Bad upgrade velocity drag
+        s5 = v5 >= 4 ? 30 : 80; // High server infrastructure load
+      } 
+      else if (activeModel === 'per_seat_b2b') {
+        annualYield = (v1 * 12) * v2;
+        s4 = v3 > 25 ? 95 : 55;
+        s5 = v5 > 60 ? 40 : 85; // Long legal processing delays reduce strategy execution velocity
+      } 
+      else if (activeModel === 'one_time_course') {
+        annualYield = v1; 
+        modelChurn = 100; // Complete depletion per sale lifecycle
+        s4 = v4 < 5 ? 90 : 40; // High refund rates kill courses
+        s5 = v5 > 15 ? 85 : 45; // Ability to sell secondary classes
+      } 
+      else if (activeModel === 'marketplace_take') {
+        annualYield = v1 * (v2 / 100);
+        s4 = v2 >= 10 ? 85 : 40;
+        s5 = v5 <= 2 ? 35 : 90; // Liquidity imbalance checks
+      }
+      else if (activeModel === 'usage_metered') {
+        annualYield = (v1 / 1000) * v2 * 12;
+        s4 = v5 >= 4 ? 35 : 80;
+        s5 = v3 > 15 ? 90 : 60;
+      }
+      else if (activeModel === 'hybrid_retainer') {
+        annualYield = (v1 * 12) + (v2 / 100 * v3);
+        s4 = v4 >= 4 ? 40 : 85; // Scope creep penalties
+        s5 = v5 >= 12 ? 90 : 45;
+      }
+      else if (activeModel === 'ecom_dtc') {
+        annualYield = v1;
+        s4 = (v1 - v2) / v1 > 0.6 ? 90 : 40; // DTC Gross Profit check
+        s5 = v5 > 20 ? 95 : 50; // Repeat purchase health loop
+      }
+      else if (activeModel === 'ad_sponsored') {
+        annualYield = (v1 / 1000 * v2 * 12) + (v3 * 12);
+        s4 = v4 > 70 ? 90 : 50;
+        s5 = v5 > 30 ? 35 : 85; // High adblock usage penalty
+      }
+      else if (activeModel === 'white_label') {
+        annualYield = v1 + v2 + (v3 * 12);
+        s4 = v4 > 25 ? 45 : 85;
+        s5 = v5 >= 4 ? 30 : 85;
       }
 
-      // 3. DIAGNOSTIC CALCULATION OF 12 SYSTEM CHANNELS
-      // S1: TAM Health
-      let s1 = tam > 10000000 ? 95 : (tam > 1000000 ? 75 : 40);
-      if (growth > 12) s1 += 10;
+      // Compute Margin Strength Score
+      s6 = annualYield > serve ? 90 : 30;
 
-      // S2: SAM Sizing Efficiency 
-      let s2 = 85;
-      if (tam > 0) { const r = sam / tam; if (r > 0.5 || r < 0.03) s2 = 35; } else s2 = 10;
+      // Compute Core Dynamic LTV to CAC Engine
+      const operationalUnitMargin = Math.max(0, annualYield - serve);
+      const durationFactor = modelChurn > 0 ? (100 / modelChurn) : 5;
+      const computedLtv = operationalUnitMargin * durationFactor;
+      const ratio = cac > 0 ? (computedLtv / cac) : 0;
 
-      // S3: SOM Capture Realism
-      let s3 = 90;
-      if (sam > 0) { const r = som / sam; if (r > 0.35) s3 = 30; } else s3 = 10;
+      if (ratio >= 4.0) s8 = 95;
+      else if (ratio >= 2.5) s8 = 75;
+      else if (ratio >= 1.5) s8 = 50;
+      else s8 = 20;
 
-      // S4: Monetization Strategy Fit
-      let s4 = 75;
-      if (modelType === 'freemium' && freeToPaid < 2) s4 -= 40; // Freemium warning tag
-      if (modelType === 'per_user' && avgSeats <= 1) s4 -= 25; // Business model conflict
+      // Map Arrays & Final Weights
+      const matrixOut = [s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12];
+      const normalized = matrixOut.map(val => Math.max(1, Math.min(100, Math.round(val))));
+      const finalMacroFeasibility = Math.round(normalized.reduce((a, b) => a + b, 0) / 12);
 
-      // S5: Expansion Elasticity 
-      let s5 = 50;
-      if (expansionRate > 15) s5 = 95;
-      else if (expansionRate > 5) s5 = 75;
-      if (modelType === 'one_time_course') s5 = 30; // One-time courses lack expansion retention channels
-
-      // S6: Margin Strength
-      let s6 = 50;
-      if (annualContractValue > 0) {
-        const marginPct = ((annualContractValue - servicing) / annualContractValue) * 100;
-        s6 = marginPct > 80 ? 95 : (marginPct > 45 ? 70 : 25);
-      }
-
-      // S7: Acquisition Funnel Velocity
-      let s7 = 75;
-      if (conversion < 8) s7 -= 30;
-      if (conversion >= 20) s7 += 15;
-
-      // S8: LTV / CAC Structural Ratio Balance
-      const lifeYears = (modelType === 'one_time_course' || churn === 0) ? 1 : (100 / churn);
-      const compositeLtv = (annualContractValue - servicing) * lifeYears * (1 + (expansionRate / 100));
-      const ltvCacRatio = cac > 0 ? (compositeLtv / cac) : 0;
-      let s8 = 20;
-      if (ltvCacRatio >= 4.5) s8 = 98;
-      else if (ltvCacRatio >= 3.0) s8 = 85;
-      else if (ltvCacRatio >= 1.8) s8 = 55;
-
-      // S9: Pre-Launch Sunk Risk Exposure
-      let s9 = 85;
-      if ((dev + marketing) > 2000000) s9 -= 25;
-
-      // S10: Overhead Runway Sustainability
-      let s10 = 40;
-      if (runway >= 18) s10 = 95;
-      else if (runway >= 12) s10 = 70;
-      else if (runway >= 6) s10 = 45;
-
-      // S11: Market Saturation
-      let s11 = 100 - (competitors * 7);
-
-      // S12: Compliance Vectors
-      let s12 = 100 - (reg * 15);
-
-      // 4. MAP DATA SECURELY TO NORMALIZED SPECTRUMS
-      const rawScores = [s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12];
-      const normalized = rawScores.map(v => Math.max(1, Math.min(100, Math.round(v))));
-      const macroScore = Math.round(normalized.reduce((a,b)=>a+b, 0) / 12);
-
-      // 5. UPDATE CORE HEADLINE VISUALS
-      outScore.textContent = macroScore + '%';
-      if (macroScore < 45) {
-        outCommentTag.textContent = "Dangerous";
-        outCommentTag.className = "comment-tag tag-danger";
-        outCommentText.textContent = "High architecture failure probability. Severe systemic drag from critical red items below.";
-      } else if (macroScore < 72) {
-        outCommentTag.textContent = "Borderline";
-        outCommentTag.className = "comment-tag tag-alert";
-        outCommentText.textContent = "Conditionally viable. Structural changes are highly required to ensure capital preservation.";
+      // Render Top Headline Panel Elements
+      outScore.textContent = finalMacroFeasibility + '%';
+      if(finalMacroFeasibility < 45) {
+        outCommentTag.textContent = "Dangerous"; outCommentTag.className = "comment-tag tag-danger";
+        outCommentText.textContent = "Critical model conflict detected. Review red specific parameters below to adjust strategy.";
+      } else if (finalMacroFeasibility < 72) {
+        outCommentTag.textContent = "Borderline"; outCommentTag.className = "comment-tag tag-alert";
+        outCommentText.textContent = "Viable framework but facing structural bottlenecks. Check sub-scores.";
       } else {
-        outCommentTag.textContent = "Highly Viable";
-        outCommentTag.className = "comment-tag tag-good";
-        outCommentText.textContent = "Optimal enterprise safety profile. Monetization loops perfectly aligned with market buffers.";
+        outCommentTag.textContent = "Highly Viable"; outCommentTag.className = "comment-tag tag-good";
+        outCommentText.textContent = "Optimized parameters. The strategy shows robust defensive barriers and clean unit economics.";
       }
 
-      // 6. INJECT 12 INDIVIDUAL DIAGNOSTIC SCORE OUTPUTS
+      // Display 12 Factor Results
       for (let i = 1; i <= 12; i++) {
         const itemScore = normalized[i - 1];
-        const element = document.getElementById(`m${i}`);
-        element.textContent = itemScore + " / 100";
-        element.className = getClassForScore(itemScore);
+        const el = document.getElementById(`m${i}`);
+        el.textContent = itemScore + " / 100";
+        el.className = itemScore < 40 ? 'val score-danger' : (itemScore < 70 ? 'val score-alert' : 'val score-good');
       }
 
-      // 7. CONTEXTUAL SUGGESTIONS WRITER MODULE
+      // Generate Clean Suggestion Matrix
       let suggestionsHTML = '';
-      if (modelType === 'freemium' && freeToPaid < 4) {
-        suggestionsHTML += `<li><i class="fas fa-exclamation-triangle"></i> <strong>Freemium Stagnation Risk:</strong> Your free-to-paid upgrade velocity is insufficient. Limit feature accessibility on free tiers.</li>`;
+      if(normalized[3] < 50) suggestionsHTML += `<li><i class="fas fa-chart-pie"></i> <strong>SOM Target Hazard:</strong> Capture goal exceeds realistic early limits. Scale back entry targeting profiles.</li>`;
+      if(normalized[7] < 50) suggestionsHTML += `<li><i class="fas fa-filter"></i> <strong>Funnel Friction:</strong> Low trial conversion limits customer onboarding speed. Streamline onboarding layout.</li>`;
+      if(normalized[9] < 50) suggestionsHTML += `<li><i class="fas fa-wallet"></i> <strong>Sunk Liability Stress:</strong> Heavy early engineering setup architecture spending risks draining launch reserves.</li>`;
+      
+      // Model specific tailored warnings
+      if(activeModel === 'one_time_course' && normalized[4] < 60) {
+        suggestionsHTML += `<li><i class="fas fa-undo-alt"></i> <strong>Asset Depletion:</strong> One-time sales suffer from churn constraints. Launch community or micro-SaaS retainer add-ons to stabilize monthly yields.</li>`;
       }
-      if (modelType === 'one_time_course' && normalized[4] < 45) {
-        suggestionsHTML += `<li><i class="fas fa-redo"></i> <strong>One-Time Course Cap:</strong> Digital assets have a weak LTV tail. Introduce secondary recurring community memberships to offset missing expansion revenue loops.</li>`;
+      if(activeModel === 'freemium_upsell' && normalized[3] < 50) {
+        suggestionsHTML += `<li><i class="fas fa-users-slash"></i> <strong>Upgrade Stagnation:</strong> Low conversions from free pools drag down macro cash velocity. Tighten feature gates.</li>`;
       }
-      if (normalized[7] < 50) {
-        suggestionsHTML += `<li><i class="fas fa-funnel-dollar"></i> <strong>Funnel Blockage:</strong> Low trial conversion rate is driving down customer acquisition velocity. Streamline your onboarding interface.</li>`;
-      }
-      if (normalized[1] < 45 || normalized[2] < 45) {
-        suggestionsHTML += `<li><i class="fas fa-chart-line"></i> <strong>Market Scale Cap:</strong> The absolute market pool size cannot sustain long term growth. Pivot or expand to a broader B2B target focus.</li>`;
-      }
-      if (normalized[9] < 50) {
-        suggestionsHTML += `<li><i class="fas fa-hourglass-end"></i> <strong>Overhead Warning:</strong> High burn rate paired with short execution runway creates a critical financial risk. Immediately reduce engineering operational spend.</li>`;
-      }
-      if (suggestionsHTML === '') {
-        suggestionsHTML = `<li><i class="fas fa-check-circle"></i> Business design verified. Foundational architecture shows no optimization blocks. Advance safely to pilot framework launch.</li>`;
+
+      if(suggestionsHTML === '') {
+        suggestionsHTML = `<li><i class="fas fa-check-circle"></i> Strategy configuration verified. No optimization blockers. Advance framework to sandbox live operations.</li>`;
       }
       suggestionsContainer.innerHTML = suggestionsHTML;
     }
